@@ -519,15 +519,27 @@ a:active, a:hover {
     padding: 20px;
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 1024px) {
     .grid-container {
         grid-template-columns: repeat(auto-fill, minmax(80px, 1fr));
+        grid-template-rows: repeat(auto-fill, auto); /* Two rows */
+        gap: 30px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .grid-container {
+        grid-template-columns: repeat(auto-fill, minmax(60px, 1fr));
+        grid-template-rows: repeat(auto-fill, auto); /* Two rows */
+        gap: 20px;
     }
 }
 
 @media screen and (max-width: 480px) {
     .grid-container {
-        grid-template-columns: repeat(auto-fill, minmax(60px, 1fr));
+        grid-template-columns: repeat(auto-fill, minmax(40px, 1fr));
+        grid-template-rows: repeat(auto-fill, auto); /* Two rows */
+        gap: 10px;
     }
 }
 
@@ -541,6 +553,27 @@ a:active, a:hover {
       box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5); /* Add shadow */
       transition: transform 0.3s ease; /* Smooth transition for rotation */
   }
+
+  @media screen and (max-width: 1024px) {
+      .circle-with-line {
+        width: 60px; /* Set width and height to create a circle */
+        height: 60px;
+      }
+  }
+  
+  @media screen and (max-width: 768px) {
+      .circle-with-line {
+        width: 40px; /* Set width and height to create a circle */
+        height: 40px;
+      }
+  }
+  
+  @media screen and (max-width: 480px) {
+      .circle-with-line {
+        width: 40px; /* Set width and height to create a circle */
+        height: 40px;
+      }
+  }
   
   .circle-with-line::before {
       content: ""; /* Required for pseudo-elements */
@@ -553,5 +586,24 @@ a:active, a:hover {
       border-radius: 5px; /* Set the border-radius to half of the height to create pill shape */
       transform: translateY(-50%); /* Center the line vertically */
   }
+  
+
+  @media screen and (max-width: 1024px) {
+    .circle-with-line::before {
+      height: 8px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .circle-with-line::before {
+      height: 6px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .circle-with-line::before {
+      height: 4px;
+    }
+}
   
   
