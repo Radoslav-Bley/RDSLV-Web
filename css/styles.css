@@ -1,0 +1,557 @@
+:root {
+    /* Background */
+    --bg-color-light: #F5F8FD;
+    --bg-color-dark: rgba(26, 29, 36, 1);
+    
+    /* Text */
+    --text-color-light: #F5F8FD;
+    --text-color-dark: rgba(26, 29, 36, 1);
+    --text-color-accent: #ED1C24;
+
+    /* Accent */
+    --accent-color: #ED1C24;
+
+    /* Status Light */
+    --status-light-red: #ED1C24;
+    --status-light-green: limegreen;
+    --status-border-red: rgba(237, 28, 36, 0.2);
+    --status-border-green: rgba(50, 205, 50, 0.2);
+    
+}
+
+html {
+    line-height: 1.15; /* 1 */
+    -webkit-text-size-adjust: 100%; /* 2 */
+    scroll-behavior: smooth;
+}
+body {
+    font-family: 'Inter', sans-serif;
+    font-size: 16px;
+    margin: 0;
+    background-color: var(--bg-color-light);
+    color: var(--text-color-dark);
+    transition: background-color 0.5s ease, color 0.5s ease;
+    overscroll-behavior: contain;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+@media screen and (max-width: 768px) {
+    body {
+        font-size: 14px;
+    }
+}
+
+@media (prefers-color-scheme: dark) {
+    body {
+        background-color: var(--bg-color-dark);
+        color: var(--text-color-light);
+    }
+}
+
+.container {
+    max-width: 1200px; 
+    margin: 0 auto; 
+    padding: 0 20px;
+    
+}
+
+@media screen and (max-width: 768px) {
+    .container {
+        padding: 0 20px;
+    }
+}
+
+.container-m {
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+
+.content {
+    padding: 20px;
+}
+
+article, aside, footer, header, nav, section {
+    display: block;
+}
+
+h1 {
+    font-size: 34px;
+    font-weight: 300;
+}
+
+@media screen and (max-width: 768px) {
+    h1 {
+        font-size: 24px; /* Adjust the font size for mobile */
+    }
+}
+
+h2 {
+    font-size: 30px;
+    font-weight: 200;
+}
+
+@media screen and (max-width: 768px) {
+    h2 {
+        font-size: 18px; /* Adjust the font size for mobile */
+    }
+}
+
+h3 {
+    font-size: 24px;
+    font-weight: 500;
+}
+
+@media screen and (max-width: 768px) {
+    h3 {
+        font-size: 18px; /* Adjust the font size for mobile */
+    }
+}
+
+h4 {
+    font-size: 20px;
+    font-weight: 200;
+}
+
+@media screen and (max-width: 768px) {
+    h4 {
+        font-size: 18px; /* Adjust the font size for mobile */
+    }
+}
+
+h5 {
+    font-size: 18px;
+    font-weight: 200;
+}
+
+@media screen and (max-width: 768px) {
+    h5 {
+        font-size: 16px; /* Adjust the font size for mobile */
+    }
+}
+
+h6 {
+    font-size: 16px;
+    font-weight: 200;
+}
+
+@media screen and (max-width: 768px) {
+    h6 {
+        font-size: 16px; /* Adjust the font size for mobile */
+    }
+}
+
+h2, h3, h4, h5, h6 {
+    margin: 0;
+    font-family: "Inter", sans-serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+    font-variation-settings:
+      "slnt" 0;
+}
+
+ul {
+    margin: 0;
+    padding: 0;
+}
+a {
+    background-color: transparent;
+}
+a:active, a:hover {
+    outline-width: 0;
+}
+
+.highlighted-text {
+    color: var(--accent-color);
+    font-weight: bold;
+}
+
+/* Your custom CSS styles start here */
+/* Add your styles below this line */
+
+/* Animations */
+.text-focus-in {
+	-webkit-animation: text-focus-in 1s cubic-bezier(0.550, 0.085, 0.680, 0.530) both;
+	        animation: text-focus-in 1s cubic-bezier(0.550, 0.085, 0.680, 0.530) both;
+}
+
+ @-webkit-keyframes text-focus-in {
+    0% {
+      -webkit-filter: blur(12px);
+              filter: blur(12px);
+      opacity: 0;
+    }
+    100% {
+      -webkit-filter: blur(0px);
+              filter: blur(0px);
+      opacity: 1;
+    }
+  }
+  @keyframes text-focus-in {
+    0% {
+      -webkit-filter: blur(12px);
+              filter: blur(12px);
+      opacity: 0;
+    }
+    100% {
+      -webkit-filter: blur(0px);
+              filter: blur(0px);
+      opacity: 1;
+    }
+  }
+  
+.slide-in-blurred-bottom {
+    -webkit-animation: none; /* Remove the animation */
+            animation: none; /* Remove the animation */
+    opacity: 0; /* Initially hide the element */
+}
+
+.slide-in-blurred-bottom.reveal {
+    -webkit-animation: slide-in-blurred-bottom 0.6s cubic-bezier(0.230, 1.000, 0.320, 1.000) both; /* Apply animation when revealed */
+            animation: slide-in-blurred-bottom 0.6s cubic-bezier(0.230, 1.000, 0.320, 1.000) both; /* Apply animation when revealed */
+}
+
+@-webkit-keyframes slide-in-blurred-bottom {
+    0% {
+        -webkit-transform: translateY(1000px) scaleY(2.5) scaleX(0.2);
+                transform: translateY(1000px) scaleY(2.5) scaleX(0.2);
+        -webkit-transform-origin: 50% 100%;
+                transform-origin: 50% 100%;
+        -webkit-filter: blur(40px);
+                filter: blur(40px);
+        opacity: 0;
+    }
+    100% {
+        -webkit-transform: translateY(0) scaleY(1) scaleX(1);
+                transform: translateY(0) scaleY(1) scaleX(1);
+        -webkit-transform-origin: 50% 50%;
+                transform-origin: 50% 50%;
+        -webkit-filter: blur(0);
+                filter: blur(0);
+        opacity: 1;
+    }
+}
+@keyframes slide-in-blurred-bottom {
+    0% {
+        -webkit-transform: translateY(1000px) scaleY(2.5) scaleX(0.2);
+                transform: translateY(1000px) scaleY(2.5) scaleX(0.2);
+        -webkit-transform-origin: 50% 100%;
+                transform-origin: 50% 100%;
+        -webkit-filter: blur(40px);
+                filter: blur(40px);
+        opacity: 0;
+    }
+    100% {
+        -webkit-transform: translateY(0) scaleY(1) scaleX(1);
+                transform: translateY(0) scaleY(1) scaleX(1);
+        -webkit-transform-origin: 50% 50%;
+                transform-origin: 50% 50%;
+        -webkit-filter: blur(0);
+                filter: blur(0);
+        opacity: 1;
+    }
+}
+
+  
+
+/* Header */
+.header {
+    background-color: transparent;
+    padding: 20px;
+    height: 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    text-transform: lowercase;
+    font-weight: 500;
+}
+
+.logo {
+    display: flex;
+}
+
+.logo img {
+    max-width: 100px; /* Adjust the max-width as needed */
+    display: none; /* Hide both logo images by default */
+}
+
+.nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+.nav ul li {
+    margin-left: 20px; /* Adjust the spacing between links */
+}
+
+.nav ul li:first-child {
+    margin-left: 0; /* Remove margin from the first link */
+}
+
+.nav ul li a {
+    text-decoration: none;
+    color: var(--text-color-dark); /* Adjust link color as needed */
+}
+
+@media (prefers-color-scheme: dark) {
+    .nav ul li a {
+        color: var(--text-color-light);
+    }
+}
+
+/* Light mode */
+@media (prefers-color-scheme: light) {
+    .logo img.logo-light {
+        display: block; /* Show light mode logo */
+    }
+    .logo img.logo-dark {
+        display: none; /* Hide dark mode logo */
+    }
+}
+
+/* Dark mode */
+@media (prefers-color-scheme: dark) {
+    .logo img.logo-light {
+        display: none; /* Hide light mode logo */
+    }
+    .logo img.logo-dark {
+        display: block; /* Show dark mode logo */
+    }
+}
+
+/* Hero */
+ .hero-section {
+    margin-top: -100px;
+    padding-top: 100px;
+    height: 100vh;
+    background: linear-gradient(0deg, rgba(245,248,253,1) 0%, rgba(231,234,241,1) 100%);
+    z-index: 1;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    .hero-section {
+        background: linear-gradient(180deg, rgba(41, 45, 56, 1) 0%, rgba(26, 29, 36, 1) 100%);
+    }
+}
+
+  
+  
+  .hero-image {
+    padding-top: 100px;
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+  }
+  
+  @media only screen and (max-width: 1024px) {
+    .hero-image {
+      margin-bottom: 100px;
+    }
+  }
+  
+  @media only screen and (max-width: 768px) {
+    .hero-image {
+      margin-bottom: 100px;
+    }
+  }
+  
+  .hero-content {
+    margin-bottom: 10%;
+    z-index: 2;
+  }
+
+  .hero-position {
+    height: 100vh;
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-start;
+  }
+
+  @media only screen and (max-width: 1024px) {
+    .hero-content {
+      padding-bottom: 5%;
+    }
+  }
+  
+  @media only screen and (max-width: 768px) {
+    .hero-content {
+      padding-bottom: 20%;
+    }
+  }
+  
+  @media only screen and (max-width: 1024px) {
+    .hero-text h2{
+      font-size: 26px;
+    }
+  }
+  
+  @media only screen and (max-width: 1024px) {
+    .hero-text h3{
+      font-size: 18px;
+    }
+  }
+  
+  @media only screen and (max-width: 768px) {
+    .hero-text h2{
+      font-size: 26px;
+    }
+  }
+  
+  @media only screen and (max-width: 768px) {
+    .hero-text h3{
+      font-size: 18px;
+    }
+  }
+
+  /* Project Status */
+  .status-content {
+    display: flex; 
+    align-items: center; 
+  }
+  
+  #status-shape {
+    width: auto;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background-color: transparent;
+    border: 1px solid rgba(35, 31, 32, 0.2);
+    border-radius: 40px;
+    padding: 7px 15px 7px 15px; 
+    margin-top: 50px;
+    margin-bottom: 50px;
+  }  
+  
+ @media (prefers-color-scheme: dark) {
+    #status-shape {
+    border: 1px solid rgba(220, 224, 223, 0.2)
+    ;
+    }
+ }
+
+  .status-light {
+    width: 12px; 
+    height: 4px; 
+    margin-left: 10px;
+    background-color: var(--status-light-red); 
+    border-radius: 10px; 
+    box-shadow: 0 0 10px var(--status-light-red); 
+    animation: flicker 1s linear infinite;
+  }
+  
+  @keyframes flicker {
+      0%, 19.999%, 22%, 62.999%, 64%, 64.999%, 70%, 100% {
+          text-shadow: none;
+      opacity: .99;
+          
+      }
+      20%, 21.999%, 63%, 63.999%, 65%, 69.999% {
+          opacity: 0.4;
+      }
+  }
+  
+  #status-shape p {
+    font-weight: 300;
+    font-size: 12px;
+    color: var(--h1-color-dark);
+    margin: 0;
+    padding-left: 15px;
+    padding-right: 10px;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+  }
+  
+  @media only screen and (max-width: 600px) {
+    #status-shape p {
+      font-size: 10px;
+    }
+  }
+
+/* Divider */   
+.divider {
+    width: 0;
+    height: 1px;
+    background-color: black;
+    overflow: hidden;
+}
+
+.divider.reveal {
+    animation: reveal 1s forwards; /* Apply animation when revealed */
+}
+
+@keyframes reveal {
+    0% {
+        width: 0;
+    }
+    100% {
+        width: 150px; /* Adjust to match the final width */
+    }
+}
+
+.about-image {
+    display: block;
+    margin: 0 auto;
+}
+
+.wrapper {
+    margin-top: 50px;
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 55%;
+    width: 1200px;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+    grid-template-rows: repeat(3, auto); /* Two rows */
+    gap: 40px;
+    max-width: 1220px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+@media screen and (max-width: 768px) {
+    .grid-container {
+        grid-template-columns: repeat(auto-fill, minmax(80px, 1fr));
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .grid-container {
+        grid-template-columns: repeat(auto-fill, minmax(60px, 1fr));
+    }
+}
+
+
+  
+  .circle-with-line {
+      position: relative; /* Position relative to allow absolute positioning */
+      width: 80px; /* Set width and height to create a circle */
+      height: 80px;
+      border-radius: 50%; /* Use border-radius property with 50% to create a circle */
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5); /* Add shadow */
+      transition: transform 0.3s ease; /* Smooth transition for rotation */
+  }
+  
+  .circle-with-line::before {
+      content: ""; /* Required for pseudo-elements */
+      position: absolute; /* Position the line absolutely */
+      top: 50%; /* Align the line vertically */
+      left: 20%; /* Position the line closer to the center of the circle */
+      width: 60%; /* Set the width of the line to half the diameter of the circle */
+      height: 10px; /* Set the height of the line */
+      background-color: #fff; /* Set the color of the line */
+      border-radius: 5px; /* Set the border-radius to half of the height to create pill shape */
+      transform: translateY(-50%); /* Center the line vertically */
+  }
+  
+  
