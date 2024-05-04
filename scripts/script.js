@@ -15,10 +15,11 @@ let dividerObserver = new IntersectionObserver(revealDivider, {
     threshold: 0.5 // Adjust threshold as needed
 });
 
-// Observe the dividers
 document.querySelectorAll('.divider').forEach(divider => {
+    divider.classList.add('divider-center'); // Add the class
     dividerObserver.observe(divider);
 });
+
 
 // Function to handle reveal animation
 function revealElement(entries, observer) {
@@ -66,3 +67,4 @@ document.querySelectorAll('.circle-with-line').forEach(circle => {
         circle.style.transform = `rotate(${rotation}deg)`;
     });
 });
+
