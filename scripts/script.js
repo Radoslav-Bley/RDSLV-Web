@@ -68,3 +68,9 @@ document.querySelectorAll('.circle-with-line').forEach(circle => {
     });
 });
 
+  var typed = new Typed('#type', {
+    strings: ['Radoslav Bley', 'a designer', 'a developer', 'a producer'],
+    typeSpeed: 100,
+    loop: true,
+    loopCount: Infinity,
+  });
