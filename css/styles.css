@@ -1,3 +1,29 @@
+/**
+ * Developed by Radoslav Bley
+ *
+ * Table of Contents:
+  * 01. Color vars
+  * 02. Base Styling
+  * 03. Containers
+  * 04. Sections
+  * 05. Overlay Effects
+  * 06. Text
+  * 07. Dividers
+  * 08. Images
+  * 09. Animations
+  * 10. Header
+  * 11. Hero Section
+  * 12. Availability status
+  * 13. Hero Circles
+  * 14. Boxes
+  * 15. Table
+  * 16. Footer
+   */
+
+/*!========================================================================
+ * 01. Color vars
+ * ======================================================================!*/
+
 :root {
   /* Background */
   --bg-color-light: rgba(245, 248, 253, 1);
@@ -24,6 +50,10 @@
   --status-border-green: rgba(50, 205, 50, 0.2);
 }
 
+/*!========================================================================
+ * 02. Base Styling
+ * ======================================================================!*/
+
 html {
   line-height: 1.15; /* 1 */
   -webkit-text-size-adjust: 100%; /* 2 */
@@ -42,11 +72,6 @@ body {
   scroll-behavior: smooth;
 }
 
-img {
-  max-width: 100%;
-  height: auto;
-}
-
 @media screen and (max-width: 768px) {
   body {
     font-size: 14px;
@@ -60,19 +85,13 @@ img {
   }
 }
 
-.overlay {
-  background-color: rgba(0, 0, 0, 0.05);
+.content {
+  padding: 20px;
 }
 
-@media (prefers-color-scheme: dark) {
-  .overlay {
-    background-color: rgba(255, 255, 255, 0.05);
-  }
-}
-
-.section {
-  position: relative;
-}
+/*!========================================================================
+ * 03. Containers
+ * ======================================================================!*/
 
 .container {
   max-width: 1200px;
@@ -91,9 +110,47 @@ img {
   padding-bottom: 50px;
 }
 
-.content {
-  padding: 20px;
+.center-container {
+  margin: 100px auto;
+  padding: 0 20px;
+  text-align: center;
 }
+
+.table-container {
+  margin: 0 auto;
+  padding: 0 20px;
+  margin-bottom: 100px;
+  text-align: center;
+}
+
+/* Style for the video */
+.video-container {
+  margin-top: 50px;
+  position: relative;
+}
+
+.video-container iframe {
+  width: 1000px;
+  height: 540px;
+}
+
+@media screen and (max-width: 1024px) {
+  .video-container iframe {
+    max-width: 80%;
+    height: 540px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .video-container iframe {
+    max-width: 80%;
+    height: 540px;
+  }
+}
+
+/*!========================================================================
+ * 04. Sections
+ * ======================================================================!*/
 
 article,
 aside,
@@ -103,6 +160,46 @@ nav,
 section {
   display: block;
 }
+
+.section {
+  position: relative;
+}
+
+.center-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.clients-section {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(2, auto);
+  gap: 10px;
+}
+
+/* Hide outside borders */
+.clients-section {
+  border: 2px solid transparent; /* Hide outside borders */
+}
+
+/*!========================================================================
+ * 05. Overlay Effects
+ * ======================================================================!*/
+
+.overlay {
+  background-color: rgba(0, 0, 0, 0.05);
+}
+
+@media (prefers-color-scheme: dark) {
+  .overlay {
+    background-color: rgba(255, 255, 255, 0.05);
+  }
+}
+
+/*!========================================================================
+ * 06. Text
+ * ======================================================================!*/
 
 h1 {
   font-size: 34px;
@@ -217,10 +314,99 @@ a:hover {
   font-weight: bold;
 }
 
-/* Your custom CSS styles start here */
-/* Add your styles below this line */
+/*!========================================================================
+ * 07. Dividers
+ * ======================================================================!*/
 
-/* Animations */
+/* General divider */
+.divider {
+  width: 0;
+  height: 1px;
+  background-color: var(--bg-color-dark);
+  overflow: hidden;
+}
+
+@media (prefers-color-scheme: dark) {
+  .divider {
+    background-color: var(--bg-color-light);
+  }
+}
+
+.divider.reveal {
+  animation: reveal 1s forwards; /* Apply animation when revealed */
+}
+
+@keyframes reveal {
+  0% {
+    width: 0;
+  }
+  100% {
+    width: 150px; /* Adjust to match the final width */
+  }
+}
+
+/* Specific dividers */
+.services .divider {
+  margin: 0 auto;
+}
+
+.center-container .divider {
+  margin: 0 auto;
+}
+
+/*!========================================================================
+ * 08. Images
+ * ======================================================================!*/
+
+/* General */
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Specific */
+.about-image {
+  display: block;
+  margin: 0 auto;
+}
+
+.client-logo {
+  width: 100%; /* Adjust as needed */
+  height: 100px; /* Adjust as needed */
+  background-color: #ccc; /* Example background color */
+  border: 2px solid #fff; /* White border around each logo */
+  border-radius: 8px; /* Rounded corners for logos */
+}
+
+/* Show inside borders */
+.client-logo {
+  box-shadow: 0 0 0 2px #ccc, /* Inside border */ 0 0 0 4px #fff; /* Outside border (same as background color) */
+}
+
+.section-logos__wrapper-logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease-in-out;
+  transition-property: opacity;
+  opacity: 0.5;
+  filter: saturate(0%);
+}
+.section-logos__wrapper-logo:hover {
+  opacity: 1;
+  filter: saturate(100%);
+}
+
+@media (prefers-color-scheme: dark) {
+  .inverted {
+    filter: invert(100%);
+  }
+}
+
+/*!========================================================================
+ * 09. Animations
+ * ======================================================================!*/
+
 .text-focus-in {
   -webkit-animation: text-focus-in 1s cubic-bezier(0.55, 0.085, 0.68, 0.53) both;
   animation: text-focus-in 1s cubic-bezier(0.55, 0.085, 0.68, 0.53) both;
@@ -337,7 +523,10 @@ a:hover {
   }
 }
 
-/* Header */
+/*!========================================================================
+ * 10. Header
+ * ======================================================================!*/
+
 .header {
   max-width: 1200px;
   margin: 40px auto;
@@ -405,7 +594,10 @@ a:hover {
   }
 }
 
-/* Hero */
+/*!========================================================================
+ * 11. Hero Section
+ * ======================================================================!*/
+
 .hero-section {
   margin-top: -150px;
   padding-top: 100px;
@@ -496,7 +688,10 @@ a:hover {
   }
 }
 
-/* Project Status */
+/*!========================================================================
+ * 12. Availability status
+ * ======================================================================!*/
+
 .status-content {
   display: flex;
   align-items: center;
@@ -570,45 +765,9 @@ a:hover {
   }
 }
 
-/* Divider */
-.divider {
-  width: 0;
-  height: 1px;
-  background-color: var(--bg-color-dark);
-  overflow: hidden;
-}
-
-@media (prefers-color-scheme: dark) {
-  .divider {
-    background-color: var(--bg-color-light);
-  }
-}
-
-.divider.reveal {
-  animation: reveal 1s forwards; /* Apply animation when revealed */
-}
-
-@keyframes reveal {
-  0% {
-    width: 0;
-  }
-  100% {
-    width: 150px; /* Adjust to match the final width */
-  }
-}
-
-.services .divider {
-  margin: 0 auto;
-}
-
-.center-container .divider {
-  margin: 0 auto;
-}
-
-.about-image {
-  display: block;
-  margin: 0 auto;
-}
+/*!========================================================================
+ * 13. Hero Circles
+ * ======================================================================!*/
 
 .wrapper {
   position: absolute;
@@ -713,8 +872,11 @@ a:hover {
   }
 }
 
-/* Service Box */
+/*!========================================================================
+ * 14. Boxes
+ * ======================================================================!*/
 
+/* Service Box */
 .service-container {
   margin-top: 100px;
   display: grid;
@@ -835,97 +997,8 @@ a:hover {
   }
 }
 
-.center-section {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.center-container {
-  margin: 100px auto;
-  padding: 0 20px;
-  text-align: center;
-}
-
-.table-container {
-  margin: 0 auto;
-  padding: 0 20px;
-  margin-bottom: 100px;
-  text-align: center;
-}
-
-/* Style for the video */
-.video-container {
-  margin-top: 50px;
-  position: relative;
-}
-
-.video-container iframe {
-  width: 1000px;
-  height: 540px;
-}
-
-@media screen and (max-width: 1024px) {
-  .video-container iframe {
-    max-width: 80%;
-    height: 540px;
-  }
-}
-
-@media screen and (max-width: 768px) {
-  .video-container iframe {
-    max-width: 80%;
-    height: 540px;
-  }
-}
-
-.clients-section {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  grid-template-rows: repeat(2, auto);
-  gap: 10px;
-}
-
-.client-logo {
-  width: 100%; /* Adjust as needed */
-  height: 100px; /* Adjust as needed */
-  background-color: #ccc; /* Example background color */
-  border: 2px solid #fff; /* White border around each logo */
-  border-radius: 8px; /* Rounded corners for logos */
-}
-
-/* Hide outside borders */
-.clients-section {
-  border: 2px solid transparent; /* Hide outside borders */
-}
-
-/* Show inside borders */
-.client-logo {
-  box-shadow: 0 0 0 2px #ccc, /* Inside border */ 0 0 0 4px #fff; /* Outside border (same as background color) */
-}
-
-.section-logos__wrapper-logo {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transition: all 0.2s ease-in-out;
-  transition-property: opacity;
-  opacity: 0.5;
-  filter: saturate(0%);
-}
-.section-logos__wrapper-logo:hover {
-  opacity: 1;
-  filter: saturate(100%);
-}
-
-@media (prefers-color-scheme: dark) {
-  .inverted {
-    filter: invert(100%);
-  }
-}
-
 /*!========================================================================
- * 50. Table
+ * 15. Table
  * ======================================================================!*/
 
 table {
@@ -1031,7 +1104,7 @@ td:last-child {
 }
 
 /*!========================================================================
- * 50. Footer
+ * 16. Footer
  * ======================================================================!*/
 
 .footer {

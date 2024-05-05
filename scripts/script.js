@@ -5,11 +5,14 @@
  *
  * 01. Reveal animations
  * 02. Hero circles
- * 03. Footer (parallax effect) */
+ * 03. Adrress Bar Color Change
+ */
 
 /*!========================================================================
  * 01. Reveal animations
  * ======================================================================!*/
+
+/* Divider Animation */
 
 // Function to handle reveal animation
 function revealDivider(entries, observer) {
@@ -32,6 +35,8 @@ document.querySelectorAll(".divider").forEach((divider) => {
   divider.classList.add("divider-center"); // Add the class
   dividerObserver.observe(divider);
 });
+
+/* Element Animation */
 
 // Function to handle reveal animation
 function revealElement(entries, observer) {
