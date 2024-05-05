@@ -5,11 +5,14 @@
  *
  * 01. Reveal animations
  * 02. Hero circles
- * 03. Footer (parallax effect) */
+ * 03. Adrress Bar Color Change
+ */
 
 /*!========================================================================
  * 01. Reveal animations
  * ======================================================================!*/
+
+/* Divider Animation */
 
 // Function to handle reveal animation
 function revealDivider(entries, observer) {
@@ -32,6 +35,8 @@ document.querySelectorAll(".divider").forEach((divider) => {
   divider.classList.add("divider-center"); // Add the class
   dividerObserver.observe(divider);
 });
+
+/* Element Animation */
 
 // Function to handle reveal animation
 function revealElement(entries, observer) {
@@ -92,7 +97,46 @@ var typed = new Typed("#type", {
 });
 
 /*!========================================================================
- * 03. Footer
+ * 03. Adrress Bar Color Change
  * ======================================================================!*/
 
+function setAddressBarColor() {
+  if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
+    // Dark mode
+    document
+      .querySelector('meta[name="theme-color"]')
+      .setAttribute("content", "var(--bg-color-dark)");
+  } else {
+    // Light mode
+    document
+      .querySelector('meta[name="theme-color"]')
+      .setAttribute("content", "var(--bg-color-light)");
+  }
+}
 
+// Call the function to set the initial address bar color
+setAddressBarColor();
+
+// Listen for changes in the user's color scheme preference
+window
+  .matchMedia("(prefers-color-scheme: dark)")
+  .addListener(setAddressBarColor);
+
+
+
+    function setFavicon() {
+        var favicon = document.querySelector('link[rel="shortcut icon"]');
+        if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+            // Dark mode
+            favicon.href = '/img/assets/favicons/favicon_dark.ico';
+        } else {
+            // Light mode
+            favicon.href = '/img/assets/favicons/favicon.ico';
+        }
+    }
+
+    // Call the function to set the initial favicon
+    setFavicon();
+
+    // Listen for changes in the user's color scheme preference
+    window.matchMedia('(prefers-color-scheme: dark)').addListener(setFavicon);

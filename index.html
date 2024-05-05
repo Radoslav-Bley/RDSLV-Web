@@ -22,6 +22,7 @@
     <meta name="robots" content="index,follow" />
     <meta name="google" content="notranslate" />
     <meta http-equiv="x-ua-compatible" content="ie=edge" />
+    <meta name="theme-color" content="rgba(245, 248, 253, 1)" />
     <link rel="canonical" href="https://rdslv.sk/" />
     <link
       rel="apple-touch-icon"
@@ -47,6 +48,11 @@
       color="#ed1c24"
     />
     <link rel="shortcut icon" href="/img/assets/favicons/favicon.ico" />
+    <link
+      rel="shortcut icon"
+      href="/img/assets/favicons/favicon_dark.ico"
+      media="(prefers-color-scheme: dark)"
+    />
     <meta name="apple-mobile-web-app-title" content="RDSLV" />
     <meta name="application-name" content="RDSLV" />
     <meta name="msapplication-TileColor" content="#b91d47" />
@@ -141,37 +147,6 @@
       <!-- section HERO -->
       <section class="hero-section">
         <div class="container">
-          <div class="wrapper">
-            <div class="grid-container">
-              <div class="circle-with-line" id="circle"></div>
-              <div class="circle-with-line" id="circle"></div>
-              <div class="circle-with-line" id="circle"></div>
-              <div class="circle-with-line" id="circle"></div>
-              <div class="circle-with-line" id="circle"></div>
-              <div class="circle-with-line" id="circle"></div>
-              <div class="circle-with-line" id="circle"></div>
-              <div class="circle-with-line" id="circle"></div>
-              <div class="circle-with-line" id="circle"></div>
-              <div class="circle-with-line" id="circle"></div>
-              <div class="circle-with-line" id="circle"></div>
-              <div class="circle-with-line" id="circle"></div>
-              <div class="circle-with-line" id="circle"></div>
-              <div class="circle-with-line" id="circle"></div>
-              <div class="circle-with-line" id="circle"></div>
-              <div class="circle-with-line" id="circle"></div>
-              <div class="circle-with-line" id="circle"></div>
-              <div class="circle-with-line" id="circle"></div>
-              <div class="circle-with-line" id="circle"></div>
-              <div class="circle-with-line" id="circle"></div>
-              <div class="circle-with-line" id="circle"></div>
-              <div class="circle-with-line" id="circle"></div>
-              <div class="circle-with-line" id="circle"></div>
-              <div class="circle-with-line" id="circle"></div>
-              <div class="circle-with-line" id="circle"></div>
-              <div class="circle-with-line" id="circle"></div>
-              <div class="circle-with-line" id="circle"></div>
-            </div>
-          </div>
           <div class="hero-position">
             <div class="hero-content hero-text">
               <h2 class="text-focus-in">
@@ -217,7 +192,7 @@
             How can i help you<span class="highlighted-text">?</span>
           </h1>
           <div class="service-container">
-            <div class="service-box slide-in-blurred-bottom">
+            <div class="service-box overlay slide-in-blurred-bottom">
               <h2 class="header-text">Front-End Development</h2>
               <ul>
                 <li>UI / UX</li>
@@ -228,7 +203,7 @@
               </ul>
               <div class="number">01</div>
             </div>
-            <div class="service-box slide-in-blurred-bottom">
+            <div class="service-box overlay slide-in-blurred-bottom">
               <h2 class="header-text">Back-End Development</h2>
               <ul>
                 <li>Node.JS</li>
@@ -237,7 +212,7 @@
               </ul>
               <div class="number">02</div>
             </div>
-            <div class="service-box slide-in-blurred-bottom">
+            <div class="service-box overlay slide-in-blurred-bottom">
               <h2 class="header-text">Graphic Design</h2>
               <ul>
                 <li>Logo</li>
@@ -247,7 +222,7 @@
               </ul>
               <div class="number">03</div>
             </div>
-            <div class="service-box slide-in-blurred-bottom">
+            <div class="service-box overlay slide-in-blurred-bottom">
               <h2 class="header-text">Video Production</h2>
               <ul>
                 <li>Cut</li>
@@ -289,7 +264,7 @@
             <tbody>
               <tr>
                 <td>
-                  <div class="section-logos__wrapper-logo">
+                  <div class="section-logos__wrapper-logo inverted">
                     <div>
                       <img
                         src="img/general/sections/clients/logo-1.png"
@@ -313,7 +288,7 @@
                   </div>
                 </td>
                 <td>
-                  <div class="section-logos__wrapper-logo">
+                  <div class="section-logos__wrapper-logo inverted">
                     <div>
                       <img
                         src="img/general/sections/clients/logo-3.png"
@@ -351,7 +326,7 @@
                   </div>
                 </td>
                 <td>
-                  <div class="section-logos__wrapper-logo">
+                  <div class="section-logos__wrapper-logo inverted">
                     <div>
                       <img
                         src="img/general/sections/clients/logo-6.png"
@@ -369,10 +344,9 @@
       </section>
       <!-- section END -->
     </main>
-    <!-- footer -->
     <footer class="footer">
       <section class="footer-container">
-        <!-- Section 1 -->
+        <!-- Top Row -->
         <div class="footer-top">
           <div>
             <h3>
@@ -392,7 +366,7 @@
         <!-- Horizontal line divider -->
         <hr class="footer-divider" />
 
-        <!-- Section 2 -->
+        <!-- Links Section -->
         <div class="footer-section">
           <div>
             <h6>Quick Links<span class="highlighted-text">.</span></h6>
@@ -421,7 +395,7 @@
             <h6>contact<span class="highlighted-text">.</span></h6>
             <ul>
               <li><a href="mailto:biznis@rdslv.sk">biznis@rdslv.sk</a></li>
-              <li><a href="#">+421 911 510 344</a></li>
+              <li><a href="tel:+421911510344">+421 911 510 344</a></li>
             </ul>
           </div>
         </div>
@@ -429,7 +403,7 @@
         <!-- Horizontal line divider -->
         <hr class="footer-divider" />
 
-        <!-- Section 3 -->
+        <!-- Subfooter -->
         <div class="subfooter-section">
           <div class="subfooter-left">
             <div class="footer-logo">
@@ -461,6 +435,5 @@
         </div>
       </section>
     </footer>
-    <!-- footer END -->
   </body>
 </html>
