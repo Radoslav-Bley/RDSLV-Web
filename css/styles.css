@@ -285,7 +285,7 @@ ul {
 }
 a {
   background-color: transparent;
-  color: var(--text-color-dark-3);
+  color: var(--text-color-light-3);
   text-decoration: none;
   transition: color 0.3s ease;
 }
@@ -299,7 +299,7 @@ a {
 a:active,
 a:hover {
   outline-width: 0;
-  color: var(--text-color-dark);
+  color: var(--text-color-light);
 }
 
 @media (prefers-color-scheme: dark) {
@@ -925,19 +925,45 @@ img {
   left: -1px; /* Adjusted left position */
   width: 0; /* Initial width of the underline */
   height: 2px; /* Increased height for a pill shape */
-  background-color: var(--bg-color-dark-2); /* Color of the underline */
+  background-color: var(--text-color-dark-3); /* Color of the underline */
   border-radius: 2px; /* Border radius for pill shape */
   transition: width 0.3s ease-out; /* Transition effect for the width */
 }
 
 @media (prefers-color-scheme: dark) {
   .header-text::before {
-    background-color: var(--bg-color-light-2);
+    background-color: var(--text-color-light-3);
   }
 }
 
 /* Hover effect to reveal the underline from left to right */
 .header-text:hover::before {
+  width: 100%; /* Reveals the underline to full width on hover */
+}
+
+/* Style for the footer heading */
+.footer-text {
+  position: relative; /* Required for positioning the pseudo-element */
+  display: inline-block; /* Ensures the pseudo-element only spans the width of the text */
+  text-decoration: none; /* Removes default underline */
+  color: inherit; /* Inherits the color from parent element */
+}
+
+/* Pseudo-element to create the underline */
+.footer-text::before {
+  content: "";
+  position: absolute;
+  bottom: -2px; /* Position the underline just below the text */
+  left: -1px; /* Adjusted left position */
+  width: 0; /* Initial width of the underline */
+  height: 2px; /* Increased height for a pill shape */
+  background-color: var(--text-color-light-3); /* Color of the underline */
+  border-radius: 2px; /* Border radius for pill shape */
+  transition: width 0.3s ease-out; /* Transition effect for the width */
+}
+
+/* Hover effect to reveal the underline from left to right */
+.footer-text:hover::before {
   width: 100%; /* Reveals the underline to full width on hover */
 }
 
@@ -1126,6 +1152,7 @@ td:last-child {
 
 .footer-top h3,
 .footer-top2 h3 {
+  color: var(--text-color-light);
   font-size: 32px;
   font-weight: 200;
 }
@@ -1137,6 +1164,7 @@ td:last-child {
 }
 
 .footer-section {
+  color: var(--text-color-light);
   display: flex;
   justify-content: space-between;
   margin: 40px 5px;
