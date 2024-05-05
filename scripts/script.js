@@ -5,7 +5,8 @@
  *
  * 01. Reveal animations
  * 02. Hero circles
- * 03. Adrress Bar Color Change
+ * 03. TypeWriter Effect Animation
+ * 04. Adrress Bar Color Change
  */
 
 /*!========================================================================
@@ -89,15 +90,19 @@ document.querySelectorAll(".circle-with-line").forEach((circle) => {
   });
 });
 
+/*!========================================================================
+ * 03. TypeWriter Effect Animation
+ * ======================================================================!*/
+
 var typed = new Typed("#type", {
-  strings: ["Radoslav Bley", "a designer", "a developer", "a producer"],
-  typeSpeed: 100,
+  strings: ["a designer", "a developer", "a producer"],
+  typeSpeed: 150,
   loop: true,
   loopCount: Infinity,
 });
 
 /*!========================================================================
- * 03. Adrress Bar Color Change
+ * 04. Adrress Bar Color Change
  * ======================================================================!*/
 
 function setAddressBarColor() {

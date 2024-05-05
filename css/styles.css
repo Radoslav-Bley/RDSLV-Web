@@ -647,21 +647,21 @@ img {
 }
 
 .hero-position {
-  height: 80vh;
+  height: 90vh;
   display: flex;
   align-items: flex-end;
   justify-content: flex-start;
 }
 
 @media only screen and (max-width: 1024px) {
-  .hero-content {
-    padding-bottom: 5%;
+  .hero-position {
+    height: 80vh;
   }
 }
 
 @media only screen and (max-width: 768px) {
-  .hero-content {
-    padding-bottom: 20%;
+  .hero-position {
+    height: 75vh;
   }
 }
 
