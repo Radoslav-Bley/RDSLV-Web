@@ -63,7 +63,8 @@ html {
 
 body {
   font-family: "Inter", sans-serif;
-  font-size: 16px;
+  font-style: normal;
+  font-display: swap;
   margin: 0;
   background-color: var(--bg-color-light);
   color: var(--text-color-dark);
@@ -1178,7 +1179,7 @@ td:last-child {
 
 .subfooter-section p {
   font-size: small;
-  font-weight: 200;
+  font-weight: 400;
 }
 
 .footer-section ul {
@@ -1291,6 +1292,17 @@ td:last-child {
   color: #14171a;
   background: #fefefe;
   border-color: #657786;
+}
+
+.rounded-social-buttons .social-button.github {
+  background: transparent;
+}
+
+.rounded-social-buttons .social-button.github:hover,
+.rounded-social-buttons .social-button.github:focus {
+  color: #333;
+  background: #fefefe;
+  border-color: #333;
 }
 
 .rounded-social-buttons .social-button.youtube {

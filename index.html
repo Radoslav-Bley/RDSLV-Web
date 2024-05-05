@@ -35,12 +35,28 @@
       type="image/png"
       sizes="32x32"
       href="/img/assets/favicons/favicon-32x32.png"
+      media="(prefers-color-scheme: light)"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="/img/assets/favicons/favicon-32x32_dark.png"
+      media="(prefers-color-scheme: dark)"
     />
     <link
       rel="icon"
       type="image/png"
       sizes="16x16"
       href="/img/assets/favicons/favicon-16x16.png"
+      media="(prefers-color-scheme: light)"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="/img/assets/favicons/favicon-16x16_dark.png"
+      media="(prefers-color-scheme: dark)"
     />
     <link rel="manifest" href="/img/assets/favicons/site.webmanifest" />
     <link
@@ -105,14 +121,7 @@
     <link rel="stylesheet" href="css/styles.css" />
     <script src="scripts/script.js" defer></script>
     <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
-    <script src="path/to/smoothscroll.min.js"></script>
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
-      integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
-      crossorigin="anonymous"
-      referrerpolicy="no-referrer"
-    />
+    <script src="https://kit.fontawesome.com/4cfd72163b.js" crossorigin="anonymous"></script>
   </head>
   <body>
     <header>
@@ -125,12 +134,14 @@
               alt="Logo"
               class="logo-light"
               width="50px"
+              height="50px"
             />
             <img
               src="/img/assets/logo/Monogram Color W.svg"
               alt="Logo"
               class="logo-dark"
               width="50px"
+              height="50px"
             />
           </a>
         </div>
@@ -150,12 +161,12 @@
         <div class="container">
           <div class="hero-position">
             <div class="hero-content hero-text">
-              <h2 class="text-focus-in">
+              <h2>
                 Website in active development<span class="highlighted-text"
                   >.</span
                 >
               </h2>
-              <h3 class="text-focus-in">concept 2024</h3>
+              <h3>concept 2024</h3>
               <div id="status-shape">
                 <span class="status-light"></span>
                 <p>Not accepting projects</p>
@@ -178,7 +189,7 @@
           <div class="container container-m">
             <img
               class="about-image"
-              src="/img/general/sections/about/about.png"
+              src="/img/general/sections/about/about.webp"
               alt="Radoslav Bley"
             />
           </div>
@@ -244,7 +255,7 @@
           <h1>Reel <span class="highlighted-text">2024</span></h1>
           <div class="video-container">
             <iframe
-              src="https://www.youtube.com/embed/VIDEO_ID"
+              src=""
               frameborder="0"
               allowfullscreen
             ></iframe>
@@ -414,20 +425,30 @@
           <div class="subfooter-right">
             <div class="rounded-social-buttons">
               <a
+                class="social-button github"
+                href="https://github.com/radblesk"
+                aria-label="RadBlesk's GitHub"
+                target="_blank"
+                ><i class="fab fa-github"></i
+              ></a>
+              <a
                 class="social-button behance"
                 href="https://www.behance.net/radoslavbley"
+                aria-label="Hire me on BeHance"
                 target="_blank"
                 ><i class="fab fa-behance"></i
               ></a>
               <a
                 class="social-button twitter"
                 href="https://twitter.com/radblesk"
+                aria-label="Radoslav on Twitter/X"
                 target="_blank"
                 ><i class="fab fa-x-twitter"></i
               ></a>
               <a
                 class="social-button youtube"
                 href="https://www.youtube.com/channel/UC2NdG4m3JBUSyFkHP1DGkPQ"
+                aria-label="Radoslav on YouTube"
                 target="_blank"
                 ><i class="fab fa-youtube"></i
               ></a>
