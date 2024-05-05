@@ -33,10 +33,10 @@
 
   /* Text */
   --text-color-light: rgba(245, 248, 253, 1);
-  --text-color-light-2: rgba(245, 248, 253, 0.5);
+  --text-color-light-2: rgba(245, 248, 253, 0.6);
   --text-color-light-3: rgba(245, 248, 253, 0.3);
   --text-color-dark: rgba(10, 10, 10, 1);
-  --text-color-dark-2: rgba(10, 10, 10, 0.5);
+  --text-color-dark-2: rgba(10, 10, 10, 0.6);
   --text-color-dark-3: rgba(10, 10, 10, 0.3);
   --text-color-accent: rgba(237, 28, 36, 1);
 
@@ -1190,7 +1190,24 @@ td:last-child {
 }
 
 .footer-section p {
-  color: var(--text-color-light-3);
+  color: var(--text-color-light-2);
+}
+
+.footer-section a,
+.footer-top2 a {
+  color: var(--text-color-light-2);
+}
+
+.footer-section a:active,
+.footer-section a:hover {
+  outline-width: 0;
+  color: var(--text-color-light);
+}
+
+.footer-top2 a:active,
+.footer-top2 a:hover {
+  outline-width: 0;
+  color: var(--text-color-light);
 }
 
 .footer-divider {
