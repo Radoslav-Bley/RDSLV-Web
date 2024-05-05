@@ -200,7 +200,7 @@ body.open:after {
 }
 .b-container.open .b-bun--bottom {
   background: var(--bg-color-dark);
-  top: 5px;
+  top: 6px;
   transform: rotate(-45deg);
 }
 .b-container.open .b-brand {
@@ -209,19 +209,15 @@ body.open:after {
 
 @media (prefers-color-scheme: dark) {
   .b-container.open .b-main {
-    border: white solid 0px;
+    border: var(--bg-color-light) solid 0px;
   }
   .b-container.open .b-bun--top {
-    background: white;
-    top: 9px;
-    transform: rotate(45deg);
+    background: var(--bg-color-light);
   }
   .b-container.open .b-bun--mid {
     opacity: 0;
   }
   .b-container.open .b-bun--bottom {
-    background: white;
-    top: 5px;
-    transform: rotate(-45deg);
+    background: var(--bg-color-light);
   }
 }
