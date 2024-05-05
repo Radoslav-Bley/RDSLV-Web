@@ -646,7 +646,7 @@ img {
 }
 
 .hero-position {
-  height: 90vh;
+  height: 80vh;
   display: flex;
   align-items: flex-end;
   justify-content: flex-start;
