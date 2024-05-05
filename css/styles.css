@@ -8,8 +8,10 @@
   /* Text */
   --text-color-light: rgba(245, 248, 253, 1);
   --text-color-light-2: rgba(245, 248, 253, 0.1);
+  --text-color-light-3: rgba(245, 248, 253, 0.3);
   --text-color-dark: rgba(26, 29, 36, 1);
   --text-color-dark-2: rgba(26, 29, 36, 0.1);
+  --text-color-dark-3: rgba(26, 29, 36, 0.3);
   --text-color-accent: rgba(237, 28, 36, 1);
 
   /* Accent */
@@ -159,7 +161,7 @@ h5 {
 
 h6 {
   font-size: 16px;
-  font-weight: 200;
+  font-weight: 700;
 }
 
 @media screen and (max-width: 768px) {
@@ -186,10 +188,28 @@ ul {
 }
 a {
   background-color: transparent;
+  color: var(--text-color-dark-3);
+  text-decoration: none;
+  transition: color 0.3s ease;
 }
+
+@media (prefers-color-scheme: dark) {
+  a {
+    color: var(--text-color-light-3);
+  }
+}
+
 a:active,
 a:hover {
   outline-width: 0;
+  color: var(--text-color-dark);
+}
+
+@media (prefers-color-scheme: dark) {
+  a:active,
+  a:hover {
+    color: var(--text-color-light);
+  }
 }
 
 .highlighted-text {
@@ -741,10 +761,10 @@ a:hover {
 .header-text::before {
   content: "";
   position: absolute;
-  bottom: -8px; /* Position the underline just below the text */
+  bottom: -2px; /* Position the underline just below the text */
   left: -1px; /* Adjusted left position */
   width: 0; /* Initial width of the underline */
-  height: 4px; /* Increased height for a pill shape */
+  height: 2px; /* Increased height for a pill shape */
   background-color: var(--bg-color-dark-2); /* Color of the underline */
   border-radius: 2px; /* Border radius for pill shape */
   transition: width 0.3s ease-out; /* Transition effect for the width */
@@ -886,20 +906,6 @@ a:hover {
   box-shadow: 0 0 0 2px #ccc, /* Inside border */ 0 0 0 4px #fff; /* Outside border (same as background color) */
 }
 
-/**/
-.lazy-wrapper {
-  display: inline-block;
-  width: 100%;
-  vertical-align: middle;
-}
-
-.lazy {
-  display: inline-block;
-  width: auto;
-  height: 100% !important;
-  padding-bottom: 0 !important;
-}
-
 .section-logos__wrapper-logo {
   display: flex;
   align-items: center;
@@ -917,6 +923,7 @@ a:hover {
 /*!========================================================================
  * 50. Table
  * ======================================================================!*/
+
 table {
   max-width: 1200px;
   border-collapse: collapse;
@@ -1016,5 +1023,212 @@ td:last-child {
   .table-xs-flex.table_no-outer-borders tr:last-child td:last-child {
     border-bottom: none;
     margin-bottom: -2em;
+  }
+}
+
+/*!========================================================================
+ * 50. Footer
+ * ======================================================================!*/
+
+.footer {
+  background-color: black;
+  padding: 20px;
+}
+
+.footer-container {
+  max-width: 1100px;
+  margin: 0px auto;
+  padding: 0 20px;
+}
+
+.footer-top {
+  display: flex;
+  justify-content: space-between;
+  margin: 60px 0 0 0;
+}
+
+.footer-top h3,
+.footer-top2 h3 {
+  font-size: 32px;
+  font-weight: 200;
+}
+
+.footer-top2 {
+  display: flex;
+  justify-content: space-between;
+  margin: 50px 0;
+}
+
+.footer-section {
+  display: flex;
+  justify-content: space-between;
+  margin: 40px 5px;
+}
+
+.subfooter-section {
+  display: flex;
+  justify-content: space-between;
+  margin: 20px 0 0 0;
+}
+
+.subfooter-section p {
+  font-size: small;
+  font-weight: 200;
+}
+
+.footer-section ul {
+  list-style: none;
+}
+
+.footer-section li {
+  margin: 20px 0 0 0;
+}
+
+.footer-section p {
+  color: var(--text-color-light-3);
+}
+
+.footer-divider {
+  border: 1px solid var(--bg-color-light-2);
+}
+
+.footer-logo {
+  display: inline-flex;
+  height: 50px;
+  color: var(--text-color-accent);
+}
+
+.footer-logo img {
+  margin-right: 20px;
+}
+
+.social-icons img {
+  height: 30px;
+}
+
+/* Social Icons */
+
+.svg-inline--fa {
+  vertical-align: -0.2em;
+}
+
+.rounded-social-buttons {
+  text-align: center;
+}
+
+.rounded-social-buttons .social-button {
+  display: inline-block;
+  position: relative;
+  cursor: pointer;
+  width: 2rem;
+  height: 2rem;
+  border: 0.125rem solid transparent;
+  padding: 0;
+  text-decoration: none;
+  text-align: center;
+  color: var(--text-color-light-3);
+  font-size: 18px;
+  font-weight: normal;
+  line-height: 2em;
+  border-radius: 1.6875rem;
+  transition: all 0.5s ease;
+  margin-right: 0.25rem;
+  margin-bottom: 0.25rem;
+}
+
+.rounded-social-buttons .social-button:hover,
+.rounded-social-buttons .social-button:focus {
+  -webkit-transform: rotate(360deg);
+  -ms-transform: rotate(360deg);
+  transform: rotate(360deg);
+}
+
+.rounded-social-buttons .fa-x-twitter,
+.fa-behance,
+.fa-youtube {
+  font-size: 18px;
+}
+
+.rounded-social-buttons .social-button.behance {
+  background: transparent;
+}
+
+.rounded-social-buttons .social-button.behance:hover,
+.rounded-social-buttons .social-button.facebook:focus {
+  color: #1769ff;
+  background: #fefefe;
+  border-color: #1769ff;
+}
+
+.rounded-social-buttons .social-button.twitter {
+  background: transparent;
+}
+
+.rounded-social-buttons .social-button.twitter:hover,
+.rounded-social-buttons .social-button.twitter:focus {
+  color: #14171a;
+  background: #fefefe;
+  border-color: #657786;
+}
+
+.rounded-social-buttons .social-button.youtube {
+  background: transparent;
+}
+
+.rounded-social-buttons .social-button.youtube:hover,
+.rounded-social-buttons .social-button.youtube:focus {
+  color: #bb0000;
+  background: #fefefe;
+  border-color: #bb0000;
+}
+
+/* Responsive adjustments */
+@media screen and (max-width: 768px) {
+  .footer-container {
+    padding: 0 10px;
+  }
+
+  .footer-top,
+  .footer-top2 {
+    text-align: left;
+  }
+
+  .footer-section {
+    flex-direction: column;
+    align-items: left;
+  }
+
+  .footer-section h6 {
+    padding-bottom: 10px;
+  }
+
+  .subfooter-section {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .footer-section div {
+    margin-bottom: 20px;
+  }
+
+  .subfooter-section div {
+    margin-bottom: 0px;
+  }
+
+  .footer-section ul li,
+  .subfooter-section ul li {
+    margin: 10px 0;
+  }
+
+  .subfooter-left {
+    order: 2;
+  }
+
+  .subfooter-right {
+    order: 1;
+  }
+
+  .rounded-social-buttons .social-button {
+    margin-bottom: 20px;
   }
 }
