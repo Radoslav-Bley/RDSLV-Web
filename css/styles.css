@@ -33,10 +33,10 @@
 
   /* Text */
   --text-color-light: rgba(245, 248, 253, 1);
-  --text-color-light-2: rgba(245, 248, 253, 0.1);
+  --text-color-light-2: rgba(245, 248, 253, 0.5);
   --text-color-light-3: rgba(245, 248, 253, 0.3);
   --text-color-dark: rgba(10, 10, 10, 1);
-  --text-color-dark-2: rgba(10, 10, 10, 0.1);
+  --text-color-dark-2: rgba(10, 10, 10, 0.5);
   --text-color-dark-3: rgba(10, 10, 10, 0.3);
   --text-color-accent: rgba(237, 28, 36, 1);
 
@@ -285,14 +285,14 @@ ul {
 }
 a {
   background-color: transparent;
-  color: var(--text-color-light-3);
+  color: var(--text-color-dark-2);
   text-decoration: none;
   transition: color 0.3s ease;
 }
 
 @media (prefers-color-scheme: dark) {
   a {
-    color: var(--text-color-light-3);
+    color: var(--text-color-light-2);
   }
 }
 
