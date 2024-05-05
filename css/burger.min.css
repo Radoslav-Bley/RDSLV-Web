@@ -18,7 +18,7 @@
 }
 
 body:after {
-  background: var(--bg-color-dark);
+  background: var(--bg-color-light);
   content: "";
   height: 100vh;
   visibility: hidden;
@@ -32,6 +32,13 @@ body:after {
   transition: all 0.4s ease;
   width: 100%;
 }
+
+@media (prefers-color-scheme: dark) {
+  body:after {
+    background: var(--bg-color-dark);
+  }
+}
+
 body.open {
   overflow: hidden;
 }
@@ -80,8 +87,8 @@ body.open:after {
 
 .b-link {
   background: transparent;
-  border-left: rgba(255, 255, 255, 0) solid 2px;
-  color: white;
+  border-left: rgba(10, 10, 10, 0) solid 2px;
+  color: var(--text-color-dark);
   font-size: 24px;
   font-weight: 300;
   margin-left: 30px;
@@ -90,9 +97,26 @@ body.open:after {
   transition: all 0.4s ease;
   width: auto;
 }
+
+@media (prefers-color-scheme: dark) {
+  .b-link {
+    border-left: rgba(255, 255, 255, 0) solid 2px;
+    color: var(--text-color-light);
+  }
+}
+
 .b-link:hover, .b-link--active {
-  border-left: white solid 2px;
+  border-left: var(--text-color-dark) solid 2px;
   padding-left: 30px;
+  color: var(--text-color-dark);
+}
+
+@media (prefers-color-scheme: dark) {
+  .b-link:hover, .b-link--active {
+    border-left: white solid 2px;
+    padding-left: 30px;
+  color: var(--text-color-light);
+  }
 }
 
 .b-menu {
@@ -164,10 +188,10 @@ body.open:after {
   background: transparent;
 }
 .b-container.open .b-main {
-  border: white solid 0px;
+  border: var(--bg-color-dark) solid 0px;
 }
 .b-container.open .b-bun--top {
-  background: white;
+  background: var(--bg-color-dark);
   top: 9px;
   transform: rotate(45deg);
 }
@@ -175,10 +199,29 @@ body.open:after {
   opacity: 0;
 }
 .b-container.open .b-bun--bottom {
-  background: white;
+  background: var(--bg-color-dark);
   top: 5px;
   transform: rotate(-45deg);
 }
 .b-container.open .b-brand {
   color: white;
+}
+
+@media (prefers-color-scheme: dark) {
+  .b-container.open .b-main {
+    border: white solid 0px;
+  }
+  .b-container.open .b-bun--top {
+    background: white;
+    top: 9px;
+    transform: rotate(45deg);
+  }
+  .b-container.open .b-bun--mid {
+    opacity: 0;
+  }
+  .b-container.open .b-bun--bottom {
+    background: white;
+    top: 5px;
+    transform: rotate(-45deg);
+  }
 }
