@@ -532,7 +532,6 @@ img {
   max-width: 1200px;
   margin: 40px auto;
   padding: 0 20px;
-  background-color: transparent;
   height: 50px;
   display: flex;
   justify-content: space-between;
@@ -547,6 +546,12 @@ img {
 .logo img {
   max-width: 100px; /* Adjust the max-width as needed */
   display: none; /* Hide both logo images by default */
+}
+
+@media only screen and (max-width: 768px) {
+  .nav {
+    display: none;
+  }
 }
 
 .nav ul {
@@ -643,7 +648,7 @@ img {
 
 .hero-content {
   margin-bottom: 10%;
-  z-index: 2;
+  z-index: 0;
 }
 
 .hero-position {
@@ -709,6 +714,7 @@ img {
   padding: 7px 15px 7px 15px;
   margin-top: 50px;
   margin-bottom: 50px;
+  z-index: 1;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -725,6 +731,7 @@ img {
   border-radius: 10px;
   box-shadow: 0 0 10px var(--status-light-red);
   animation: flicker 1s linear infinite;
+  z-index: 1;
 }
 
 @keyframes flicker {
