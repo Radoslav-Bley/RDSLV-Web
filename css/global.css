@@ -14,10 +14,9 @@
   * 10. Header
   * 11. Hero Section
   * 12. Availability status
-  * 13. Hero Circles
-  * 14. Boxes
-  * 15. Table
-  * 16. Footer
+  * 13. Boxes
+  * 14. Table
+  * 15. Footer
    */
 
 /*!========================================================================
@@ -26,22 +25,28 @@
 
 :root {
   /* Background */
-  --bg-color-light: rgba(245, 248, 253, 1);
-  --bg-color-light-2: rgba(245, 248, 253, 0.1);
-  --bg-color-dark: rgba(10, 10, 10, 1);
-  --bg-color-dark-2: rgba(10, 10, 10, 0.1);
+  --bg-color: rgba(245, 248, 253, 1);
+  --bg-color-2: rgba(245, 248, 253, 0.1);
 
   /* Text */
-  --text-color-light: rgba(245, 248, 253, 1);
-  --text-color-light-2: rgba(245, 248, 253, 0.6);
-  --text-color-light-3: rgba(245, 248, 253, 0.3);
-  --text-color-dark: rgba(10, 10, 10, 1);
-  --text-color-dark-2: rgba(10, 10, 10, 0.6);
-  --text-color-dark-3: rgba(10, 10, 10, 0.3);
+  --text-color: rgba(10, 10, 10, 1);
+  --text-color-2: rgba(10, 10, 10, 0.6);
+  --text-color-3: rgba(10, 10, 10, 0.3);
+  --text-color-footer-1: rgba(245, 248, 253, 1);
+  --text-color-footer-2: rgba(245, 248, 253, 0.6);
   --text-color-accent: rgba(237, 28, 36, 1);
+
+  /* Overlay */
+  --overlay: rgba(0, 0, 0, 0.05);
 
   /* Accent */
   --accent-color: rgba(237, 28, 36, 1);
+
+  /* Menu Color */
+  --menu-color: rgba(10, 10, 10, 1);
+
+  /* Footer Divider */
+  --f-divider: rgba(10, 10, 10, 1);
 
   /* Status Light */
   --status-light-red: rgba(237, 28, 36, 1);
@@ -55,8 +60,8 @@
  * ======================================================================!*/
 
 html {
-  line-height: 1.15; /* 1 */
-  -webkit-text-size-adjust: 100%; /* 2 */
+  line-height: 1.15;
+  -webkit-text-size-adjust: 100%;
   scroll-behavior: smooth;
   text-transform: lowercase;
 }
@@ -64,26 +69,12 @@ html {
 body {
   font-family: "Inter", sans-serif;
   font-style: normal;
-  font-display: swap;
   margin: 0;
-  background-color: var(--bg-color-light);
-  color: var(--text-color-dark);
+  background-color: var(--bg-color);
+  color: var(--text-color);
   transition: background-color 0.5s ease, color 0.5s ease;
   overscroll-behavior: contain;
   scroll-behavior: smooth;
-}
-
-@media screen and (max-width: 768px) {
-  body {
-    font-size: 14px;
-  }
-}
-
-@media (prefers-color-scheme: dark) {
-  body {
-    background-color: var(--bg-color-dark);
-    color: var(--text-color-light);
-  }
 }
 
 .content {
@@ -98,12 +89,6 @@ body {
   max-width: 1200px;
   margin: 100px auto;
   padding: 0 20px;
-}
-
-@media screen and (max-width: 768px) {
-  .container {
-    padding: 0 20px;
-  }
 }
 
 .container-m {
@@ -124,7 +109,6 @@ body {
   text-align: center;
 }
 
-/* Style for the video */
 .video-container {
   margin-top: 50px;
   position: relative;
@@ -133,20 +117,6 @@ body {
 .video-container iframe {
   width: 1000px;
   height: 540px;
-}
-
-@media screen and (max-width: 1024px) {
-  .video-container iframe {
-    max-width: 80%;
-    height: 540px;
-  }
-}
-
-@media screen and (max-width: 768px) {
-  .video-container iframe {
-    max-width: 80%;
-    height: 540px;
-  }
 }
 
 /*!========================================================================
@@ -179,9 +149,8 @@ section {
   gap: 10px;
 }
 
-/* Hide outside borders */
 .clients-section {
-  border: 2px solid transparent; /* Hide outside borders */
+  border: 2px solid transparent;
 }
 
 /*!========================================================================
@@ -189,13 +158,7 @@ section {
  * ======================================================================!*/
 
 .overlay {
-  background-color: rgba(0, 0, 0, 0.05);
-}
-
-@media (prefers-color-scheme: dark) {
-  .overlay {
-    background-color: rgba(255, 255, 255, 0.05);
-  }
+  background-color: var(--overlay);
 }
 
 /*!========================================================================
@@ -207,21 +170,9 @@ h1 {
   font-weight: 300;
 }
 
-@media screen and (max-width: 768px) {
-  h1 {
-    font-size: 24px; /* Adjust the font size for mobile */
-  }
-}
-
 h2 {
   font-size: 30px;
   font-weight: 200;
-}
-
-@media screen and (max-width: 768px) {
-  h2 {
-    font-size: 18px; /* Adjust the font size for mobile */
-  }
 }
 
 h3 {
@@ -229,21 +180,9 @@ h3 {
   font-weight: 500;
 }
 
-@media screen and (max-width: 768px) {
-  h3 {
-    font-size: 18px; /* Adjust the font size for mobile */
-  }
-}
-
 h4 {
   font-size: 20px;
   font-weight: 200;
-}
-
-@media screen and (max-width: 768px) {
-  h4 {
-    font-size: 18px; /* Adjust the font size for mobile */
-  }
 }
 
 h5 {
@@ -251,21 +190,9 @@ h5 {
   font-weight: 200;
 }
 
-@media screen and (max-width: 768px) {
-  h5 {
-    font-size: 16px; /* Adjust the font size for mobile */
-  }
-}
-
 h6 {
   font-size: 16px;
   font-weight: 700;
-}
-
-@media screen and (max-width: 768px) {
-  h6 {
-    font-size: 16px; /* Adjust the font size for mobile */
-  }
 }
 
 h2,
@@ -286,28 +213,15 @@ ul {
 }
 a {
   background-color: transparent;
-  color: var(--text-color-dark-2);
+  color: var(--text-color-2);
   text-decoration: none;
   transition: color 0.3s ease;
-}
-
-@media (prefers-color-scheme: dark) {
-  a {
-    color: var(--text-color-light-2);
-  }
 }
 
 a:active,
 a:hover {
   outline-width: 0;
-  color: var(--text-color-light);
-}
-
-@media (prefers-color-scheme: dark) {
-  a:active,
-  a:hover {
-    color: var(--text-color-light);
-  }
+  color: var(--text-color);
 }
 
 .highlighted-text {
@@ -323,18 +237,12 @@ a:hover {
 .divider {
   width: 0;
   height: 1px;
-  background-color: var(--bg-color-dark);
+  background-color: var(--bg-color);
   overflow: hidden;
 }
 
-@media (prefers-color-scheme: dark) {
-  .divider {
-    background-color: var(--bg-color-light);
-  }
-}
-
 .divider.reveal {
-  animation: reveal 1s forwards; /* Apply animation when revealed */
+  animation: reveal 1s forwards;
 }
 
 @keyframes reveal {
@@ -342,7 +250,7 @@ a:hover {
     width: 0;
   }
   100% {
-    width: 150px; /* Adjust to match the final width */
+    width: 150px;
   }
 }
 
@@ -372,11 +280,11 @@ img {
 }
 
 .client-logo {
-  width: 100%; /* Adjust as needed */
-  height: 100px; /* Adjust as needed */
-  background-color: #ccc; /* Example background color */
-  border: 2px solid #fff; /* White border around each logo */
-  border-radius: 8px; /* Rounded corners for logos */
+  width: 100%;
+  height: 100px;
+  background-color: #ccc;
+  border: 2px solid #fff;
+  border-radius: 8px;
 }
 
 /* Show inside borders */
@@ -396,12 +304,6 @@ img {
 .section-logos__wrapper-logo:hover {
   opacity: 1;
   filter: saturate(100%);
-}
-
-@media (prefers-color-scheme: dark) {
-  .inverted {
-    filter: invert(100%);
-  }
 }
 
 /*!========================================================================
@@ -439,15 +341,15 @@ img {
 }
 
 .slide-in-blurred-bottom {
-  -webkit-animation: none; /* Remove the animation */
-  animation: none; /* Remove the animation */
-  opacity: 0; /* Initially hide the element */
+  -webkit-animation: none;
+  animation: none;
+  opacity: 0;
 }
 
 .slide-in-blurred-bottom.reveal {
   -webkit-animation: slide-in-blurred-bottom 0.6s cubic-bezier(0.23, 1, 0.32, 1)
-    both; /* Apply animation when revealed */
-  animation: slide-in-blurred-bottom 0.6s cubic-bezier(0.23, 1, 0.32, 1) both; /* Apply animation when revealed */
+    both;
+  animation: slide-in-blurred-bottom 0.6s cubic-bezier(0.23, 1, 0.32, 1) both;
 }
 
 @-webkit-keyframes slide-in-blurred-bottom {
@@ -544,14 +446,8 @@ img {
 }
 
 .logo img {
-  max-width: 100px; /* Adjust the max-width as needed */
-  display: none; /* Hide both logo images by default */
-}
-
-@media only screen and (max-width: 768px) {
-  .nav {
-    display: none;
-  }
+  max-width: 100px;
+  display: none;
 }
 
 .nav ul {
@@ -562,41 +458,24 @@ img {
 }
 
 .nav ul li {
-  margin-left: 20px; /* Adjust the spacing between links */
+  margin-left: 20px;
 }
 
 .nav ul li:first-child {
-  margin-left: 0; /* Remove margin from the first link */
+  margin-left: 0;
 }
 
 .nav ul li a {
   text-decoration: none;
-  color: var(--text-color-dark); /* Adjust link color as needed */
+  color: var(--text-color);
 }
 
-@media (prefers-color-scheme: dark) {
-  .nav ul li a {
-    color: var(--text-color-light);
-  }
-}
-
-/* Light mode */
 @media (prefers-color-scheme: light) {
   .logo img.logo-light {
-    display: block; /* Show light mode logo */
+    display: block;
   }
   .logo img.logo-dark {
-    display: none; /* Hide dark mode logo */
-  }
-}
-
-/* Dark mode */
-@media (prefers-color-scheme: dark) {
-  .logo img.logo-light {
-    display: none; /* Hide light mode logo */
-  }
-  .logo img.logo-dark {
-    display: block; /* Show dark mode logo */
+    display: none;
   }
 }
 
@@ -616,34 +495,12 @@ img {
   z-index: 1;
 }
 
-@media (prefers-color-scheme: dark) {
-  .hero-section {
-    background: linear-gradient(
-      180deg,
-      rgba(30, 30, 30, 1) 0%,
-      rgba(10, 10, 10, 1) 100%
-    );
-  }
-}
-
 .hero-image {
   padding-top: 100px;
   position: absolute;
   left: 0;
   right: 0;
   margin: 0 auto;
-}
-
-@media only screen and (max-width: 1024px) {
-  .hero-image {
-    margin-bottom: 100px;
-  }
-}
-
-@media only screen and (max-width: 768px) {
-  .hero-image {
-    margin-bottom: 100px;
-  }
 }
 
 .hero-content {
@@ -656,42 +513,6 @@ img {
   display: flex;
   align-items: flex-end;
   justify-content: flex-start;
-}
-
-@media only screen and (max-width: 1024px) {
-  .hero-position {
-    height: 80vh;
-  }
-}
-
-@media only screen and (max-width: 768px) {
-  .hero-position {
-    height: 75vh;
-  }
-}
-
-@media only screen and (max-width: 1024px) {
-  .hero-text h2 {
-    font-size: 26px;
-  }
-}
-
-@media only screen and (max-width: 1024px) {
-  .hero-text h3 {
-    font-size: 18px;
-  }
-}
-
-@media only screen and (max-width: 768px) {
-  .hero-text h2 {
-    font-size: 26px;
-  }
-}
-
-@media only screen and (max-width: 768px) {
-  .hero-text h3 {
-    font-size: 18px;
-  }
 }
 
 /*!========================================================================
@@ -715,12 +536,6 @@ img {
   margin-top: 50px;
   margin-bottom: 50px;
   z-index: 1;
-}
-
-@media (prefers-color-scheme: dark) {
-  #status-shape {
-    border: 1px solid rgba(220, 224, 223, 0.2);
-  }
 }
 
 .status-light {
@@ -759,7 +574,7 @@ img {
 #status-shape p {
   font-weight: 300;
   font-size: 12px;
-  color: var(--h1-color-dark);
+  color: var(--h1-color);
   margin: 0;
   padding-left: 15px;
   padding-right: 10px;
@@ -767,121 +582,8 @@ img {
   letter-spacing: 3px;
 }
 
-@media only screen and (max-width: 600px) {
-  #status-shape p {
-    font-size: 10px;
-  }
-}
-
 /*!========================================================================
- * 13. Hero Circles
- * ======================================================================!*/
-
-.wrapper {
-  position: absolute;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 40vh;
-  width: 1200px;
-}
-
-.grid-container {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
-  grid-template-rows: repeat(3, auto); /* Two rows */
-  gap: 40px;
-  max-width: 1220px;
-  margin: 0 auto;
-  padding: 20px;
-}
-
-@media screen and (max-width: 1024px) {
-  .grid-container {
-    grid-template-columns: repeat(auto-fill, minmax(80px, 1fr));
-    grid-template-rows: repeat(auto-fill, auto); /* Two rows */
-    gap: 30px;
-  }
-}
-
-@media screen and (max-width: 768px) {
-  .grid-container {
-    grid-template-columns: repeat(auto-fill, minmax(60px, 1fr));
-    grid-template-rows: repeat(auto-fill, auto); /* Two rows */
-    gap: 20px;
-  }
-}
-
-@media screen and (max-width: 480px) {
-  .grid-container {
-    grid-template-columns: repeat(auto-fill, minmax(40px, 1fr));
-    grid-template-rows: repeat(auto-fill, auto); /* Two rows */
-    gap: 10px;
-  }
-}
-
-.circle-with-line {
-  position: relative; /* Position relative to allow absolute positioning */
-  width: 80px; /* Set width and height to create a circle */
-  height: 80px;
-  border-radius: 50%; /* Use border-radius property with 50% to create a circle */
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5); /* Add shadow */
-  transition: transform 0.3s ease; /* Smooth transition for rotation */
-}
-
-@media screen and (max-width: 1024px) {
-  .circle-with-line {
-    width: 60px; /* Set width and height to create a circle */
-    height: 60px;
-  }
-}
-
-@media screen and (max-width: 768px) {
-  .circle-with-line {
-    width: 40px; /* Set width and height to create a circle */
-    height: 40px;
-  }
-}
-
-@media screen and (max-width: 480px) {
-  .circle-with-line {
-    width: 40px; /* Set width and height to create a circle */
-    height: 40px;
-  }
-}
-
-.circle-with-line::before {
-  content: ""; /* Required for pseudo-elements */
-  position: absolute; /* Position the line absolutely */
-  top: 50%; /* Align the line vertically */
-  left: 20%; /* Position the line closer to the center of the circle */
-  width: 60%; /* Set the width of the line to half the diameter of the circle */
-  height: 10px; /* Set the height of the line */
-  background-color: #fff; /* Set the color of the line */
-  border-radius: 5px; /* Set the border-radius to half of the height to create pill shape */
-  transform: translateY(-50%); /* Center the line vertically */
-}
-
-@media screen and (max-width: 1024px) {
-  .circle-with-line::before {
-    height: 8px;
-  }
-}
-
-@media screen and (max-width: 768px) {
-  .circle-with-line::before {
-    height: 6px;
-  }
-}
-
-@media screen and (max-width: 480px) {
-  .circle-with-line::before {
-    height: 4px;
-  }
-}
-
-/*!========================================================================
- * 14. Boxes
+ * 13. Boxes
  * ======================================================================!*/
 
 /* Service Box */
@@ -889,12 +591,12 @@ img {
   margin-top: 100px;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  grid-auto-rows: auto; /* Fixed height for rows */
+  grid-auto-rows: auto;
   gap: 40px;
-  justify-items: center; /* Center items horizontally */
-  align-items: center; /* Center items vertically */
-  justify-content: center; /* Center the grid horizontally */
-  align-content: center; /* Center the grid vertically */
+  justify-items: center;
+  align-items: center;
+  justify-content: center;
+  align-content: center;
 }
 
 .service-box {
@@ -906,73 +608,55 @@ img {
   position: relative;
 }
 
-@media (prefers-color-scheme: dark) {
-  .service-box {
-    border: 1px solid rgba(255, 255, 255, 0.05);
-  }
-}
-
 .service-box h2 {
   margin-bottom: 50px;
   font-size: 26px;
 }
 
-/* Style for the header text */
 .header-text {
-  position: relative; /* Required for positioning the pseudo-element */
-  display: inline-block; /* Ensures the pseudo-element only spans the width of the text */
-  text-decoration: none; /* Removes default underline */
-  color: inherit; /* Inherits the color from parent element */
+  position: relative;
+  display: inline-block;
+  text-decoration: none;
+  color: inherit;
 }
 
-/* Pseudo-element to create the underline */
 .header-text::before {
   content: "";
   position: absolute;
-  bottom: -2px; /* Position the underline just below the text */
-  left: -1px; /* Adjusted left position */
-  width: 0; /* Initial width of the underline */
-  height: 2px; /* Increased height for a pill shape */
-  background-color: var(--text-color-dark-3); /* Color of the underline */
-  border-radius: 2px; /* Border radius for pill shape */
-  transition: width 0.3s ease-out; /* Transition effect for the width */
+  bottom: -2px;
+  left: -1px;
+  width: 0;
+  height: 2px;
+  background-color: var(--text-color-3);
+  border-radius: 2px;
+  transition: width 0.3s ease-out;
 }
 
-@media (prefers-color-scheme: dark) {
-  .header-text::before {
-    background-color: var(--text-color-light-3);
-  }
-}
-
-/* Hover effect to reveal the underline from left to right */
 .header-text:hover::before {
-  width: 100%; /* Reveals the underline to full width on hover */
+  width: 100%;
 }
 
-/* Style for the footer heading */
 .footer-text {
-  position: relative; /* Required for positioning the pseudo-element */
-  display: inline-block; /* Ensures the pseudo-element only spans the width of the text */
-  text-decoration: none; /* Removes default underline */
-  color: inherit; /* Inherits the color from parent element */
+  position: relative;
+  display: inline-block;
+  text-decoration: none;
+  color: inherit;
 }
 
-/* Pseudo-element to create the underline */
 .footer-text::before {
   content: "";
   position: absolute;
-  bottom: -2px; /* Position the underline just below the text */
-  left: -1px; /* Adjusted left position */
-  width: 0; /* Initial width of the underline */
-  height: 2px; /* Increased height for a pill shape */
-  background-color: var(--text-color-light-3); /* Color of the underline */
-  border-radius: 2px; /* Border radius for pill shape */
-  transition: width 0.3s ease-out; /* Transition effect for the width */
+  bottom: -2px;
+  left: -1px;
+  width: 0;
+  height: 2px;
+  background-color: var(--text-color-3);
+  border-radius: 2px;
+  transition: width 0.3s ease-out;
 }
 
-/* Hover effect to reveal the underline from left to right */
 .footer-text:hover::before {
-  width: 100%; /* Reveals the underline to full width on hover */
+  width: 100%;
 }
 
 .service-box ul {
@@ -981,8 +665,8 @@ img {
 
 .service-box ul li {
   position: relative;
-  padding-left: 50px; /* Space for the line */
-  margin-bottom: 30px; /* Adjust spacing between lines */
+  padding-left: 50px;
+  margin-bottom: 30px;
 }
 
 .service-box ul li::before {
@@ -991,30 +675,10 @@ img {
   top: 50%;
   left: 0;
   transform: translateY(-50%);
-  width: 15px; /* Length of the line */
-  height: 4px; /* Thickness of the line */
+  width: 15px;
+  height: 4px;
   border-radius: 2px;
-  background-color: rgba(26, 29, 36, 0.5); /* Color of the line */
-}
-
-@media (prefers-color-scheme: dark) {
-  .service-box ul li::before {
-    background-color: rgba(245, 248, 253, 0.5);
-  }
-}
-
-@media (max-width: 767px) {
-  /* Small screens */
-  .service-container {
-    grid-template-columns: 1fr; /* One box per row */
-  }
-}
-
-@media (max-width: 1024px) {
-  /* Small screens */
-  .service-box {
-    width: 75%; /* One box per row */
-  }
+  background-color: rgba(26, 29, 36, 0.5);
 }
 
 .service-box .number {
@@ -1025,14 +689,8 @@ img {
   color: rgba(26, 29, 36, 0.5);
 }
 
-@media (prefers-color-scheme: dark) {
-  .service-box .number {
-    color: rgba(245, 248, 253, 0.5);
-  }
-}
-
 /*!========================================================================
- * 15. Table
+ * 14. Table
  * ======================================================================!*/
 
 table {
@@ -1042,14 +700,8 @@ table {
 }
 
 thead th {
-  border-bottom: 1px solid var(--bg-color-dark-2);
+  border-bottom: 1px solid var(--bg-color-2);
   padding-bottom: 0.5em;
-}
-
-@media (prefers-color-scheme: dark) {
-  thead th {
-    border-bottom: 1px solid var(--bg-color-light-2);
-  }
 }
 
 th {
@@ -1058,13 +710,7 @@ th {
 }
 
 tr {
-  border-bottom: 1px solid var(--bg-color-dark-2);
-}
-
-@media (prefers-color-scheme: dark) {
-  tr {
-    border-bottom: 1px solid var(--bg-color-light-2);
-  }
+  border-bottom: 1px solid var(--bg-color-2);
 }
 
 td {
@@ -1089,56 +735,17 @@ td:last-child {
 .table_no-outer-borders tr {
   border-collapse: collapse;
   border-style: hidden;
-  border: 1px solid var(--bg-color-dark-2);
-}
-
-@media (prefers-color-scheme: dark) {
-  .table_no-outer-borders tr {
-    border-bottom: 1px solid var(--bg-color-light-2);
-  }
+  border: 1px solid var(--bg-color-2);
 }
 
 .table_no-outer-borders td {
   padding: 2em;
   border-collapse: collapse;
-  border: 1px solid var(--bg-color-dark-2);
-}
-
-@media (prefers-color-scheme: dark) {
-  .table_no-outer-borders td {
-    border: 1px solid var(--bg-color-light-2);
-  }
-}
-
-@media screen and (max-width: 576px) {
-  .table-xs-flex {
-    display: block;
-  }
-  .table-xs-flex tbody,
-  .table-xs-flex tr,
-  .table-xs-flex td {
-    display: block;
-  }
-  .table-xs-flex.table_no-outer-borders tr {
-    border: none;
-  }
-  .table-xs-flex.table_no-outer-borders td {
-    padding: 2em;
-    border-left: none;
-    border-right: none;
-    border-top: none;
-  }
-  .table-xs-flex.table_no-outer-borders tr:first-child td:first-child {
-    margin-top: -2em;
-  }
-  .table-xs-flex.table_no-outer-borders tr:last-child td:last-child {
-    border-bottom: none;
-    margin-bottom: -2em;
-  }
+  border: 1px solid var(--bg-color-2);
 }
 
 /*!========================================================================
- * 16. Footer
+ * 15. Footer
  * ======================================================================!*/
 
 .footer {
@@ -1160,7 +767,7 @@ td:last-child {
 
 .footer-top h3,
 .footer-top2 h3 {
-  color: var(--text-color-light);
+  color: var(--text-color-footer-1);
   font-size: 32px;
   font-weight: 200;
 }
@@ -1172,7 +779,7 @@ td:last-child {
 }
 
 .footer-section {
-  color: var(--text-color-light);
+  color: var(--text-color-footer-1);
   display: flex;
   justify-content: space-between;
   margin: 40px 5px;
@@ -1198,28 +805,28 @@ td:last-child {
 }
 
 .footer-section p {
-  color: var(--text-color-light-2);
+  color: var(--text-color-footer-2);
 }
 
 .footer-section a,
 .footer-top2 a {
-  color: var(--text-color-light-2);
+  color: var(--text-color-footer-2);
 }
 
 .footer-section a:active,
 .footer-section a:hover {
   outline-width: 0;
-  color: var(--text-color-light);
+  color: var(--text-color-footer-1);
 }
 
 .footer-top2 a:active,
 .footer-top2 a:hover {
   outline-width: 0;
-  color: var(--text-color-light);
+  color: var(--text-color-footer-1);
 }
 
 .footer-divider {
-  border: 1px solid var(--bg-color-light-2);
+  border: 1px solid var(--f-divider);
 }
 
 .footer-logo {
@@ -1237,7 +844,6 @@ td:last-child {
 }
 
 /* Social Icons */
-
 .svg-inline--fa {
   vertical-align: -0.2em;
 }
@@ -1256,7 +862,7 @@ td:last-child {
   padding: 0;
   text-decoration: none;
   text-align: center;
-  color: var(--text-color-light-3);
+  color: var(--text-color-3);
   font-size: 18px;
   font-weight: normal;
   line-height: 2em;
@@ -1321,55 +927,4 @@ td:last-child {
   color: #bb0000;
   background: #fefefe;
   border-color: #bb0000;
-}
-
-/* Responsive adjustments */
-@media screen and (max-width: 768px) {
-  .footer-container {
-    padding: 0 10px;
-  }
-
-  .footer-top,
-  .footer-top2 {
-    text-align: left;
-  }
-
-  .footer-section {
-    flex-direction: column;
-    align-items: left;
-  }
-
-  .footer-section h6 {
-    padding-bottom: 10px;
-  }
-
-  .subfooter-section {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .footer-section div {
-    margin-bottom: 20px;
-  }
-
-  .subfooter-section div {
-    margin-bottom: 0px;
-  }
-
-  .footer-section ul li,
-  .subfooter-section ul li {
-    margin: 10px 0;
-  }
-
-  .subfooter-left {
-    order: 2;
-  }
-
-  .subfooter-right {
-    order: 1;
-  }
-
-  .rounded-social-buttons .social-button {
-    margin-bottom: 20px;
-  }
 }

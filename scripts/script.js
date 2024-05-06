@@ -4,9 +4,9 @@
  * Table of Contents:
  *
  * 01. Reveal animations
- * 02. Hero circles
- * 03. TypeWriter Effect Animation
- * 04. Adrress Bar Color Change
+ * 02. TypeWriter Effect Animation
+ * 03. Adrress Bar Color Change
+ * 04. Favicon Color Change
  */
 
 /*!========================================================================
@@ -62,36 +62,7 @@ document.querySelectorAll(".slide-in-blurred-bottom").forEach((element) => {
 });
 
 /*!========================================================================
- * 02. Hero Circles
- * ======================================================================!*/
-
-// Array of possible colors
-const colors = ["#C0C0C0", "#231F20", "#ED1C24"];
-
-document.querySelectorAll(".circle-with-line").forEach((circle) => {
-  // Generate a random index to select a color from the array
-  const randomIndex = Math.floor(Math.random() * colors.length);
-  const randomColor = colors[randomIndex];
-
-  // Apply the random color to the circle
-  circle.style.backgroundColor = randomColor;
-
-  // Generate a random initial rotation angle between 0 and 360 degrees
-  const initialRotation = Math.random() * 360;
-  circle.style.transform = `rotate(${initialRotation}deg)`;
-
-  // Add event listener to rotate the circle towards the pointer
-  circle.addEventListener("mousemove", function (e) {
-    const centerX = circle.offsetLeft + circle.offsetWidth / 2;
-    const centerY = circle.offsetTop + circle.offsetHeight / 2;
-    const angle = Math.atan2(e.clientY - centerY, e.clientX - centerX);
-    const rotation = angle * (180 / Math.PI) + 90;
-    circle.style.transform = `rotate(${rotation}deg)`;
-  });
-});
-
-/*!========================================================================
- * 03. TypeWriter Effect Animation
+ * 02. TypeWriter Effect Animation
  * ======================================================================!*/
 
 var typed = new Typed("#type", {
@@ -102,7 +73,7 @@ var typed = new Typed("#type", {
 });
 
 /*!========================================================================
- * 04. Adrress Bar Color Change
+ * 03. Adrress Bar Color Change
  * ======================================================================!*/
 
 function setAddressBarColor() {
@@ -127,21 +98,23 @@ window
   .matchMedia("(prefers-color-scheme: dark)")
   .addListener(setAddressBarColor);
 
+/*!========================================================================
+ * 04. Favicon Color Change
+ * ======================================================================!*/
 
+function setFavicon() {
+  var favicon = document.querySelector('link[rel="shortcut icon"]');
+  if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
+    // Dark mode
+    favicon.href = "/img/assets/favicons/favicon_dark.ico";
+  } else {
+    // Light mode
+    favicon.href = "/img/assets/favicons/favicon.ico";
+  }
+}
 
-    function setFavicon() {
-        var favicon = document.querySelector('link[rel="shortcut icon"]');
-        if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
-            // Dark mode
-            favicon.href = '/img/assets/favicons/favicon_dark.ico';
-        } else {
-            // Light mode
-            favicon.href = '/img/assets/favicons/favicon.ico';
-        }
-    }
+// Call the function to set the initial favicon
+setFavicon();
 
-    // Call the function to set the initial favicon
-    setFavicon();
-
-    // Listen for changes in the user's color scheme preference
-    window.matchMedia('(prefers-color-scheme: dark)').addListener(setFavicon);
+// Listen for changes in the user's color scheme preference
+window.matchMedia("(prefers-color-scheme: dark)").addListener(setFavicon);

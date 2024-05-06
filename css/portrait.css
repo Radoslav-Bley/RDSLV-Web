@@ -1,0 +1,255 @@
+/**
+ * Developed by Radoslav Bley
+ *
+ * Table of Contents:
+  * 01. Color vars
+  * 02. Base Styling
+  * 03. Containers
+  * 04. Sections
+  * 05. Overlay Effects
+  * 06. Text
+  * 07. Dividers
+  * 08. Images
+  * 09. Animations
+  * 10. Header
+  * 11. Hero Section
+  * 12. Availability status
+  * 13. Boxes
+  * 14. Table
+  * 15. Footer
+   */
+
+/*!========================================================================
+ * 01. Color vars
+ * ======================================================================!*/
+
+/*!========================================================================
+   * 02. Base Styling
+   * ======================================================================!*/
+
+@media screen and (max-width: 768px) {
+  body {
+    font-size: 14px;
+  }
+}
+
+/*!========================================================================
+   * 03. Containers
+   * ======================================================================!*/
+
+@media screen and (max-width: 1024px) {
+  .video-container iframe {
+    max-width: 80%;
+    height: 540px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .container {
+    padding: 0 20px;
+  }
+  .video-container iframe {
+    max-width: 80%;
+    height: 540px;
+  }
+}
+
+/*!========================================================================
+   * 04. Sections
+   * ======================================================================!*/
+
+/*!========================================================================
+   * 05. Overlay Effects
+   * ======================================================================!*/
+
+/*!========================================================================
+   * 06. Text
+   * ======================================================================!*/
+
+@media screen and (max-width: 768px) {
+  h1 {
+    font-size: 24px;
+  }
+  h2 {
+    font-size: 18px;
+  }
+  h3 {
+    font-size: 18px;
+  }
+  h4 {
+    font-size: 18px;
+  }
+  h5 {
+    font-size: 16px;
+  }
+  h6 {
+    font-size: 16px;
+  }
+}
+
+/*!========================================================================
+   * 07. Dividers
+   * ======================================================================!*/
+
+/*!========================================================================
+   * 08. Images
+   * ======================================================================!*/
+
+/*!========================================================================
+   * 09. Animations
+   * ======================================================================!*/
+
+/*!========================================================================
+   * 10. Header
+   * ======================================================================!*/
+
+@media only screen and (max-width: 768px) {
+  .nav {
+    display: none;
+  }
+}
+
+/*!========================================================================
+   * 11. Hero Section
+   * ======================================================================!*/
+
+@media only screen and (max-width: 1024px) {
+  .hero-image {
+    margin-bottom: 100px;
+  }
+  .hero-position {
+    height: 80vh;
+  }
+  .hero-text h2 {
+    font-size: 26px;
+  }
+  .hero-text h3 {
+    font-size: 18px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .hero-image {
+    margin-bottom: 100px;
+  }
+  .hero-position {
+    height: 75vh;
+  }
+  .hero-text h2 {
+    font-size: 26px;
+  }
+  .hero-text h3 {
+    font-size: 18px;
+  }
+}
+
+/*!========================================================================
+   * 12. Availability status
+   * ======================================================================!*/
+
+@media only screen and (max-width: 600px) {
+  #status-shape p {
+    font-size: 10px;
+  }
+}
+
+/*!========================================================================
+   * 13. Boxes
+   * ======================================================================!*/
+
+@media (max-width: 1024px) {
+  .service-box {
+    width: 75%;
+  }
+}
+
+@media (max-width: 768px) {
+  .service-container {
+    grid-template-columns: 1fr;
+  }
+}
+
+/*!========================================================================
+   * 14. Table
+   * ======================================================================!*/
+
+@media screen and (max-width: 576px) {
+  .table-xs-flex {
+    display: block;
+  }
+  .table-xs-flex tbody,
+  .table-xs-flex tr,
+  .table-xs-flex td {
+    display: block;
+  }
+  .table-xs-flex.table_no-outer-borders tr {
+    border: none;
+  }
+  .table-xs-flex.table_no-outer-borders td {
+    padding: 2em;
+    border-left: none;
+    border-right: none;
+    border-top: none;
+  }
+  .table-xs-flex.table_no-outer-borders tr:first-child td:first-child {
+    margin-top: -2em;
+  }
+  .table-xs-flex.table_no-outer-borders tr:last-child td:last-child {
+    border-bottom: none;
+    margin-bottom: -2em;
+  }
+}
+
+/*!========================================================================
+   * 15. Footer
+   * ======================================================================!*/
+
+@media screen and (max-width: 768px) {
+  .footer-container {
+    padding: 0 10px;
+  }
+
+  .footer-top,
+  .footer-top2 {
+    text-align: left;
+  }
+
+  .footer-section {
+    flex-direction: column;
+    align-items: left;
+  }
+
+  .footer-section h6 {
+    padding-bottom: 10px;
+  }
+
+  .subfooter-section {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .footer-section div {
+    margin-bottom: 20px;
+  }
+
+  .subfooter-section div {
+    margin-bottom: 0px;
+  }
+
+  .footer-section ul li,
+  .subfooter-section ul li {
+    margin: 10px 0;
+  }
+
+  .subfooter-left {
+    order: 2;
+  }
+
+  .subfooter-right {
+    order: 1;
+  }
+
+  .rounded-social-buttons .social-button {
+    margin-bottom: 20px;
+  }
+}
