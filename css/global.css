@@ -49,6 +49,9 @@
   --divider: rgba(10, 10, 10, 1);
   --f-divider: rgba(255, 255, 255, 0.1);
 
+  /* Table */
+  --table-border: rgba(10, 10, 10, 0.1);
+
   /* Social Icons */
   --social-color: rgba(255, 255, 255, 0.3);
 
@@ -704,7 +707,7 @@ table {
 }
 
 thead th {
-  border-bottom: 1px solid var(--bg-color-2);
+  border-bottom: 1px solid var(--table-border);
   padding-bottom: 0.5em;
 }
 
@@ -714,7 +717,7 @@ th {
 }
 
 tr {
-  border-bottom: 1px solid var(--bg-color-2);
+  border-bottom: 1px solid var(--table-border);
 }
 
 td {
@@ -739,13 +742,13 @@ td:last-child {
 .table_no-outer-borders tr {
   border-collapse: collapse;
   border-style: hidden;
-  border: 1px solid var(--bg-color-2);
+  border: 1px solid var(--table-border);
 }
 
 .table_no-outer-borders td {
   padding: 2em;
   border-collapse: collapse;
-  border: 1px solid var(--bg-color-2);
+  border: 1px solid var(--table-border);
 }
 
 /*!========================================================================

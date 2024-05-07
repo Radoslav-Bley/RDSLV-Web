@@ -39,9 +39,12 @@
 
     /* Menu Color */
     --menu-color: rgba(245, 248, 253, 1);
-    
-  /* Divider */
-  --divider: rgba(245, 248, 253, 1);
+
+    /* Divider */
+    --divider: rgba(245, 248, 253, 1);
+
+    /* Table */
+    --table-border: rgba(245, 248, 253, 0.1);
   }
 
   /*!========================================================================
@@ -65,29 +68,13 @@
    * 05. Overlay Effects
    * ======================================================================!*/
 
-  .overlay {
-    background-color: var(--overlay);
-  }
-
   /*!========================================================================
    * 06. Text
    * ======================================================================!*/
 
-  a {
-    color: var(--text-color-2);
-  }
-  a:active,
-  a:hover {
-    color: var(--text-color);
-  }
-
   /*!========================================================================
    * 07. Dividers
    * ======================================================================!*/
-
-  .divider {
-    background-color: var(--bg-color);
-  }
 
   /*!========================================================================
    * 08. Images
@@ -105,9 +92,6 @@
    * 10. Header
    * ======================================================================!*/
 
-  .nav ul li a {
-    color: var(--text-color);
-  }
   .logo img.logo-light {
     display: none;
   }
@@ -157,16 +141,16 @@
    * ======================================================================!*/
 
   thead th {
-    border-bottom: 1px solid var(--bg-color-2);
+    border-bottom: 1px solid var(--table-border);
   }
   tr {
-    border-bottom: 1px solid var(--bg-color-2);
+    border-bottom: 1px solid var(--table-border);
   }
   .table_no-outer-borders tr {
-    border-bottom: 1px solid var(--bg-color-2);
+    border-bottom: 1px solid var(--table-border);
   }
   .table_no-outer-borders td {
-    border: 1px solid var(--bg-color-2);
+    border: 1px solid var(--table-border);
   }
 
   /*!========================================================================
