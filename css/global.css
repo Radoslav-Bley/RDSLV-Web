@@ -45,8 +45,12 @@
   /* Menu Color */
   --menu-color: rgba(10, 10, 10, 1);
 
-  /* Footer Divider */
-  --f-divider: rgba(10, 10, 10, 1);
+  /* Divider */
+  --divider: rgba(10, 10, 10, 1);
+  --f-divider: rgba(255, 255, 255, 0.1);
+
+  /* Social Icons */
+  --social-color: rgba(255, 255, 255, 0.3);
 
   /* Status Light */
   --status-light-red: rgba(237, 28, 36, 1);
@@ -237,7 +241,7 @@ a:hover {
 .divider {
   width: 0;
   height: 1px;
-  background-color: var(--bg-color);
+  background-color: var(--divider);
   overflow: hidden;
 }
 
@@ -862,7 +866,7 @@ td:last-child {
   padding: 0;
   text-decoration: none;
   text-align: center;
-  color: var(--text-color-3);
+  color: var(--social-color);
   font-size: 18px;
   font-weight: normal;
   line-height: 2em;
