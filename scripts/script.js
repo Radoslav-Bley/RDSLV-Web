@@ -75,7 +75,7 @@ var typed = new Typed("#type", {
 /*!========================================================================
  * 03. Adrress Bar Color Change
  * ======================================================================!*/
-
+/*
 function setAddressBarColor() {
   if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
     // Dark mode
@@ -97,6 +97,7 @@ setAddressBarColor();
 window
   .matchMedia("(prefers-color-scheme: dark)")
   .addListener(setAddressBarColor);
+*/
 
 /*!========================================================================
  * 04. Favicon Color Change
