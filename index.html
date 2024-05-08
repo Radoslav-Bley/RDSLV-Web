@@ -22,10 +22,7 @@
     <meta name="robots" content="index,follow" />
     <meta name="google" content="notranslate" />
     <meta http-equiv="x-ua-compatible" content="ie=edge" />
-    <meta
-      name="theme-color"
-      content="#f5f8fd"
-    />
+    <meta name="theme-color" content="#f5f8fd" />
     <meta
       name="theme-color"
       content="#0a0a0a"
@@ -127,9 +124,9 @@
     <link rel="stylesheet" href="css/global.css" />
     <link rel="stylesheet" href="css/portrait.css" />
     <link rel="stylesheet" href="css/dark-mode.css" />
-    <link rel="stylesheet" href="css/burger.min.css" />
+    <link rel="stylesheet" href="css/menu.css" />
     <script src="scripts/script.js" defer></script>
-    <script src="scripts/bundle.js" defer></script>
+    <script src="scripts/menu.js" defer></script>
     <script src="scripts/typed.umd.js"></script>
     <script
       src="https://kit.fontawesome.com/4cfd72163b.js"
@@ -167,20 +164,91 @@
           </ul>
         </nav>
         <!-- Mobile Navigation -->
-        <div class="b-nav">
-          <li><a class="b-link b-link--active" href="https://rdslv.sk/">Home</a></li>
-          <li><a class="b-link" href="#about">About</a></li>
-          <li><a class="b-link" href="#work">Work</a></li>
-          <li><a class="b-link" href="#contact">Contact</a></li>
+        <div class="menu-container" id="menu-toggle">
+          <p class="menu-text" id="menu-text-open">Menu</p>
+          <p class="menu-text" id="menu-text-close" style="display: none">
+            Close
+          </p>
+          <svg class="hamburger hamRotate bun" viewBox="0 0 100 100" width="40">
+            <path
+              class="line top"
+              d="m 30,33 h 40 c 3.722839,0 7.5,3.126468 7.5,8.578427 0,5.451959 -2.727029,8.421573 -7.5,8.421573 h -20"
+            />
+            <path class="line middle" d="m 30,50 h 40" />
+            <path
+              class="line bottom"
+              d="m 70,67 h -40 c 0,0 -7.5,-0.802118 -7.5,-8.365747 0,-7.563629 7.5,-8.634253 7.5,-8.634253 h 20"
+            />
+          </svg>
         </div>
-
-        <!-- Burger-Icon -->
-        <div class="b-container">
-          <div class="b-menu">
-            <div class="b-bun b-bun--top"></div>
-            <div class="b-bun b-bun--bottom"></div>
+        <!-- Fullscreen Menu -->
+        <div id="fullscreen-menu" style="display: none">
+          <nav class="mobile-nav">
+            <ul>
+              <li>
+                <div class="menu-item">
+                  <span class="subheading">01 / Main page</span>
+                  <a href="#about">Home</a>
+                </div>
+              </li>
+              <li>
+                <div class="menu-item">
+                  <span class="subheading">02 / About me</span>
+                  <a href="#about">About</a>
+                </div>
+              </li>
+              <li>
+                <div class="menu-item">
+                  <span class="subheading">03 / My latest work and Reel</span>
+                  <a href="#work">Work</a>
+                </div>
+              </li>
+              <li>
+                <div class="menu-item">
+                  <span class="subheading"
+                    >04 / Interested in my work? Let me know!</span
+                  >
+                  <a href="#contact">Contact</a>
+                </div>
+              </li>
+            </ul>
+          </nav>
+          <div class="copyright">
+            <div class="subfooter-right">
+              <div class="rounded-social-buttons">
+                <a
+                  class="social-button github"
+                  href="https://github.com/radblesk"
+                  aria-label="RadBlesk's GitHub"
+                  target="_blank"
+                  ><i class="fab fa-github"></i
+                ></a>
+                <a
+                  class="social-button behance"
+                  href="https://www.behance.net/radoslavbley"
+                  aria-label="Hire me on BeHance"
+                  target="_blank"
+                  ><i class="fab fa-behance"></i
+                ></a>
+                <a
+                  class="social-button twitter"
+                  href="https://twitter.com/radblesk"
+                  aria-label="Radoslav on Twitter/X"
+                  target="_blank"
+                  ><i class="fab fa-x-twitter"></i
+                ></a>
+                <a
+                  class="social-button youtube"
+                  href="https://www.youtube.com/channel/UC2NdG4m3JBUSyFkHP1DGkPQ"
+                  aria-label="Radoslav on YouTube"
+                  target="_blank"
+                  ><i class="fab fa-youtube"></i
+                ></a>
+              </div>
+            </div>
           </div>
         </div>
+        <!-- Mobile Navigation END -->
       </header>
       <!-- Header END -->
     </header>
@@ -225,6 +293,8 @@
               src="/img/general/sections/about/about.webp"
               alt="Radoslav Bley"
               loading="lazy"
+              width="400"
+              height="400"
             />
           </div>
         </div>
