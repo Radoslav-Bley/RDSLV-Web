@@ -790,7 +790,7 @@ td:last-child {
   color: var(--text-color-footer-1);
   display: flex;
   justify-content: space-between;
-  margin: 40px 5px;
+  margin: 20px 5px;
 }
 
 .footer-section h6 {
