@@ -47,7 +47,7 @@
 
   /* Divider */
   --divider: rgba(10, 10, 10, 1);
-  --f-divider: rgba(255, 255, 255, 0.5);
+  --f-divider: rgba(255, 255, 255, 0.3);
 
   /* Table */
   --table-border: rgba(10, 10, 10, 0.1);
