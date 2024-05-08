@@ -162,16 +162,16 @@
   flex-direction: column;
 }
 
-.copyright {
+.menu-socials {
   font-size: 1em;
   text-align: center;
   position: absolute;
-  bottom: 25%;
+  bottom: 20%;
   left: -80px;
   right: 0;
   z-index: 100000; /* Add this line */
 }
 
-.copyright .rounded-social-buttons .social-button {
+.menu-socials .rounded-social-buttons .social-button {
   color: var(--text-color-3);
 }
