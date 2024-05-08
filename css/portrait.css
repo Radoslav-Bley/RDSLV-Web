@@ -39,18 +39,21 @@
 
 @media screen and (max-width: 1024px) {
   .video-container iframe {
-    max-width: 80%;
+    max-width: fit-content;
     height: 540px;
   }
 }
 
 @media screen and (max-width: 768px) {
   .container {
-    padding: 0 20px;
+    padding: 0 40px;
   }
   .video-container iframe {
     max-width: 80%;
     height: 540px;
+  }
+  .center-container {
+    max-width: 80%;
   }
 }
 
@@ -109,6 +112,12 @@
   }
 }
 
+@media screen and (min-width: 768px) {
+  .menu-container {
+    display: none;
+  }
+}
+
 /*!========================================================================
    * 11. Hero Section
    * ======================================================================!*/
@@ -157,12 +166,6 @@
    * 13. Boxes
    * ======================================================================!*/
 
-@media (max-width: 1024px) {
-  .service-box {
-    width: 75%;
-  }
-}
-
 @media (max-width: 768px) {
   .service-container {
     grid-template-columns: 1fr;
@@ -206,6 +209,7 @@
 
 @media screen and (max-width: 768px) {
   .footer-container {
+    max-width: 80%;
     padding: 0 10px;
   }
 
