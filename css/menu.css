@@ -81,7 +81,7 @@
   display: flex;
   align-items: flex-start; /* Align items to the top */
   justify-content: flex-start; /* Align items to the left */
-  padding: 150px 20px 20px 60px; /* Add more padding to the top */
+  padding: 100px 20px 20px 60px; /* Add more padding to the top */
   z-index: 9999;
 }
 

@@ -812,6 +812,10 @@ td:last-child {
   margin: 20px 0 0 0;
 }
 
+.footer-section li:last-child {
+  margin-bottom: -10px;
+}
+
 .footer-section p {
   color: var(--text-color-footer-2);
 }
