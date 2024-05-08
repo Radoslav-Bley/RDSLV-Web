@@ -81,12 +81,12 @@ function setAddressBarColor() {
     // Dark mode
     document
       .querySelector('meta[name="theme-color"]')
-      .setAttribute("content", "var(--bg-color-dark)");
+      .setAttribute("content", "#0a0a0a");
   } else {
     // Light mode
     document
       .querySelector('meta[name="theme-color"]')
-      .setAttribute("content", "red");
+      .setAttribute("content", "#f5f8fd");
   }
 }
 
