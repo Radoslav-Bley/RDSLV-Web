@@ -14,7 +14,7 @@ jobs:
         server: ftp.rdslv.sk
         username: rdslv.sk
         password: ${{ secrets.password }}
-        protocol: ftps
+        protocol: ftp
         port: 222 # todo replace with your web hosts ftps port
         server-dir: /public_html/
         timeout: 120000
