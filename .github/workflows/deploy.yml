@@ -17,3 +17,4 @@ jobs:
         protocol: ftps
         port: 222 # todo replace with your web hosts ftps port
         server-dir: /public_html/
+        timeout: 60000
