@@ -86,7 +86,7 @@ function setAddressBarColor() {
     // Light mode
     document
       .querySelector('meta[name="theme-color"]')
-      .setAttribute("content", "var(--bg-color-light)");
+      .setAttribute("content", "red");
   }
 }
 
