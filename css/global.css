@@ -95,7 +95,7 @@ body {
 .container {
   max-width: 1200px;
   margin: 100px auto;
-  padding: 0 40px;
+  padding: 0 20px;
 }
 
 .container-m {
@@ -440,7 +440,7 @@ img {
 .header {
   max-width: 1200px;
   margin: 0 auto;
-  padding: 20px 40px;
+  padding: 20px 20px;
   height: 50px;
   display: flex;
   justify-content: space-between;
@@ -790,7 +790,7 @@ td:last-child {
   color: var(--text-color-footer-1);
   display: flex;
   justify-content: space-between;
-  margin: 40px 5px;
+  margin: 20px 5px;
 }
 
 .footer-section h6 {
