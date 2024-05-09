@@ -172,6 +172,13 @@ section {
  * 06. Text
  * ======================================================================!*/
 
+ @font-face {
+  font-family: 'Inter';
+  src: url('/fonts/Inter-Variable.woff2') format('woff2'),
+       url('/fonts/Inter-Variable.woff') format('woff');
+  font-display: swap;
+ }
+
 h1 {
   font-size: 34px;
   font-weight: 300;

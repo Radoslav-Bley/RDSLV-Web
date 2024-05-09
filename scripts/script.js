@@ -4,9 +4,8 @@
  * Table of Contents:
  *
  * 01. Reveal animations
- * 02. TypeWriter Effect Animation
- * 03. Adrress Bar Color Change
- * 04. Favicon Color Change
+ * 02. Adrress Bar Color Change
+ * 03. Favicon Color Change
  */
 
 /*!========================================================================
@@ -62,18 +61,7 @@ document.querySelectorAll(".slide-in-blurred-bottom").forEach((element) => {
 });
 
 /*!========================================================================
- * 02. TypeWriter Effect Animation
- * ======================================================================!*/
-
-var typed = new Typed("#type", {
-  strings: ["a designer", "a developer", "a producer"],
-  typeSpeed: 150,
-  loop: true,
-  loopCount: Infinity,
-});
-
-/*!========================================================================
- * 03. Adrress Bar Color Change
+ * 02. Adrress Bar Color Change
  * ======================================================================!*/
 
 function setAddressBarColor() {
@@ -99,7 +87,7 @@ window
   .addListener(setAddressBarColor);
 
 /*!========================================================================
- * 04. Favicon Color Change
+ * 03. Favicon Color Change
  * ======================================================================!*/
 
 function setFavicon() {
@@ -120,7 +108,7 @@ setFavicon();
 window.matchMedia("(prefers-color-scheme: dark)").addListener(setFavicon);
 
 /*!========================================================================
- * 05. YouTube Lazy Loading
+ * 04. YouTube Lazy Loading
  * ======================================================================!*/
 
 function loadYoutubeVideo() {
