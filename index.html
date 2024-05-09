@@ -120,9 +120,8 @@
     <link rel="stylesheet" href="css/portrait.css" />
     <link rel="stylesheet" href="css/dark-mode.css" />
     <link rel="stylesheet" href="css/menu.css" />
-    <script src="scripts/script.js" defer></script>
-    <script src="scripts/menu.js" defer></script>
-    <script src="scripts/typed.umd.js"></script>
+    <script src="scripts/mscript.js" defer></script>
+    <script src="scripts/mmenu.js" defer></script>
     <script
       src="https://kit.fontawesome.com/4cfd72163b.js"
       crossorigin="anonymous"
@@ -269,7 +268,7 @@
       </section>
       <!-- - section END -->
       <!-- section ABOUT -->
-      <section id="about" class="section">
+      <section id="about">
         <div class="container">
           <div class="divider"></div>
           <div>
@@ -278,9 +277,20 @@
               ><span class="highlighted-text">.</span>
             </h1>
             <h1>
-              I am <span id="type" style="font-weight: 900"></span
-              ><span class="highlighted-text">.</span>
+              I am <span id="type" style="font-weight: 900"></span><span class="highlighted-text">.</span>
             </h1>
+
+            <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.11"></script>
+            <script>
+              document.addEventListener("DOMContentLoaded", function() {
+                var typed = new Typed('#type', {
+                  strings: ["a developer", "a designer", "a producer"],
+                  typeSpeed: 50,
+                  backSpeed: 50,
+                  loop: true,
+                });
+              });
+            </script>
           </div>
           <div class="container container-m">
             <img
