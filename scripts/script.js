@@ -118,3 +118,11 @@ setFavicon();
 
 // Listen for changes in the user's color scheme preference
 window.matchMedia("(prefers-color-scheme: dark)").addListener(setFavicon);
+
+/*!========================================================================
+ * 05. YouTube Lazy Loading
+ * ======================================================================!*/
+
+function loadYoutubeVideo() {
+  document.getElementById('youtube-video').innerHTML = '<iframe  width="560"  height="315"  src="https://www.youtube-nocookie.com/embed/meZF8t133sM?si=PgT4IJZVQzbWXgwi"  title="LMB Making of #1"  frameborder="0"  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"  referrerpolicy="strict-origin-when-cross-origin"  allowfullscreen></iframe>';
+}
