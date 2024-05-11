@@ -99,8 +99,10 @@
 }
 
 .menu-socials {
-  position: absolute;
-  bottom: 0;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  margin-top: 40px;
 }
 
 .menu-socials .rounded-social-buttons .social-button {
