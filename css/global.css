@@ -170,8 +170,8 @@ body {
   top: 50%;
   transform: translate(-50%, -50%);
   width: 100%;
-  height: 60px;
-  background-image: url("https://upload.wikimedia.org/wikipedia/commons/thumb/b/b8/YouTube_Logo_2017.svg/1280px-YouTube_Logo_2017.svg.png");
+  height: 63px;
+  background-image: url("/img/assets/youtube/YouTube_play_button_icon_\(2013–2017\).svg");
   background-size: cover;
 }
 
