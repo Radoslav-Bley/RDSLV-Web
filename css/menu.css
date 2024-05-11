@@ -1,75 +1,44 @@
-.menu-container {
+/*!========================================================================
+ * 01. Menu Button
+ * ======================================================================!*/
+
+.hamburger-menu {
+  width: 30px;
+  height: 20px;
   position: relative;
-  display: flex;
-  align-items: center;
   cursor: pointer;
   z-index: 10000;
 }
 
-
-@media screen and (min-width: 768px) {
-  .menu-container {
-    display: none;
-  }
-}
-
-.menu-text {
-  transition: opacity 0.3s ease;
-  margin-right: 0px;
-}
-
-.hamburger {
-  margin-left: auto;
-  -webkit-tap-highlight-color: transparent;
-  transition: transform 0.4s ease;
-  -moz-user-select: none;
-  -webkit-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-}
-
-.hamRotate.active {
-  transform: rotate(45deg);
-}
-
-.hamRotate180.active {
-  transform: rotate(180deg);
-}
-
 .line {
-  fill: none;
-  transition: stroke-dasharray 0.4s ease, stroke-dashoffset 0.4s ease;
-  stroke: var(--menu-color);
-  stroke-width: 5.5;
-  stroke-linecap: round;
+  width: 100%;
+  height: 2px;
+  background-color: var(--menu-color);
+  position: absolute;
+  transition: all 0.3s ease;
 }
 
-.bun .top {
-  stroke-dasharray: 40 160;
+.line1 {
+  top: 5px;
 }
 
-.bun .middle {
-  stroke-dasharray: 40 142;
-  transform-origin: 50%;
-  transition: transform 400ms;
-}
-.bun .bottom {
-  stroke-dasharray: 40 85;
-  transform-origin: 50%;
-  transition: transform 400ms, stroke-dashoffset 400ms;
-}
-.bun.active .top {
-  stroke-dashoffset: -64px;
+.line2 {
+  bottom: 5px;
 }
 
-.bun.active .middle {
-  /*stroke-dashoffset: -20px;*/
-  transform: rotate(90deg);
+.hamburger-menu.active .line1 {
+  transform: rotate(-45deg);
+  top: 45%;
 }
 
-.bun.active .bottom {
-  stroke-dashoffset: -64px;
+.hamburger-menu.active .line2 {
+  transform: rotate(45deg);
+  bottom: 45%;
 }
+
+/*!========================================================================
+ * 02. Fulscreen Menu
+ * ======================================================================!*/
 
 #fullscreen-menu {
   position: fixed;
@@ -78,22 +47,71 @@
   width: 100vw;
   height: 100vh;
   background-color: var(--bg-color);
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+#fullscreen-menu.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+.mobile-menu-container {
   display: flex;
-  align-items: flex-start;
   justify-content: flex-start;
+  align-items: flex-start;
   flex-direction: column;
-  padding: 100px 0 0 40px;
-  z-index: 9999;
+  padding: 100px 40px;
+  height: 100vh;
 }
 
 #fullscreen-menu .mobile-nav ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
   display: flex;
   flex-direction: column;
+  align-items: start;
+  list-style: none;
 }
 
+#fullscreen-menu .mobile-nav ul li a {
+  margin: 0;
+  padding: 0;
+  font-size: 2.5em;
+  font-weight: 200;
+  color: var(--text-color-1);
+}
+
+#fullscreen-menu .mobile-nav ul li a:hover {
+  color: var(--text-color-2);
+}
+
+.menu-item {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  margin-bottom: 40px;
+}
+
+.subheading {
+  font-size: 0.8em;
+  font-weight: 600;
+  color: var(--text-color-3);
+}
+
+.menu-socials {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.menu-socials .rounded-social-buttons .social-button {
+  color: var(--text-color-3);
+}
+
+/*!========================================================================
+ * 02. Animations
+ * ======================================================================!*/
+ 
 @keyframes slideInBlurredTop {
   0% {
     transform: translateY(-1000px) scaleY(2.5) scaleX(0.2);
@@ -107,57 +125,4 @@
     filter: blur(0);
     opacity: 1;
   }
-}
-
-#fullscreen-menu .mobile-nav ul li {
-  margin-bottom: 40px;
-}
-
-#fullscreen-menu .mobile-nav ul li:nth-child(1) {
-  animation: slideInBlurredTop 0.5s cubic-bezier(0.23, 1, 0.32, 1) 0s both;
-}
-
-#fullscreen-menu .mobile-nav ul li:nth-child(2) {
-  animation: slideInBlurredTop 0.5s cubic-bezier(0.23, 1, 0.32, 1) 0.2s both;
-}
-
-#fullscreen-menu .mobile-nav ul li:nth-child(3) {
-  animation: slideInBlurredTop 0.5s cubic-bezier(0.23, 1, 0.32, 1) 0.4s both;
-}
-
-#fullscreen-menu .mobile-nav ul li:nth-child(4) {
-  animation: slideInBlurredTop 0.5s cubic-bezier(0.23, 1, 0.32, 1) 0.6s both;
-}
-
-#fullscreen-menu .mobile-nav ul li a {
-  font-size: 2.5em;
-  font-weight: 200;
-  color: var(--text-color-1);
-}
-
-#fullscreen-menu .mobile-nav ul li a:hover {
-  color: var(--text-color-2);
-}
-
-.subheading {
-  font-size: 0.8em;
-  font-weight: 600;
-  color: var(--text-color-3);
-}
-
-.menu-item {
-  display: flex;
-  flex-direction: column;
-}
-
-.menu-socials {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-top: 20px;
-  animation: slideInBlurredTop 0.5s cubic-bezier(0.23, 1, 0.32, 1) 0.8s both;
-}
-
-.menu-socials .rounded-social-buttons .social-button {
-  color: var(--text-color-3);
 }

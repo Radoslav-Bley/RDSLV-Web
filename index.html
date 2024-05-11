@@ -138,6 +138,7 @@
       <section class="hero-section">
         <!-- Header -->
         <header class="header">
+          <div class="header-container">
           <div class="logo">
             <a href="https://rdslv.sk/">
               <img
@@ -164,47 +165,31 @@
             </ul>
           </nav>
           <!-- Mobile Navigation -->
-          <div class="menu-container" id="menu-toggle">
-            <p class="menu-text" id="menu-text-open">Menu</p>
-            <p class="menu-text" id="menu-text-close" style="display: none">
-              Close
-            </p>
-            <svg
-              class="hamburger hamRotate bun"
-              viewBox="0 0 100 100"
-              width="40"
-            >
-              <path
-                class="line top"
-                d="m 30,33 h 40 c 3.722839,0 7.5,3.126468 7.5,8.578427 0,5.451959 -2.727029,8.421573 -7.5,8.421573 h -20"
-              />
-              <path class="line middle" d="m 30,50 h 40" />
-              <path
-                class="line bottom"
-                d="m 70,67 h -40 c 0,0 -7.5,-0.802118 -7.5,-8.365747 0,-7.563629 7.5,-8.634253 7.5,-8.634253 h 20"
-              />
-            </svg>
-          </div>
+        <div class="hamburger-menu" id="hamburger-menu">
+          <div class="line line1"></div>
+          <div class="line line2"></div>
+        </div>
           <!-- Fullscreen Menu -->
-          <div id="fullscreen-menu" style="display: none">
+          <div id="fullscreen-menu">
+            <div class="mobile-menu-container">
             <nav class="mobile-nav">
               <ul>
                 <li>
                   <div class="menu-item">
                     <span class="subheading">01 / Main page</span>
-                    <a href="#about">Home</a>
+                    <a href="#about" class="header-text">Home</a>
                   </div>
                 </li>
                 <li>
                   <div class="menu-item">
                     <span class="subheading">02 / About me</span>
-                    <a href="#about">About</a>
+                    <a href="#about" class="header-text">About</a>
                   </div>
                 </li>
                 <li>
                   <div class="menu-item">
                     <span class="subheading">03 / My latest work and Reel</span>
-                    <a href="#work">Work</a>
+                    <a href="#work" class="header-text">Work</a>
                   </div>
                 </li>
                 <li>
@@ -212,7 +197,7 @@
                     <span class="subheading"
                       >04 / Interested in my work? Let me know!</span
                     >
-                    <a href="#contact">Contact</a>
+                    <a href="#contact" class="header-text">Contact</a>
                   </div>
                 </li>
               </ul>
@@ -252,7 +237,9 @@
               </div>
             </div>
           </div>
+          </div>
           <!-- Mobile Navigation END -->
+        </div>
         </header>
         <!-- Header END -->
         <div class="container">
@@ -305,8 +292,6 @@
             src="./img/general/sections/about/about.webp"
             alt="Radoslav Bley"
             loading="lazy"
-            width="400"
-            height="400"
           />
         </div>
       </section>
@@ -390,13 +375,13 @@
             <tbody>
               <tr>
                 <td>
-                  <div class="section-logos__wrapper-logo inverted">
+                  <div class="section-logos__wrapper-logo">
                     <div>
                       <img
-                        src="img/general/sections/clients/logo-1.png"
+                        src="img/general/sections/clients/logo-1.svg"
                         width="140"
                         height="140"
-                        alt=""
+                        alt="Odveziem-To"
                         loading="lazy"
                       />
                     </div>
@@ -406,23 +391,24 @@
                   <div class="section-logos__wrapper-logo">
                     <div>
                       <img
-                        src="img/general/sections/clients/logo-2.png"
+                        src="img/general/sections/clients/logo-2.svg"
                         width="140"
                         height="140"
-                        alt=""
+                        alt="Butterfly Tattoo"
                         loading="lazy"
                       />
                     </div>
                   </div>
                 </td>
                 <td>
-                  <div class="section-logos__wrapper-logo inverted">
+                  <div class="section-logos__wrapper-logo">
                     <div>
+                      <a href="https://lmb.sk" target="_blank">
                       <img
-                        src="img/general/sections/clients/logo-3.png"
+                        src="img/general/sections/clients/logo-3.svg"
                         width="140"
                         height="140"
-                        alt=""
+                        alt="LMB Community"
                         loading="lazy"
                       />
                     </div>
@@ -434,10 +420,10 @@
                   <div class="section-logos__wrapper-logo">
                     <div>
                       <img
-                        src="img/general/sections/clients/logo-4.png"
+                        src="img/general/sections/clients/logo-4.svg"
                         width="140"
                         height="140"
-                        alt=""
+                        alt="Ľubomír Klempa"
                         loading="lazy"
                       />
                     </div>
@@ -447,10 +433,10 @@
                   <div class="section-logos__wrapper-logo">
                     <div>
                       <img
-                        src="img/general/sections/clients/logo-5.png"
+                        src="img/general/sections/clients/logo-5.svg"
                         width="140"
                         height="140"
-                        alt=""
+                        alt="Marek Trnovský Boxing"
                         loading="lazy"
                       />
                     </div>
@@ -460,7 +446,50 @@
                   <div class="section-logos__wrapper-logo inverted">
                     <div>
                       <img
-                        src="img/general/sections/clients/logo-6.png"
+                        src="img/general/sections/clients/logo-6.svg"
+                        width="140"
+                        height="140"
+                        alt="M-Detail"
+                        loading="lazy"
+                      />
+                    </div>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <div class="section-logos__wrapper-logo">
+                    <div>
+                      <a href="https://boatacademy.sk" target="_blank">
+                      <img
+                        src="img/general/sections/clients/logo-7.svg"
+                        width="140"
+                        height="140"
+                        alt="BoatAcademy Peter Halahija"
+                        loading="lazy"
+                      />
+                    </div>
+                  </div>
+                </td>
+                <td>
+                  <div class="section-logos__wrapper-logo">
+                    <div>
+                      <a href="https://vegano.sk" target="_blank">
+                        <img
+                          src="img/general/sections/clients/logo-8.svg"
+                          width="140"
+                          height="140"
+                          alt="VegÁno Restaurant"
+                          loading="lazy"
+                        />
+                    </div>
+                  </div>
+                </td>
+                <td>
+                  <div class="section-logos__wrapper-logo inverted">
+                    <div>
+                      <img
+                        src="img/general/sections/clients/logo-9.svg"
                         width="140"
                         height="140"
                         alt=""

@@ -39,6 +39,7 @@
 
     /* Menu Color */
     --menu-color: rgba(245, 248, 253, 1);
+    --menu-divider: rgba(245, 248, 253, 0.1);
 
     /* Divider */
     --divider: rgba(245, 248, 253, 1);
@@ -82,6 +83,10 @@
 
   .inverted {
     filter: invert(100%);
+  }
+
+  .inverted:hover {
+    filter: invert(100%) drop-shadow(0 0 15px rgba(255, 255, 255, 0.2));
   }
 
   /*!========================================================================
