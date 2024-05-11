@@ -100,9 +100,7 @@ body {
 .container {
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
-  justify-content: flex-start;
-  width: 100%;
+  width: 90%;
   max-width: 1200px;
   margin: 0 auto;
   padding: 20px;
@@ -147,14 +145,43 @@ body {
   gap: 40px;
 }
 
-.video-container {
-  margin-top: 50px;
+#youtube-video {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   position: relative;
+  overflow: visible; /* Add this line */
+}
+
+#youtube-video button {
+  background: transparent;
+  border: none;
+  position: absolute;
+  width: 90px;
+  height: 90px;
+  cursor: pointer;
+}
+
+#youtube-video button:before {
+  content: "";
+  display: block;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  height: 60px;
+  background-image: url('https://upload.wikimedia.org/wikipedia/commons/thumb/b/b8/YouTube_Logo_2017.svg/1280px-YouTube_Logo_2017.svg.png');
+  background-size: cover;
 }
 
 .video-container iframe {
-  width: 1000px;
-  height: 540px;
+  width: 100%;
+  height: 500px;
+  border: none;
+  border-radius: 20px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
 }
 
 /*!========================================================================
