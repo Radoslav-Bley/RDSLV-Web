@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="sk">
   <head>
     <meta charset="UTF-8" />
     <meta
@@ -133,34 +133,33 @@
     ></script>
   </head>
   <body>
-    <main id="main content">
+    <main>
       <!-- section HERO -->
       <section class="hero-section">
         <!-- Header -->
         <header class="header">
           <div id="language-selector" style="display: none">
             <p id="language-message"></p>
-           <div id="language-controls"> <!-- Add this line -->
-            <select id="language-dropdown">
+            <div id="language-controls">
+              <select id="language-dropdown">
                 <option value="en">English</option>
                 <option value="sk">Slovak</option>
               </select>
               <button id="confirm-button">Confirm</button>
-            </div> <!-- Add this line -->
-            <button id="close-button">x</button>
+            </div>
           </div>
           <div class="header-container">
             <div class="logo">
               <a href="https://rdslv.sk/">
                 <img
-                  src="./img/assets/logo/Monogram Color B.svg"
+                  src="/img/assets/logo/Monogram Color B.svg"
                   alt="Logo"
                   class="logo-light"
                   width="50px"
                   height="50px"
                 />
                 <img
-                  src="./img/assets/logo/Monogram Color W.svg"
+                  src="/img/assets/logo/Monogram Color W.svg"
                   alt="Logo"
                   class="logo-dark"
                   width="50px"
@@ -170,9 +169,9 @@
             </div>
             <nav class="nav">
               <ul>
-                <li><a href="#about">About</a></li>
-                <li><a href="#work">Work</a></li>
-                <li><a href="#contact">Contact</a></li>
+                <li><a href="#about">O mne</a></li>
+                <li><a href="#work">Práca</a></li>
+                <li><a href="#contact">Kontakt</a></li>
               </ul>
             </nav>
             <!-- Mobile Navigation -->
@@ -187,30 +186,30 @@
                   <ul>
                     <li>
                       <div class="menu-item">
-                        <span class="subheading">01 / Main page</span>
-                        <a href="#about" class="header-text">Home</a>
+                        <span class="subheading">01 / Hlavná stránka</span>
+                        <a href="#about" class="header-text">Domov</a>
                       </div>
                     </li>
                     <li>
                       <div class="menu-item">
-                        <span class="subheading">02 / About me</span>
-                        <a href="#about" class="header-text">About</a>
-                      </div>
-                    </li>
-                    <li>
-                      <div class="menu-item">
-                        <span class="subheading"
-                          >03 / My latest work and Reel</span
-                        >
-                        <a href="#work" class="header-text">Work</a>
+                        <span class="subheading">02 / Spoznajte ma</span>
+                        <a href="#about" class="header-text">O mne</a>
                       </div>
                     </li>
                     <li>
                       <div class="menu-item">
                         <span class="subheading"
-                          >04 / Interested in my work? Let me know!</span
+                          >03 / Moje posledné práce a Reel</span
                         >
-                        <a href="#contact" class="header-text">Contact</a>
+                        <a href="#work" class="header-text">Práca</a>
+                      </div>
+                    </li>
+                    <li>
+                      <div class="menu-item">
+                        <span class="subheading"
+                          >04 / Zaujala Vás moja práca? Dajte mi vedieť!</span
+                        >
+                        <a href="#contact" class="header-text">Kontakt</a>
                       </div>
                     </li>
                   </ul>
@@ -259,14 +258,12 @@
           <row>
             <div>
               <h1>
-                Website in active development<span class="highlighted-text"
-                  >.</span
-                >
+                Stránka v aktívnom vývoji<span class="highlighted-text">.</span>
               </h1>
-              <h2>concept 2024</h2>
+              <h2>Koncept 2024</h2>
               <div id="status-shape">
                 <span class="status-light"></span>
-                <p>Not accepting projects</p>
+                <p>Neprijímam nové projekty</p>
               </div>
             </div>
           </row>
@@ -279,22 +276,23 @@
           <div class="divider"></div>
           <div>
             <h1>
-              I am <span id="type"></span
-              ><span class="highlighted-text">.</span>
+              Som <span id="type"></span><span class="highlighted-text">.</span>
             </h1>
             <h2 style="font-style: italic">
-              "Hello! I'm
-              <strong>Radoslav Bley, a 28-year-old from Slovakia</strong> with a
-              love for all things creative. Whether it's designing eye-catching
-              graphics, coding sleek front-end interfaces, or producing engaging
-              videos, I thrive on bringing ideas to life. Let's team up and turn
-              your vision into a <strong>standout digital masterpiece!</strong>"
+              "Ahoj! Volám sa
+              <strong>Radoslav Bley, som 28-ročný Slovák</strong> s láskou ku
+              všetkému tvorivému. Či už ide o pútavý grafický dizajn, kódovanie
+              elegantných front-end rozhraní alebo pútavú video produkciu, darí
+              sa mi pretvárať nápady na realitu. Spojme sa a spoločne pretvorme
+              Vašu víziu<strong>
+                na vynikajúce digitálne majstrovské dielo!</strong
+              >“
             </h2>
             <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.11"></script>
             <script>
               document.addEventListener("DOMContentLoaded", function () {
                 var typed = new Typed("#type", {
-                  strings: ["a developer", "a designer", "a producer"],
+                  strings: ["vývojár", "dizajnér", "producent"],
                   typeSpeed: 50,
                   backSpeed: 50,
                   loop: true,
@@ -306,7 +304,7 @@
         <div class="container center">
           <img
             class="about-image"
-            src="./img/general/sections/about/about.webp"
+            src="/img/general/sections/about/about.webp"
             alt="Radoslav Bley"
             loading="lazy"
           />
@@ -317,7 +315,7 @@
       <section id="services">
         <div class="container center">
           <div class="divider"></div>
-          <h1>How can i help you<span class="highlighted-text">?</span></h1>
+          <h1>Ako Vám môžem pomôcť<span class="highlighted-text">?</span></h1>
         </div>
         <div class="container center services">
           <div class="service-box overlay slide-in-blurred-bottom">
@@ -341,19 +339,19 @@
             <div class="number">02</div>
           </div>
           <div class="service-box overlay slide-in-blurred-bottom">
-            <h2 class="header-text">Graphic Design</h2>
+            <h2 class="header-text">Grafický Dizajn</h2>
             <ul>
               <li>Logo</li>
-              <li>Identity</li>
-              <li>Banners</li>
-              <li>Printing production</li>
+              <li>Identita</li>
+              <li>Banery</li>
+              <li>Tlačová produkcia</li>
             </ul>
             <div class="number">03</div>
           </div>
           <div class="service-box overlay slide-in-blurred-bottom">
-            <h2 class="header-text">Video Production</h2>
+            <h2 class="header-text">Video Produkcia</h2>
             <ul>
-              <li>Cut</li>
+              <li>Strih</li>
               <li>Color Grading</li>
               <li>VFX</li>
               <li>audio</li>
@@ -373,7 +371,7 @@
           <!-- Placeholder image -->
           <div id="youtube-video" class="video-container">
             <img
-              src="./img/general/sections/reel/placeholder.webp"
+              src="/img/general/sections/reel/placeholder.webp"
               alt="Video thumbnail"
             />
             <button onclick="loadYoutubeVideo()">Play</button>
@@ -385,7 +383,7 @@
       <section id="clients">
         <div class="container center">
           <div class="divider"></div>
-          <h1>Clients<span class="highlighted-text">.</span></h1>
+          <h1>Klienti<span class="highlighted-text">.</span></h1>
         </div>
         <div class="container center">
           <table class="table table_no-outer-borders table-xs-flex">
@@ -394,7 +392,7 @@
                 <td>
                   <div class="section-logos__wrapper-logo">
                     <img
-                      src="img/general/sections/clients/logo-1.svg"
+                      src="/img/general/sections/clients/logo-1.svg"
                       width="140"
                       height="140"
                       alt="Odveziem-To"
@@ -405,7 +403,7 @@
                 <td>
                   <div class="section-logos__wrapper-logo">
                     <img
-                      src="img/general/sections/clients/logo-2.svg"
+                      src="/img/general/sections/clients/logo-2.svg"
                       width="140"
                       height="140"
                       alt="Butterfly Tattoo"
@@ -417,7 +415,7 @@
                   <div class="section-logos__wrapper-logo">
                     <a href="https://lmb.sk" target="_blank">
                       <img
-                        src="img/general/sections/clients/logo-3.svg"
+                        src="/img/general/sections/clients/logo-3.svg"
                         width="140"
                         height="140"
                         alt="LMB Community"
@@ -430,7 +428,7 @@
                 <td>
                   <div class="section-logos__wrapper-logo">
                     <img
-                      src="img/general/sections/clients/logo-4.svg"
+                      src="/img/general/sections/clients/logo-4.svg"
                       width="140"
                       height="140"
                       alt="Ľubomír Klempa"
@@ -441,7 +439,7 @@
                 <td>
                   <div class="section-logos__wrapper-logo">
                     <img
-                      src="img/general/sections/clients/logo-5.svg"
+                      src="/img/general/sections/clients/logo-5.svg"
                       width="140"
                       height="140"
                       alt="Marek Trnovský Boxing"
@@ -452,7 +450,7 @@
                 <td>
                   <div class="section-logos__wrapper-logo inverted">
                     <img
-                      src="img/general/sections/clients/logo-6.svg"
+                      src="/img/general/sections/clients/logo-6.svg"
                       width="140"
                       height="140"
                       alt="M-Detail"
@@ -466,7 +464,7 @@
                   <div class="section-logos__wrapper-logo">
                     <a href="https://boatacademy.sk" target="_blank">
                       <img
-                        src="img/general/sections/clients/logo-7.svg"
+                        src="/img/general/sections/clients/logo-7.svg"
                         width="140"
                         height="140"
                         alt="BoatAcademy Peter Halahija"
@@ -478,7 +476,7 @@
                   <div class="section-logos__wrapper-logo">
                     <a href="https://vegano.sk" target="_blank">
                       <img
-                        src="img/general/sections/clients/logo-8.svg"
+                        src="/img/general/sections/clients/logo-8.svg"
                         width="140"
                         height="140"
                         alt="VegÁno Restaurant"
@@ -489,7 +487,7 @@
                 <td>
                   <div class="section-logos__wrapper-logo inverted">
                     <img
-                      src="img/general/sections/clients/logo-9.svg"
+                      src="/img/general/sections/clients/logo-9.svg"
                       width="140"
                       height="140"
                       alt=""
@@ -510,10 +508,10 @@
         <div class="footer-top">
           <div>
             <h2>
-              With over <strong>five years</strong> of expertise in graphic
-              design, front-end development, and video production, I specialize
-              in crafting captivating digital experiences. Interested in
-              collaborating on your project?
+              S viac ako <strong>päťročnými</strong> odbornými znalosťami v
+              oblasti grafického dizajnu, front-end vývoja a
+              produkcie videa sa špecializujem na vytváraní podmanivých digitálnych zážitkov.
+              Máte záujem o spoluprácu na Vašom projekte?
             </h2>
           </div>
         </div>
@@ -529,30 +527,30 @@
         <!-- Links Section -->
         <div class="footer-section">
           <div>
-            <h3>Quick Links<span class="highlighted-text">.</span></h3>
+            <h3>Rýchle odkazy<span class="highlighted-text">.</span></h3>
             <ul>
-              <li><a href="en/privacy-policy.html">Privacy Policy</a></li>
-              <li><a href="#">Sitemap</a></li>
+              <li><a href="en/privacy-policy.html">Podmienky ochrany osobných údajov</a></li>
+              <li><a href="#">Mapa stránky</a></li>
             </ul>
           </div>
           <div>
-            <h3>latest projects<span class="highlighted-text">.</span></h3>
+            <h3>Najnovšie projekty<span class="highlighted-text">.</span></h3>
             <ul>
               <li><a href="#">Link 3</a></li>
               <li><a href="#">Link 4</a></li>
             </ul>
           </div>
           <div>
-            <h3>company<span class="highlighted-text">.</span></h3>
+            <h3>Spoločnosť<span class="highlighted-text">.</span></h3>
             <ul>
-              <li><p>Name: Radoslav Bley</p></li>
-              <li><p>Business ID: 51846080</p></li>
-              <li><p>Tax ID: 1124696683</p></li>
-              <li><p>Trade Register Number: 540-21358</p></li>
+              <li><p>Meno: Radoslav Bley</p></li>
+              <li><p>IČO: 51846080</p></li>
+              <li><p>DIČ: 1124696683</p></li>
+              <li><p>Číslo ž. registra: 540-21358</p></li>
             </ul>
           </div>
           <div>
-            <h3>contact<span class="highlighted-text">.</span></h3>
+            <h3>Kontakt<span class="highlighted-text">.</span></h3>
             <ul>
               <li><a href="mailto:biznis@rdslv.sk">biznis@rdslv.sk</a></li>
               <li><a href="tel:+421911510344">+421 911 510 344</a></li>
