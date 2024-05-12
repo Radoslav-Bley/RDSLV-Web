@@ -197,6 +197,10 @@ section {
   display: block;
 }
 
+.header-section {
+  height: 150px;
+}
+
 /*!========================================================================
  * 05. Overlay Effects
  * ======================================================================!*/
@@ -320,6 +324,19 @@ p {
 .highlighted-text {
   color: var(--accent-color);
   font-weight: 700;
+}
+
+#policy ul {
+  list-style-type: circle;
+  padding-left: 40px;
+}
+
+#policy h2 {
+  font-weight: 500;
+}
+
+strong {
+  font-weight: 500;
 }
 
 /*!========================================================================
@@ -581,6 +598,27 @@ img {
   .logo img.logo-dark {
     display: none;
   }
+}
+
+.subheader {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  flex-direction: column;
+  margin: 80px 0 0 0;
+}
+
+.subheader h1 {
+  font-size: 32px;
+  font-weight: 600;
+  margin: 0;
+}
+
+.subheader p {
+  font-size: 14px;
+  font-weight: 200;
+  font-style: italic;
+  margin: 20px 0;
 }
 
 /*!========================================================================
