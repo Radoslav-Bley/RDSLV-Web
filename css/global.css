@@ -101,7 +101,7 @@ body {
   width: 90%;
   max-width: 1200px;
   margin: 0 auto;
-  padding: 20px;
+  padding: 0 15px;
   transition: all 0.3s ease;
 }
 
@@ -441,33 +441,121 @@ img {
   height: auto;
   max-width: 500px;
   max-height: 600px;
+  padding: 40px;
 }
 
-.client-logo {
+.logo-carousel {
+  overflow: hidden;
   width: 100%;
-  height: 100px;
-  background-color: #ccc;
-  border: 2px solid #fff;
-  border-radius: 8px;
-}
-
-/* Show inside borders */
-.client-logo {
-  box-shadow: 0 0 0 2px #ccc, /* Inside border */ 0 0 0 4px #fff; /* Outside border (same as background color) */
-}
-
-.section-logos__wrapper-logo {
+  position: relative;
+  padding: 20px 0;
   display: flex;
-  align-items: center;
-  justify-content: center;
-  transition: all 0.2s ease-in-out;
-  transition-property: opacity;
-  opacity: 0.5;
-  filter: saturate(0%);
+  flex-direction: column;
+  gap: 40px;
 }
-.section-logos__wrapper-logo:hover {
-  opacity: 1;
-  filter: saturate(100%) drop-shadow(0 0 15px rgba(255, 255, 255, 0.2));
+
+.logo-carousel::before,
+.logo-carousel::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 100px; /* Adjust the width as needed */
+  pointer-events: none;
+  z-index: 1;
+}
+
+.logo-carousel::before {
+  left: 0;
+  background: linear-gradient(to right, var(--bg-color), rgba(255, 255, 255, 0));
+}
+
+.logo-carousel::after {
+  right: 0;
+  background: linear-gradient(to left, var(--bg-color), rgba(255, 255, 255, 0));
+}
+
+.logo-track {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  animation: scroll-left 40s linear infinite; /* Slower scroll */
+}
+
+.logo-track img {
+  max-height: 100px;
+  margin: 0 30px;
+  filter: grayscale(100%);
+  border-radius: 10px;
+  padding: 10px;
+  background-color: var(--overlay);
+}
+
+.track-row-1 {
+  animation: scroll-left 40s linear infinite;
+}
+
+.track-row-2 {
+  animation: scroll-right 40s linear infinite;
+}
+
+@keyframes scroll-left {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+@keyframes scroll-right {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+@media (max-width: 768px) {
+  .logo-track img {
+    max-height: 80px;
+    margin: 0 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .logo-carousel {
+    display: grid;
+    grid-template-rows: repeat(2, auto);
+    gap: 20px;
+  }
+
+  .logo-track {
+    justify-content: space-between;
+    animation-duration: 30s; /* Adjust speed for smaller screens */
+  }
+
+  .logo-track img {
+    max-height: 60px;
+    margin: 0 15px;
+  }
+}
+
+/* Duplicating the logos to create a seamless scroll */
+.logo-track::after {
+  content: "";
+  display: flex;
+}
+
+.logo-track img,
+.logo-track::after img {
+  max-height: 100px;
+  margin: 0 30px;
+  filter: grayscale(100%);
+  border-radius: 10px;
+  padding: 10px;
+  background-color: var(--overlay);
 }
 
 /*!========================================================================

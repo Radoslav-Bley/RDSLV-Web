@@ -124,3 +124,17 @@ window.addEventListener("scroll", function () {
   var header = document.querySelector(".header");
   header.classList.toggle("sticky", window.scrollY > 0);
 });
+
+const track1 = document.querySelector('.track-row-1');
+const track2 = document.querySelector('.track-row-2');
+
+const cloneLogos = (track) => {
+  const logos = Array.from(track.children);
+  logos.forEach(logo => {
+    const clone = logo.cloneNode(true);
+    track.appendChild(clone);
+  });
+};
+
+cloneLogos(track1);
+cloneLogos(track2);
