@@ -129,16 +129,18 @@ window.addEventListener("scroll", function () {
  * 06. Client Logos Cloning
  * ======================================================================!*/
 
-const track1 = document.querySelector('.track-row-1');
-const track2 = document.querySelector('.track-row-2');
+document.addEventListener("DOMContentLoaded", function() {
+  const track = document.querySelector('.logo-track');
 
-const cloneLogos = (track) => {
-  const logos = Array.from(track.children);
-  logos.forEach(logo => {
-    const clone = logo.cloneNode(true);
-    track.appendChild(clone);
-  });
-};
+  const cloneLogos = (track) => {
+    const logos = Array.from(track.children);
+    logos.forEach(logo => {
+      const clone = logo.cloneNode(true);
+      track.appendChild(clone);
+    });
+  };
 
-cloneLogos(track1);
-cloneLogos(track2);
+  // Clone logos to create an infinite scroll effect
+  cloneLogos(track);
+  cloneLogos(track);
+});
