@@ -26,3 +26,17 @@ hamburgerMenu.addEventListener('click', function() {
     });
   }
 });
+
+menuItems.forEach(function(item) {
+  item.addEventListener('click', function() {
+    hamburgerMenu.classList.remove('active');
+    fullscreenMenu.classList.remove('active');
+    body.style.overflow = 'auto';
+    menuItems.forEach(function(item) {
+      item.style.animation = '';
+    });
+    socialIcons.forEach(function(icon) {
+      icon.style.animation = '';
+    });
+  });
+});
