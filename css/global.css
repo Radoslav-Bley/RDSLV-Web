@@ -85,8 +85,6 @@ body {
   background-color: var(--bg-color);
   color: var(--text-color);
   transition: background-color 0.5s ease, color 0.5s ease;
-  overscroll-behavior: contain;
-  scroll-behavior: smooth;
 }
 
 .content {
@@ -223,7 +221,8 @@ section {
   justify-content: space-between;
 }
 
-#language-dropdown, #confirm-button {
+#language-dropdown,
+#confirm-button {
   width: auto; /* Add this line */
 }
 
@@ -237,16 +236,16 @@ section {
 }
 
 #confirm-button {
-  background-color:var(--overlay);
-  border-radius:28px;
-  border:1px solid var(--accent-color);
-  display:inline-block;
-  cursor:pointer;
-  color:var(--text-color);
-  font-family:Arial;
+  background-color: var(--overlay);
+  border-radius: 28px;
+  border: 1px solid var(--accent-color);
+  display: inline-block;
+  cursor: pointer;
+  color: var(--text-color);
+  font-family: Arial;
   font-size: 12px;
-  padding:10px 18px;
-  text-decoration:none;
+  padding: 10px 18px;
+  text-decoration: none;
 }
 
 #close-button {
