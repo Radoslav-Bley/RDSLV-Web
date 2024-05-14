@@ -125,6 +125,10 @@ window.addEventListener("scroll", function () {
   header.classList.toggle("sticky", window.scrollY > 0);
 });
 
+/*!========================================================================
+ * 06. Client Logos Cloning
+ * ======================================================================!*/
+
 const track1 = document.querySelector('.track-row-1');
 const track2 = document.querySelector('.track-row-2');
 
