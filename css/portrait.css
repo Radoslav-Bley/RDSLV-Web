@@ -134,15 +134,6 @@
   .nav {
     display: none;
   }
-  #language-message {
-    max-width: 80%;
-  }
-  #language-selector {
-    flex-direction: column;
-  }
-  #language-dropdown {
-    width: 100%;
-  }
 }
 
 @media only screen and (min-width: 768px) {
@@ -172,41 +163,6 @@
 @media screen and (max-width: 768px) {
   .container-services {
     grid-template-columns: 1fr;
-  }
-}
-
-/*!========================================================================
-   * 14. Table
-   * ======================================================================!*/
-
-@media screen and (max-width: 768px) {
-  table {
-    width: 50%;
-  }
-
-  .table-xs-flex {
-    display: block;
-  }
-  .table-xs-flex tbody,
-  .table-xs-flex tr,
-  .table-xs-flex td {
-    display: block;
-  }
-  .table-xs-flex.table_no-outer-borders tr {
-    border: none;
-  }
-  .table-xs-flex.table_no-outer-borders td {
-    padding: 2em;
-    border-left: none;
-    border-right: none;
-    border-top: none;
-  }
-  .table-xs-flex.table_no-outer-borders tr:first-child td:first-child {
-    margin-top: -2em;
-  }
-  .table-xs-flex.table_no-outer-borders tr:last-child td:last-child {
-    border-bottom: none;
-    margin-bottom: -2em;
   }
 }
 
