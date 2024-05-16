@@ -1,18 +1,14 @@
-const track1 = document.querySelector('.track-row-1');
-const track2 = document.querySelector('.track-row-2');
+/*
+ JS to toggle scroll axis styles
+*/
+const control = document.getElementById("direction-toggle");
+const marquees = document.querySelectorAll(".marquee");
+const wrapper = document.querySelector(".wrapper");
 
-const cloneLogos = (track) => {
-  const logos = Array.from(track.children);
-  logos.forEach(logo => {
-    const clone = logo.cloneNode(true);
-    track.appendChild(clone);
-  });
-  logos.forEach(logo => {
-    const clone = logo.cloneNode(true);
-    track.appendChild(clone);
-  });
-};
-
-// Clone logos for both rows
-cloneLogos(track1);
-cloneLogos(track2);
+control.addEventListener("click", () => {
+  control.classList.toggle("toggle--vertical");
+  wrapper.classList.toggle("wrapper--vertical");
+  [...marquees].forEach((marquee) =>
+    marquee.classList.toggle("marquee--vertical")
+  );
+});
