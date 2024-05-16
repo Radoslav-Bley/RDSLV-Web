@@ -119,263 +119,313 @@
     </script>
     <link rel="stylesheet" href="/css/global.css" />
     <link rel="stylesheet" href="/css/portrait.css" />
-    <link rel="stylesheet" href="/css/dark-mode.css" />
-    <link rel="stylesheet" href="/css/menu.css" />
+    <link
+      rel="stylesheet"
+      href="/css/dark-mode.css"
+      media="(prefers-color-scheme: dark)"
+    />
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        var link = document.createElement("link");
+        link.rel = "stylesheet";
+        link.href = "/css/menu.css";
+        link.onload = function () {
+          console.log("Menu stylesheet has been loaded");
+        };
+        document.head.appendChild(link);
+      });
+    </script>
     <script src="/scripts/script.js" defer></script>
-    <script src="/scripts/clients.js"></script>
+    <script src="/scripts/clients.js" defer></script>
     <script src="/scripts/menu.js" defer></script>
     <script src="/scripts/jquery-3.7.1.min.js"></script>
     <script>
-      $(document).ready(function () {
-        // Define the available localizations
-        const availableLocalizations = [
-          "ar",
-          "cs",
-          "de",
-          "en",
-          "es",
-          "fr",
-          "hi",
-          "it",
-          "ja",
-          "pl",
-          "pt",
-          "ru",
-          "sk",
-          "zh",
-        ];
+            $(document).ready(function () {
+              // Define the available localizations
+              const availableLocalizations = [
+                "ar",
+                "cs",
+                "de",
+                "en",
+                "es",
+                "fr",
+                "hi",
+                "it",
+                "ja",
+                "pl",
+                "pt",
+                "ru",
+                "sk",
+                "zh",
+              ];
 
-        // Translation dictionary with local country names
-        const translations = {
-          en: {
-            message:
-              "We see you are located in {country}. Would you like to change to your language?",
-            confirm: "Confirm",
-            countries: {
-              sk: "Slovakia",
-              cs: "Czech Republic",
-              de: "Germany",
-              en: "United States",
-              es: "Spain",
-              fr: "France",
-              hi: "India",
-              it: "Italy",
-              ja: "Japan",
-              pl: "Poland",
-              pt: "Portugal",
-              ru: "Russia",
-              zh: "China",
-            },
-          },
-          sk: {
-            message:
-              "Vidíme, že sa nachádzate na Slovensku. Chcete zmeniť jazyk?",
-            confirm: "Potvrdiť",
-            countries: {
-              sk: "Slovensko",
-              cs: "Česká republika",
-              de: "Nemecko",
-              en: "Spojené štáty",
-              es: "Španielsko",
-              fr: "Francúzsko",
-              hi: "India",
-              it: "Taliansko",
-              ja: "Japonsko",
-              pl: "Poľsko",
-              pt: "Portugalsko",
-              ru: "Rusko",
-              zh: "Čína",
-            },
-          },
-          cs: {
-            message:
-              "Vidíme, že se nacházíte v {country}. Chcete změnit jazyk?",
-            confirm: "Potvrdit",
-            countries: {
-              sk: "Slovensko",
-              cs: "Česká republika",
-              de: "Německo",
-              en: "Spojené státy",
-              es: "Španělsko",
-              fr: "Francie",
-              hi: "Indie",
-              it: "Itálie",
-              ja: "Japonsko",
-              pl: "Polsko",
-              pt: "Portugalsko",
-              ru: "Rusko",
-              zh: "Čína",
-            },
-          },
-          // Add other translations similarly...
-          // Example:
-          de: {
-            message:
-              "Wir sehen, dass Sie sich in {country} befinden. Möchten Sie die Sprache ändern?",
-            confirm: "Bestätigen",
-            countries: {
-              sk: "Slowakei",
-              cs: "Tschechische Republik",
-              de: "Deutschland",
-              en: "Vereinigte Staaten",
-              es: "Spanien",
-              fr: "Frankreich",
-              hi: "Indien",
-              it: "Italien",
-              ja: "Japan",
-              pl: "Polen",
-              pt: "Portugal",
-              ru: "Russland",
-              zh: "China",
-            },
-          },
-          // Continue for all languages...
-        };
+              // Translation dictionary with local country names
+              const translations = {
+                en: {
+                  message:
+                    "We see you are located in {country}. Would you like to change to your language?",
+                  confirm: "Confirm",
+                  countries: {
+                    sk: "Slovakia",
+                    cs: "Czech Republic",
+                    de: "Germany",
+                    en: "United States",
+                    es: "Spain",
+                    fr: "France",
+                    hi: "India",
+                    it: "Italy",
+                    ja: "Japan",
+                    pl: "Poland",
+                    pt: "Portugal",
+                    ru: "Russia",
+                    zh: "China",
+                  },
+                },
+                sk: {
+                  message:
+                    "Vidíme, že sa nachádzate na Slovensku. Chcete zmeniť jazyk?",
+                  confirm: "Potvrdiť",
+                  countries: {
+                    sk: "Slovensko",
+                    cs: "Česká republika",
+                    de: "Nemecko",
+                    en: "Spojené štáty",
+                    es: "Španielsko",
+                    fr: "Francúzsko",
+                    hi: "India",
+                    it: "Taliansko",
+                    ja: "Japonsko",
+                    pl: "Poľsko",
+                    pt: "Portugalsko",
+                    ru: "Rusko",
+                    zh: "Čína",
+                  },
+                },
+                cs: {
+                  message:
+                    "Vidíme, že se nacházíte v {country}. Chcete změnit jazyk?",
+                  confirm: "Potvrdit",
+                  countries: {
+                    sk: "Slovensko",
+                    cs: "Česká republika",
+                    de: "Německo",
+                    en: "Spojené státy",
+                    es: "Španělsko",
+                    fr: "Francie",
+                    hi: "Indie",
+                    it: "Itálie",
+                    ja: "Japonsko",
+                    pl: "Polsko",
+                    pt: "Portugalsko",
+                    ru: "Rusko",
+                    zh: "Čína",
+                  },
+                },
+                // Add other translations similarly...
+                // Example:
+                de: {
+                  message:
+                    "Wir sehen, dass Sie sich in {country} befinden. Möchten Sie die Sprache ändern?",
+                  confirm: "Bestätigen",
+                  countries: {
+                    sk: "Slowakei",
+                    cs: "Tschechische Republik",
+                    de: "Deutschland",
+                    en: "Vereinigte Staaten",
+                    es: "Spanien",
+                    fr: "Frankreich",
+                    hi: "Indien",
+                    it: "Italien",
+                    ja: "Japan",
+                    pl: "Polen",
+                    pt: "Portugal",
+                    ru: "Russland",
+                    zh: "China",
+                  },
+                },
+                // Continue for all languages...
+              };
 
-        // Get the current URL path
-        const currentPath = window.location.pathname.split("/")[1];
+              // Get the current URL path
+              const currentPath = window.location.pathname.split("/")[1];
 
-        // Check if the current path is in the list of available localizations
-        if (availableLocalizations.includes(currentPath)) {
-          return; // Do not show the banner if the current path is a localization
+              // Check if the current path is in the list of available localizations
+              if (availableLocalizations.includes(currentPath)) {
+                return; // Do not show the banner if the current path is a localization
+              }
+
+              // Using a public API to get the user's location
+              const throttleTime = 60000; // 1 minute
+      const cacheDuration = 3600000; // 1 hour
+
+      let lastRequestTime = localStorage.getItem('lastRequestTime') ? parseInt(localStorage.getItem('lastRequestTime'), 10) : 0;
+
+      function getGeoLocation() {
+        const now = Date.now();
+        const cachedData = localStorage.getItem('geoLocation');
+        const cacheTime = localStorage.getItem('geoLocationTime');
+
+        if (cachedData && cacheTime && (now - parseInt(cacheTime, 10) < cacheDuration)) {
+          // Use cached data
+          const response = JSON.parse(cachedData);
+          processResponse(response);
+        } else if (now - lastRequestTime >= throttleTime) {
+          // Make a new request
+          $.get('https://ipapi.co/json/', function(response) {
+            processResponse(response);
+            // Cache the data
+            localStorage.setItem('geoLocation', JSON.stringify(response));
+            localStorage.setItem('geoLocationTime', now.toString());
+            // Update last request time
+            localStorage.setItem('lastRequestTime', now.toString());
+            lastRequestTime = now;
+          }).fail(function() {
+            console.error('Failed to fetch geolocation data');
+          });
+        } else {
+          console.log('Throttled request, please wait.');
         }
+      }
 
-        // Using a public API to get the user's location
-        $.get(
-          "https://ipapi.co/json/",
-          function (response) {
-            var country = response.country_name;
-            var countryCode = response.country_code.toLowerCase();
+      function processResponse(response) {
+        var country = response.country_name;
+        var countryCode = response.country_code.toLowerCase();
+        console.log(`Country: ${country}, Country Code: ${countryCode}`);
+        // Add any other processing logic here
+      }
 
-            // Show the localization banner
-            showLocalizationBanner(country, countryCode);
-          },
-          "json"
-        ).fail(function () {
-          console.error("Failed to get location data");
-        });
+      getGeoLocation(); // Call this function when necessary
 
-        function showLocalizationBanner(country, countryCode) {
-          var countryOptions = `
-    <option value="${countryCode}">${country}</option>
-      <option value="ar">الجزائر</option>
-      <option value="ar">البحرين</option>
-      <option value="ar">مصر</option>
-      <option value="ar">العراق</option>
-      <option value="ar">الأردن</option>
-      <option value="ar">الكويت</option>
-      <option value="ar">لبنان</option>
-      <option value="ar">ليبيا</option>
-      <option value="ar">المغرب</option>
-      <option value="ar">عمان</option>
-      <option value="ar">قطر</option>
-      <option value="ar">المملكة العربية السعودية</option>
-      <option value="ar">سوريا</option>
-      <option value="ar">تونس</option>
-      <option value="ar">الإمارات العربية المتحدة</option>
-      <option value="ar">اليمن</option>
-      <option value="cs">Česká republika</option>
-      <option value="de">Österreich</option>
-      <option value="de">Deutschland</option>
-      <option value="en">Australia</option>
-      <option value="en">Canada</option>
-      <option value="en">Ireland</option>
-      <option value="en">New Zealand</option>
-      <option value="en">South Africa</option>
-      <option value="en">United Kingdom</option>
-      <option value="en">United States</option>
-      <option value="es">Argentina</option>
-      <option value="es">Bolivia</option>
-      <option value="es">Chile</option>
-      <option value="es">Colombia</option>
-      <option value="es">Costa Rica</option>
-      <option value="es">Cuba</option>
-      <option value="es">República Dominicana</option>
-      <option value="es">Ecuador</option>
-      <option value="es">El Salvador</option>
-      <option value="es">Guatemala</option>
-      <option value="es">Honduras</option>
-      <option value="es">México</option>
-      <option value="es">Nicaragua</option>
-      <option value="es">Panamá</option>
-      <option value="es">Paraguay</option>
-      <option value="es">Perú</option>
-      <option value="es">España</option>
-      <option value="es">Uruguay</option>
-      <option value="es">Venezuela</option>
-      <option value="fr">Belgique</option>
-      <option value="fr">Canada</option>
-      <option value="fr">France</option>
-      <option value="fr">Luxembourg</option>
-      <option value="fr">Suisse</option>
-      <option value="hi">भारत</option>
-      <option value="it">Italia</option>
-      <option value="ja">日本</option>
-      <option value="pl">Polska</option>
-      <option value="pt">Brasil</option>
-      <option value="pt">Portugal</option>
-      <option value="ru">Россия</option>
-      <option value="sk">Slovensko</option>
-      <option value="zh">中国</option>
-      <option value="zh">台灣</option>
-    `;
 
-          // Get the translated message and confirm text
-          var selectedLanguage =
-            countryCode in translations ? countryCode : "en";
-          var translatedMessage = translations[
-            selectedLanguage
-          ].message.replace(
-            "{country}",
-            translations[selectedLanguage].countries[countryCode]
-          );
-          var translatedConfirm = translations[selectedLanguage].confirm;
+                  // Show the localization banner
+                  showLocalizationBanner(country, countryCode);
+                },
+                "json"
+              ).fail(function () {
+                console.error("Failed to get location data");
+              });
 
-          var banner = `
-      <div id="localization-banner">
-        <button id="close-banner" class="close-button">&times;</button>
-        <div id="localization-banner-body">
-          <p>${translatedMessage}</p>
-          <select id="country-select">
-            ${countryOptions}
-          </select>
-          <button id="confirm-btn" class="confirm-button">${translatedConfirm}</button>
-        </div>
-      </div>
-    `;
-          $("body").prepend(banner);
+              function showLocalizationBanner(country, countryCode) {
+                var countryOptions = `
+          <option value="${countryCode}">${country}</option>
+            <option value="ar">الجزائر</option>
+            <option value="ar">البحرين</option>
+            <option value="ar">مصر</option>
+            <option value="ar">العراق</option>
+            <option value="ar">الأردن</option>
+            <option value="ar">الكويت</option>
+            <option value="ar">لبنان</option>
+            <option value="ar">ليبيا</option>
+            <option value="ar">المغرب</option>
+            <option value="ar">عمان</option>
+            <option value="ar">قطر</option>
+            <option value="ar">المملكة العربية السعودية</option>
+            <option value="ar">سوريا</option>
+            <option value="ar">تونس</option>
+            <option value="ar">الإمارات العربية المتحدة</option>
+            <option value="ar">اليمن</option>
+            <option value="cs">Česká republika</option>
+            <option value="de">Österreich</option>
+            <option value="de">Deutschland</option>
+            <option value="en">Australia</option>
+            <option value="en">Canada</option>
+            <option value="en">Ireland</option>
+            <option value="en">New Zealand</option>
+            <option value="en">South Africa</option>
+            <option value="en">United Kingdom</option>
+            <option value="en">United States</option>
+            <option value="es">Argentina</option>
+            <option value="es">Bolivia</option>
+            <option value="es">Chile</option>
+            <option value="es">Colombia</option>
+            <option value="es">Costa Rica</option>
+            <option value="es">Cuba</option>
+            <option value="es">República Dominicana</option>
+            <option value="es">Ecuador</option>
+            <option value="es">El Salvador</option>
+            <option value="es">Guatemala</option>
+            <option value="es">Honduras</option>
+            <option value="es">México</option>
+            <option value="es">Nicaragua</option>
+            <option value="es">Panamá</option>
+            <option value="es">Paraguay</option>
+            <option value="es">Perú</option>
+            <option value="es">España</option>
+            <option value="es">Uruguay</option>
+            <option value="es">Venezuela</option>
+            <option value="fr">Belgique</option>
+            <option value="fr">Canada</option>
+            <option value="fr">France</option>
+            <option value="fr">Luxembourg</option>
+            <option value="fr">Suisse</option>
+            <option value="hi">भारत</option>
+            <option value="it">Italia</option>
+            <option value="ja">日本</option>
+            <option value="pl">Polska</option>
+            <option value="pt">Brasil</option>
+            <option value="pt">Portugal</option>
+            <option value="ru">Россия</option>
+            <option value="sk">Slovensko</option>
+            <option value="zh">中国</option>
+            <option value="zh">台灣</option>
+          `;
 
-          // Add margin to the body to move content down
-          $("body").css("margin-top", $("#localization-banner").outerHeight());
+                // Get the translated message and confirm text
+                var selectedLanguage =
+                  countryCode in translations ? countryCode : "en";
+                var translatedMessage = translations[
+                  selectedLanguage
+                ].message.replace(
+                  "{country}",
+                  translations[selectedLanguage].countries[countryCode]
+                );
+                var translatedConfirm = translations[selectedLanguage].confirm;
 
-          $("#close-banner").on("click", function () {
-            $("#localization-banner").remove();
-            // Remove the margin from the body when the banner is closed
-            $("body").css("margin-top", 0);
-          });
+                var banner = `
+            <div id="localization-banner">
+              <button id="close-banner" class="close-button">&times;</button>
+              <div id="localization-banner-body">
+                <p>${translatedMessage}</p>
+                <select id="country-select">
+                  ${countryOptions}
+                </select>
+                <button id="confirm-btn" class="confirm-button">${translatedConfirm}</button>
+              </div>
+            </div>
+          `;
+                $("body").prepend(banner);
 
-          $("#confirm-btn").on("click", function () {
-            var selectedCountry = $("#country-select").val();
-            var currentPath = window.location.pathname; // Get the current path
-            window.location.href = `/${selectedCountry}${currentPath}`; // Redirect to the same path with the country code
-          });
+                // Add margin to the body to move content down
+                $("body").css("margin-top", $("#localization-banner").outerHeight());
 
-          $("#country-select").on("change", function () {
-            var selectedCountry = $("#country-select").val();
-            var selectedLanguage =
-              selectedCountry in translations ? selectedCountry : "en";
-            var translatedMessage = translations[
-              selectedLanguage
-            ].message.replace(
-              "{country}",
-              $("#country-select option:selected").text()
-            );
-            var translatedConfirm = translations[selectedLanguage].confirm;
-            $("#localization-banner-body p").text(translatedMessage);
-            $("#confirm-btn").text(translatedConfirm);
-          });
-        }
-      });
+                $("#close-banner").on("click", function () {
+                  $("#localization-banner").remove();
+                  // Remove the margin from the body when the banner is closed
+                  $("body").css("margin-top", 0);
+                });
+
+                $("#confirm-btn").on("click", function () {
+                  var selectedCountry = $("#country-select").val();
+                  var currentPath = window.location.pathname; // Get the current path
+                  window.location.href = `/${selectedCountry}${currentPath}`; // Redirect to the same path with the country code
+                });
+
+                $("#country-select").on("change", function () {
+                  var selectedCountry = $("#country-select").val();
+                  var selectedLanguage =
+                    selectedCountry in translations ? selectedCountry : "en";
+                  var translatedMessage = translations[
+                    selectedLanguage
+                  ].message.replace(
+                    "{country}",
+                    $("#country-select option:selected").text()
+                  );
+                  var translatedConfirm = translations[selectedLanguage].confirm;
+                  $("#localization-banner-body p").text(translatedMessage);
+                  $("#confirm-btn").text(translatedConfirm);
+                });
+              }
+            ;
     </script>
   </head>
   <body>
@@ -565,15 +615,15 @@
               I am <span id="type"></span
               ><span class="highlighted-text">.</span>
             </h1>
-            <h2 style="font-style: italic">
+            <p style="font-style: italic; font-size: 20px">
               "Hello, <strong>I'm Radoslav</strong>, a dedicated front-end
               developer, graphic designer, and video producer based in Slovakia.
               I focus on creating engaging and functional websites with a keen
               eye for design and animation. With a passion for innovation and
               detail, I aim to deliver
               <strong>top-notch digital experiences.</strong>"
-            </h2>
-            <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.11"></script>
+            </p>
+            <script src="/scripts/typed.js"></script>
             <script>
               document.addEventListener("DOMContentLoaded", function () {
                 var typed = new Typed("#type", {

@@ -124,23 +124,3 @@ window.addEventListener("scroll", function () {
   var header = document.querySelector(".header");
   header.classList.toggle("sticky", window.scrollY > 0);
 });
-
-/*!========================================================================
- * 06. Client Logos Cloning
- * ======================================================================!*/
-
-document.addEventListener("DOMContentLoaded", function() {
-  const track = document.querySelector('.logo-track');
-
-  const cloneLogos = (track) => {
-    const logos = Array.from(track.children);
-    logos.forEach(logo => {
-      const clone = logo.cloneNode(true);
-      track.appendChild(clone);
-    });
-  };
-
-  // Clone logos to create an infinite scroll effect
-  cloneLogos(track);
-  cloneLogos(track);
-});
