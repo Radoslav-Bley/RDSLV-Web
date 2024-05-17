@@ -139,6 +139,7 @@
     <script src="/scripts/clients.js" defer></script>
     <script src="/scripts/menu.js" defer></script>
     <script src="/scripts/jquery-3.7.1.min.js"></script>
+    <script src="/scripts/typeit.umd.js" defer></script>
     <script>
       $(document).ready(function () {
         // Define the available localizations
@@ -158,7 +159,7 @@
           "sk",
           "zh",
         ];
-    
+
         // Translation dictionary with local country names
         const translations = {
           en: {
@@ -182,7 +183,8 @@
             },
           },
           sk: {
-            message: "Vidíme, že sa nachádzate na Slovensku. Chcete zmeniť jazyk?",
+            message:
+              "Vidíme, že sa nachádzate na Slovensku. Chcete zmeniť jazyk?",
             confirm: "Potvrdiť",
             countries: {
               sk: "Slovensko",
@@ -201,7 +203,8 @@
             },
           },
           cs: {
-            message: "Vidíme, že se nacházíte v {country}. Chcete změnit jazyk?",
+            message:
+              "Vidíme, že se nacházíte v {country}. Chcete změnit jazyk?",
             confirm: "Potvrdit",
             countries: {
               sk: "Slovensko",
@@ -242,7 +245,7 @@
           },
           // Continue for all languages...
         };
-    
+
         // Function to set a cookie
         function setCookie(name, value, days) {
           var expires = "";
@@ -253,7 +256,7 @@
           }
           document.cookie = name + "=" + (value || "") + expires + "; path=/";
         }
-    
+
         // Function to get a cookie
         function getCookie(name) {
           var nameEQ = name + "=";
@@ -261,32 +264,33 @@
           for (var i = 0; i < ca.length; i++) {
             var c = ca[i];
             while (c.charAt(0) == " ") c = c.substring(1, c.length);
-            if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length, c.length);
+            if (c.indexOf(nameEQ) == 0)
+              return c.substring(nameEQ.length, c.length);
           }
           return null;
         }
-    
+
         // Get the current URL path
         const currentPath = window.location.pathname.split("/")[1];
-    
+
         // Check if the current path is in the list of available localizations
         if (availableLocalizations.includes(currentPath)) {
           return; // Do not show the banner if the current path is a localization
         }
-    
+
         // Check if the language selection cookie exists
         const languageCookie = getCookie("userLanguage");
         if (languageCookie) {
           return; // Do not show the banner if the user has already selected a language
         }
-    
+
         // Using a public API to get the user's location
         $.get(
           "https://ipapi.co/json/",
           function (response) {
             var country = response.country_name;
             var countryCode = response.country_code.toLowerCase();
-    
+
             // Show the localization banner
             showLocalizationBanner(country, countryCode);
           },
@@ -294,7 +298,7 @@
         ).fail(function () {
           console.error("Failed to get location data");
         });
-    
+
         function showLocalizationBanner(country, countryCode) {
           var countryOptions = `
         <option value="${countryCode}">${country}</option>
@@ -359,15 +363,18 @@
           <option value="zh">中国</option>
           <option value="zh">台灣</option>
         `;
-    
+
           // Get the translated message and confirm text
-          var selectedLanguage = countryCode in translations ? countryCode : "en";
-          var translatedMessage = translations[selectedLanguage].message.replace(
+          var selectedLanguage =
+            countryCode in translations ? countryCode : "en";
+          var translatedMessage = translations[
+            selectedLanguage
+          ].message.replace(
             "{country}",
             translations[selectedLanguage].countries[countryCode]
           );
           var translatedConfirm = translations[selectedLanguage].confirm;
-    
+
           var banner = `
           <div id="localization-banner">
             <button id="close-banner" class="close-button">&times;</button>
@@ -381,28 +388,30 @@
           </div>
         `;
           $("body").prepend(banner);
-    
+
           // Add margin to the body to move content down
           $("body").css("margin-top", $("#localization-banner").outerHeight());
-    
+
           $("#close-banner").on("click", function () {
             $("#localization-banner").remove();
             // Remove the margin from the body when the banner is closed
             $("body").css("margin-top", 0);
           });
-    
+
           $("#confirm-btn").on("click", function () {
             var selectedCountry = $("#country-select").val();
             setCookie("userLanguage", selectedCountry, 1); // Set the cookie for 1 day
             var currentPath = window.location.pathname; // Get the current path
             window.location.href = `/${selectedCountry}${currentPath}`; // Redirect to the same path with the country code
           });
-    
+
           $("#country-select").on("change", function () {
             var selectedCountry = $("#country-select").val();
             var selectedLanguage =
               selectedCountry in translations ? selectedCountry : "en";
-            var translatedMessage = translations[selectedLanguage].message.replace(
+            var translatedMessage = translations[
+              selectedLanguage
+            ].message.replace(
               "{country}",
               $("#country-select option:selected").text()
             );
@@ -413,7 +422,6 @@
         }
       });
     </script>
-    
   </head>
   <body>
     <main id="main content">
@@ -423,21 +431,24 @@
         <header class="header">
           <div class="header-container">
             <div class="logo">
-              <a href="https://rdslv.sk/">
-                <img
-                  src="/img/assets/logo/Monogram Color B.svg"
-                  alt="Logo"
-                  class="logo-light"
-                  width="50px"
-                  height="50px"
-                />
-                <img
-                  src="/img/assets/logo/Monogram Color W.svg"
-                  alt="Logo"
-                  class="logo-dark"
-                  width="50px"
-                  height="50px"
-                />
+              <a href="https://rdslv.sk/" title="Homepage">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 1080 1080"
+                  width="50"
+                  height="50"
+                >
+                  <g transform="translate(0, 50)">
+                    <path
+                      id="part1"
+                      d="M435.92,841.12h150.24v-464.2l-150.24,332.71v131.48ZM1022.76,653.94c0,134.62-113.26,243.75-252.97,243.75h-98.04V183.05h98.04c110.55,0,200.18,86.36,200.18,192.87,0,36.23-10.37,70.13-28.41,99.09,49.94,44.51,81.2,108.2,81.2,178.93Z"
+                    />
+                    <path
+                      id="part2"
+                      d="M296.73,215.96l-139.34,308.55c-15.06-12.03-28.09-26.55-38.5-43.01-17.44-27.6-26.66-59.53-26.66-92.37,0-46.26,18.01-89.74,50.72-122.45,32.71-32.71,76.19-50.72,122.45-50.72h31.32M350.93,180.96h-85.53c-114.97,0-208.17,93.2-208.17,208.17,0,81.66,47.03,152.36,115.49,186.46l178.21-394.63h0ZM596.76,211.51l-296.67,656.97H104.57L401.24,211.51h195.52M644.08,180.96h-262.57L57.24,899.04h262.57L644.08,180.96h0ZM613.82,315.66v553.12h-177.91v30.26h208.17V248.66l-30.26,67.01Z"
+                    />
+                  </g>
+                </svg>
               </a>
             </div>
             <nav class="nav">
@@ -575,16 +586,18 @@
           </div>
         </header>
         <!-- Header END -->
+        <canvas id="heroCanvas"></canvas>
         <div class="container">
           <row>
-            <div>
+            <div class="headline">
               <h1>
-                Website in active development<span class="highlighted-text"
+                Nerdy by Nature,<br />Creative by Choice<span
+                  class="highlighted-text"
                   >.</span
                 >
               </h1>
-              <h2>concept 2024</h2>
-              <div id="status-shape">
+              <p>Making Digital Dreams Come True with a Wink</p>
+              <div id="status-shape" class="overlay">
                 <span class="status-light"></span>
                 <p>Not accepting projects</p>
               </div>
@@ -599,40 +612,40 @@
           <div class="divider"></div>
           <div>
             <h1>
-              I am <span id="type"></span
-              ><span class="highlighted-text">.</span>
+              I'm <span id="type"></span><span class="highlighted-text">.</span>
             </h1>
             <p style="font-style: italic; font-size: 20px">
               "Hello, <strong>I'm Radoslav</strong>, a dedicated front-end
-              developer, graphic designer, and video producer based in Slovakia.
-              I focus on creating engaging and functional websites with a keen
-              eye for design and animation. With a passion for innovation and
-              detail, I aim to deliver
+              developer, graphic designer, and video editor based in
+              <strong>Slovakia</strong>. I focus on creating engaging and
+              functional websites with a keen eye for design and animation. With
+              a passion for innovation and detail, I aim to deliver
               <strong>top-notch digital experiences.</strong>"
             </p>
-            <script src="/scripts/typed.js"></script>
             <script>
               document.addEventListener("DOMContentLoaded", function () {
-                var typed = new Typed("#type", {
-                  strings: ["a developer", "a designer", "a producer"],
-                  typeSpeed: 50,
-                  backSpeed: 50,
+                new TypeIt("#type", {
+                  strings: [
+                    "a developer",
+                    "a graphic designer",
+                    "a video editor",
+                  ],
+                  speed: 50,
+                  breakLines: false,
                   loop: true,
-                });
+                  waitUntilVisible: true,
+                }).go();
               });
             </script>
           </div>
         </div>
-        <div class="container center">
-          <img
-            class="about-image"
-            src="/img/general/sections/about/about.webp"
-            alt="Radoslav Bley"
-            loading="lazy"
-            width="500px"
-            height="600px"
-          />
-        </div>
+        <img
+          src="/img/general/sections/about/about.webp"
+          alt="Radoslav Bley"
+          loading="lazy"
+          width="500px"
+          height="600px"
+        />
       </section>
       <!-- section END-->
       <!-- section Services -->
@@ -642,45 +655,45 @@
           <h1>How can i help you<span class="highlighted-text">?</span></h1>
         </div>
         <div class="container center services">
-          <div class="service-box overlay slide-in-blurred-bottom">
+          <div class="service-box slide-in-blurred-bottom">
             <h2 class="header-text">Front-End Development</h2>
             <ul>
-              <li>UI / UX</li>
-              <li>CSS</li>
-              <li>HTML</li>
-              <li>JavaScript</li>
-              <li>JQuery</li>
+              <li>Website and Web Application Development</li>
+              <li>UI/UX Design Implementation</li>
+              <li>Performance Optimization</li>
+              <li>Cross-Browser and Cross-Device Compatibility</li>
             </ul>
-            <div class="number">01</div>
+            <div class="number">/1</div>
           </div>
-          <div class="service-box overlay slide-in-blurred-bottom">
+          <div class="service-box slide-in-blurred-bottom">
             <h2 class="header-text">Back-End Development</h2>
             <ul>
-              <li>Node.JS</li>
-              <li>PHP</li>
-              <li>MySQL</li>
+              <li>Server-Side Development</li>
+              <li>Database Management</li>
+              <li>API Development and Integration</li>
+              <li>Authentication and Security</li>
             </ul>
-            <div class="number">02</div>
+            <div class="number">/2</div>
           </div>
-          <div class="service-box overlay slide-in-blurred-bottom">
+          <div class="service-box slide-in-blurred-bottom">
             <h2 class="header-text">Graphic Design</h2>
             <ul>
-              <li>Logo</li>
-              <li>Identity</li>
-              <li>Banners</li>
-              <li>Printing production</li>
+              <li>Branding and Identity Design</li>
+              <li>Web and Mobile Design</li>
+              <li>Print Design</li>
+              <li>Marketing and Advertising Design</li>
             </ul>
-            <div class="number">03</div>
+            <div class="number">/3</div>
           </div>
-          <div class="service-box overlay slide-in-blurred-bottom">
+          <div class="service-box slide-in-blurred-bottom">
             <h2 class="header-text">Video Production</h2>
             <ul>
-              <li>Cut</li>
-              <li>Color Grading</li>
-              <li>VFX</li>
-              <li>audio</li>
+              <li>Video Editing and Post-Production</li>
+              <li>Motion Graphics and Animation</li>
+              <li>Audio Editing and Sound Design</li>
+              <li>Color Grading and Correction</li>
             </ul>
-            <div class="number">04</div>
+            <div class="number">/4</div>
           </div>
         </div>
       </section>

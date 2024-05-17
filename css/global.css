@@ -35,7 +35,11 @@
   --text-color-footer-1: rgba(245, 248, 253, 1);
   --text-color-footer-2: rgba(245, 248, 253, 0.6);
   --text-color-accent: rgba(237, 28, 36, 1);
-  --box-number-color: rgba(0, 0, 0, 0.3);
+  --box-number-color: rgba(0, 0, 0, 0.05);
+
+  /* Logo */
+  --primary-color: #ed1c24;
+  --secondary-color: #231f20;
 
   /* Overlay */
   --overlay: rgba(0, 0, 0, 0.05);
@@ -51,8 +55,12 @@
   --divider: rgba(10, 10, 10, 1);
   --f-divider: rgba(255, 255, 255, 0.2);
 
-  /* Table */
-  --table-border: rgba(10, 10, 10, 0.1);
+  /* Service Box */
+  --box-bg: radial-gradient(
+    circle at top center,
+    transparent,
+    rgba(10, 10, 10, 0.1)
+  );
 
   /* Social Icons */
   --social-color: rgba(128, 128, 128, 0.5);
@@ -347,6 +355,17 @@ strong {
   font-weight: 500;
 }
 
+.headline h1 {
+  font-size: 28px;
+  font-weight: 600;
+  margin: 0;
+  font-family: "Inter", sans-serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+  font-variation-settings: "slnt" 0;
+  transition: color 0.3s ease;
+}
+
 /*!========================================================================
  * 07. Dividers
  * ======================================================================!*/
@@ -376,19 +395,25 @@ strong {
  * 08. Images
  * ======================================================================!*/
 
+/* Logo */
+#part1 {
+  fill: var(--secondary-color);
+}
+
+#part2 {
+  fill: var(--primary-color);
+}
+
+.inverted {
+  filter: invert(1);
+}
+
 /* General */
 img {
   max-width: 100%;
-  height: auto;
   display: block;
   margin: 0 auto;
   transition: all 0.3s ease;
-}
-
-/* Specific */
-.about-image {
-  position: relative;
-  display: inline;
 }
 
 /*!========================================================================
@@ -523,6 +548,7 @@ img {
 }
 
 .header-container {
+  position: relative;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -539,15 +565,6 @@ img {
   box-shadow: var(--menu-divider) 0px 1px 0px 0px;
   -webkit-backdrop-filter: blur(30px);
   backdrop-filter: blur(30px);
-}
-
-.logo {
-  display: flex;
-}
-
-.logo img {
-  max-width: 100px;
-  display: none;
 }
 
 .nav ul {
@@ -568,15 +585,6 @@ img {
 .nav ul li a {
   text-decoration: none;
   color: var(--text-color);
-}
-
-@media (prefers-color-scheme: light) {
-  .logo img.logo-light {
-    display: block;
-  }
-  .logo img.logo-dark {
-    display: none;
-  }
 }
 
 .subheader {
@@ -611,7 +619,17 @@ img {
     rgba(245, 248, 253, 1) 0%,
     rgba(231, 234, 241, 1) 100%
   );
+  overflow: hidden;
 }
+
+#heroCanvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%; /* Adjust the width as needed */
+  height: 100%; /* Adjust the height as needed */
+}
+
 
 /*!========================================================================
  * 12. Availability status
@@ -627,7 +645,6 @@ img {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  background-color: transparent;
   border: 1px solid rgba(35, 31, 32, 0.2);
   border-radius: 40px;
   padding: 7px 10px 7px 10px;
@@ -688,17 +705,19 @@ img {
   padding: 20px 40px;
   border-radius: 20px;
   height: 400px;
-  border: 1px solid rgba(0, 0, 0, 0.05);
+  border: 1px solid rgba(0, 0, 0, 0.1);
   transition: all 0.3s ease-out;
   text-align: left;
   position: relative;
   z-index: 1;
-  overflow: clip;
+  overflow: hidden;
+  background-image: var(--box-bg);
 }
 
 .service-box h2 {
   margin-bottom: 50px;
   font-size: 26px;
+  font-weight: bold;
 }
 
 .header-text {
@@ -749,13 +768,15 @@ img {
 
 .service-box ul {
   list-style-type: none;
-  padding-left: 20px;
+  padding-left: 10px;
 }
 
 .service-box ul li {
   position: relative;
-  padding-left: 50px;
+  padding-left: 30px;
   margin-bottom: 30px;
+  font-weight: 200;
+  color: var(--text-color-2);
 }
 
 .service-box ul li::before {
@@ -772,8 +793,8 @@ img {
 
 .service-box .number {
   position: absolute;
-  bottom: -.4em;
-  right: -.2em;
+  bottom: -0.4em;
+  right: -0.2em;
   font-size: 10rem;
   font-weight: 900;
   color: var(--box-number-color) !important;
@@ -953,8 +974,6 @@ img {
   border-color: #bb0000;
 }
 
-
-
 /*!========================================================================
  * 15. Clients Section
  * ======================================================================!*/
@@ -1044,7 +1063,7 @@ img {
  * 16. Localization banner
  * ======================================================================!*/
 
- #localization-banner {
+#localization-banner {
   background: var(--bg-color);
   border-bottom: 1px solid #e0e0e0;
   padding: 10px 20px;
@@ -1119,7 +1138,6 @@ img {
 
 /* Media query for mobile devices */
 @media (max-width: 768px) {
-
   #localization-banner p {
     margin-bottom: 10px;
     width: 100%;

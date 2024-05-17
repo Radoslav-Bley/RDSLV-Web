@@ -33,7 +33,11 @@
     --text-color: rgba(245, 248, 253, 1);
     --text-color-2: rgba(245, 248, 253, 0.6);
     --text-color-3: rgba(245, 248, 253, 0.3);
-    --box-number-color: rgba(255, 255, 255, 0.3);
+    --box-number-color: rgba(255, 255, 255, 0.05);
+
+    /* Logo */
+    --primary-color: #ed1c24;
+    --secondary-color: #ffffff;
 
     /* Overlay */
     --overlay: rgba(255, 255, 255, 0.05);
@@ -45,8 +49,12 @@
     /* Divider */
     --divider: rgba(245, 248, 253, 1);
 
-    /* Table */
-    --table-border: rgba(245, 248, 253, 0.1);
+    /* Service Box */
+    --box-bg: radial-gradient(
+      circle at top center,
+      transparent,
+      rgba(245, 248, 253, 0.05)
+    );
   }
 
   /*!========================================================================
@@ -90,7 +98,6 @@
     filter: invert(100%) drop-shadow(0 0 15px rgba(255, 255, 255, 0.2));
   }
 
-  
   .marquee__group .logo {
     filter: invert(100%);
   }
@@ -102,13 +109,6 @@
   /*!========================================================================
    * 10. Header
    * ======================================================================!*/
-
-  .logo img.logo-light {
-    display: none;
-  }
-  .logo img.logo-dark {
-    display: block;
-  }
 
   /*!========================================================================
    * 11. Hero Section
@@ -145,23 +145,6 @@
   }
   .service-box .number {
     color: rgba(245, 248, 253, 0.5);
-  }
-
-  /*!========================================================================
-   * 14. Table
-   * ======================================================================!*/
-
-  thead th {
-    border-bottom: 1px solid var(--table-border);
-  }
-  tr {
-    border-bottom: 1px solid var(--table-border);
-  }
-  .table_no-outer-borders tr {
-    border-bottom: 1px solid var(--table-border);
-  }
-  .table_no-outer-borders td {
-    border: 1px solid var(--table-border);
   }
 
   /*!========================================================================
