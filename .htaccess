@@ -5,6 +5,9 @@ RewriteCond %{HTTP_USER_AGENT} !(Windows\sNT\s5\.[12])
 RewriteCond %{HTTP_HOST} ^(www\.)?rdslv\.sk [NC,OR]
 RewriteCond %{HTTPS} off
 RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME}\.html -f
+RewriteRule ^(.*)$ $1.html [NC,L]
 
 <FilesMatch "\.(jpg|png|css|js|html)$">
 Header set Cache-Control "private, proxy-revalidate, max-age=300"
