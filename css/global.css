@@ -57,10 +57,10 @@
 
   /* Service Box */
   --box-bg: radial-gradient(
-    circle at top center,
-    transparent,
-    rgba(10, 10, 10, 0.1)
-  );
+      circle at bottom right,
+      rgba(10, 10, 10, 0.1),
+      transparent
+    );
 
   /* Social Icons */
   --social-color: rgba(128, 128, 128, 0.5);
@@ -411,6 +411,7 @@ strong {
 /* General */
 img {
   max-width: 100%;
+  height: auto;
   display: block;
   margin: 0 auto;
   transition: all 0.3s ease;
@@ -624,7 +625,7 @@ img {
 
 #heroCanvas {
   position: absolute;
-  top: 0;
+  top: 0px;
   left: 0;
   width: 100%; /* Adjust the width as needed */
   height: 100%; /* Adjust the height as needed */
@@ -705,7 +706,7 @@ img {
   padding: 20px 40px;
   border-radius: 20px;
   height: 400px;
-  border: 1px solid rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(0, 0, 0, .1);
   transition: all 0.3s ease-out;
   text-align: left;
   position: relative;
@@ -776,7 +777,7 @@ img {
   padding-left: 30px;
   margin-bottom: 30px;
   font-weight: 200;
-  color: var(--text-color-2);
+  color: var(--text-color);
 }
 
 .service-box ul li::before {
