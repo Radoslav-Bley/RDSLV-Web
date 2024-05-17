@@ -185,26 +185,9 @@
     align-items: left;
   }
 
-  .footer-section h6 {
-    padding-bottom: 10px;
-  }
-
   .subfooter-section {
     flex-direction: column;
     align-items: center;
-  }
-
-  .footer-section div {
-    margin-bottom: 20px;
-  }
-
-  .subfooter-section div {
-    margin-bottom: 0px;
-  }
-
-  .footer-section ul li,
-  .subfooter-section ul li {
-    margin: 10px 0;
   }
 
   .subfooter-left {

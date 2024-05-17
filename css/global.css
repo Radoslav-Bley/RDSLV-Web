@@ -54,7 +54,7 @@
   --table-border: rgba(10, 10, 10, 0.1);
 
   /* Social Icons */
-  --social-color: rgba(255, 255, 255, 0.3);
+  --social-color: rgba(128, 128, 128, 0.5);
 
   /* Status Light */
   --status-light-red: rgba(237, 28, 36, 1);
@@ -819,13 +819,24 @@ img {
   display: flex;
   justify-content: space-between;
   margin: 20px 0;
+  border-top: 1px solid var(--f-divider);
+  border-bottom: 1px solid var(--f-divider);
+}
+
+
+.footer-section div {
+  margin: 10px 0;
+}
+
+.footer-section div:last-child {
+  margin: 20px 0;
 }
 
 .footer-section h3 {
-  margin-bottom: 10px;
+  margin-bottom: 20px;
   color: var(--text-color-footer-1);
-  font-size: 20px;
-  font-weight: 500;
+  font-size: 18px;
+  font-weight: 400;
 }
 
 .footer-section ul {
@@ -856,19 +867,13 @@ img {
   color: var(--text-color-footer-1);
 }
 
-.footer-divider {
-  border: 1px solid var(--f-divider);
-  width: 100%;
-  margin: 20px 0;
-}
-
 .subfooter-section {
   display: flex;
   justify-content: space-between;
 }
 
 .copyright-text p {
-  color: var(--text-color-3);
+  color: var(--f-divider);
   font-size: 14px;
   font-weight: 400;
 }
