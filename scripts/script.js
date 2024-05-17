@@ -270,15 +270,6 @@ function shiningAnimation() {
     requestAnimationFrame(shiningAnimation);
 }
 
-// Resize canvas on window resize
-window.addEventListener('resize', function () {
-    canvas.width = window.innerWidth;
-    canvas.height = window.innerHeight;
-    ctx.clearRect(0, 0, canvas.width, canvas.height);
-    drawGrid();
-    drawSVG();
-});
-
 // Initialize and animate
 loadSVG().then(() => {
     if (paths.length > 0) {
