@@ -33,6 +33,7 @@
     --text-color: rgba(245, 248, 253, 1);
     --text-color-2: rgba(245, 248, 253, 0.6);
     --text-color-3: rgba(245, 248, 253, 0.3);
+    --box-number-color: rgba(255, 255, 255, 0.3);
 
     /* Overlay */
     --overlay: rgba(255, 255, 255, 0.05);
