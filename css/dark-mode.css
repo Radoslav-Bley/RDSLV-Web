@@ -149,9 +149,6 @@
   .service-box ul li::before {
     background-color: rgba(245, 248, 253, 0.5);
   }
-  .service-box .number {
-    color: rgba(245, 248, 253, 0.5);
-  }
 
   /*!========================================================================
    * 15. Footer

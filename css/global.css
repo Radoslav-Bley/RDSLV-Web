@@ -63,10 +63,10 @@
 
   /* Service Box */
   --box-bg: radial-gradient(
-      circle at bottom right,
-      rgba(10, 10, 10, 0.1),
-      transparent
-    );
+    circle at bottom right,
+    rgba(10, 10, 10, 0.1),
+    transparent
+  );
 
   /* Social Icons */
   --social-color: rgba(128, 128, 128, 0.5);
@@ -89,9 +89,22 @@
 /*!========================================================================
  * 02. Base Styling
  * ======================================================================!*/
- 
+
 * {
   box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-size: 100%;
+  font-family: inherit;
+  font-weight: inherit;
+  line-height: inherit;
+  color: inherit;
+  text-decoration: none;
+  list-style: none;
+  border: none;
+  outline: none;
+  background-color: transparent;
+  transition: all 0.3s ease;
 }
 
 html {
@@ -152,6 +165,10 @@ body {
   text-align: left;
 }
 
+.container row {
+  position: absolute;
+  bottom: 20px;
+}
 .services {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -354,37 +371,27 @@ strong {
   font-weight: 500;
 }
 
-#top {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  z-index: 1;
-}
-
-#bottom {
-  position: relative;
-  height: 100vh;
-  z-index: 1;
-}
 
 .headline {
-  position: absolute;
-  bottom: 0;
-  left: 0;
   display: flex;
-  justify-content: flex-start;
-  align-items: flex-start;
   flex-direction: column;
-  text-align: left;
-  height: auto;
-  z-index: 2;
-  width: 100%;
+  gap: 20px;
 }
 
 .headline h1 {
   font-size: 28px;
   font-weight: 600;
+  margin: 0;
+  font-family: "Inter", sans-serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+  font-variation-settings: "slnt" 0;
+  transition: color 0.3s ease;
+}
+
+.headline p {
+  font-size: 16px;
+  font-weight: 200;
   margin: 0;
   font-family: "Inter", sans-serif;
   font-optical-sizing: auto;
@@ -443,6 +450,7 @@ strong {
 }
 
 /* General */
+
 img {
   max-width: 100%;
   height: auto;
@@ -583,7 +591,6 @@ img {
 }
 
 .header-container {
-  position: relative;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -622,42 +629,23 @@ img {
   color: var(--text-color);
 }
 
-.subheader {
-  display: flex;
-  justify-content: flex-start;
-  align-items: flex-start;
-  flex-direction: column;
-  margin: 80px 0 0 0;
-}
-
-.subheader h1 {
-  font-size: 32px;
-  font-weight: 600;
-  margin: 0;
-}
-
-.subheader p {
-  font-size: 14px;
-  font-weight: 200;
-  font-style: italic;
-  margin: 20px 0;
-}
-
 /*!========================================================================
  * 11. Hero Section
  * ======================================================================!*/
 
 .hero-section {
-  position: relative;
-  width: 100%;
   height: 100vh;
-  overflow: hidden;
-  display: flex;
   background: linear-gradient(
     0deg,
     rgba(245, 248, 253, 1) 0%,
     rgba(231, 234, 241, 1) 100%
   );
+}
+
+.heroanim {
+  height: 100vh;
+  position: relative;
+  overflow: hidden;
 }
 
 .anilogo {
@@ -667,36 +655,38 @@ img {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  opacity: 1;
 }
 
 .anilogo .icon {
   position: absolute;
   width: 600px;
-  top: 40px;
+  top: 50%;
+  transform: translateY(-50%);
 }
 
 .anilogo .icon #b,
 .anilogo .icon #r {
-  stroke-dashoffset: 3000; /* Ensure initial state is set */
+  stroke-dashoffset: 3000; 
   stroke-dasharray: 3000;
 }
 
 .anilogo .icon #b {
-  stroke: var(--secondary-color-2);
-  stroke-width: 3px;
+  stroke: var(--secondary-color);
+  stroke-width: 2px;
 }
 
 .anilogo .icon #b.is-active {
-  animation: iconB 8s linear 1 forwards;
+  animation: iconB 20s linear 1 forwards;
 }
 
 .anilogo .icon #r {
-  stroke: var(--primary-color-2);
-  stroke-width: 3px;
+  stroke: var(--primary-color);
+  stroke-width: 2px;
 }
 
 .anilogo .icon #r.is-active {
-  animation: iconR 8s linear 1 forwards;
+  animation: iconR 20s linear 1 forwards;
 }
 
 @-webkit-keyframes iconR {
@@ -707,13 +697,13 @@ img {
   50% {
     stroke-dashoffset: 0;
   }
-  75% {
+  50% {
     fill: transparent;
-    stroke-width: 3px;
+    stroke-width: 2px;
   }
   to {
     stroke-dashoffset: 0;
-    fill: var(--final-color);
+    fill: var(--primary-color);
     stroke-width: 0px;
   }
 }
@@ -726,13 +716,13 @@ img {
   50% {
     stroke-dashoffset: 0;
   }
-  75% {
+  50% {
     fill: transparent;
-    stroke-width: 3px;
+    stroke-width: 2px;
   }
   to {
     stroke-dashoffset: 0;
-    fill: var(--final-color);
+    fill: var(--secondary-color);
     stroke-width: 0px;
   }
 }
@@ -745,13 +735,13 @@ img {
   50% {
     stroke-dashoffset: 0;
   }
-  75% {
+  50% {
     fill: transparent;
-    stroke-width: 3px;
+    stroke-width: 2px;
   }
   to {
     stroke-dashoffset: 0;
-    fill: var(--final-color);
+    fill: var(--primary-color);
     stroke-width: 0px;
   }
 }
@@ -764,13 +754,13 @@ img {
   50% {
     stroke-dashoffset: 0;
   }
-  75% {
+  50% {
     fill: transparent;
-    stroke-width: 3px;
+    stroke-width: 2px;
   }
   to {
     stroke-dashoffset: 0;
-    fill: var(--final-color);
+    fill: var(--secondary-color);
     stroke-width: 0px;
   }
 }
@@ -790,16 +780,17 @@ img {
 
 @media (max-width: 768px) {
   .anilogo .icon {
-    width: 1050px;
-    top: -110px;
-    left: 20px;
+    width: 950px;
+    left: 0;
   }
 }
 
 @media (max-width: 576px) {
   .anilogo .icon {
-    width: 1100px;
-    top: -100px;
+    width: 950px;
+  }
+  .anilogo .icon #b {
+    display: none;
   }
 }
 
@@ -813,7 +804,8 @@ img {
   overflow: hidden;
 }
 
-.vertical-lines, .horizontal-lines {
+.vertical-lines,
+.horizontal-lines {
   position: absolute;
   top: 0;
   left: 0;
@@ -821,7 +813,8 @@ img {
   height: 100%;
 }
 
-.vertical-lines div, .horizontal-lines div {
+.vertical-lines div,
+.horizontal-lines div {
   position: absolute;
   background-color: var(--grid-color);
   animation: draw 2s ease-out forwards;
@@ -861,16 +854,15 @@ img {
 }
 
 #status-shape {
-  width: auto;
+  width: fit-content;
   display: inline-flex;
   align-items: center;
   justify-content: center;
   border: 1px solid rgba(35, 31, 32, 0.2);
   border-radius: 40px;
   padding: 7px 10px 7px 10px;
-  margin-top: 50px;
-  margin-bottom: 50px;
   z-index: 1;
+  margin: 8px 0;
 }
 
 .status-light {
@@ -933,7 +925,7 @@ img {
   padding: 40px;
   border-radius: 20px;
   height: auto;
-  border: 1px solid rgba(0, 0, 0, .1);
+  border: 1px solid rgba(0, 0, 0, 0.1);
   transition: all 0.3s ease-out;
   text-align: left;
   position: relative;
@@ -947,7 +939,6 @@ img {
   font-size: 26px;
   font-weight: bold;
 }
-
 
 .service-box ul {
   list-style-type: none;
@@ -981,7 +972,7 @@ img {
   right: -0.2em;
   font-size: 10rem;
   font-weight: 900;
-  color: var(--box-number-color) !important;
+  color: var(--box-number-color);
   white-space: nowrap;
   pointer-events: none;
 }
@@ -1031,7 +1022,6 @@ img {
 .footer-text:hover::before {
   width: 100%;
 }
-
 
 /*!========================================================================
  * 14. Footer

@@ -46,7 +46,7 @@
   top: 0;
   left: 0;
   width: 100vw;
-  height: 100vh;
+  height: 100dvh;
   background-color: var(--bg-color);
   opacity: 0;
   visibility: hidden;
@@ -100,10 +100,9 @@
 }
 
 .menu-socials {
-  display: flex;
-  justify-content: flex-start;
-  align-items: center;
-  margin-top: 40px;
+  position: absolute;
+  bottom: 40px;
+  left: 40px;
 }
 
 .menu-socials .rounded-social-buttons .social-button {
