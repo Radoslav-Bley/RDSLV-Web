@@ -40,6 +40,12 @@
   /* Logo */
   --primary-color: #ed1c24;
   --secondary-color: #231f20;
+  --primary-color-2: rgba(237, 28, 36, 0.2);
+  --secondary-color-2: rgba(35, 31, 32, 0.2);
+  --final-color: #e1e4e9;
+
+  /* Grid */
+  --grid-color: rgba(245, 248, 253, 0.6);
 
   /* Overlay */
   --overlay: rgba(0, 0, 0, 0.05);
@@ -120,6 +126,7 @@ body {
   margin: 0 auto;
   padding: 20px;
   transition: all 0.3s ease;
+  z-index: 10;
 }
 
 .container:first-child {
@@ -141,16 +148,13 @@ body {
   text-align: left;
 }
 
-.container row {
+.container row #top {
+  position: absolute;
+  top: 0;
+}
+.container row #bottom {
   position: absolute;
   bottom: 0;
-}
-
-.table-container {
-  margin: 0 auto;
-  padding: 0 20px;
-  margin-bottom: 100px;
-  text-align: center;
 }
 
 .services {
@@ -353,6 +357,16 @@ p {
 
 strong {
   font-weight: 500;
+}
+
+.headline {
+  position: absolute;
+  bottom: 0;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  flex-direction: column;
+  text-align: left;
 }
 
 .headline h1 {
@@ -614,23 +628,168 @@ img {
  * ======================================================================!*/
 
 .hero-section {
+  position: relative;
+  width: 100%;
   height: 100vh;
+  overflow: hidden;
+  display: flex;
   background: linear-gradient(
     0deg,
     rgba(245, 248, 253, 1) 0%,
     rgba(231, 234, 241, 1) 100%
   );
+}
+
+.anilogo {
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.anilogo .icon {
+  position: absolute;
+  width: 600px;
+  top: 40px;
+}
+
+.anilogo .icon #b {
+  stroke: var(--secondary-color-2);
+  stroke-width: 3px;
+  stroke-dashoffset: -3000;
+  stroke-dasharray: 3000;
+}
+
+.anilogo .icon #b.is-active {
+  animation-name: iconB;
+  animation-duration: 8s;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+}
+
+.anilogo .icon #r {
+  stroke: var(--primary-color-2);
+  stroke-width: 3px;
+  stroke-dashoffset: -3000;
+  stroke-dasharray: 3000;
+}
+
+.anilogo .icon #r.is-active {
+  animation-name: iconR;
+  animation-duration: 8s;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+}
+
+@keyframes iconR {
+  50% {
+    stroke-dashoffset: 0;
+    fill: transparent;
+  }
+  75% {
+    fill: transparent;
+    stroke-width: 3px;
+  }
+  100% {
+    stroke-dashoffset: 0;
+    fill: var(--final-color);
+    stroke-width: 0px;
+  }
+}
+
+@keyframes iconB {
+  50% {
+    stroke-dashoffset: 0;
+    fill: transparent;
+  }
+  75% {
+    fill: transparent;
+    stroke-width: 3px;
+  }
+  100% {
+    stroke-dashoffset: 0;
+    fill: var(--final-color);
+    stroke-width: 0px;
+  }
+}
+
+/* Responsive Styles */
+@media (max-width: 1200px) {
+  .anilogo .icon {
+    width: 600px;
+  }
+}
+
+@media (max-width: 992px) {
+  .anilogo .icon {
+    width: 600px;
+  }
+}
+
+@media (max-width: 768px) {
+  .anilogo .icon {
+    width: 1050px;
+    top: -110px;
+    left: 20px;
+  }
+}
+
+@media (max-width: 576px) {
+  .anilogo .icon {
+    width: 1100px;
+    top: -100px;
+  }
+}
+
+.grid-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
   overflow: hidden;
 }
 
-#heroCanvas {
+.vertical-lines, .horizontal-lines {
   position: absolute;
-  top: 0px;
+  top: 0;
   left: 0;
-  width: 100%; /* Adjust the width as needed */
-  height: 100%; /* Adjust the height as needed */
+  width: 100%;
+  height: 100%;
 }
 
+.vertical-lines div, .horizontal-lines div {
+  position: absolute;
+  background-color: var(--grid-color);
+  animation: draw 2s ease-out forwards;
+}
+
+.vertical-lines div {
+  width: 2px;
+  height: 0;
+  animation-name: drawVertical;
+}
+
+.horizontal-lines div {
+  width: 0;
+  height: 2px;
+  animation-name: drawHorizontal;
+}
+
+@keyframes drawVertical {
+  to {
+    height: 100%;
+  }
+}
+
+@keyframes drawHorizontal {
+  to {
+    width: 100%;
+  }
+}
 
 /*!========================================================================
  * 12. Availability status
@@ -658,11 +817,19 @@ img {
   width: 8px;
   height: 8px;
   margin-left: 10px;
-  background-color: var(--accent-color);
   border-radius: 10px;
-  box-shadow: 0 0 10px var(--accent-color);
   animation: flicker 1s linear infinite;
   z-index: 1;
+}
+
+.not-available {
+  background-color: var(--status-light-red);
+  box-shadow: 0 0 10px var(--status-border-red);
+}
+
+.available {
+  background-color: var(--status-light-green);
+  box-shadow: 0 0 10px var(--status-border-green);
 }
 
 @keyframes flicker {

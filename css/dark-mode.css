@@ -38,6 +38,12 @@
     /* Logo */
     --primary-color: #ed1c24;
     --secondary-color: #ffffff;
+    --primary-color-2: rgba(237, 28, 36, 0.2);
+    --secondary-color-2: rgba(255, 255, 255, 0.2);
+    --final-color: #202020;
+
+    /* Grid */
+    --grid-color: rgba(10, 10, 10, 0.3);
 
     /* Overlay */
     --overlay: rgba(255, 255, 255, 0.05);
