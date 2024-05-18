@@ -780,17 +780,15 @@ img {
 
 @media (max-width: 768px) {
   .anilogo .icon {
-    width: 950px;
-    left: 0;
+    width: 400px;
+    top: 40%;
+    transform: translateY(-50%);
   }
 }
 
 @media (max-width: 576px) {
   .anilogo .icon {
-    width: 950px;
-  }
-  .anilogo .icon #b {
-    display: none;
+    width: 300px;
   }
 }
 
