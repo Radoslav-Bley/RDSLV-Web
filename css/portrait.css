@@ -176,7 +176,7 @@
     text-align: left;
   }
 
-  .footer-section {
+  .footer-middle {
     flex-direction: column;
     align-items: left;
   }
@@ -186,11 +186,11 @@
     align-items: center;
   }
 
-  .subfooter-left {
+  .copyright-text {
     order: 2;
   }
 
-  .subfooter-right {
+  .social-buttons {
     order: 1;
   }
 

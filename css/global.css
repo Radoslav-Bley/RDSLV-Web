@@ -89,6 +89,10 @@
 /*!========================================================================
  * 02. Base Styling
  * ======================================================================!*/
+ 
+* {
+  box-sizing: border-box;
+}
 
 html {
   font-size: 18px;
@@ -121,12 +125,11 @@ body {
 .container {
   display: flex;
   flex-direction: column;
-  width: 90%;
+  padding: 20px;
+  width: 100%;
   max-width: 1200px;
   margin: 0 auto;
-  padding: 20px;
   transition: all 0.3s ease;
-  z-index: 10;
 }
 
 .container:first-child {
@@ -144,17 +147,9 @@ body {
 }
 
 .container.left {
+  align-items: flex-start;
   justify-content: flex-start;
   text-align: left;
-}
-
-.container row #top {
-  position: absolute;
-  top: 0;
-}
-.container row #bottom {
-  position: absolute;
-  bottom: 0;
 }
 
 .services {
@@ -359,14 +354,32 @@ strong {
   font-weight: 500;
 }
 
+#top {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1;
+}
+
+#bottom {
+  position: relative;
+  height: 100vh;
+  z-index: 1;
+}
+
 .headline {
   position: absolute;
   bottom: 0;
+  left: 0;
   display: flex;
   justify-content: flex-start;
   align-items: flex-start;
   flex-direction: column;
   text-align: left;
+  height: auto;
+  z-index: 2;
+  width: 100%;
 }
 
 .headline h1 {
@@ -410,6 +423,13 @@ strong {
  * ======================================================================!*/
 
 /* Logo */
+
+.logo {
+  width: 50px;
+  height: auto;
+  display: block;
+}
+
 #part1 {
   fill: var(--secondary-color);
 }
@@ -567,9 +587,9 @@ img {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  width: 90vw;
+  width: 100%;
   max-width: 1200px;
-  height: 30px;
+  height: 70px;
   margin: 0 auto;
   padding: 20px 20px;
   font-weight: 500;
@@ -655,44 +675,81 @@ img {
   top: 40px;
 }
 
-.anilogo .icon #b {
-  stroke: var(--secondary-color-2);
-  stroke-width: 3px;
-  stroke-dashoffset: -3000;
+.anilogo .icon #b,
+.anilogo .icon #r {
+  stroke-dashoffset: 3000; /* Ensure initial state is set */
   stroke-dasharray: 3000;
 }
 
+.anilogo .icon #b {
+  stroke: var(--secondary-color-2);
+  stroke-width: 3px;
+}
+
 .anilogo .icon #b.is-active {
-  animation-name: iconB;
-  animation-duration: 8s;
-  animation-iteration-count: 1;
-  animation-fill-mode: forwards;
+  animation: iconB 8s linear 1 forwards;
 }
 
 .anilogo .icon #r {
   stroke: var(--primary-color-2);
   stroke-width: 3px;
-  stroke-dashoffset: -3000;
-  stroke-dasharray: 3000;
 }
 
 .anilogo .icon #r.is-active {
-  animation-name: iconR;
-  animation-duration: 8s;
-  animation-iteration-count: 1;
-  animation-fill-mode: forwards;
+  animation: iconR 8s linear 1 forwards;
 }
 
-@keyframes iconR {
+@-webkit-keyframes iconR {
+  from {
+    stroke-dashoffset: 3000;
+    fill: transparent;
+  }
   50% {
     stroke-dashoffset: 0;
-    fill: transparent;
   }
   75% {
     fill: transparent;
     stroke-width: 3px;
   }
-  100% {
+  to {
+    stroke-dashoffset: 0;
+    fill: var(--final-color);
+    stroke-width: 0px;
+  }
+}
+
+@-webkit-keyframes iconB {
+  from {
+    stroke-dashoffset: 3000;
+    fill: transparent;
+  }
+  50% {
+    stroke-dashoffset: 0;
+  }
+  75% {
+    fill: transparent;
+    stroke-width: 3px;
+  }
+  to {
+    stroke-dashoffset: 0;
+    fill: var(--final-color);
+    stroke-width: 0px;
+  }
+}
+
+@keyframes iconR {
+  from {
+    stroke-dashoffset: 3000;
+    fill: transparent;
+  }
+  50% {
+    stroke-dashoffset: 0;
+  }
+  75% {
+    fill: transparent;
+    stroke-width: 3px;
+  }
+  to {
     stroke-dashoffset: 0;
     fill: var(--final-color);
     stroke-width: 0px;
@@ -700,15 +757,18 @@ img {
 }
 
 @keyframes iconB {
+  from {
+    stroke-dashoffset: 3000;
+    fill: transparent;
+  }
   50% {
     stroke-dashoffset: 0;
-    fill: transparent;
   }
   75% {
     fill: transparent;
     stroke-width: 3px;
   }
-  100% {
+  to {
     stroke-dashoffset: 0;
     fill: var(--final-color);
     stroke-width: 0px;
@@ -870,9 +930,9 @@ img {
  * ======================================================================!*/
 
 .service-box {
-  padding: 20px 40px;
+  padding: 40px;
   border-radius: 20px;
-  height: 400px;
+  height: auto;
   border: 1px solid rgba(0, 0, 0, .1);
   transition: all 0.3s ease-out;
   text-align: left;
@@ -883,9 +943,47 @@ img {
 }
 
 .service-box h2 {
-  margin-bottom: 50px;
+  margin: 0;
   font-size: 26px;
   font-weight: bold;
+}
+
+
+.service-box ul {
+  list-style-type: none;
+  padding: 10px;
+  margin-top: 30px;
+}
+
+.service-box ul li {
+  position: relative;
+  padding-left: 30px;
+  margin-bottom: 30px;
+  font-weight: 200;
+  color: var(--text-color);
+}
+
+.service-box ul li::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: rgba(26, 29, 36, 0.5);
+}
+
+.service-box .number {
+  position: absolute;
+  bottom: -0.4em;
+  right: -0.2em;
+  font-size: 10rem;
+  font-weight: 900;
+  color: var(--box-number-color) !important;
+  white-space: nowrap;
+  pointer-events: none;
 }
 
 .header-text {
@@ -934,41 +1032,6 @@ img {
   width: 100%;
 }
 
-.service-box ul {
-  list-style-type: none;
-  padding-left: 10px;
-}
-
-.service-box ul li {
-  position: relative;
-  padding-left: 30px;
-  margin-bottom: 30px;
-  font-weight: 200;
-  color: var(--text-color);
-}
-
-.service-box ul li::before {
-  content: "";
-  position: absolute;
-  top: 50%;
-  left: 0;
-  transform: translateY(-50%);
-  width: 8px;
-  height: 8px;
-  border-radius: 50%;
-  background-color: rgba(26, 29, 36, 0.5);
-}
-
-.service-box .number {
-  position: absolute;
-  bottom: -0.4em;
-  right: -0.2em;
-  font-size: 10rem;
-  font-weight: 900;
-  color: var(--box-number-color) !important;
-  white-space: nowrap;
-  pointer-events: none;
-}
 
 /*!========================================================================
  * 14. Footer
@@ -976,7 +1039,6 @@ img {
 
 .footer {
   background-color: black;
-  padding: 20px;
 }
 
 .footer-container {
@@ -987,38 +1049,40 @@ img {
   padding: 20px;
 }
 
-.footer-top,
-.footer-top2 {
+.footer-top {
   display: flex;
-  justify-content: space-between;
+  gap: 40px;
+  margin: 40px 0;
+  flex-direction: column;
 }
 
-.footer-top h2,
-.footer-top2 h2 {
+.footer-top h2 {
   color: var(--text-color-footer-1);
   font-size: 32px;
   font-weight: 200;
+  margin: 0;
 }
 
-.footer-top2 h2 a {
+.footer-top h2 a {
   color: var(--text-color-footer-2);
   text-decoration: none;
 }
 
-.footer-top2 h2 a:hover {
+.footer-top h2 a:hover {
   color: var(--text-color-footer-1);
 }
 
-.footer-section {
+.footer-middle {
   display: flex;
   justify-content: space-between;
-  margin: 30px 0;
-  padding: 20px 0;
+  padding: 40px 0;
+  gap: 20px;
   border-top: 1px solid var(--f-divider);
   border-bottom: 1px solid var(--f-divider);
 }
 
 .footer-section h3 {
+  margin-top: 0;
   margin-bottom: 20px;
   color: var(--text-color-footer-1);
   font-size: 18px;
@@ -1043,6 +1107,12 @@ img {
   color: var(--text-color-footer-2);
 }
 
+.footer-section li:last-child,
+.footer-section p:last-child,
+.footer-section a:last-child {
+  margin-bottom: 0;
+}
+
 .footer-section li:active,
 .footer-section p:active,
 .footer-section a:active,
@@ -1056,6 +1126,8 @@ img {
 .subfooter-section {
   display: flex;
   justify-content: space-between;
+  padding: 20px 0;
+  gap: 20px;
 }
 
 .copyright-text p {
@@ -1079,9 +1151,8 @@ img {
   text-decoration: none;
   text-align: center;
   fill: var(--social-color);
-  font-size: 18px;
   font-weight: normal;
-  line-height: 2.3em;
+  line-height: 2.4em;
   border-radius: 1.6875rem;
   transition: all 0.5s ease;
 }
