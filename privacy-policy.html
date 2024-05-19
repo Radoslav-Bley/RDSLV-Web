@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
     <title>Privacy Policy - RDSLV</title>
     <link
       rel="preload"
@@ -77,7 +77,7 @@
       name="msapplication-config"
       content="/img/assets/favicons/browserconfig.xml"
     />
-    <meta property="og:title" content="RDSLV - Concept 2024" />
+    <meta property="og:title" content="Privacy Policy - RDSLV" />
     <meta
       property="og:description"
       content="Concept 2024 - Author and Developer: Radoslav Bley. Web and Graphic Design, Video Production Services."
@@ -89,9 +89,9 @@
     <meta property="og:url" content="https://rdslv.sk/privacy-policy" />
     <meta property="og:type" content="website" />
     <meta property="og:locale" content="en_US" />
-    <meta property="og:site_name" content="RDSLV" />
+    <meta property="og:site_name" content="Privacy Policy - RDSLV" />
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="RDSLV - Concept 2024" />
+    <meta name="twitter:title" content="Privacy Policy - RDSLV" />
     <meta
       name="twitter:description"
       content="Concept 2024 - Author and Developer: Radoslav Bley. Web and Graphic Design, Video Production Services."
@@ -118,18 +118,16 @@
       }
     </script>
     <link rel="stylesheet" href="/css/global.css" />
-    <link rel="stylesheet" href="/css/portrait.css" />
+    <link rel="stylesheet" href="/css/responsive.css" />
     <link
       rel="stylesheet"
       href="/css/dark-mode.css"
       media="(prefers-color-scheme: dark)"
     />
-    <link rel="stylesheet" href="/css/menu.css" />
     <script src="/scripts/script.js" defer></script>
-    <script src="/scripts/clients.js"></script>
-    <script src="/scripts/menu.js" defer></script>
-    <script src="/scripts/jquery-3.7.1.min.js"></script>
-    <script>
+    <!--  <script src="/scripts/jquery-3.7.1.min.js" async="false"></script> -->
+    <script src="/scripts/typeit.umd.js" defer></script>
+    <!-- <script>
       $(document).ready(function () {
         // Define the available localizations
         const availableLocalizations = [
@@ -148,7 +146,7 @@
           "sk",
           "zh",
         ];
-    
+
         // Translation dictionary with local country names
         const translations = {
           en: {
@@ -172,7 +170,8 @@
             },
           },
           sk: {
-            message: "Vidíme, že sa nachádzate na Slovensku. Chcete zmeniť jazyk?",
+            message:
+              "Vidíme, že sa nachádzate na Slovensku. Chcete zmeniť jazyk?",
             confirm: "Potvrdiť",
             countries: {
               sk: "Slovensko",
@@ -191,7 +190,8 @@
             },
           },
           cs: {
-            message: "Vidíme, že se nacházíte v {country}. Chcete změnit jazyk?",
+            message:
+              "Vidíme, že se nacházíte v {country}. Chcete změnit jazyk?",
             confirm: "Potvrdit",
             countries: {
               sk: "Slovensko",
@@ -232,7 +232,7 @@
           },
           // Continue for all languages...
         };
-    
+
         // Function to set a cookie
         function setCookie(name, value, days) {
           var expires = "";
@@ -243,7 +243,7 @@
           }
           document.cookie = name + "=" + (value || "") + expires + "; path=/";
         }
-    
+
         // Function to get a cookie
         function getCookie(name) {
           var nameEQ = name + "=";
@@ -251,32 +251,33 @@
           for (var i = 0; i < ca.length; i++) {
             var c = ca[i];
             while (c.charAt(0) == " ") c = c.substring(1, c.length);
-            if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length, c.length);
+            if (c.indexOf(nameEQ) == 0)
+              return c.substring(nameEQ.length, c.length);
           }
           return null;
         }
-    
+
         // Get the current URL path
         const currentPath = window.location.pathname.split("/")[1];
-    
+
         // Check if the current path is in the list of available localizations
         if (availableLocalizations.includes(currentPath)) {
           return; // Do not show the banner if the current path is a localization
         }
-    
+
         // Check if the language selection cookie exists
         const languageCookie = getCookie("userLanguage");
         if (languageCookie) {
           return; // Do not show the banner if the user has already selected a language
         }
-    
+
         // Using a public API to get the user's location
         $.get(
           "https://ipapi.co/json/",
           function (response) {
             var country = response.country_name;
             var countryCode = response.country_code.toLowerCase();
-    
+
             // Show the localization banner
             showLocalizationBanner(country, countryCode);
           },
@@ -284,7 +285,7 @@
         ).fail(function () {
           console.error("Failed to get location data");
         });
-    
+
         function showLocalizationBanner(country, countryCode) {
           var countryOptions = `
         <option value="${countryCode}">${country}</option>
@@ -349,15 +350,18 @@
           <option value="zh">中国</option>
           <option value="zh">台灣</option>
         `;
-    
+
           // Get the translated message and confirm text
-          var selectedLanguage = countryCode in translations ? countryCode : "en";
-          var translatedMessage = translations[selectedLanguage].message.replace(
+          var selectedLanguage =
+            countryCode in translations ? countryCode : "en";
+          var translatedMessage = translations[
+            selectedLanguage
+          ].message.replace(
             "{country}",
             translations[selectedLanguage].countries[countryCode]
           );
           var translatedConfirm = translations[selectedLanguage].confirm;
-    
+
           var banner = `
           <div id="localization-banner">
             <button id="close-banner" class="close-button">&times;</button>
@@ -371,28 +375,30 @@
           </div>
         `;
           $("body").prepend(banner);
-    
+
           // Add margin to the body to move content down
           $("body").css("margin-top", $("#localization-banner").outerHeight());
-    
+
           $("#close-banner").on("click", function () {
             $("#localization-banner").remove();
             // Remove the margin from the body when the banner is closed
             $("body").css("margin-top", 0);
           });
-    
+
           $("#confirm-btn").on("click", function () {
             var selectedCountry = $("#country-select").val();
             setCookie("userLanguage", selectedCountry, 1); // Set the cookie for 1 day
             var currentPath = window.location.pathname; // Get the current path
             window.location.href = `/${selectedCountry}${currentPath}`; // Redirect to the same path with the country code
           });
-    
+
           $("#country-select").on("change", function () {
             var selectedCountry = $("#country-select").val();
             var selectedLanguage =
               selectedCountry in translations ? selectedCountry : "en";
-            var translatedMessage = translations[selectedLanguage].message.replace(
+            var translatedMessage = translations[
+              selectedLanguage
+            ].message.replace(
               "{country}",
               $("#country-select option:selected").text()
             );
@@ -402,8 +408,7 @@
           });
         }
       });
-    </script>
-    
+    </script> -->
   </head>
   <body>
     <main>
@@ -413,21 +418,24 @@
         <header class="header">
           <div class="header-container">
             <div class="logo">
-              <a href="https://rdslv.sk/">
-                <img
-                  src="/img/assets/logo/Monogram Color B.svg"
-                  alt="Logo"
-                  class="logo-light"
-                  width="50px"
-                  height="50px"
-                />
-                <img
-                  src="/img/assets/logo/Monogram Color W.svg"
-                  alt="Logo"
-                  class="logo-dark"
-                  width="50px"
-                  height="50px"
-                />
+              <a href="https://rdslv.sk/" title="Homepage">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 1080 1080"
+                  width="50"
+                  height="50"
+                >
+                  <g transform="translate(0, 50)">
+                    <path
+                      id="part1"
+                      d="M435.92,841.12h150.24v-464.2l-150.24,332.71v131.48ZM1022.76,653.94c0,134.62-113.26,243.75-252.97,243.75h-98.04V183.05h98.04c110.55,0,200.18,86.36,200.18,192.87,0,36.23-10.37,70.13-28.41,99.09,49.94,44.51,81.2,108.2,81.2,178.93Z"
+                    />
+                    <path
+                      id="part2"
+                      d="M296.73,215.96l-139.34,308.55c-15.06-12.03-28.09-26.55-38.5-43.01-17.44-27.6-26.66-59.53-26.66-92.37,0-46.26,18.01-89.74,50.72-122.45,32.71-32.71,76.19-50.72,122.45-50.72h31.32M350.93,180.96h-85.53c-114.97,0-208.17,93.2-208.17,208.17,0,81.66,47.03,152.36,115.49,186.46l178.21-394.63h0ZM596.76,211.51l-296.67,656.97H104.57L401.24,211.51h195.52M644.08,180.96h-262.57L57.24,899.04h262.57L644.08,180.96h0ZM613.82,315.66v553.12h-177.91v30.26h208.17V248.66l-30.26,67.01Z"
+                    />
+                  </g>
+                </svg>
               </a>
             </div>
             <nav class="nav">
@@ -450,13 +458,13 @@
                     <li>
                       <div class="menu-item">
                         <span class="subheading">01 / Main page</span>
-                        <a href="#about" class="header-text">Home</a>
+                        <a href="#about">Home</a>
                       </div>
                     </li>
                     <li>
                       <div class="menu-item">
                         <span class="subheading">02 / About me</span>
-                        <a href="#about" class="header-text">About</a>
+                        <a href="#about">About</a>
                       </div>
                     </li>
                     <li>
@@ -464,7 +472,7 @@
                         <span class="subheading"
                           >03 / My latest work and Reel</span
                         >
-                        <a href="#work" class="header-text">Work</a>
+                        <a href="#work">Work</a>
                       </div>
                     </li>
                     <li>
@@ -472,92 +480,90 @@
                         <span class="subheading"
                           >04 / Interested in my work? Let me know!</span
                         >
-                        <a href="#contact" class="header-text">Contact</a>
+                        <a href="#contact">Contact</a>
                       </div>
                     </li>
                   </ul>
                 </nav>
-                <div class="menu-socials">
-                  <div class="subfooter-right">
-                    <div class="social-buttons">
-                      <a
-                        rel="noopener"
-                        class="social-button github"
-                        href="https://github.com/radblesk"
-                        aria-label="RadBlesk's GitHub"
-                        target="_blank"
-                      >
-                        <!-- GitHub SVG -->
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          width="16"
-                          height="16"
-                          viewBox="0 0 16 16"
-                        >
-                          <path
-                            d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27s1.36.09 2 .27c1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8"
-                          />
-                        </svg>
-                      </a>
-                      <a
-                        rel="noopener"
-                        class="social-button behance"
-                        href="https://www.behance.net/radoslavbley"
-                        aria-label="Hire me on BeHance"
-                        target="_blank"
-                      >
-                        <!-- Behance SVG -->
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          width="16"
-                          height="16"
-                          viewBox="0 0 16 16"
-                        >
-                          <path
-                            d="M4.654 3c.461 0 .887.035 1.278.14.39.07.711.216.996.391s.497.426.641.747c.14.32.216.711.216 1.137 0 .496-.106.922-.356 1.242-.215.32-.566.606-.997.817.606.176 1.067.496 1.348.922s.461.957.461 1.563c0 .496-.105.922-.285 1.278a2.3 2.3 0 0 1-.782.887c-.32.215-.711.39-1.137.496a5.3 5.3 0 0 1-1.278.176L0 12.803V3zm-.285 3.978c.39 0 .71-.105.957-.285.246-.18.355-.497.355-.887 0-.216-.035-.426-.105-.567a1 1 0 0 0-.32-.355 1.8 1.8 0 0 0-.461-.176c-.176-.035-.356-.035-.567-.035H2.17v2.31c0-.005 2.2-.005 2.2-.005zm.105 4.193c.215 0 .426-.035.606-.07.176-.035.356-.106.496-.216s.25-.215.356-.39c.07-.176.14-.391.14-.641 0-.496-.14-.852-.426-1.102-.285-.215-.676-.32-1.137-.32H2.17v2.734h2.305zm6.858-.035q.428.427 1.278.426c.39 0 .746-.106 1.032-.286q.426-.32.53-.64h1.74c-.286.851-.712 1.457-1.278 1.848-.566.355-1.243.566-2.06.566a4.1 4.1 0 0 1-1.527-.285 2.8 2.8 0 0 1-1.137-.782 2.85 2.85 0 0 1-.712-1.172c-.175-.461-.25-.957-.25-1.528 0-.531.07-1.032.25-1.493.18-.46.426-.852.747-1.207.32-.32.711-.606 1.137-.782a4 4 0 0 1 1.493-.285c.606 0 1.137.105 1.598.355.46.25.817.532 1.102.958.285.39.496.851.641 1.348.07.496.105.996.07 1.563h-5.15c0 .58.21 1.11.496 1.396m2.24-3.732c-.25-.25-.642-.391-1.103-.391-.32 0-.566.07-.781.176s-.356.25-.496.39a.96.96 0 0 0-.25.497c-.036.175-.07.32-.07.46h3.196c-.07-.526-.25-.882-.497-1.132zm-3.127-3.728h3.978v.957h-3.978z"
-                          />
-                        </svg>
-                      </a>
-                      <a
-                        rel="noopener"
-                        class="social-button twitter"
-                        href="https://twitter.com/radblesk"
-                        aria-label="Radoslav on Twitter/X"
-                        target="_blank"
-                      >
-                        <!-- Twitter SVG -->
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          width="16"
-                          height="16"
-                          viewBox="0 0 16 16"
-                        >
-                          <path
-                            d="M12.6.75h2.454l-5.36 6.142L16 15.25h-4.937l-3.867-5.07-4.425 5.07H.316l5.733-6.57L0 .75h5.063l3.495 4.633L12.601.75Zm-.86 13.028h1.36L4.323 2.145H2.865z"
-                          />
-                        </svg>
-                      </a>
-                      <a
-                        rel="noopener"
-                        class="social-button youtube"
-                        href="https://www.youtube.com/channel/UC2NdG4m3JBUSyFkHP1DGkPQ"
-                        aria-label="Radoslav on YouTube"
-                        target="_blank"
-                      >
-                        <!-- YouTube SVG -->
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          width="16"
-                          height="16"
-                          viewBox="0 0 16 16"
-                        >
-                          <path
-                            d="M8.051 1.999h.089c.822.003 4.987.033 6.11.335a2.01 2.01 0 0 1 1.415 1.42c.101.38.172.883.22 1.402l.01.104.022.26.008.104c.065.914.073 1.77.074 1.957v.075c-.001.194-.01 1.108-.082 2.06l-.008.105-.009.104c-.05.572-.124 1.14-.235 1.558a2.01 2.01 0 0 1-1.415 1.42c-1.16.312-5.569.334-6.18.335h-.142c-.309 0-1.587-.006-2.927-.052l-.17-.006-.087-.004-.171-.007-.171-.007c-1.11-.049-2.167-.128-2.654-.26a2.01 2.01 0 0 1-1.415-1.419c-.111-.417-.185-.986-.235-1.558L.09 9.82l-.008-.104A31 31 0 0 1 0 7.68v-.123c.002-.215.01-.958.064-1.778l.007-.103.003-.052.008-.104.022-.26.01-.104c.048-.519.119-1.023.22-1.402a2.01 2.01 0 0 1 1.415-1.42c.487-.13 1.544-.21 2.654-.26l.17-.007.172-.006.086-.003.171-.007A100 100 0 0 1 7.858 2zM6.4 5.209v4.818l4.157-2.408z"
-                          />
-                        </svg>
-                      </a>
-                    </div>
-                  </div>
+              </div>
+              <div class="menu-socials">
+                <div class="social-buttons">
+                  <a
+                    rel="noopener"
+                    class="social-button github"
+                    href="https://github.com/radblesk"
+                    aria-label="RadBlesk's GitHub"
+                    target="_blank"
+                  >
+                    <!-- GitHub SVG -->
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="16"
+                      height="16"
+                      viewBox="0 0 16 16"
+                    >
+                      <path
+                        d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27s1.36.09 2 .27c1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8"
+                      />
+                    </svg>
+                  </a>
+                  <a
+                    rel="noopener"
+                    class="social-button behance"
+                    href="https://www.behance.net/radoslavbley"
+                    aria-label="Hire me on BeHance"
+                    target="_blank"
+                  >
+                    <!-- Behance SVG -->
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="16"
+                      height="16"
+                      viewBox="0 0 16 16"
+                    >
+                      <path
+                        d="M4.654 3c.461 0 .887.035 1.278.14.39.07.711.216.996.391s.497.426.641.747c.14.32.216.711.216 1.137 0 .496-.106.922-.356 1.242-.215.32-.566.606-.997.817.606.176 1.067.496 1.348.922s.461.957.461 1.563c0 .496-.105.922-.285 1.278a2.3 2.3 0 0 1-.782.887c-.32.215-.711.39-1.137.496a5.3 5.3 0 0 1-1.278.176L0 12.803V3zm-.285 3.978c.39 0 .71-.105.957-.285.246-.18.355-.497.355-.887 0-.216-.035-.426-.105-.567a1 1 0 0 0-.32-.355 1.8 1.8 0 0 0-.461-.176c-.176-.035-.356-.035-.567-.035H2.17v2.31c0-.005 2.2-.005 2.2-.005zm.105 4.193c.215 0 .426-.035.606-.07.176-.035.356-.106.496-.216s.25-.215.356-.39c.07-.176.14-.391.14-.641 0-.496-.14-.852-.426-1.102-.285-.215-.676-.32-1.137-.32H2.17v2.734h2.305zm6.858-.035q.428.427 1.278.426c.39 0 .746-.106 1.032-.286q.426-.32.53-.64h1.74c-.286.851-.712 1.457-1.278 1.848-.566.355-1.243.566-2.06.566a4.1 4.1 0 0 1-1.527-.285 2.8 2.8 0 0 1-1.137-.782 2.85 2.85 0 0 1-.712-1.172c-.175-.461-.25-.957-.25-1.528 0-.531.07-1.032.25-1.493.18-.46.426-.852.747-1.207.32-.32.711-.606 1.137-.782a4 4 0 0 1 1.493-.285c.606 0 1.137.105 1.598.355.46.25.817.532 1.102.958.285.39.496.851.641 1.348.07.496.105.996.07 1.563h-5.15c0 .58.21 1.11.496 1.396m2.24-3.732c-.25-.25-.642-.391-1.103-.391-.32 0-.566.07-.781.176s-.356.25-.496.39a.96.96 0 0 0-.25.497c-.036.175-.07.32-.07.46h3.196c-.07-.526-.25-.882-.497-1.132zm-3.127-3.728h3.978v.957h-3.978z"
+                      />
+                    </svg>
+                  </a>
+                  <a
+                    rel="noopener"
+                    class="social-button twitter"
+                    href="https://twitter.com/radblesk"
+                    aria-label="Radoslav on Twitter/X"
+                    target="_blank"
+                  >
+                    <!-- Twitter SVG -->
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="16"
+                      height="16"
+                      viewBox="0 0 16 16"
+                    >
+                      <path
+                        d="M12.6.75h2.454l-5.36 6.142L16 15.25h-4.937l-3.867-5.07-4.425 5.07H.316l5.733-6.57L0 .75h5.063l3.495 4.633L12.601.75Zm-.86 13.028h1.36L4.323 2.145H2.865z"
+                      />
+                    </svg>
+                  </a>
+                  <a
+                    rel="noopener"
+                    class="social-button youtube"
+                    href="https://www.youtube.com/channel/UC2NdG4m3JBUSyFkHP1DGkPQ"
+                    aria-label="Radoslav on YouTube"
+                    target="_blank"
+                  >
+                    <!-- YouTube SVG -->
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="16"
+                      height="16"
+                      viewBox="0 0 16 16"
+                    >
+                      <path
+                        d="M8.051 1.999h.089c.822.003 4.987.033 6.11.335a2.01 2.01 0 0 1 1.415 1.42c.101.38.172.883.22 1.402l.01.104.022.26.008.104c.065.914.073 1.77.074 1.957v.075c-.001.194-.01 1.108-.082 2.06l-.008.105-.009.104c-.05.572-.124 1.14-.235 1.558a2.01 2.01 0 0 1-1.415 1.42c-1.16.312-5.569.334-6.18.335h-.142c-.309 0-1.587-.006-2.927-.052l-.17-.006-.087-.004-.171-.007-.171-.007c-1.11-.049-2.167-.128-2.654-.26a2.01 2.01 0 0 1-1.415-1.419c-.111-.417-.185-.986-.235-1.558L.09 9.82l-.008-.104A31 31 0 0 1 0 7.68v-.123c.002-.215.01-.958.064-1.778l.007-.103.003-.052.008-.104.022-.26.01-.104c.048-.519.119-1.023.22-1.402a2.01 2.01 0 0 1 1.415-1.42c.487-.13 1.544-.21 2.654-.26l.17-.007.172-.006.086-.003.171-.007A100 100 0 0 1 7.858 2zM6.4 5.209v4.818l4.157-2.408z"
+                      />
+                    </svg>
+                  </a>
                 </div>
               </div>
             </div>
@@ -569,6 +575,7 @@
           <div class="subheader">
             <h1>Privacy Policy<span class="highlighted-text">.</span></h1>
             <p><strong>Effective Date:</strong> 16/05/2024</p>
+            <p class="breadcrumb">/ <a href="https://rdslv.sk/">Homepage</a> / <a href="https://rdslv.sk/privacy-policy">Privacy Policy</a></p>
           </div>
         </div>
       </section>
@@ -577,206 +584,210 @@
       <section id="policy">
         <div class="container left">
           <div class="divider"></div>
+          <div class="content">
+            <p>
+              Welcome to Radoslav’s website,
+              <a href="https://rdslv.sk">rdslv.sk</a>. We are committed to
+              protecting your privacy and ensuring that your personal data is
+              handled in a safe and responsible manner. This privacy policy
+              outlines how we collect, use, disclose, and protect your personal
+              information in accordance with the General Data Protection
+              Regulation (GDPR).
+            </p>
 
-          <p>
-            Welcome to Radoslav’s website,
-            <a href="https://rdslv.sk">rdslv.sk</a>. We are committed to
-            protecting your privacy and ensuring that your personal data is
-            handled in a safe and responsible manner. This privacy policy
-            outlines how we collect, use, disclose, and protect your personal
-            information in accordance with the General Data Protection
-            Regulation (GDPR).
-          </p>
+            <h2>1. Data Controller</h2>
+            <p>The data controller for this website is:</p>
+            <p><strong>Name:</strong> Radoslav</p>
+            <p>
+              <strong>Contact:</strong>
+              <a href="mailto:policy@rdslv.sk">policy@rdslv.sk</a>, +421 911 510
+              344
+            </p>
 
-          <h2>1. Data Controller</h2>
-          <p>The data controller for this website is:</p>
-          <p><strong>Name:</strong> Radoslav</p>
-          <p>
-            <strong>Contact:</strong>
-            <a href="mailto:policy@rdslv.sk">policy@rdslv.sk</a>, +421 911 510
-            344
-          </p>
+            <h2>2. Information We Collect</h2>
+            <p>
+              We collect and process the following types of personal information
+              when you use our website or services:
+            </p>
 
-          <h2>2. Information We Collect</h2>
-          <p>
-            We collect and process the following types of personal information
-            when you use our website or services:
-          </p>
+            <h3>Personal Information:</h3>
+            <p><strong>Name</strong></p>
+            <p><strong>Email address</strong></p>
+            <p><strong>Phone number</strong></p>
+            <p>
+              <strong
+                >Specific information related to the services you
+                request</strong
+              >
+            </p>
 
-          <h3>Personal Information:</h3>
-          <p><strong>Name</strong></p>
-          <p><strong>Email address</strong></p>
-          <p><strong>Phone number</strong></p>
-          <p>
-            <strong
-              >Specific information related to the services you request</strong
-            >
-          </p>
+            <h3>Automatically Collected Information:</h3>
+            <p><strong>IP address</strong></p>
+            <p><strong>Browser type and version</strong></p>
+            <p><strong>Pages visited</strong></p>
+            <p><strong>Time and date of visit</strong></p>
+            <p><strong>Time spent on pages</strong></p>
 
-          <h3>Automatically Collected Information:</h3>
-          <p><strong>IP address</strong></p>
-          <p><strong>Browser type and version</strong></p>
-          <p><strong>Pages visited</strong></p>
-          <p><strong>Time and date of visit</strong></p>
-          <p><strong>Time spent on pages</strong></p>
+            <h2>3. Use of Personal Information</h2>
+            <p>We use your personal information for the following purposes:</p>
+            <p>To provide and improve our services</p>
+            <p>To respond to your inquiries and requests</p>
+            <p>For internal administrative and analytical purposes</p>
 
-          <h2>3. Use of Personal Information</h2>
-          <p>We use your personal information for the following purposes:</p>
-          <p>To provide and improve our services</p>
-          <p>To respond to your inquiries and requests</p>
-          <p>For internal administrative and analytical purposes</p>
+            <h2>4. Cookies</h2>
 
-          <h2>4. Cookies</h2>
+            <h3>What are Cookies?</h3>
+            <p>
+              Cookies are small text files stored on your device when you visit
+              a website. They help improve your browsing experience by
+              remembering your preferences and visits.
+            </p>
 
-          <h3>What are Cookies?</h3>
-          <p>
-            Cookies are small text files stored on your device when you visit a
-            website. They help improve your browsing experience by remembering
-            your preferences and visits.
-          </p>
+            <h3>Types of Cookies We Use:</h3>
+            <p>
+              <strong>Essential Cookies:</strong> These cookies are necessary
+              for the operation of our website and do not require user consent.
+              They ensure basic functionalities such as security and
+              accessibility.
+            </p>
 
-          <h3>Types of Cookies We Use:</h3>
-          <p>
-            <strong>Essential Cookies:</strong> These cookies are necessary for
-            the operation of our website and do not require user consent. They
-            ensure basic functionalities such as security and accessibility.
-          </p>
+            <h3>Managing Cookies:</h3>
+            <p>
+              You can manage or disable cookies through your browser settings.
+              However, disabling essential cookies may affect the functionality
+              of our website.
+            </p>
 
-          <h3>Managing Cookies:</h3>
-          <p>
-            You can manage or disable cookies through your browser settings.
-            However, disabling essential cookies may affect the functionality of
-            our website.
-          </p>
+            <h2>5. Third-Party Links</h2>
+            <p>
+              Our website may contain links to third-party websites. We do not
+              control these websites and are not responsible for their privacy
+              practices. We encourage you to review the privacy policies of any
+              third-party websites you visit.
+            </p>
 
-          <h2>5. Third-Party Links</h2>
-          <p>
-            Our website may contain links to third-party websites. We do not
-            control these websites and are not responsible for their privacy
-            practices. We encourage you to review the privacy policies of any
-            third-party websites you visit.
-          </p>
+            <h2>6. Data Security</h2>
+            <p>
+              We implement appropriate technical and organizational measures to
+              protect your personal data from unauthorized access, disclosure,
+              alteration, and destruction. These measures include:
+            </p>
+            <p>
+              <strong>Encryption:</strong> We use SSL encryption to protect data
+              transmitted over the internet.
+            </p>
+            <p>
+              <strong>Access Controls:</strong> We limit access to your personal
+              data to authorized personnel only.
+            </p>
 
-          <h2>6. Data Security</h2>
-          <p>
-            We implement appropriate technical and organizational measures to
-            protect your personal data from unauthorized access, disclosure,
-            alteration, and destruction. These measures include:
-          </p>
-          <p>
-            <strong>Encryption:</strong> We use SSL encryption to protect data
-            transmitted over the internet.
-          </p>
-          <p>
-            <strong>Access Controls:</strong> We limit access to your personal
-            data to authorized personnel only.
-          </p>
+            <h2>7. Data Retention</h2>
+            <p>
+              We retain your personal information only as long as necessary to
+              fulfill the purposes for which it was collected, comply with legal
+              obligations, and resolve disputes. Once the retention period
+              expires, we securely delete or anonymize your data.
+            </p>
 
-          <h2>7. Data Retention</h2>
-          <p>
-            We retain your personal information only as long as necessary to
-            fulfill the purposes for which it was collected, comply with legal
-            obligations, and resolve disputes. Once the retention period
-            expires, we securely delete or anonymize your data.
-          </p>
+            <h2>8. Legal Basis for Processing</h2>
+            <p>
+              We process your personal data based on the following legal
+              grounds:
+            </p>
+            <p>
+              <strong>Consent:</strong> When you provide us with your personal
+              information, you consent to our processing of that information for
+              the purposes outlined.
+            </p>
+            <p>
+              <strong>Contractual Necessity:</strong> To perform our contract
+              with you and provide the services you have requested.
+            </p>
+            <p>
+              <strong>Legitimate Interests:</strong> To pursue our legitimate
+              interests, such as improving our services, provided these
+              interests do not override your fundamental rights and freedoms.
+            </p>
 
-          <h2>8. Legal Basis for Processing</h2>
-          <p>
-            We process your personal data based on the following legal grounds:
-          </p>
-          <p>
-            <strong>Consent:</strong> When you provide us with your personal
-            information, you consent to our processing of that information for
-            the purposes outlined.
-          </p>
-          <p>
-            <strong>Contractual Necessity:</strong> To perform our contract with
-            you and provide the services you have requested.
-          </p>
-          <p>
-            <strong>Legitimate Interests:</strong> To pursue our legitimate
-            interests, such as improving our services, provided these interests
-            do not override your fundamental rights and freedoms.
-          </p>
+            <h2>9. Your Rights</h2>
+            <p>Under the GDPR, you have the following rights:</p>
+            <p>
+              <strong>Right of Access:</strong> You can request access to your
+              personal data we hold.
+            </p>
+            <p>
+              <strong>Right to Rectification:</strong> You can request
+              correction of inaccurate or incomplete data.
+            </p>
+            <p>
+              <strong>Right to Erasure:</strong> You can request deletion of
+              your personal data.
+            </p>
+            <p>
+              <strong>Right to Restriction:</strong> You can request restriction
+              of processing your data.
+            </p>
+            <p>
+              <strong>Right to Data Portability:</strong> You can request a copy
+              of your data in a structured, commonly used format.
+            </p>
+            <p>
+              <strong>Right to Object:</strong> You can object to the processing
+              of your personal data.
+            </p>
+            <p>
+              <strong>Right to Withdraw Consent:</strong> You can withdraw
+              consent at any time.
+            </p>
+            <p>
+              To exercise these rights, please contact us at
+              <a href="mailto:policy@rdslv.sk">policy@rdslv.sk</a>.
+            </p>
 
-          <h2>9. Your Rights</h2>
-          <p>Under the GDPR, you have the following rights:</p>
-          <p>
-            <strong>Right of Access:</strong> You can request access to your
-            personal data we hold.
-          </p>
-          <p>
-            <strong>Right to Rectification:</strong> You can request correction
-            of inaccurate or incomplete data.
-          </p>
-          <p>
-            <strong>Right to Erasure:</strong> You can request deletion of your
-            personal data.
-          </p>
-          <p>
-            <strong>Right to Restriction:</strong> You can request restriction
-            of processing your data.
-          </p>
-          <p>
-            <strong>Right to Data Portability:</strong> You can request a copy
-            of your data in a structured, commonly used format.
-          </p>
-          <p>
-            <strong>Right to Object:</strong> You can object to the processing
-            of your personal data.
-          </p>
-          <p>
-            <strong>Right to Withdraw Consent:</strong> You can withdraw consent
-            at any time.
-          </p>
-          <p>
-            To exercise these rights, please contact us at
-            <a href="mailto:policy@rdslv.sk">policy@rdslv.sk</a>.
-          </p>
+            <h2>10. Children's Privacy</h2>
+            <p>
+              Our website is not intended for children under the age of 16. We
+              do not knowingly collect personal data from children under 16. If
+              we become aware that we have collected personal data from a child
+              under 16, we will take steps to delete that information.
+            </p>
 
-          <h2>10. Children's Privacy</h2>
-          <p>
-            Our website is not intended for children under the age of 16. We do
-            not knowingly collect personal data from children under 16. If we
-            become aware that we have collected personal data from a child under
-            16, we will take steps to delete that information.
-          </p>
+            <h2>11. International Data Transfers</h2>
+            <p>
+              Your personal data may be transferred to and processed in
+              countries other than your own. We ensure that such transfers are
+              conducted in accordance with applicable data protection laws,
+              including GDPR, and that appropriate safeguards are in place to
+              protect your personal data.
+            </p>
 
-          <h2>11. International Data Transfers</h2>
-          <p>
-            Your personal data may be transferred to and processed in countries
-            other than your own. We ensure that such transfers are conducted in
-            accordance with applicable data protection laws, including GDPR, and
-            that appropriate safeguards are in place to protect your personal
-            data.
-          </p>
+            <h2>12. Changes to This Privacy Policy</h2>
+            <p>
+              We may update this privacy policy from time to time to reflect
+              changes in our practices or legal requirements. Any changes will
+              be posted on this page with an updated revision date. We encourage
+              you to review this policy periodically to stay informed about how
+              we are protecting your information.
+            </p>
 
-          <h2>12. Changes to This Privacy Policy</h2>
-          <p>
-            We may update this privacy policy from time to time to reflect
-            changes in our practices or legal requirements. Any changes will be
-            posted on this page with an updated revision date. We encourage you
-            to review this policy periodically to stay informed about how we are
-            protecting your information.
-          </p>
+            <h2>13. Contact Information</h2>
+            <p>
+              If you have any questions or concerns about this privacy policy or
+              our data processing practices, please contact us at:
+            </p>
+            <p>
+              <strong>Email:</strong>
+              <a href="mailto:policy@rdslv.sk">policy@rdslv.sk</a>
+            </p>
+            <p><strong>Phone:</strong> +421 911 510 344</p>
 
-          <h2>13. Contact Information</h2>
-          <p>
-            If you have any questions or concerns about this privacy policy or
-            our data processing practices, please contact us at:
-          </p>
-          <p>
-            <strong>Email:</strong>
-            <a href="mailto:policy@rdslv.sk">policy@rdslv.sk</a>
-          </p>
-          <p><strong>Phone:</strong> +421 911 510 344</p>
-
-          <h2>14. Complaint</h2>
-          <p>
-            If you believe that we are not handling your personal data in
-            accordance with the law, you have the right to file a complaint with
-            the relevant supervisory authority.
-          </p>
+            <h2>14. Complaint</h2>
+            <p>
+              If you believe that we are not handling your personal data in
+              accordance with the law, you have the right to file a complaint
+              with the relevant supervisory authority.
+            </p>
+          </div>
         </div>
       </section>
       <!-- section END-->
@@ -792,31 +803,29 @@
               collaborate on your next project. Reach out to me at:
             </h2>
           </div>
-        </div>
-        <div class="footer-top2">
           <div>
-            <h2 class="footer-text">
+            <h2>
               <a href="mailto:biznis@rdslv.sk">biznis@rdslv.sk</a>
             </h2>
           </div>
         </div>
-        <!-- Links Section -->
-        <div class="footer-section">
-          <div>
+        <!-- Middle Section -->
+        <div class="footer-middle">
+          <div class="footer-section">
             <h3>Quick Links<span class="highlighted-text">.</span></h3>
             <ul>
               <li><a href="/privacy-policy.html">Privacy Policy</a></li>
               <li><a href="#">Sitemap</a></li>
             </ul>
           </div>
-          <div>
+          <div class="footer-section">
             <h3>latest projects<span class="highlighted-text">.</span></h3>
             <ul>
-              <li><a href="#">Link 3</a></li>
-              <li><a href="#">Link 4</a></li>
+              <li><a href="#">RDSLV brand identity</a></li>
+              <li><a href="#">LMB Summer Chill 4</a></li>
             </ul>
           </div>
-          <div>
+          <div class="footer-section">
             <h3>company<span class="highlighted-text">.</span></h3>
             <ul>
               <li><p>Business ID: 51846080</p></li>
@@ -824,7 +833,7 @@
               <li><p>Trade Register Number: 540-21358</p></li>
             </ul>
           </div>
-          <div>
+          <div class="footer-section">
             <h3>contact<span class="highlighted-text">.</span></h3>
             <ul>
               <li><a href="mailto:biznis@rdslv.sk">biznis@rdslv.sk</a></li>
@@ -833,91 +842,87 @@
           </div>
         </div>
         <!-- Subfooter -->
-        <div class="subfooter-section">
-          <div class="subfooter-left">
-            <div class="copyright-text">
-              <p>&copy; 2024 radoslav bley.</p>
-            </div>
+        <div class="subfooter">
+          <div class="copyright-text">
+            <p>&copy; 2024 radoslav bley.</p>
           </div>
-          <div class="subfooter-right">
-            <div class="social-buttons">
-              <a
-                rel="noopener"
-                class="social-button github"
-                href="https://github.com/radblesk"
-                aria-label="RadBlesk's GitHub"
-                target="_blank"
+          <div class="social-buttons">
+            <a
+              rel="noopener"
+              class="social-button github"
+              href="https://github.com/radblesk"
+              aria-label="RadBlesk's GitHub"
+              target="_blank"
+            >
+              <!-- GitHub SVG -->
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="16"
+                height="16"
+                viewBox="0 0 16 16"
               >
-                <!-- GitHub SVG -->
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="16"
-                  height="16"
-                  viewBox="0 0 16 16"
-                >
-                  <path
-                    d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27s1.36.09 2 .27c1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8"
-                  />
-                </svg>
-              </a>
-              <a
-                rel="noopener"
-                class="social-button behance"
-                href="https://www.behance.net/radoslavbley"
-                aria-label="Hire me on BeHance"
-                target="_blank"
+                <path
+                  d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27s1.36.09 2 .27c1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8"
+                />
+              </svg>
+            </a>
+            <a
+              rel="noopener"
+              class="social-button behance"
+              href="https://www.behance.net/radoslavbley"
+              aria-label="Hire me on BeHance"
+              target="_blank"
+            >
+              <!-- Behance SVG -->
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="16"
+                height="16"
+                viewBox="0 0 16 16"
               >
-                <!-- Behance SVG -->
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="16"
-                  height="16"
-                  viewBox="0 0 16 16"
-                >
-                  <path
-                    d="M4.654 3c.461 0 .887.035 1.278.14.39.07.711.216.996.391s.497.426.641.747c.14.32.216.711.216 1.137 0 .496-.106.922-.356 1.242-.215.32-.566.606-.997.817.606.176 1.067.496 1.348.922s.461.957.461 1.563c0 .496-.105.922-.285 1.278a2.3 2.3 0 0 1-.782.887c-.32.215-.711.39-1.137.496a5.3 5.3 0 0 1-1.278.176L0 12.803V3zm-.285 3.978c.39 0 .71-.105.957-.285.246-.18.355-.497.355-.887 0-.216-.035-.426-.105-.567a1 1 0 0 0-.32-.355 1.8 1.8 0 0 0-.461-.176c-.176-.035-.356-.035-.567-.035H2.17v2.31c0-.005 2.2-.005 2.2-.005zm.105 4.193c.215 0 .426-.035.606-.07.176-.035.356-.106.496-.216s.25-.215.356-.39c.07-.176.14-.391.14-.641 0-.496-.14-.852-.426-1.102-.285-.215-.676-.32-1.137-.32H2.17v2.734h2.305zm6.858-.035q.428.427 1.278.426c.39 0 .746-.106 1.032-.286q.426-.32.53-.64h1.74c-.286.851-.712 1.457-1.278 1.848-.566.355-1.243.566-2.06.566a4.1 4.1 0 0 1-1.527-.285 2.8 2.8 0 0 1-1.137-.782 2.85 2.85 0 0 1-.712-1.172c-.175-.461-.25-.957-.25-1.528 0-.531.07-1.032.25-1.493.18-.46.426-.852.747-1.207.32-.32.711-.606 1.137-.782a4 4 0 0 1 1.493-.285c.606 0 1.137.105 1.598.355.46.25.817.532 1.102.958.285.39.496.851.641 1.348.07.496.105.996.07 1.563h-5.15c0 .58.21 1.11.496 1.396m2.24-3.732c-.25-.25-.642-.391-1.103-.391-.32 0-.566.07-.781.176s-.356.25-.496.39a.96.96 0 0 0-.25.497c-.036.175-.07.32-.07.46h3.196c-.07-.526-.25-.882-.497-1.132zm-3.127-3.728h3.978v.957h-3.978z"
-                  />
-                </svg>
-              </a>
-              <a
-                rel="noopener"
-                class="social-button twitter"
-                href="https://twitter.com/radblesk"
-                aria-label="Radoslav on Twitter/X"
-                target="_blank"
+                <path
+                  d="M4.654 3c.461 0 .887.035 1.278.14.39.07.711.216.996.391s.497.426.641.747c.14.32.216.711.216 1.137 0 .496-.106.922-.356 1.242-.215.32-.566.606-.997.817.606.176 1.067.496 1.348.922s.461.957.461 1.563c0 .496-.105.922-.285 1.278a2.3 2.3 0 0 1-.782.887c-.32.215-.711.39-1.137.496a5.3 5.3 0 0 1-1.278.176L0 12.803V3zm-.285 3.978c.39 0 .71-.105.957-.285.246-.18.355-.497.355-.887 0-.216-.035-.426-.105-.567a1 1 0 0 0-.32-.355 1.8 1.8 0 0 0-.461-.176c-.176-.035-.356-.035-.567-.035H2.17v2.31c0-.005 2.2-.005 2.2-.005zm.105 4.193c.215 0 .426-.035.606-.07.176-.035.356-.106.496-.216s.25-.215.356-.39c.07-.176.14-.391.14-.641 0-.496-.14-.852-.426-1.102-.285-.215-.676-.32-1.137-.32H2.17v2.734h2.305zm6.858-.035q.428.427 1.278.426c.39 0 .746-.106 1.032-.286q.426-.32.53-.64h1.74c-.286.851-.712 1.457-1.278 1.848-.566.355-1.243.566-2.06.566a4.1 4.1 0 0 1-1.527-.285 2.8 2.8 0 0 1-1.137-.782 2.85 2.85 0 0 1-.712-1.172c-.175-.461-.25-.957-.25-1.528 0-.531.07-1.032.25-1.493.18-.46.426-.852.747-1.207.32-.32.711-.606 1.137-.782a4 4 0 0 1 1.493-.285c.606 0 1.137.105 1.598.355.46.25.817.532 1.102.958.285.39.496.851.641 1.348.07.496.105.996.07 1.563h-5.15c0 .58.21 1.11.496 1.396m2.24-3.732c-.25-.25-.642-.391-1.103-.391-.32 0-.566.07-.781.176s-.356.25-.496.39a.96.96 0 0 0-.25.497c-.036.175-.07.32-.07.46h3.196c-.07-.526-.25-.882-.497-1.132zm-3.127-3.728h3.978v.957h-3.978z"
+                />
+              </svg>
+            </a>
+            <a
+              rel="noopener"
+              class="social-button twitter"
+              href="https://twitter.com/radblesk"
+              aria-label="Radoslav on Twitter/X"
+              target="_blank"
+            >
+              <!-- Twitter SVG -->
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="16"
+                height="16"
+                viewBox="0 0 16 16"
               >
-                <!-- Twitter SVG -->
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="16"
-                  height="16"
-                  viewBox="0 0 16 16"
-                >
-                  <path
-                    d="M12.6.75h2.454l-5.36 6.142L16 15.25h-4.937l-3.867-5.07-4.425 5.07H.316l5.733-6.57L0 .75h5.063l3.495 4.633L12.601.75Zm-.86 13.028h1.36L4.323 2.145H2.865z"
-                  />
-                </svg>
-              </a>
-              <a
-                rel="noopener"
-                class="social-button youtube"
-                href="https://www.youtube.com/channel/UC2NdG4m3JBUSyFkHP1DGkPQ"
-                aria-label="Radoslav on YouTube"
-                target="_blank"
+                <path
+                  d="M12.6.75h2.454l-5.36 6.142L16 15.25h-4.937l-3.867-5.07-4.425 5.07H.316l5.733-6.57L0 .75h5.063l3.495 4.633L12.601.75Zm-.86 13.028h1.36L4.323 2.145H2.865z"
+                />
+              </svg>
+            </a>
+            <a
+              rel="noopener"
+              class="social-button youtube"
+              href="https://www.youtube.com/channel/UC2NdG4m3JBUSyFkHP1DGkPQ"
+              aria-label="Radoslav on YouTube"
+              target="_blank"
+            >
+              <!-- YouTube SVG -->
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="16"
+                height="16"
+                viewBox="0 0 16 16"
               >
-                <!-- YouTube SVG -->
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="16"
-                  height="16"
-                  viewBox="0 0 16 16"
-                >
-                  <path
-                    d="M8.051 1.999h.089c.822.003 4.987.033 6.11.335a2.01 2.01 0 0 1 1.415 1.42c.101.38.172.883.22 1.402l.01.104.022.26.008.104c.065.914.073 1.77.074 1.957v.075c-.001.194-.01 1.108-.082 2.06l-.008.105-.009.104c-.05.572-.124 1.14-.235 1.558a2.01 2.01 0 0 1-1.415 1.42c-1.16.312-5.569.334-6.18.335h-.142c-.309 0-1.587-.006-2.927-.052l-.17-.006-.087-.004-.171-.007-.171-.007c-1.11-.049-2.167-.128-2.654-.26a2.01 2.01 0 0 1-1.415-1.419c-.111-.417-.185-.986-.235-1.558L.09 9.82l-.008-.104A31 31 0 0 1 0 7.68v-.123c.002-.215.01-.958.064-1.778l.007-.103.003-.052.008-.104.022-.26.01-.104c.048-.519.119-1.023.22-1.402a2.01 2.01 0 0 1 1.415-1.42c.487-.13 1.544-.21 2.654-.26l.17-.007.172-.006.086-.003.171-.007A100 100 0 0 1 7.858 2zM6.4 5.209v4.818l4.157-2.408z"
-                  />
-                </svg>
-              </a>
-            </div>
+                <path
+                  d="M8.051 1.999h.089c.822.003 4.987.033 6.11.335a2.01 2.01 0 0 1 1.415 1.42c.101.38.172.883.22 1.402l.01.104.022.26.008.104c.065.914.073 1.77.074 1.957v.075c-.001.194-.01 1.108-.082 2.06l-.008.105-.009.104c-.05.572-.124 1.14-.235 1.558a2.01 2.01 0 0 1-1.415 1.42c-1.16.312-5.569.334-6.18.335h-.142c-.309 0-1.587-.006-2.927-.052l-.17-.006-.087-.004-.171-.007-.171-.007c-1.11-.049-2.167-.128-2.654-.26a2.01 2.01 0 0 1-1.415-1.419c-.111-.417-.185-.986-.235-1.558L.09 9.82l-.008-.104A31 31 0 0 1 0 7.68v-.123c.002-.215.01-.958.064-1.778l.007-.103.003-.052.008-.104.022-.26.01-.104c.048-.519.119-1.023.22-1.402a2.01 2.01 0 0 1 1.415-1.42c.487-.13 1.544-.21 2.654-.26l.17-.007.172-.006.086-.003.171-.007A100 100 0 0 1 7.858 2zM6.4 5.209v4.818l4.157-2.408z"
+                />
+              </svg>
+            </a>
           </div>
         </div>
       </section>

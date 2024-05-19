@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
     <title>RDSLV - Concept 2024</title>
     <link
       rel="preload"
@@ -124,20 +124,8 @@
       href="/css/dark-mode.css"
       media="(prefers-color-scheme: dark)"
     />
-    <script>
-      document.addEventListener("DOMContentLoaded", function () {
-        var link = document.createElement("link");
-        link.rel = "stylesheet";
-        link.href = "/css/menu.css";
-        link.onload = function () {
-          console.log("Menu stylesheet has been loaded");
-        };
-        document.head.appendChild(link);
-      });
-    </script>
     <script src="/scripts/script.js" defer></script>
-    <script src="/scripts/menu.js" defer></script>
-    <script src="/scripts/jquery-3.7.1.min.js" async="false"></script>
+    <!--  <script src="/scripts/jquery-3.7.1.min.js" async="false"></script> -->
     <script src="/scripts/typeit.umd.js" defer></script>
     <!-- <script>
       $(document).ready(function () {
@@ -474,13 +462,13 @@
                     <li>
                       <div class="menu-item">
                         <span class="subheading">01 / Main page</span>
-                        <a href="#about" class="header-text">Home</a>
+                        <a href="#about">Home</a>
                       </div>
                     </li>
                     <li>
                       <div class="menu-item">
                         <span class="subheading">02 / About me</span>
-                        <a href="#about" class="header-text">About</a>
+                        <a href="#about">About</a>
                       </div>
                     </li>
                     <li>
@@ -488,7 +476,7 @@
                         <span class="subheading"
                           >03 / My latest work and Reel</span
                         >
-                        <a href="#work" class="header-text">Work</a>
+                        <a href="#work">Work</a>
                       </div>
                     </li>
                     <li>
@@ -496,7 +484,7 @@
                         <span class="subheading"
                           >04 / Interested in my work? Let me know!</span
                         >
-                        <a href="#contact" class="header-text">Contact</a>
+                        <a href="#contact">Contact</a>
                       </div>
                     </li>
                   </ul>
@@ -587,7 +575,7 @@
           </div>
         </header>
         <!-- Header END -->
-        <div class="heroanim">
+        <div>
           <div class="anilogo">
             <svg class="icon" viewBox="0 0 1080 1080">
               <path
@@ -607,7 +595,7 @@
         </div>
         <div class="container">
           <row>
-            <div class="headline">
+            <div class="hero-content-container">
               <h1>
                 Nerdy by Nature,<br />Creative by Choice<span
                   class="highlighted-text"
@@ -615,10 +603,10 @@
                 >
               </h1>
               <p>Making Digital Dreams Come True with a Wink</p>
-              <div id="status-shape" class="overlay">
-                <span class="status-light not-available"></span>
+              <!--<div id="status-pill" class="overlay">
+                <span class="light not-available"></span>
                 <p>Not available</p>
-              </div>
+              </div>-->
             </div>
           </row>
         </div>
@@ -629,9 +617,12 @@
         <div class="container left">
           <div class="divider"></div>
           <div>
-            <h1>
-              I'm <span id="type"></span><span class="highlighted-text">.</span>
-            </h1>
+            <div class="section-heading">
+              <h1>
+                I'm <span id="type"></span
+                ><span class="highlighted-text">.</span>
+              </h1>
+            </div>
             <p style="font-style: italic">
               "Hello, <strong>I'm Radoslav</strong>, a dedicated front-end
               developer, graphic designer, and video editor based in
@@ -670,11 +661,27 @@
       <section id="services">
         <div class="container center">
           <div class="divider"></div>
-          <h1>How can i help you<span class="highlighted-text">?</span></h1>
+          <div class="section-heading">
+            <h1>How can i help you<span class="highlighted-text">?</span></h1>
+          </div>
         </div>
         <div class="container center services">
           <div class="service-box slide-in-blurred-bottom">
-            <h2 class="header-text">Front-End Development</h2>
+            <div class="box-heading">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="16"
+                height="16"
+                fill="currentColor"
+                class="bi bi-code-slash"
+                viewBox="0 0 16 16"
+              >
+                <path
+                  d="M10.478 1.647a.5.5 0 1 0-.956-.294l-4 13a.5.5 0 0 0 .956.294zM4.854 4.146a.5.5 0 0 1 0 .708L1.707 8l3.147 3.146a.5.5 0 0 1-.708.708l-3.5-3.5a.5.5 0 0 1 0-.708l3.5-3.5a.5.5 0 0 1 .708 0m6.292 0a.5.5 0 0 0 0 .708L14.293 8l-3.147 3.146a.5.5 0 0 0 .708.708l3.5-3.5a.5.5 0 0 0 0-.708l-3.5-3.5a.5.5 0 0 0-.708 0"
+                />
+              </svg>
+              <h2>Front-End Development</h2>
+            </div>
             <ul>
               <li>Website and Web Application Development</li>
               <li>UI/UX Design Implementation</li>
@@ -684,7 +691,21 @@
             <div class="number">/1</div>
           </div>
           <div class="service-box slide-in-blurred-bottom">
-            <h2 class="header-text">Back-End Development</h2>
+            <div class="box-heading">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="16"
+                height="16"
+                fill="currentColor"
+                class="bi bi-code-slash"
+                viewBox="0 0 16 16"
+              >
+                <path
+                  d="M10.478 1.647a.5.5 0 1 0-.956-.294l-4 13a.5.5 0 0 0 .956.294zM4.854 4.146a.5.5 0 0 1 0 .708L1.707 8l3.147 3.146a.5.5 0 0 1-.708.708l-3.5-3.5a.5.5 0 0 1 0-.708l3.5-3.5a.5.5 0 0 1 .708 0m6.292 0a.5.5 0 0 0 0 .708L14.293 8l-3.147 3.146a.5.5 0 0 0 .708.708l3.5-3.5a.5.5 0 0 0 0-.708l-3.5-3.5a.5.5 0 0 0-.708 0"
+                />
+              </svg>
+              <h2>Back-End Development</h2>
+            </div>
             <ul>
               <li>Server-Side Development</li>
               <li>Database Management</li>
@@ -694,7 +715,22 @@
             <div class="number">/2</div>
           </div>
           <div class="service-box slide-in-blurred-bottom">
-            <h2 class="header-text">Graphic Design</h2>
+            <div class="box-heading">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="16"
+                height="16"
+                fill="currentColor"
+                class="bi bi-circle-square"
+                viewBox="0 0 16 16"
+              >
+                <path d="M0 6a6 6 0 1 1 12 0A6 6 0 0 1 0 6" />
+                <path
+                  d="M12.93 5h1.57a.5.5 0 0 1 .5.5v9a.5.5 0 0 1-.5.5h-9a.5.5 0 0 1-.5-.5v-1.57a7 7 0 0 1-1-.22v1.79A1.5 1.5 0 0 0 5.5 16h9a1.5 1.5 0 0 0 1.5-1.5v-9A1.5 1.5 0 0 0 14.5 4h-1.79q.145.486.22 1"
+                />
+              </svg>
+              <h2>Graphic Design</h2>
+            </div>
             <ul>
               <li>Branding and Identity Design</li>
               <li>Web and Mobile Design</li>
@@ -704,7 +740,27 @@
             <div class="number">/3</div>
           </div>
           <div class="service-box slide-in-blurred-bottom">
-            <h2 class="header-text">Video Production</h2>
+            <div class="box-heading">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="16"
+                height="16"
+                fill="currentColor"
+                class="bi bi-camera-reels"
+                viewBox="0 0 16 16"
+              >
+                <path
+                  d="M6 3a3 3 0 1 1-6 0 3 3 0 0 1 6 0M1 3a2 2 0 1 0 4 0 2 2 0 0 0-4 0"
+                />
+                <path
+                  d="M9 6h.5a2 2 0 0 1 1.983 1.738l3.11-1.382A1 1 0 0 1 16 7.269v7.462a1 1 0 0 1-1.406.913l-3.111-1.382A2 2 0 0 1 9.5 16H2a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2zm6 8.73V7.27l-3.5 1.555v4.35zM1 8v6a1 1 0 0 0 1 1h7.5a1 1 0 0 0 1-1V8a1 1 0 0 0-1-1H2a1 1 0 0 0-1 1"
+                />
+                <path
+                  d="M9 6a3 3 0 1 0 0-6 3 3 0 0 0 0 6M7 3a2 2 0 1 1 4 0 2 2 0 0 1-4 0"
+                />
+              </svg>
+              <h2>Video Edit</h2>
+            </div>
             <ul>
               <li>Video Editing and Post-Production</li>
               <li>Motion Graphics and Animation</li>
@@ -720,7 +776,9 @@
       <section id="reel" class="overlay">
         <div class="container center">
           <div class="divider"></div>
+          <div class="section-heading">
           <h1>Reel <span class="highlighted-text">2024</span></h1>
+          </div>
         </div>
         <div class="container center">
           <div id="youtube-video" class="video-container">
@@ -732,15 +790,15 @@
             <button onclick="loadYoutubeVideo()">Play</button>
           </div>
         </div>
-      </section>
-      section END -->
+      </section> -->
+      <!-- section END -->
       <!-- section CLIENTS -->
       <section id="clients">
         <div class="container center">
           <div class="divider"></div>
-          <h1>Clients<span class="highlighted-text">.</span></h1>
-        </div>
-        <div class="container">
+          <div class="section-heading">
+            <h1>Clients<span class="highlighted-text">.</span></h1>
+          </div>
           <article class="wrapper">
             <div class="marquee">
               <div class="marquee__group">
@@ -882,7 +940,7 @@
             </h2>
           </div>
           <div>
-            <h2 class="footer-text">
+            <h2>
               <a href="mailto:biznis@rdslv.sk">biznis@rdslv.sk</a>
             </h2>
           </div>
@@ -920,7 +978,7 @@
           </div>
         </div>
         <!-- Subfooter -->
-        <div class="subfooter-section">
+        <div class="subfooter">
           <div class="copyright-text">
             <p>&copy; 2024 radoslav bley.</p>
           </div>

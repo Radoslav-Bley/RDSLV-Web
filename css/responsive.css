@@ -2,311 +2,113 @@
  * Developed by Radoslav Bley
  *
  * Table of Contents:
-  * 01. Color vars
-  * 02. Base Styling
-  * 03. Containers
-  * 04. Sections
-  * 05. Overlay Effects
-  * 06. Text
-  * 07. Dividers
-  * 08. Images
-  * 09. Animations
-  * 10. Header
-  * 11. Hero Section
-  * 12. Availability status
-  * 13. Boxes
-  * 14. Table
-  * 15. Footer
+  * 00. General
+  * 01. Mobile Phones
+  * 02. Tablets
+  * 03. Laptops
+  * 04. Desktops
+  * 05. Extra Large Devices
+  * 06. Safe Area
    */
 
 /*!========================================================================
- * 01. Color vars
- * ======================================================================!*/
-
-/*!========================================================================
-   * 02. Base Styling
+   * 00. General
    * ======================================================================!*/
 
-@supports (padding: max(0px)) {
-  body,
-  header,
-  footer {
-    padding-left: min(0vmin, env(safe-area-inset-left));
-    padding-right: min(0vmin, env(safe-area-inset-right));
+@media (orientation: portrait) {
+  .anilogo .icon {
+    width: 70%;
+  }
+}
+
+@media (orientation: landscape) {
+  .anilogo .icon {
+    height: 70%;
   }
 }
 
 /*!========================================================================
-   * 03. Containers
+   * 01. Mobile Phones
    * ======================================================================!*/
 
-@media screen and (max-width: 1024px) {
-  .video-container iframe {
-    max-width: 100%;
-    height: 540px;
-  }
-}
-
-@media screen and (max-width: 768px) {
-  .container:first-child {
-    padding-top: 100px;
-  }
-
-  .container:last-child {
-    padding-bottom: 100px;
-  }
-  .video-container iframe {
-    height: 300px;
-  }
+@media (max-width: 575.98px) {
   .container.services {
     grid-template-columns: 1fr;
   }
-}
-
-@media only screen and (orientation: landscape) {
-  .container:first-child {
-    padding-top: 50px;
+  .nav {
+    display: none;
   }
-
-  .container:last-child {
-    padding-bottom: 50px;
+  .subfooter {
+    flex-direction: column;
+    align-items: center;
   }
-}
-
-/*!========================================================================
-   * 04. Sections
-   * ======================================================================!*/
-
-/*!========================================================================
-   * 05. Overlay Effects
-   * ======================================================================!*/
-
-/*!========================================================================
-   * 06. Text
-   * ======================================================================!*/
-
-@media screen and (max-width: 1024px) {
-  h1 {
-    font-size: 36px;
+  .footer-middle {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
   }
-  h2 {
-    font-size: 30px;
+  .copyright-text {
+    order: 2;
   }
-  h3 {
-    font-size: 24px;
-  }
-  h4 {
-    font-size: 20px;
-  }
-  h5 {
-    font-size: 18px;
-  }
-  h6 {
-    font-size: 16px;
+  .social-buttons {
+    order: 1;
   }
 }
 
-@media screen and (max-width: 768px) {
-  h1 {
-    font-size: 24px;
-  }
-  h2 {
-    font-size: 20px;
-  }
-  h3 {
-    font-size: 18px;
-  }
-  h4 {
-    font-size: 16px;
-  }
-  h5 {
-    font-size: 16px;
-  }
-  h6 {
-    font-size: 14px;
-  }
-}
-
-@media only screen and (orientation: landscape) and (max-width: 960px) {
-  h1 {
-    font-size: 6vh;
-  }
-  h2 {
-    font-size: 5vh;
-  }
-  h3 {
-    font-size: 4vh;
-  }
-  h4 {
-    font-size: 3vh;
-  }
-  h5 {
-    font-size: 2vh;
-  }
-  h6 {
-    font-size: 1vh;
-  }
-  p,
-  ul {
-    font-size: 4vh;
-  }
-  .headline h1 {
-    font-size: 6vh;
-  }
-  .headline p {
-    font-size: 3vh;
-  }
-  #fullscreen-menu .mobile-nav ul li {
-    font-size: 3vh;
-  }
-}
-
-@media only screen and (orientation: landscape) and (min-width: 960px) {
-  h1 {
-    font-size: 4vh;
-  }
-  h2 {
-    font-size: 3vh;
-  }
-  h3 {
-    font-size: 2vh;
-  }
-  h4 {
-    font-size: 1.5vh;
-  }
-  h5 {
-    font-size: 1vh;
-  }
-  h6 {
-    font-size: 0.5vh;
-  }
-  p,
-  ul {
-    font-size: 2vh;
-  }
-  .headline h1 {
-    font-size: 4vh;
-  }
-  .headline p {
-    font-size: 2vh;
-  }
-  #fullscreen-menu .mobile-nav ul li {
-    font-size: 2vh;
-  }
-  
-}
-
 /*!========================================================================
-   * 07. Dividers
+   * 02. Tablets
    * ======================================================================!*/
 
-/*!========================================================================
-   * 08. Images
-   * ======================================================================!*/
-
-/*!========================================================================
-   * 09. Animations
-   * ======================================================================!*/
-
-/*!========================================================================
-   * 10. Header
-   * ======================================================================!*/
-
-@media only screen and (max-width: 960px) {
+@media (min-width: 576px) and (max-width: 767.98px) {
   .nav {
     display: none;
   }
 }
 
-@media only screen and (min-width: 960px) {
+/*!========================================================================
+   * 03. Laptops
+   * ======================================================================!*/
+
+@media (min-width: 768px) and (max-width: 991.98px) {
+  .nav {
+    display: none;
+  }
+}
+
+/*!========================================================================
+   * 04. Desktops
+   * ======================================================================!*/
+
+@media (min-width: 992px) and (max-width: 1199.98px) {
   .hamburger-menu {
     display: none;
   }
 }
 
-@media only screen and (orientation: landscape) {
-  .header-container {
-    height: 60px;
+/*!========================================================================
+   * 05. Extra Large Devices
+   * ======================================================================!*/
+
+@media (min-width: 1200px) {
+  .hamburger-menu {
+    display: none;
   }
 }
 
 /*!========================================================================
-   * 11. Hero Section
+   * 06. Safe Area
    * ======================================================================!*/
 
-@media only screen and (orientation: landscape) {
-  .anilogo .icon {
-    width: 70vh;
+@supports(padding: env(safe-area-inset-top)) {
+  body {
+    padding-top: env(safe-area-inset-top);
+    padding-left: env(safe-area-inset-left);
+    padding-right: env(safe-area-inset-right);
+    padding-bottom: env(safe-area-inset-bottom);
   }
-}
-/*!========================================================================
-   * 12. Availability status
-   * ======================================================================!*/
 
-@media only screen and (max-width: 768px) {
-  #status-shape p {
-    font-size: 10px;
-  }
-}
-
-@media only screen and (orientation: landscape) and (max-width: 960px) {
-  #status-shape p {
-    font-size: 8px;
+  .header {
+    padding-left: env(safe-area-inset-left);
+    padding-right: env(safe-area-inset-right);
   }
 }
 
-/*!========================================================================
-   * 13. Boxes
-   * ======================================================================!*/
-
-@media screen and (orientation: landscape) and (max-width: 960px) {
-  .service-box {
-    padding: 30px;
-    min-height: max-content;
-  }
-  .service-box h2 {
-    font-size: larger;
-  }
-  .service-box li {
-    font-size: small;
-  }
-}
-
-@media screen and (max-width: 768px) {
-  .container-services {
-    grid-template-columns: 1fr;
-  }
-}
-
-/*!========================================================================
-   * 15. Footer
-   * ======================================================================!*/
-
-@media screen and (max-width: 768px) {
-  .footer-top,
-  .footer-top2 {
-    text-align: left;
-  }
-
-  .subfooter-section {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .footer-middle {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-  }
-
-  .copyright-text {
-    order: 2;
-  }
-
-  .social-buttons {
-    order: 1;
-  }
-
-  .rounded-social-buttons .social-button {
-    margin-bottom: 20px;
-  }
-}
