@@ -676,7 +676,7 @@ img {
 }
 
 .anilogo .icon #b.is-active {
-  animation: iconB 20s linear 1 forwards;
+  animation: iconB 15s ease-in-out infinite forwards;
 }
 
 .anilogo .icon #r {
@@ -685,7 +685,7 @@ img {
 }
 
 .anilogo .icon #r.is-active {
-  animation: iconR 20s linear 1 forwards;
+  animation: iconR 15s ease-in-out infinite forwards;
 }
 
 @-webkit-keyframes iconR {
@@ -695,15 +695,6 @@ img {
   }
   50% {
     stroke-dashoffset: 0;
-  }
-  50% {
-    fill: transparent;
-    stroke-width: 2px;
-  }
-  to {
-    stroke-dashoffset: 0;
-    fill: var(--primary-color);
-    stroke-width: 0px;
   }
 }
 
@@ -715,15 +706,6 @@ img {
   50% {
     stroke-dashoffset: 0;
   }
-  50% {
-    fill: transparent;
-    stroke-width: 2px;
-  }
-  to {
-    stroke-dashoffset: 0;
-    fill: var(--secondary-color);
-    stroke-width: 0px;
-  }
 }
 
 @keyframes iconR {
@@ -734,15 +716,6 @@ img {
   50% {
     stroke-dashoffset: 0;
   }
-  50% {
-    fill: transparent;
-    stroke-width: 2px;
-  }
-  to {
-    stroke-dashoffset: 0;
-    fill: var(--primary-color);
-    stroke-width: 0px;
-  }
 }
 
 @keyframes iconB {
@@ -752,15 +725,6 @@ img {
   }
   50% {
     stroke-dashoffset: 0;
-  }
-  50% {
-    fill: transparent;
-    stroke-width: 2px;
-  }
-  to {
-    stroke-dashoffset: 0;
-    fill: var(--secondary-color);
-    stroke-width: 0px;
   }
 }
 
