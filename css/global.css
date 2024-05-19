@@ -70,7 +70,7 @@
   );
 
   /* Social Icons */
-  --social-color: rgba(128, 128, 128, 0.5);
+  --social-color: grey;
 
   /* Status Light */
   --status-light-red: rgba(237, 28, 36, 1);
