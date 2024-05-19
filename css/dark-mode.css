@@ -96,14 +96,6 @@
    * 08. Images
    * ======================================================================!*/
 
-  .inverted {
-    filter: invert(100%);
-  }
-
-  .inverted:hover {
-    filter: invert(100%) drop-shadow(0 0 15px rgba(255, 255, 255, 0.2));
-  }
-
   .marquee__group .logo {
     filter: invert(100%);
   }

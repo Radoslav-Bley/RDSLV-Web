@@ -50,7 +50,7 @@
   background-color: var(--bg-color);
   opacity: 0;
   visibility: hidden;
-  transition: opacity 0.3s ease, visibility 0.3s ease;
+  transition: opacity 0.3s ease, visibility 0.3s ease, background-color 0.3s ease;
 }
 
 #fullscreen-menu.active {
