@@ -1155,6 +1155,7 @@ img {
   font-weight: normal;
   line-height: 2.4em;
   border-radius: 1.6875rem;
+  transition: all var(--transition);
 }
 
 .social-buttons .social-button svg {

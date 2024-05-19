@@ -3,7 +3,7 @@
  * ======================================================================!*/
 
 .hamburger-menu {
-  width: 30px;
+  width: 20px;
   height: 20px;
   position: relative;
   cursor: pointer;
@@ -29,12 +29,12 @@
 
 .hamburger-menu.active .line1 {
   transform: rotate(-45deg);
-  top: 46%;
+  top: 47%;
 }
 
 .hamburger-menu.active .line2 {
   transform: rotate(45deg);
-  bottom: 46%;
+  bottom: 47%;
 }
 
 /*!========================================================================
