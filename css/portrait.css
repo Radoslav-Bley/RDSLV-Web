@@ -185,14 +185,14 @@
     text-align: left;
   }
 
-  .footer-middle {
-    flex-direction: column;
-    align-items: left;
-  }
-
   .subfooter-section {
     flex-direction: column;
     align-items: center;
+  }
+
+  .footer-middle {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
   }
 
   .copyright-text {

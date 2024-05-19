@@ -1046,8 +1046,8 @@ img {
 
 .footer-top h2 {
   color: var(--text-color-footer-1);
-  font-size: 32px;
-  font-weight: 200;
+  font-size: 24px;
+  font-weight: 100;
   margin: 0;
 }
 
@@ -1062,11 +1062,17 @@ img {
 
 .footer-middle {
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-between;
+  width: 100%;
+  gap: 40px;
   padding: 40px 0;
-  gap: 20px;
   border-top: 1px solid var(--f-divider);
   border-bottom: 1px solid var(--f-divider);
+}
+
+.footer-section {
+  width: fit-content;
 }
 
 .footer-section h3 {
@@ -1114,7 +1120,8 @@ img {
 .subfooter-section {
   display: flex;
   justify-content: space-between;
-  padding: 20px 0;
+  align-items: center;
+  padding-top: 20px;
   gap: 20px;
 }
 
@@ -1122,6 +1129,8 @@ img {
   color: var(--f-divider);
   font-size: 14px;
   font-weight: 400;
+  margin: 0;
+  padding: 0;
 }
 
 .social-buttons {
