@@ -1077,80 +1077,19 @@ img {
 }
 
 .social-buttons {
-  text-align: center;
+  display: flex;
+  gap: 20px;
 }
 
 .social-buttons .social-button {
-  display: inline-block;
-  position: relative;
+  display: inline-flex;
   cursor: pointer;
-  width: 2rem;
-  height: 2rem;
-  border: 0.125rem solid transparent;
-  padding: 0;
-  text-decoration: none;
-  text-align: center;
   fill: var(--social-color);
-  font-weight: normal;
-  line-height: 2.1em;
-  border-radius: 1.6875rem;
-  transition: all var(--transition);
+  transition: fill var(--transition);
 }
 
-.social-buttons .social-button svg {
-  width: 18px; /* Adjust the size as needed */
-  height: 18px; /* Adjust the size as needed */
-}
-
-.social-buttons .social-button:hover,
-.social-buttons .social-button:focus {
-  -webkit-transform: rotate(360deg);
-  -ms-transform: rotate(360deg);
-  transform: rotate(360deg);
-}
-
-.social-buttons .social-button.behance {
-  background: transparent;
-}
-
-.social-buttons .social-button.behance:hover,
-.social-buttons .social-button.behance:focus {
-  fill: #1769ff;
-  background: #fefefe;
-  border-color: #1769ff;
-}
-
-.social-buttons .social-button.twitter {
-  background: transparent;
-}
-
-.social-buttons .social-button.twitter:hover,
-.social-buttons .social-button.twitter:focus {
-  fill: #14171a;
-  background: #fefefe;
-  border-color: #657786;
-}
-
-.social-buttons .social-button.github {
-  background: transparent;
-}
-
-.social-buttons .social-button.github:hover,
-.social-buttons .social-button.github:focus {
-  fill: #333;
-  background: #fefefe;
-  border-color: #333;
-}
-
-.social-buttons .social-button.youtube {
-  background: transparent;
-}
-
-.social-buttons .social-button.youtube:hover,
-.social-buttons .social-button.youtube:focus {
-  fill: #bb0000;
-  background: #fefefe;
-  border-color: #bb0000;
+.social-buttons .social-button:hover {
+  fill: var(--text-color-footer-1);
 }
 
 /*!========================================================================
