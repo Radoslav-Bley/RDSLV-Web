@@ -6,6 +6,9 @@
  * 01. Reveal animations
  * 02. Adrress Bar Color Change
  * 03. Favicon Color Change
+ * 04. YouTube Lazy Loading
+ * 05. Header background on scroll
+ * 06. Grid Drawing Animation
  */
 
 /*!========================================================================
@@ -134,19 +137,19 @@ document.addEventListener('DOMContentLoaded', () => {
   const verticalLinesContainer = document.querySelector('.vertical-lines');
   const horizontalLinesContainer = document.querySelector('.horizontal-lines');
 
-  const numVerticalLines = Math.ceil(window.innerWidth / 50);
-  const numHorizontalLines = Math.ceil(window.innerHeight / 50);
+  const numVerticalLines = Math.ceil(window.innerWidth / 25);
+  const numHorizontalLines = Math.ceil(window.innerHeight / 25);
 
   for (let i = 0; i <= numVerticalLines; i++) {
     const line = document.createElement('div');
-    line.style.left = `${i * 50}px`;
+    line.style.left = `${i * 25}px`;
     line.style.animationDelay = `${i * 0.1}s`;
     verticalLinesContainer.appendChild(line);
   }
 
   for (let i = 0; i <= numHorizontalLines; i++) {
     const line = document.createElement('div');
-    line.style.top = `${i * 50}px`;
+    line.style.top = `${i * 25}px`;
     line.style.animationDelay = `${i * 0.1}s`;
     horizontalLinesContainer.appendChild(line);
   }

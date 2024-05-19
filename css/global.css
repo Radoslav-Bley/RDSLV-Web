@@ -137,18 +137,18 @@ body {
 .container {
   display: flex;
   flex-direction: column;
-  padding: 20px;
+  padding: 0 20px;
   width: 100%;
   max-width: 1200px;
   margin: 0 auto;
 }
 
 .container:first-child {
-  padding-top: 80px;
+  padding-top: 50px;
 }
 
 .container:last-child {
-  padding-bottom: 80px;
+  padding-bottom: 50px;
 }
 
 .container.center {
@@ -377,11 +377,11 @@ strong {
 .headline {
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  gap: 2vh;
 }
 
 .headline h1 {
-  font-size: 28px;
+  font-size: 7vw;
   font-weight: 600;
   margin: 0;
   font-family: "Inter", sans-serif;
@@ -391,7 +391,7 @@ strong {
 }
 
 .headline p {
-  font-size: 16px;
+  font-size: 4vw;
   font-weight: 200;
   margin: 0;
   font-family: "Inter", sans-serif;
@@ -455,6 +455,12 @@ img {
   height: auto;
   display: block;
   margin: 0 auto;
+}
+
+#about img {
+  height: auto;
+  display: block;
+  margin-top: 50px;
 }
 
 /*!========================================================================
@@ -641,12 +647,6 @@ img {
   transition: background-image var(--transition);
 }
 
-.heroanim {
-  height: 100vh;
-  position: relative;
-  overflow: hidden;
-}
-
 .anilogo {
   width: 100%;
   height: auto;
@@ -659,8 +659,9 @@ img {
 
 .anilogo .icon {
   position: absolute;
-  width: 600px;
-  top: 50%;
+  width: 70vw;
+  max-width: 1200px;
+  top: 45%;
   transform: translateY(-50%);
 }
 
@@ -728,33 +729,6 @@ img {
   }
 }
 
-/* Responsive Styles */
-@media (max-width: 1200px) {
-  .anilogo .icon {
-    width: 600px;
-  }
-}
-
-@media (max-width: 992px) {
-  .anilogo .icon {
-    width: 600px;
-  }
-}
-
-@media (max-width: 768px) {
-  .anilogo .icon {
-    width: 400px;
-    top: 40%;
-    transform: translateY(-50%);
-  }
-}
-
-@media (max-width: 576px) {
-  .anilogo .icon {
-    width: 300px;
-  }
-}
-
 .grid-container {
   position: absolute;
   top: 0;
@@ -783,14 +757,14 @@ img {
 }
 
 .vertical-lines div {
-  width: 2px;
+  width: 1px;
   height: 0;
   animation-name: drawVertical;
 }
 
 .horizontal-lines div {
   width: 0;
-  height: 2px;
+  height: 1px;
   animation-name: drawHorizontal;
 }
 
@@ -890,6 +864,7 @@ img {
   padding: 40px;
   border-radius: 20px;
   height: auto;
+  min-height: 450px;
   border: 1px solid rgba(0, 0, 0, 0.1);
   text-align: left;
   position: relative;
@@ -1117,7 +1092,7 @@ img {
   text-align: center;
   fill: var(--social-color);
   font-weight: normal;
-  line-height: 2.4em;
+  line-height: 2.1em;
   border-radius: 1.6875rem;
   transition: all var(--transition);
 }

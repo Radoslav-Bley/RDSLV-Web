@@ -36,12 +36,6 @@
   }
 }
 
-@media screen and (max-width: 768px) {
-  body {
-    font-size: 16px;
-  }
-}
-
 /*!========================================================================
    * 03. Containers
    * ======================================================================!*/
@@ -66,6 +60,16 @@
   }
   .container.services {
     grid-template-columns: 1fr;
+  }
+}
+
+@media only screen and (orientation: landscape) {
+  .container:first-child {
+    padding-top: 50px;
+  }
+
+  .container:last-child {
+    padding-bottom: 50px;
   }
 }
 
@@ -123,6 +127,75 @@
   }
 }
 
+@media only screen and (orientation: landscape) and (max-width: 960px) {
+  h1 {
+    font-size: 6vh;
+  }
+  h2 {
+    font-size: 5vh;
+  }
+  h3 {
+    font-size: 4vh;
+  }
+  h4 {
+    font-size: 3vh;
+  }
+  h5 {
+    font-size: 2vh;
+  }
+  h6 {
+    font-size: 1vh;
+  }
+  p,
+  ul {
+    font-size: 4vh;
+  }
+  .headline h1 {
+    font-size: 6vh;
+  }
+  .headline p {
+    font-size: 3vh;
+  }
+  #fullscreen-menu .mobile-nav ul li {
+    font-size: 3vh;
+  }
+}
+
+@media only screen and (orientation: landscape) and (min-width: 960px) {
+  h1 {
+    font-size: 4vh;
+  }
+  h2 {
+    font-size: 3vh;
+  }
+  h3 {
+    font-size: 2vh;
+  }
+  h4 {
+    font-size: 1.5vh;
+  }
+  h5 {
+    font-size: 1vh;
+  }
+  h6 {
+    font-size: 0.5vh;
+  }
+  p,
+  ul {
+    font-size: 2vh;
+  }
+  .headline h1 {
+    font-size: 4vh;
+  }
+  .headline p {
+    font-size: 2vh;
+  }
+  #fullscreen-menu .mobile-nav ul li {
+    font-size: 2vh;
+  }
+  
+}
+
 /*!========================================================================
    * 07. Dividers
    * ======================================================================!*/
@@ -139,15 +212,21 @@
    * 10. Header
    * ======================================================================!*/
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: 960px) {
   .nav {
     display: none;
   }
 }
 
-@media only screen and (min-width: 768px) {
+@media only screen and (min-width: 960px) {
   .hamburger-menu {
     display: none;
+  }
+}
+
+@media only screen and (orientation: landscape) {
+  .header-container {
+    height: 60px;
   }
 }
 
@@ -155,6 +234,11 @@
    * 11. Hero Section
    * ======================================================================!*/
 
+@media only screen and (orientation: landscape) {
+  .anilogo .icon {
+    width: 70vh;
+  }
+}
 /*!========================================================================
    * 12. Availability status
    * ======================================================================!*/
@@ -165,9 +249,28 @@
   }
 }
 
+@media only screen and (orientation: landscape) and (max-width: 960px) {
+  #status-shape p {
+    font-size: 8px;
+  }
+}
+
 /*!========================================================================
    * 13. Boxes
    * ======================================================================!*/
+
+@media screen and (orientation: landscape) and (max-width: 960px) {
+  .service-box {
+    padding: 30px;
+    min-height: max-content;
+  }
+  .service-box h2 {
+    font-size: larger;
+  }
+  .service-box li {
+    font-size: small;
+  }
+}
 
 @media screen and (max-width: 768px) {
   .container-services {
@@ -192,7 +295,7 @@
 
   .footer-middle {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
   }
 
   .copyright-text {
