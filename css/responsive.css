@@ -28,8 +28,7 @@
   .nav-container,
   .footer-container,
   .mobile-menu-container,
-  .menu-socials,
-  header {
+  .menu-socials {
     padding-left: env(safe-area-inset-left);
     padding-right: env(safe-area-inset-right);
   }
@@ -60,8 +59,10 @@
   .social-buttons {
     order: 1;
   }
+  #sitemap .container {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
-
 /*!========================================================================
    * 02. Tablets
    * ======================================================================!*/
@@ -107,7 +108,8 @@
    * ======================================================================!*/
 
 @supports (padding: env(safe-area-inset-top)) {
-  .container {
+  .container,
+  header {
     padding-top: calc(2rem + env(safe-area-inset-top));
     padding-left: calc(2rem + env(safe-area-inset-left));
     padding-right: calc(2rem + env(safe-area-inset-right));

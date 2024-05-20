@@ -205,6 +205,27 @@ section row {
   bottom: 2rem;
 }
 
+.error {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  gap: 2rem;
+  margin: 20rem auto;
+}
+
+.text-box {
+  display: flex;
+  flex-direction: column;
+}
+
+#sitemap .container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 5rem;
+}
+
 /*!========================================================================
  * Services Section Container */
 
@@ -396,8 +417,11 @@ header {
   flex-direction: column;
   position: relative;
   width: 100%;
+  gap: 1rem;
+  margin: 0 auto;
+  max-width: 120rem;
   margin-top: 5.5rem;
-  padding: 2rem 2rem;
+  border-bottom: 1px solid var(--text-color-3);
 }
 
 #hero-section {
@@ -466,7 +490,7 @@ h2 {
 
 h3 {
   font-size: 2.1em;
-  font-weight: 300;
+  font-weight: 600;
   margin: 0;
   font-family: "Inter", sans-serif;
   font-optical-sizing: auto;
@@ -476,7 +500,7 @@ h3 {
 
 h4 {
   font-size: 1.9em;
-  font-weight: 300;
+  font-weight: 500;
   margin: 0;
   font-family: "Inter", sans-serif;
   font-optical-sizing: auto;
@@ -486,7 +510,7 @@ h4 {
 
 h5 {
   font-size: 1.7em;
-  font-weight: 200;
+  font-weight: 400;
   margin: 0;
   font-family: "Inter", sans-serif;
   font-optical-sizing: auto;
@@ -496,7 +520,7 @@ h5 {
 
 h6 {
   font-size: 1.5em;
-  font-weight: 200;
+  font-weight: 300;
   margin: 0;
   font-family: "Inter", sans-serif;
   font-optical-sizing: auto;
@@ -517,13 +541,13 @@ li {
   transition: color var(--transition);
 }
 
+h1,
 h2,
 h3,
 h4,
 h5,
 h6 {
-  margin-top: 2rem;
-  margin-bottom: 1rem;
+  margin: 2rem 0;
 }
 
 .box-heading h2 {
@@ -552,6 +576,12 @@ h6 {
   margin: 4rem 0;
   padding: 0;
   color: var(--text-color);
+}
+
+header h1 {
+  font-size: 3em;
+  font-weight: 800;
+  margin: 0;
 }
 
 /*!========================================================================
@@ -607,6 +637,7 @@ p {
 }
 
 header p {
+  font-size: 1.2em;
   font-weight: 200;
   margin: 0;
   font-family: "Inter", sans-serif;
@@ -657,7 +688,7 @@ header p {
 }
 
 strong {
-  font-weight: 500;
+  font-weight: 400;
 }
 
 .service-box .number {
@@ -730,6 +761,22 @@ ul {
 
 .footer-section ul {
   list-style: none;
+}
+
+#sitemap ul {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  gap: 1rem;
+  justify-content: space-between;
+  list-style: none;
+}
+
+#sitemap ul li {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  font-size: 1.5em;
 }
 
 /*!========================================================================

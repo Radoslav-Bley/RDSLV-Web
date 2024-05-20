@@ -9,9 +9,15 @@ RewriteCond %{REQUEST_FILENAME} !-d
 RewriteCond %{REQUEST_FILENAME}\.html -f
 RewriteRule ^(.*)$ $1.html [NC,L]
 
-<FilesMatch "\.(jpg|png|css|js|html)$">
-Header set Cache-Control "private, proxy-revalidate, max-age=300"
-</FilesMatch>
+# Enable mod_rewrite
+RewriteEngine On
+
+# Check if the requested URL starts with /sk/ and serve the Slovak 404 page
+RewriteCond %{REQUEST_URI} ^/sk/
+RewriteRule .* /sk/404.html [L]
+
+# Default 404 page for English or any other language
+ErrorDocument 404 /404.html
 
 RewriteCond %{HTTP_USER_AGENT} ^BlackWidow [OR]
 RewriteCond %{HTTP_USER_AGENT} ^Bot\ mailto:craftbot@yahoo.com [OR]
