@@ -673,8 +673,12 @@ strong {
 }
 
 .breadcrumb {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 1rem;
   margin-top: 1em;
-  font-size: 1em;
+  font-size: 1.4em;
   font-weight: 200;
 }
 
@@ -960,6 +964,10 @@ nav.sticky {
   }
 }
 
+.empty-space {
+  height: 4rem;
+}
+
 /*!========================================================================
  * 11. Images
  * ======================================================================!*/
@@ -1080,6 +1088,13 @@ img {
 .social-buttons .social-button:hover {
   fill: var(--text-color-footer-1);
   transform: scale(1.2);
+}
+
+.breadcrumb svg {
+  display: block;
+  width: 1.4rem;
+  height: auto;
+  fill: var(--text-color-2);
 }
 
 /*!========================================================================
