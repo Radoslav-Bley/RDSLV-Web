@@ -2,7 +2,10 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, viewport-fit=cover"
+    />
     <title>RDSLV - Concept 2024</title>
     <link
       rel="preload"
@@ -125,8 +128,8 @@
       media="(prefers-color-scheme: dark)"
     />
     <script src="/scripts/script.js" defer></script>
-    <!--  <script src="/scripts/jquery-3.7.1.min.js" async="false"></script> -->
     <script src="/scripts/typeit.umd.js" defer></script>
+    <!--  <script src="/scripts/jquery-3.7.1.min.js" async="false"></script> -->
     <!-- <script>
       $(document).ready(function () {
         // Define the available localizations
@@ -412,23 +415,18 @@
   </head>
   <body>
     <main>
-      <!-- section HERO -->
-      <section class="hero-section">
+      <section id="hero-section">
+
         <div class="grid-container">
           <div class="vertical-lines"></div>
           <div class="horizontal-lines"></div>
         </div>
-        <!-- Header -->
-        <header class="header">
-          <div class="header-container">
+
+        <nav>
+          <div class="nav-container">
             <div class="logo">
               <a href="https://rdslv.sk/" title="Homepage">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  viewBox="0 0 1080 1080"
-                  width="50"
-                  height="50"
-                >
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1080 1080">
                   <g transform="translate(0, 50)">
                     <path
                       id="part1"
@@ -442,22 +440,20 @@
                 </svg>
               </a>
             </div>
-            <nav class="nav">
+            <div class="nav">
               <ul>
                 <li><a href="#about">About</a></li>
                 <li><a href="#work">Work</a></li>
                 <li><a href="#contact">Contact</a></li>
               </ul>
-            </nav>
-            <!-- Mobile Navigation -->
+            </div>
             <div class="hamburger-menu" id="hamburger-menu">
               <div class="line line1"></div>
               <div class="line line2"></div>
             </div>
-            <!-- Fullscreen Menu -->
             <div id="fullscreen-menu">
               <div class="mobile-menu-container">
-                <nav class="mobile-nav">
+                <div class="mobile-nav">
                   <ul>
                     <li>
                       <div class="menu-item">
@@ -488,7 +484,7 @@
                       </div>
                     </li>
                   </ul>
-                </nav>
+                </div>
               </div>
               <div class="menu-socials">
                 <div class="social-buttons">
@@ -571,10 +567,9 @@
                 </div>
               </div>
             </div>
-            <!-- Mobile Navigation END -->
           </div>
-        </header>
-        <!-- Header END -->
+        </nav>
+
         <div>
           <div class="anilogo">
             <svg class="icon" viewBox="0 0 1080 1080">
@@ -593,6 +588,7 @@
             </svg>
           </div>
         </div>
+
         <div class="container">
           <row>
             <div class="hero-content-container">
@@ -610,10 +606,11 @@
             </div>
           </row>
         </div>
+
       </section>
-      <!-- - section END -->
-      <!-- section ABOUT -->
+
       <section id="about">
+
         <div class="container left">
           <div class="divider"></div>
           <div>
@@ -655,131 +652,135 @@
           width="500px"
           height="600px"
         />
+
       </section>
-      <!-- section END-->
-      <!-- section Services -->
+
       <section id="services">
+
         <div class="container center">
           <div class="divider"></div>
           <div class="section-heading">
             <h1>How can i help you<span class="highlighted-text">?</span></h1>
           </div>
         </div>
-        <div class="container center services">
-          <div class="service-box slide-in-blurred-bottom">
-            <div class="box-heading">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="16"
-                height="16"
-                fill="currentColor"
-                class="bi bi-code-slash"
-                viewBox="0 0 16 16"
-              >
-                <path
-                  d="M10.478 1.647a.5.5 0 1 0-.956-.294l-4 13a.5.5 0 0 0 .956.294zM4.854 4.146a.5.5 0 0 1 0 .708L1.707 8l3.147 3.146a.5.5 0 0 1-.708.708l-3.5-3.5a.5.5 0 0 1 0-.708l3.5-3.5a.5.5 0 0 1 .708 0m6.292 0a.5.5 0 0 0 0 .708L14.293 8l-3.147 3.146a.5.5 0 0 0 .708.708l3.5-3.5a.5.5 0 0 0 0-.708l-3.5-3.5a.5.5 0 0 0-.708 0"
-                />
-              </svg>
-              <h2>Front-End Development</h2>
+
+          <div class="container services">
+            <div class="service-box slide-in-blurred-bottom">
+              <div class="box-heading">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="16"
+                  height="16"
+                  fill="currentColor"
+                  class="bi bi-code-slash"
+                  viewBox="0 0 16 16"
+                >
+                  <path
+                    d="M10.478 1.647a.5.5 0 1 0-.956-.294l-4 13a.5.5 0 0 0 .956.294zM4.854 4.146a.5.5 0 0 1 0 .708L1.707 8l3.147 3.146a.5.5 0 0 1-.708.708l-3.5-3.5a.5.5 0 0 1 0-.708l3.5-3.5a.5.5 0 0 1 .708 0m6.292 0a.5.5 0 0 0 0 .708L14.293 8l-3.147 3.146a.5.5 0 0 0 .708.708l3.5-3.5a.5.5 0 0 0 0-.708l-3.5-3.5a.5.5 0 0 0-.708 0"
+                  />
+                </svg>
+                <h2>Front-End Development</h2>
+              </div>
+              <ul>
+                <li>Website and Web Application Development</li>
+                <li>UI/UX Design Implementation</li>
+                <li>Performance Optimization</li>
+                <li>Cross-Browser and Cross-Device Compatibility</li>
+              </ul>
+              <div class="number">/1</div>
             </div>
-            <ul>
-              <li>Website and Web Application Development</li>
-              <li>UI/UX Design Implementation</li>
-              <li>Performance Optimization</li>
-              <li>Cross-Browser and Cross-Device Compatibility</li>
-            </ul>
-            <div class="number">/1</div>
-          </div>
-          <div class="service-box slide-in-blurred-bottom">
-            <div class="box-heading">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="16"
-                height="16"
-                fill="currentColor"
-                class="bi bi-code-slash"
-                viewBox="0 0 16 16"
-              >
-                <path
-                  d="M10.478 1.647a.5.5 0 1 0-.956-.294l-4 13a.5.5 0 0 0 .956.294zM4.854 4.146a.5.5 0 0 1 0 .708L1.707 8l3.147 3.146a.5.5 0 0 1-.708.708l-3.5-3.5a.5.5 0 0 1 0-.708l3.5-3.5a.5.5 0 0 1 .708 0m6.292 0a.5.5 0 0 0 0 .708L14.293 8l-3.147 3.146a.5.5 0 0 0 .708.708l3.5-3.5a.5.5 0 0 0 0-.708l-3.5-3.5a.5.5 0 0 0-.708 0"
-                />
-              </svg>
-              <h2>Back-End Development</h2>
+            <div class="service-box slide-in-blurred-bottom">
+              <div class="box-heading">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="16"
+                  height="16"
+                  fill="currentColor"
+                  class="bi bi-code-slash"
+                  viewBox="0 0 16 16"
+                >
+                  <path
+                    d="M10.478 1.647a.5.5 0 1 0-.956-.294l-4 13a.5.5 0 0 0 .956.294zM4.854 4.146a.5.5 0 0 1 0 .708L1.707 8l3.147 3.146a.5.5 0 0 1-.708.708l-3.5-3.5a.5.5 0 0 1 0-.708l3.5-3.5a.5.5 0 0 1 .708 0m6.292 0a.5.5 0 0 0 0 .708L14.293 8l-3.147 3.146a.5.5 0 0 0 .708.708l3.5-3.5a.5.5 0 0 0 0-.708l-3.5-3.5a.5.5 0 0 0-.708 0"
+                  />
+                </svg>
+                <h2>Back-End Development</h2>
+              </div>
+              <ul>
+                <li>Server-Side Development</li>
+                <li>Database Management</li>
+                <li>API Development and Integration</li>
+                <li>Authentication and Security</li>
+              </ul>
+              <div class="number">/2</div>
             </div>
-            <ul>
-              <li>Server-Side Development</li>
-              <li>Database Management</li>
-              <li>API Development and Integration</li>
-              <li>Authentication and Security</li>
-            </ul>
-            <div class="number">/2</div>
-          </div>
-          <div class="service-box slide-in-blurred-bottom">
-            <div class="box-heading">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="16"
-                height="16"
-                fill="currentColor"
-                class="bi bi-circle-square"
-                viewBox="0 0 16 16"
-              >
-                <path d="M0 6a6 6 0 1 1 12 0A6 6 0 0 1 0 6" />
-                <path
-                  d="M12.93 5h1.57a.5.5 0 0 1 .5.5v9a.5.5 0 0 1-.5.5h-9a.5.5 0 0 1-.5-.5v-1.57a7 7 0 0 1-1-.22v1.79A1.5 1.5 0 0 0 5.5 16h9a1.5 1.5 0 0 0 1.5-1.5v-9A1.5 1.5 0 0 0 14.5 4h-1.79q.145.486.22 1"
-                />
-              </svg>
-              <h2>Graphic Design</h2>
+            <div class="service-box slide-in-blurred-bottom">
+              <div class="box-heading">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="16"
+                  height="16"
+                  fill="currentColor"
+                  class="bi bi-circle-square"
+                  viewBox="0 0 16 16"
+                >
+                  <path d="M0 6a6 6 0 1 1 12 0A6 6 0 0 1 0 6" />
+                  <path
+                    d="M12.93 5h1.57a.5.5 0 0 1 .5.5v9a.5.5 0 0 1-.5.5h-9a.5.5 0 0 1-.5-.5v-1.57a7 7 0 0 1-1-.22v1.79A1.5 1.5 0 0 0 5.5 16h9a1.5 1.5 0 0 0 1.5-1.5v-9A1.5 1.5 0 0 0 14.5 4h-1.79q.145.486.22 1"
+                  />
+                </svg>
+                <h2>Graphic Design</h2>
+              </div>
+              <ul>
+                <li>Branding and Identity Design</li>
+                <li>Web and Mobile Design</li>
+                <li>Print Design</li>
+                <li>Marketing and Advertising Design</li>
+              </ul>
+              <div class="number">/3</div>
             </div>
-            <ul>
-              <li>Branding and Identity Design</li>
-              <li>Web and Mobile Design</li>
-              <li>Print Design</li>
-              <li>Marketing and Advertising Design</li>
-            </ul>
-            <div class="number">/3</div>
-          </div>
-          <div class="service-box slide-in-blurred-bottom">
-            <div class="box-heading">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="16"
-                height="16"
-                fill="currentColor"
-                class="bi bi-camera-reels"
-                viewBox="0 0 16 16"
-              >
-                <path
-                  d="M6 3a3 3 0 1 1-6 0 3 3 0 0 1 6 0M1 3a2 2 0 1 0 4 0 2 2 0 0 0-4 0"
-                />
-                <path
-                  d="M9 6h.5a2 2 0 0 1 1.983 1.738l3.11-1.382A1 1 0 0 1 16 7.269v7.462a1 1 0 0 1-1.406.913l-3.111-1.382A2 2 0 0 1 9.5 16H2a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2zm6 8.73V7.27l-3.5 1.555v4.35zM1 8v6a1 1 0 0 0 1 1h7.5a1 1 0 0 0 1-1V8a1 1 0 0 0-1-1H2a1 1 0 0 0-1 1"
-                />
-                <path
-                  d="M9 6a3 3 0 1 0 0-6 3 3 0 0 0 0 6M7 3a2 2 0 1 1 4 0 2 2 0 0 1-4 0"
-                />
-              </svg>
-              <h2>Video Edit</h2>
+            <div class="service-box slide-in-blurred-bottom">
+              <div class="box-heading">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="16"
+                  height="16"
+                  fill="currentColor"
+                  class="bi bi-camera-reels"
+                  viewBox="0 0 16 16"
+                >
+                  <path
+                    d="M6 3a3 3 0 1 1-6 0 3 3 0 0 1 6 0M1 3a2 2 0 1 0 4 0 2 2 0 0 0-4 0"
+                  />
+                  <path
+                    d="M9 6h.5a2 2 0 0 1 1.983 1.738l3.11-1.382A1 1 0 0 1 16 7.269v7.462a1 1 0 0 1-1.406.913l-3.111-1.382A2 2 0 0 1 9.5 16H2a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2zm6 8.73V7.27l-3.5 1.555v4.35zM1 8v6a1 1 0 0 0 1 1h7.5a1 1 0 0 0 1-1V8a1 1 0 0 0-1-1H2a1 1 0 0 0-1 1"
+                  />
+                  <path
+                    d="M9 6a3 3 0 1 0 0-6 3 3 0 0 0 0 6M7 3a2 2 0 1 1 4 0 2 2 0 0 1-4 0"
+                  />
+                </svg>
+                <h2>Video Edit</h2>
+              </div>
+              <ul>
+                <li>Video Editing and Post-Production</li>
+                <li>Motion Graphics and Animation</li>
+                <li>Audio Editing and Sound Design</li>
+                <li>Color Grading and Correction</li>
+              </ul>
+              <div class="number">/4</div>
             </div>
-            <ul>
-              <li>Video Editing and Post-Production</li>
-              <li>Motion Graphics and Animation</li>
-              <li>Audio Editing and Sound Design</li>
-              <li>Color Grading and Correction</li>
-            </ul>
-            <div class="number">/4</div>
           </div>
-        </div>
+
       </section>
-      <!-- section END -->
-      <!-- section REEL 
-      <section id="reel" class="overlay">
+
+      <!-- <section id="reel" class="overlay">
+
         <div class="container center">
           <div class="divider"></div>
           <div class="section-heading">
           <h1>Reel <span class="highlighted-text">2024</span></h1>
           </div>
         </div>
+
         <div class="container center">
           <div id="youtube-video" class="video-container">
             <img
@@ -790,16 +791,18 @@
             <button onclick="loadYoutubeVideo()">Play</button>
           </div>
         </div>
+
       </section> -->
-      <!-- section END -->
-      <!-- section CLIENTS -->
+
       <section id="clients">
+
         <div class="container center">
           <div class="divider"></div>
           <div class="section-heading">
             <h1>Clients<span class="highlighted-text">.</span></h1>
           </div>
-          <article class="wrapper">
+
+          <div class="wrapper">
             <div class="marquee">
               <div class="marquee__group">
                 <img
@@ -923,14 +926,15 @@
                 />
               </div>
             </div>
-          </article>
+          </div>
         </div>
+
       </section>
-      <!-- section END -->
     </main>
+
     <footer class="footer">
+
       <section class="footer-container">
-        <!-- Top Row -->
         <div class="footer-top">
           <div>
             <h2>
@@ -945,13 +949,13 @@
             </h2>
           </div>
         </div>
-        <!-- Middle Section -->
+
         <div class="footer-middle">
           <div class="footer-section">
             <h3>Quick Links<span class="highlighted-text">.</span></h3>
             <ul>
               <li><a href="/privacy-policy.html">Privacy Policy</a></li>
-              <li><a href="#">Sitemap</a></li>
+              <li><a href="/sitemap.html">Sitemap</a></li>
             </ul>
           </div>
           <div class="footer-section">
@@ -977,7 +981,7 @@
             </ul>
           </div>
         </div>
-        <!-- Subfooter -->
+
         <div class="subfooter">
           <div class="copyright-text">
             <p>&copy; 2024 radoslav bley.</p>
@@ -1062,6 +1066,7 @@
           </div>
         </div>
       </section>
+      
     </footer>
   </body>
 </html>

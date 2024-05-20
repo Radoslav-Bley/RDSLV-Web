@@ -25,6 +25,13 @@
   .anilogo .icon {
     height: 70%;
   }
+  .nav-container,
+  .footer-container,
+  .mobile-menu-container,
+  .menu-socials {
+    padding-left: env(safe-area-inset-left);
+    padding-right: env(safe-area-inset-right);
+  }
 }
 
 /*!========================================================================
@@ -32,7 +39,7 @@
    * ======================================================================!*/
 
 @media (max-width: 575.98px) {
-  .container.services {
+  .services {
     grid-template-columns: 1fr;
   }
   .nav {
@@ -98,17 +105,12 @@
    * 06. Safe Area
    * ======================================================================!*/
 
-@supports(padding: env(safe-area-inset-top)) {
-  body {
-    padding-top: env(safe-area-inset-top);
-    padding-left: env(safe-area-inset-left);
-    padding-right: env(safe-area-inset-right);
-    padding-bottom: env(safe-area-inset-bottom);
+   @supports (padding: env(safe-area-inset-top)) {
+    .container {
+      padding-top: calc(2rem + env(safe-area-inset-top));
+      padding-left: calc(2rem + env(safe-area-inset-left));
+      padding-right: calc(2rem + env(safe-area-inset-right));
+      padding-bottom: calc(2rem + env(safe-area-inset-bottom));
+    }
   }
-
-  .header {
-    padding-left: env(safe-area-inset-left);
-    padding-right: env(safe-area-inset-right);
-  }
-}
-
+  

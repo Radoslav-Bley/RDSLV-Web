@@ -96,29 +96,12 @@
   /*!========================================================================
  * Clients Section */
 
-  --size: clamp(10rem, 1rem + 30vmin, 20rem);
+  --size: clamp(10rem, 1rem + 40vmin, 30rem);
   --gap: calc(var(--size) / 14);
   --duration: 60s;
   --scroll-start: 0;
   --scroll-end: calc(-100% - var(--gap));
   --box-color: rgba(128, 128, 128, 0.1);
-
-  /*!========================================================================
- * Paddings/Margins */
-  --container: 0 1.3em;
-  --footer: 2em 0;
-  --smaller: 1em;
-  --main: 1.3em;
-  --bigger: 2em;
-  --biggest: 3em;
-  --section: 4em;
-  --center: 0 auto;
-  --gap-smallest: 0.5em;
-  --gap-small: 1em;
-  --gap-smaller: 1.5em;
-  --gap-bigger: 2em;
-  --gap-big: 2.5em;
-  --gap-biggest: 3.5em;
 }
 
 /*!========================================================================
@@ -141,7 +124,7 @@
 }
 
 html {
-  font-size: 16px;
+  font-size: 10px;
   font-weight: 400;
   line-height: 1.5;
   text-transform: lowercase;
@@ -161,7 +144,7 @@ body {
 }
 
 .content {
-  padding-top: var(--main);
+  padding-top: 2rem;
 }
 
 /*!========================================================================
@@ -171,29 +154,21 @@ body {
 /*!========================================================================
  * Hero + Navigation Container */
 
-.header-container {
+.nav-container {
   display: flex;
   justify-content: space-between;
   align-items: center;
   width: 100%;
-  max-width: 1200px;
-  margin: var(--center);
-  padding: var(--smaller);
+  max-width: 120rem;
+  margin: 0 auto;
+  padding: 2rem;
   font-weight: 500;
 }
 
 .hero-content-container {
   display: flex;
   flex-direction: column;
-  gap: var(--gap-smaller);
-}
-
-.subheader {
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  gap: 1em;
-  padding: 5em 0;
+  gap: 1.5rem;
 }
 
 /*!========================================================================
@@ -202,18 +177,15 @@ body {
 .container {
   display: flex;
   flex-direction: column;
-  padding: var(--container);
+  padding: 2rem;
   width: 100%;
-  max-width: 1200px;
+  max-width: 120rem;
   margin: 0 auto;
 }
 
-.container:first-child {
-  padding-top: var(--section);
-}
-
-.container:last-child {
-  padding-bottom: var(--section);
+section {
+  padding-top: 4rem;
+  padding-bottom: 4rem;
 }
 
 .container.center {
@@ -228,9 +200,9 @@ body {
   text-align: left;
 }
 
-.container row {
+section row {
   position: absolute;
-  bottom: var(--main);
+  bottom: 2rem;
 }
 
 /*!========================================================================
@@ -238,14 +210,16 @@ body {
 
 .services {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  grid-auto-rows: auto;
-  gap: var(--gap-biggest);
+  grid-template-columns: repeat(2, minmax(1rem, 1fr));
+  gap: 4rem;
+  padding: 0 2rem;
+  max-width: 120rem;
+  margin: 0 auto;
 }
 
 .service-box {
-  padding: var(--bigger);
-  border-radius: 1.3em;
+  padding: 3rem;
+  border-radius: 2rem;
   height: 100%;
   border: 1px solid rgba(0, 0, 0, 0.1);
   text-align: left;
@@ -262,7 +236,7 @@ body {
   align-items: center;
   justify-content: flex-start;
   border-bottom: 1px solid var(--text-color-3);
-  padding-bottom: var(--main);
+  padding-bottom: 1.5rem;
 }
 
 /*!========================================================================
@@ -280,8 +254,8 @@ body {
   background: transparent;
   border: none;
   position: absolute;
-  width: 90px;
-  height: 90px;
+  width: 9rem;
+  height: 9rem;
   cursor: pointer;
 }
 
@@ -293,17 +267,17 @@ body {
   top: 50%;
   transform: translate(-50%, -50%);
   width: 100%;
-  height: 63px;
+  height: 6.3rem;
   background-image: url("/img/assets/youtube/YouTube_play_button_icon_\(2013–2017\).svg");
   background-size: cover;
 }
 
 .video-container iframe {
   width: 100%;
-  height: 500px;
+  height: 50rem;
   border: none;
-  border-radius: 20px;
-  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+  border-radius: 2rem;
+  box-shadow: 0 0 2rem rgba(0, 0, 0, 0.1);
 }
 
 /*!========================================================================
@@ -375,15 +349,15 @@ body {
   display: flex;
   flex-direction: column;
   margin: 0 auto;
-  padding: var(--main);
-  max-width: 1200px;
+  padding: 2rem;
+  max-width: 120rem;
   width: 100%;
 }
 
 .footer-top {
   display: flex;
-  gap: var(--gap-bigger);
-  margin: var(--footer);
+  gap: 4rem;
+  margin: 4rem 0;
   flex-direction: column;
 }
 
@@ -392,8 +366,8 @@ body {
   flex-wrap: wrap;
   justify-content: space-between;
   width: 100%;
-  gap: var(--gap-bigger);
-  padding: var(--footer);
+  gap: 2rem;
+  padding: 4rem 0;
   border-top: 1px solid var(--f-divider);
   border-bottom: 1px solid var(--f-divider);
 }
@@ -402,35 +376,31 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding-top: var(--gap-bigger);
-  gap: 1.5em;
+  padding: 3rem 0 1rem 0;
+  gap: 2rem;
 }
 
 .social-buttons {
   display: flex;
-  gap: var(--gap-small);
+  gap: 3rem;
+  margin: 0;
+  padding: 0;
 }
 
 /*!========================================================================
  * 04. Sections
  * ======================================================================!*/
 
-article,
-aside,
-footer,
-header,
-nav,
-section {
-  display: block;
-}
-
-.header-section {
+header {
+  display: flex;
+  flex-direction: column;
   position: relative;
   width: 100%;
-  height: 9em;
+  margin-top: 5.5rem;
+  padding: 2rem 2rem;
 }
 
-.hero-section {
+#hero-section {
   width: 100%;
   height: 100vh;
   background-image: linear-gradient(
@@ -474,7 +444,7 @@ section {
  * Headings */
 
 h1 {
-  font-size: 1.8em;
+  font-size: 2.5em;
   font-weight: 800;
   line-height: 1.2;
   margin: 0;
@@ -485,7 +455,7 @@ h1 {
 }
 
 h2 {
-  font-size: 1.6em;
+  font-size: 2.3em;
   font-weight: 700;
   margin: 0;
   font-family: "Inter", sans-serif;
@@ -495,7 +465,7 @@ h2 {
 }
 
 h3 {
-  font-size: 1.4em;
+  font-size: 2.1em;
   font-weight: 300;
   margin: 0;
   font-family: "Inter", sans-serif;
@@ -505,7 +475,7 @@ h3 {
 }
 
 h4 {
-  font-size: 1.2em;
+  font-size: 1.9em;
   font-weight: 300;
   margin: 0;
   font-family: "Inter", sans-serif;
@@ -515,7 +485,7 @@ h4 {
 }
 
 h5 {
-  font-size: 1em;
+  font-size: 1.7em;
   font-weight: 200;
   margin: 0;
   font-family: "Inter", sans-serif;
@@ -525,7 +495,7 @@ h5 {
 }
 
 h6 {
-  font-size: 0.8em;
+  font-size: 1.5em;
   font-weight: 200;
   margin: 0;
   font-family: "Inter", sans-serif;
@@ -552,34 +522,34 @@ h3,
 h4,
 h5,
 h6 {
-  margin-top: 1.3em;
-  margin-bottom: 1em;
+  margin-top: 2rem;
+  margin-bottom: 1rem;
 }
 
 .box-heading h2 {
   margin: 0;
   padding: 0;
-  font-size: 1.3em;
+  font-size: 2em;
   font-weight: 800;
 }
 
 .footer-top h2 {
   color: var(--text-color-footer-1);
-  font-size: 1.5em;
+  font-size: 2.5em;
   font-weight: 100;
   margin: 0;
 }
 
 .footer-section h3 {
   margin-top: 0;
-  margin-bottom: 1.3em;
+  margin-bottom: 2rem;
   color: var(--text-color-footer-1);
-  font-size: 1em;
+  font-size: 1.8em;
   font-weight: 500;
 }
 
 .section-heading {
-  margin: 2em 0;
+  margin: 4rem 0;
   padding: 0;
   color: var(--text-color);
 }
@@ -607,12 +577,16 @@ a:hover {
   color: var(--text-color-footer-1);
 }
 
-.footer-section a{
-  font-size: 0.9em;
+.footer-section a {
   font-weight: 200;
   margin-top: 0;
-  margin-bottom: 0.7em;
+  margin-bottom: 1rem;
   color: var(--text-color-footer-2);
+}
+
+.footer-section a,
+.footer-section p {
+  font-size: 1.5rem;
 }
 
 .footer-section a:hover {
@@ -623,7 +597,7 @@ a:hover {
  * Basic */
 
 p {
-  font-size: 1em;
+  font-size: 1.8em;
   font-weight: 200;
   margin: 0;
   font-family: "Inter", sans-serif;
@@ -632,7 +606,7 @@ p {
   font-variation-settings: "slnt" 0;
 }
 
-.subheader p {
+header p {
   font-weight: 200;
   margin: 0;
   font-family: "Inter", sans-serif;
@@ -642,11 +616,10 @@ p {
 }
 
 .footer-section p,
-.footer-section li{
-  font-size: 0.9em;
+.footer-section li {
   font-weight: 200;
   margin-top: 0;
-  margin-bottom: 0.7em;
+  margin-bottom: 1em;
   color: var(--text-color-footer-2);
 }
 
@@ -658,7 +631,7 @@ p {
 
 .copyright-text p {
   color: var(--f-divider);
-  font-size: 0.9em;
+  font-size: 1.2em;
   font-weight: 400;
   margin: 0;
   padding: 0;
@@ -666,11 +639,11 @@ p {
 
 #status-pill p {
   font-weight: 300;
-  font-size: 0.8em;
+  font-size: 1em;
   color: var(--text-color);
   margin: 0;
   padding-left: 1em;
-  padding-right: 0.8em;
+  padding-right: 1em;
   text-transform: uppercase;
   letter-spacing: 0.1em;
 }
@@ -700,8 +673,8 @@ strong {
 }
 
 .breadcrumb {
-  margin-top: 0;
-  font-size: 0.6em;
+  margin-top: 1em;
+  font-size: 1em;
   font-weight: 200;
 }
 
@@ -722,7 +695,8 @@ ul {
 }
 
 .nav ul li {
-  margin-left: 1.3em;
+  margin-left: 2em;
+  font-size: 1.5em;
 }
 
 .nav ul li:first-child {
@@ -732,10 +706,10 @@ ul {
 .service-box ul {
   display: flex;
   flex-direction: column;
-  gap: 2em;
+  gap: 3rem;
   list-style: disc;
-  padding-left: 2em;
-  margin-top: 2em;
+  padding-left: 3em;
+  margin-top: 3em;
 }
 
 .service-box ul li::marker {
@@ -745,8 +719,9 @@ ul {
 .service-box ul li {
   position: relative;
   font-weight: 200;
+  font-size: 1.5em;
   color: var(--text-color);
-  padding-left: 1.3em;
+  padding-left: 1em;
 }
 
 .footer-section ul {
@@ -757,40 +732,41 @@ ul {
  * 08. Navigation
  * ======================================================================!*/
 
-.header {
+nav {
   position: fixed;
   left: 0;
   top: 0;
   width: 100%;
-  height: 4em;
+  height: 5.5rem;
   z-index: 9999;
   display: flex;
   align-items: center;
   justify-content: space-between;
+  transition: all var(--transition);
 }
 
-.header.sticky {
+nav.sticky {
   background-color: var(--bg-color-2);
   box-shadow: var(--menu-divider) 0px 1px 0px 0px;
-  -webkit-backdrop-filter: blur(30px);
-  backdrop-filter: blur(30px);
-  transition: background-color var(--transition);
+  -webkit-backdrop-filter: blur(14px);
+  backdrop-filter: blur(14px);
+  transition: all var(--transition);
 }
 
 /*!========================================================================
  * Hamburger */
 
 .hamburger-menu {
-  width: 1.3em;
-  height: 1.3em;
+  width: 2rem;
+  height: 1.5rem;
   position: relative;
   cursor: pointer;
   z-index: 10000;
 }
 
 .line {
-  width: 1.3em;
-  height: 1px;
+  width: 2rem;
+  height: 0.1rem;
   background-color: var(--menu-color);
   position: absolute;
   right: 0;
@@ -807,12 +783,12 @@ ul {
 
 .hamburger-menu.active .line1 {
   transform: rotate(-45deg);
-  top: 47%;
+  top: 46%;
 }
 
 .hamburger-menu.active .line2 {
   transform: rotate(45deg);
-  bottom: 47%;
+  bottom: 46%;
 }
 
 /*!========================================================================
@@ -841,13 +817,14 @@ ul {
   justify-content: flex-start;
   align-items: flex-start;
   flex-direction: column;
-  padding: 5em 3em;
+  margin-top: 10rem;
+  padding: 0 4rem;
 }
 
 #fullscreen-menu .mobile-nav ul {
   display: flex;
   flex-wrap: wrap;
-  gap: 2.5em;
+  gap: 3rem;
   justify-content: space-between;
   list-style: none;
 }
@@ -855,7 +832,7 @@ ul {
 #fullscreen-menu .mobile-nav ul li a {
   margin: 0;
   padding: 0;
-  font-size: 2.5em;
+  font-size: 3em;
   font-weight: 200;
   color: var(--text-color-1);
 }
@@ -869,19 +846,19 @@ ul {
   flex-direction: column;
   align-items: start;
   flex-grow: 1;
-  width: 13em;
+  width: 17rem;
 }
 
 .subheading {
-  font-size: 0.8em;
+  font-size: 1em;
   font-weight: 600;
   color: var(--text-color-3);
 }
 
 .menu-socials {
   position: absolute;
-  bottom: 3em;
-  left: 3em;
+  bottom: 4em;
+  left: 4em;
 }
 
 /*!========================================================================
@@ -991,9 +968,12 @@ ul {
  * Logo */
 
 .logo {
-  width: 3em;
-  height: auto;
   display: block;
+}
+
+.logo svg {
+  width: 4.5rem;
+  height: auto;
 }
 
 #part1 {
@@ -1021,7 +1001,7 @@ ul {
 
 .anilogo .icon {
   position: absolute;
-  max-width: 1200px;
+  max-width: 120rem;
   top: 50%;
   transform: translateY(-50%);
 }
@@ -1034,7 +1014,7 @@ ul {
 
 .anilogo .icon #b {
   stroke: var(--secondary-color);
-  stroke-width: 0.2em;
+  stroke-width: 0.2rem;
 }
 
 .anilogo .icon #b.is-active {
@@ -1043,7 +1023,7 @@ ul {
 
 .anilogo .icon #r {
   stroke: var(--primary-color);
-  stroke-width: 0.2em;
+  stroke-width: 0.2rem;
 }
 
 .anilogo .icon #r.is-active {
@@ -1060,7 +1040,7 @@ ul {
   background: var(--box-color);
   aspect-ratio: 16/9;
   padding: calc(var(--size) / 10);
-  border-radius: 0.5em;
+  border-radius: 1rem;
   transition: filter var(--transition);
 }
 
@@ -1077,28 +1057,29 @@ img {
 #about img {
   height: auto;
   display: block;
-  margin-top: 4em;
+  margin: 4rem auto;
 }
 
 /*!========================================================================
  * Icons */
 
 .box-heading svg {
-  width: 1.2em;
+  width: 1.8rem;
   height: auto;
   fill: var(--text-color);
-  margin-right: 1em;
+  margin-right: 2rem;
 }
 
 .social-buttons .social-button {
   display: inline-flex;
   cursor: pointer;
   fill: var(--social-color);
-  transition: fill var(--transition);
+  transition: all var(--transition);
 }
 
 .social-buttons .social-button:hover {
   fill: var(--text-color-footer-1);
+  transform: scale(1.2);
 }
 
 /*!========================================================================

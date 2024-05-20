@@ -86,7 +86,7 @@
  * 04. Sections
  * ======================================================================!*/
 
-  .hero-section {
+  #hero-section {
     background: linear-gradient(
       180deg,
       rgba(30, 30, 30, 1) 0%,
