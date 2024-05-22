@@ -17,14 +17,11 @@
 
 @media (orientation: portrait) {
   .anilogo .icon {
-    width: 70%;
+    width: 100%;
   }
 }
 
 @media (orientation: landscape) {
-  .anilogo .icon {
-    height: 70%;
-  }
   .nav-container,
   .footer-container,
   .mobile-menu-container,
@@ -61,6 +58,9 @@
   }
   #sitemap .container {
     grid-template-columns: repeat(2, 1fr);
+  }
+  section row {
+    height: 80%;
   }
 }
 /*!========================================================================
