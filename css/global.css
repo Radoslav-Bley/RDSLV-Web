@@ -239,9 +239,6 @@ section row {
   display: grid;
   grid-template-columns: repeat(2, minmax(1rem, 1fr));
   gap: 4rem;
-  padding: 0 2rem;
-  max-width: 120rem;
-  margin: 0 auto;
 }
 
 .service-box {
@@ -253,7 +250,7 @@ section row {
   position: relative;
   z-index: 1;
   overflow: hidden;
-  background-image: var(--box-bg);
+  background-color: var(--box-color);
   transition: background-image var(--transition), border var(--transition);
 }
 
@@ -628,7 +625,7 @@ a:hover {
 
 .footer-section a,
 .footer-section p {
-  font-size: 1.5rem;
+  font-size: 1.4rem;
 }
 
 .footer-section a:hover {
@@ -639,7 +636,7 @@ a:hover {
  * Basic */
 
 p {
-  font-size: 1.5em;
+  font-size: 1.7em;
   font-weight: 200;
   margin: 0;
   font-family: "Inter", sans-serif;
@@ -748,7 +745,7 @@ ul {
 
 .nav ul li {
   margin-left: 2em;
-  font-size: 1.5em;
+  font-size: 1.4em;
 }
 
 .nav ul li:first-child {
@@ -771,7 +768,7 @@ ul {
 .service-box ul li {
   position: relative;
   font-weight: 200;
-  font-size: 1.5em;
+  font-size: 1.7em;
   color: var(--text-color);
   padding-left: 1em;
 }
