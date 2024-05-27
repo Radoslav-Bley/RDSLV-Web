@@ -73,12 +73,12 @@ function setAddressBarColor() {
     // Dark mode
     document
       .querySelector('meta[name="theme-color"]')
-      .setAttribute("content", "#0a0a0a");
+      .setAttribute("content", "#000000");
   } else {
     // Light mode
     document
       .querySelector('meta[name="theme-color"]')
-      .setAttribute("content", "#f5f8fd");
+      .setAttribute("content", "#ffffff");
   }
 }
 
@@ -204,7 +204,7 @@ menuItems.forEach(function(item) {
 });
 
 /*!========================================================================
- * 08. Smooth Scroll
+ * 08. Hero Section Particles Animation
  * ======================================================================!*/
 
 particlesJS("particles-js", {
