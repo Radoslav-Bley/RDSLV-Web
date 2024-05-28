@@ -25,19 +25,17 @@
   /*!========================================================================
  * Backgrounds */
 
-  --bg-color: rgb(255, 255, 255);
-  --bg-footer: rgb(245, 245, 247);
-  --bg-box: rgb(245, 245, 247);
+  --bg-color: #ffffff;
+  --bg-footer: #ececec;
+  --bg-box: #ececec;
 
   /*!========================================================================
  * Text */
 
-  --text-primary: rgb(0, 0, 0);
-  --text-secondary: rgba(0, 0, 0, 0.5);
-  --text-footer: rgba(0, 0, 0, 0.56);
-  --text-accent: rgba(237, 28, 36, 1);
-  --box-number-color: rgba(0, 0, 0, 0.05);
-  --section-heading: rgba(0, 0, 0, 0.5);
+  --text-primary: #000000;
+  --text-secondary: #5e5e5e;
+  --text-accent: #ed1c24;
+  --section-heading: #919191;
   --transition: 0.3s ease-in-out;
 
   /*!========================================================================
@@ -50,26 +48,16 @@
   --final-color: #e1e4e9;
 
   /*!========================================================================
- * Grid Drawing */
-
-  --grid-color: rgba(245, 248, 253, 0.6);
-
-  /*!========================================================================
- * Overlays */
-
-  --overlay: rgba(0, 0, 0, 0.05);
-
-  /*!========================================================================
  * Navigation */
 
-  --menu-color: rgba(10, 10, 10, 1);
-  --menu-divider: rgba(10, 10, 10, 0.1);
+  --nav-color: rgba(255, 255, 255, .2);
+  --menu-color: #000000;
+  --menu-divider: #ececec;
 
   /*!========================================================================
  * Dividers */
 
-  --divider: rgba(10, 10, 10, 1);
-  --section-divider: rgba(0, 0, 0, 0.16);
+  --section-divider: #919191;
 
   /*!========================================================================
  * Social Icons */
@@ -223,7 +211,7 @@ section row {
 
 .service-box {
   padding: 1.87rem;
-  border-radius: 1.25rem;
+  border-radius: 20px;
   height: 100%;
   text-align: left;
   position: relative;
@@ -418,6 +406,7 @@ header {
 
 .footer {
   background-color: var(--bg-footer);
+  border-radius: 20px 20px 0 0;
 }
 
 section {
@@ -546,7 +535,7 @@ h6 {
 
 .footer-top h2 {
   font-size: 1.5rem;
-  font-weight: 100;
+  font-weight: 300;
   margin: 0;
 }
 
@@ -559,6 +548,7 @@ h6 {
 
 .section-heading {
   font-size: 1em;
+  font-weight: 900;
   text-align: left;
   padding: 0;
   margin-bottom: 1.55rem;
@@ -590,7 +580,7 @@ a:hover {
  * Basic */
 
 p {
-  font-size: 1em;
+  font-size: 1.06em;
   font-weight: 200;
   margin: 0;
   font-family: "Inter", sans-serif;
@@ -610,7 +600,7 @@ header p {
 }
 
 .footer-section li {
-  font-weight: 200;
+  font-weight: 400;
   color: var(--text-secondary);
   font-size: .75em;
   margin-bottom: .3rem;
@@ -706,7 +696,7 @@ ul {
   font-weight: 200;
   font-size: 1.06rem;
   padding-left: 1.25em;
-  color: var(--text-secondary);
+  color: var(--text-primary);
 }
 
 .footer-section ul {
@@ -748,7 +738,7 @@ nav {
 }
 
 nav.sticky {
-  background-color: var(--bg-color-2);
+  background-color: var(--nav-color);
   box-shadow: var(--menu-divider) 0px 1px 0px 0px;
   -webkit-backdrop-filter: blur(15px);
   backdrop-filter: blur(15px);
@@ -836,6 +826,7 @@ nav.sticky {
   padding: 0;
   font-size: 1.87em;
   font-weight: 200;
+  color: var(--text-primary);
 }
 
 .menu-item {
@@ -1026,7 +1017,7 @@ nav.sticky {
 
 .anilogo .icon #b {
   stroke: var(--secondary-color);
-  stroke-width: 0.1.25rem;
+  stroke-width: .3rem;
 }
 
 .anilogo .icon #b.is-active {
@@ -1035,7 +1026,7 @@ nav.sticky {
 
 .anilogo .icon #r {
   stroke: var(--primary-color);
-  stroke-width: 0.1.25rem;
+  stroke-width: .3rem;
 }
 
 .anilogo .icon #r.is-active {
@@ -1052,7 +1043,7 @@ nav.sticky {
   aspect-ratio: 16/9;
   background-color: var(--bg-box);
   padding: calc(var(--size) / 10);
-  border-radius: 0.62rem;
+  border-radius: 20px;
   transition: filter var(--transition);
 }
 
