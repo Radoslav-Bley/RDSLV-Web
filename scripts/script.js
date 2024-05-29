@@ -5,40 +5,15 @@
  *
  * 01. Reveal animations
  * 02. Adrress Bar Color Change
- * 03. Favicon Color Change
- * 04. YouTube Lazy Loading
- * 05. Header background on scroll
- * 06. Grid Drawing Animation
- * 07. Menu Toggle
+ * 03. YouTube Lazy Loading
+ * 04. Header background on scroll
+ * 05. Menu Toggle
+ * 06. Hero Section Particles Animation
  */
 
 /*!========================================================================
  * 01. Reveal animations
  * ======================================================================!*/
-
-/* Divider Animation */
-
-// Function to handle reveal animation
-function revealDivider(entries, observer) {
-  entries.forEach((entry) => {
-    if (entry.isIntersecting) {
-      entry.target.classList.add("reveal"); // Add reveal class when divider appears on the screen
-      observer.unobserve(entry.target); // Stop observing once revealed
-    }
-  });
-}
-
-// Create an Intersection Observer
-let dividerObserver = new IntersectionObserver(revealDivider, {
-  root: null,
-  rootMargin: "0px",
-  threshold: 0.5, // Adjust threshold as needed
-});
-
-document.querySelectorAll(".divider").forEach((divider) => {
-  divider.classList.add("divider-center"); // Add the class
-  dividerObserver.observe(divider);
-});
 
 /* Element Animation */
 
@@ -91,28 +66,7 @@ window
   .addListener(setAddressBarColor);
 
 /*!========================================================================
- * 03. Favicon Color Change
- * ======================================================================!*/
-
-function setFavicon() {
-  var favicon = document.querySelector('link[rel="shortcut icon"]');
-  if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
-    // Dark mode
-    favicon.href = "/img/assets/favicons/favicon_dark.ico";
-  } else {
-    // Light mode
-    favicon.href = "/img/assets/favicons/favicon.ico";
-  }
-}
-
-// Call the function to set the initial favicon
-setFavicon();
-
-// Listen for changes in the user's color scheme preference
-window.matchMedia("(prefers-color-scheme: dark)").addListener(setFavicon);
-
-/*!========================================================================
- * 04. YouTube Lazy Loading
+ * 03. YouTube Lazy Loading
  * ======================================================================!*/
 
 function loadYoutubeVideo() {
@@ -121,7 +75,7 @@ function loadYoutubeVideo() {
 }
 
 /*!========================================================================
- * 05. Header background on scroll
+ * 04. Header background on scroll
  * ======================================================================!*/
 
 window.addEventListener("scroll", function () {
@@ -129,35 +83,9 @@ window.addEventListener("scroll", function () {
   nav.classList.toggle("sticky", window.scrollY > 0);
 });
 
-/*!========================================================================
- * 06. Grid Drawing Animation
- * ======================================================================!*/
-
-document.addEventListener('DOMContentLoaded', () => {
-  const gridContainer = document.querySelector('.grid-container');
-  const verticalLinesContainer = document.querySelector('.vertical-lines');
-  const horizontalLinesContainer = document.querySelector('.horizontal-lines');
-
-  const numVerticalLines = Math.ceil(window.innerWidth / 25);
-  const numHorizontalLines = Math.ceil(window.innerHeight / 25);
-
-  for (let i = 0; i <= numVerticalLines; i++) {
-    const line = document.createElement('div');
-    line.style.left = `${i * 25}px`;
-    line.style.animationDelay = `${i * 0.1}s`;
-    verticalLinesContainer.appendChild(line);
-  }
-
-  for (let i = 0; i <= numHorizontalLines; i++) {
-    const line = document.createElement('div');
-    line.style.top = `${i * 25}px`;
-    line.style.animationDelay = `${i * 0.1}s`;
-    horizontalLinesContainer.appendChild(line);
-  }
-});
 
 /*!========================================================================
- * 07. Menu Toggle
+ * 05. Menu Toggle
  * ======================================================================!*/
 
 var hamburgerMenu = document.querySelector('.hamburger-menu');
@@ -204,7 +132,7 @@ menuItems.forEach(function(item) {
 });
 
 /*!========================================================================
- * 08. Hero Section Particles Animation
+ * 06. Hero Section Particles Animation
  * ======================================================================!*/
 
 particlesJS("particles-js", {

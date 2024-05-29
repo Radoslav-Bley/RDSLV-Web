@@ -112,16 +112,15 @@
 
 @supports (padding: env(safe-area-inset-top)) {
   header,
-  .container,
-  .footer-container {
-    padding-top: calc(2.5rem + env(safe-area-inset-top));
-    padding-left: calc(2.5rem + env(safe-area-inset-left));
-    padding-right: calc(2.5rem + env(safe-area-inset-right));
-    padding-bottom: calc(2.5rem + env(safe-area-inset-bottom));
+  .container {
+    padding-top: calc(1.5rem + env(safe-area-inset-top));
+    padding-left: calc(1.5rem + env(safe-area-inset-left));
+    padding-right: calc(1.5rem + env(safe-area-inset-right));
+    padding-bottom: calc(1.5rem + env(safe-area-inset-bottom));
   }
 
   .nav-container {
-    padding-left: calc(1.25rem + env(safe-area-inset-left));
-    padding-right: calc(1.25rem + env(safe-area-inset-right));
+    padding-left: calc(1.5rem + env(safe-area-inset-left));
+    padding-right: calc(1.5rem + env(safe-area-inset-right));
   }
 }
