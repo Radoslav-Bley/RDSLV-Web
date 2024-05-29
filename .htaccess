@@ -19,13 +19,6 @@ RewriteRule .* /sk/404.html [L]
 # Default 404 page for English or any other language
 ErrorDocument 404 /404.html
 
-
-# Cache Control
-<IfModule mod_headers.c>
-    Header set Cache-Control: "max-age=31536000, public"
-</IfModule>
-
-# Block bad bots
 RewriteCond %{HTTP_USER_AGENT} ^BlackWidow [OR]
 RewriteCond %{HTTP_USER_AGENT} ^Bot\ mailto:craftbot@yahoo.com [OR]
 RewriteCond %{HTTP_USER_AGENT} ^ChinaClaw [OR]
