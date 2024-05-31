@@ -8,7 +8,7 @@
  * 03. YouTube Lazy Loading
  * 04. Header background on scroll
  * 05. Menu Toggle
- * 06. Hero Section Particles Animation
+ * 06. Cookie Consent Banner
  */
 
 /*!========================================================================
@@ -132,116 +132,216 @@ menuItems.forEach(function(item) {
 });
 
 /*!========================================================================
- * 06. Hero Section Particles Animation
+ * 06. Cookie Consent Banner
  * ======================================================================!*/
 
-particlesJS("particles-js", {
-  "particles": {
-    "number": {
-      "value": 355,
-      "density": {
-        "enable": true,
-        "value_area": 789.1476416322727
-      }
-    },
-    "color": {
-      "value": "#808080"
-    },
-    "shape": {
-      "type": "circle",
-      "stroke": {
-        "width": 0,
-        "color": "#000000"
-      },
-      "polygon": {
-        "nb_sides": 5
-      },
-      "image": {
-        "src": "img/github.svg",
-        "width": 100,
-        "height": 100
-      }
-    },
-    "opacity": {
-      "value": 0.48927153781200905,
-      "random": false,
-      "anim": {
-        "enable": true,
-        "speed": 0.2,
-        "opacity_min": 0,
-        "sync": false
-      }
-    },
-    "size": {
-      "value": 2,
-      "random": true,
-      "anim": {
-        "enable": true,
-        "speed": 2,
-        "size_min": 0,
-        "sync": false
-      }
-    },
-    "line_linked": {
-      "enable": false,
-      "distance": 150,
-      "color": "#ffffff",
-      "opacity": 0.4,
-      "width": 1
-    },
-    "move": {
-      "enable": true,
-      "speed": 0.2,
-      "direction": "none",
-      "random": true,
-      "straight": false,
-      "out_mode": "out",
-      "bounce": false,
-      "attract": {
-        "enable": false,
-        "rotateX": 600,
-        "rotateY": 1200
-      }
+document.addEventListener('DOMContentLoaded', function() {
+  // Check if the consent cookie is already set
+  var consent = getCookie('cookie_consent');
+  if (!consent) {
+    // Show the banner if consent is not set
+    document.getElementById('cookie-consent-banner').style.display = 'block';
+  }
+
+  // Set up event listeners for the buttons
+  document.getElementById('accept-cookies').addEventListener('click', function() {
+    setCookie('cookie_consent', 'accepted', 365);
+    hideBanner();
+    // Push event to the GTM data layer
+    window.dataLayer = window.dataLayer || [];
+    window.dataLayer.push({
+      'event': 'cookieConsentGranted'
+    });
+  });
+
+  document.getElementById('deny-cookies').addEventListener('click', function() {
+    setCookie('cookie_consent', 'denied', 365);
+    hideBanner();
+  });
+
+  function hideBanner() {
+    document.getElementById('cookie-consent-banner').style.display = 'none';
+  }
+
+  function setCookie(name, value, days) {
+    var expires = "";
+    if (days) {
+      var date = new Date();
+      date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
+      expires = "; expires=" + date.toUTCString();
     }
-  },
-  "interactivity": {
-    "detect_on": "canvas",
-    "events": {
-      "onhover": {
-        "enable": true,
-        "mode": "bubble"
-      },
-      "onclick": {
-        "enable": true,
-        "mode": "push"
-      },
-      "resize": true
-    },
-    "modes": {
-      "grab": {
-        "distance": 400,
-        "line_linked": {
-          "opacity": 1
-        }
-      },
-      "bubble": {
-        "distance": 83.91608391608392,
-        "size": 1,
-        "duration": 3,
-        "opacity": 1,
-        "speed": 3
-      },
-      "repulse": {
-        "distance": 200,
-        "duration": 0.4
-      },
-      "push": {
-        "particles_nb": 4
-      },
-      "remove": {
-        "particles_nb": 2
-      }
+    document.cookie = name + "=" + (value || "") + expires + "; path=/";
+  }
+
+  function getCookie(name) {
+    var nameEQ = name + "=";
+    var ca = document.cookie.split(';');
+    for (var i = 0; i < ca.length; i++) {
+      var c = ca[i];
+      while (c.charAt(0) === ' ') c = c.substring(1, c.length);
+      if (c.indexOf(nameEQ) === 0) return c.substring(nameEQ.length, c.length);
     }
-  },
-  "retina_detect": true
+    return null;
+  }
 });
+
+
+
+document.addEventListener("DOMContentLoaded", function () {
+  const scrollImages = document.querySelector(".scrolling-wrapper-flexbox");
+  const scrollLength = scrollImages.scrollWidth - scrollImages.clientWidth;
+  const leftButton = document.querySelector(".left");
+  const rightButton = document.querySelector(".right");
+
+  function checkScroll() {
+    const currentScroll = scrollImages.scrollLeft;
+    if (currentScroll === 0) {
+      leftButton.setAttribute("disabled", "true");
+      rightButton.removeAttribute("disabled");
+    } else if (currentScroll === scrollLength) {
+      rightButton.setAttribute("disabled", "true");
+      leftButton.removeAttribute("disabled");
+    } else {
+      leftButton.removeAttribute("disabled");
+      rightButton.removeAttribute("disabled");
+    }
+  }
+
+  scrollImages.addEventListener("scroll", checkScroll);
+  window.addEventListener("resize", checkScroll);
+  checkScroll();
+
+  function leftScroll() {
+    scrollImages.scrollBy({
+      left: -600,
+      behavior: "smooth"
+    });
+  }
+
+  function rightScroll() {
+    scrollImages.scrollBy({
+      left: 600,
+      behavior: "smooth"
+    });
+  }
+
+  leftButton.addEventListener("click", leftScroll);
+  rightButton.addEventListener("click", rightScroll);
+});
+
+
+// /*!========================================================================
+//  * 06. Hero Section Particles Animation
+//  * ======================================================================!*/
+
+// particlesJS("particles-js", {
+//   "particles": {
+//     "number": {
+//       "value": 355,
+//       "density": {
+//         "enable": true,
+//         "value_area": 789.1476416322727
+//       }
+//     },
+//     "color": {
+//       "value": "#808080"
+//     },
+//     "shape": {
+//       "type": "circle",
+//       "stroke": {
+//         "width": 0,
+//         "color": "#000000"
+//       },
+//       "polygon": {
+//         "nb_sides": 5
+//       },
+//       "image": {
+//         "src": "img/github.svg",
+//         "width": 100,
+//         "height": 100
+//       }
+//     },
+//     "opacity": {
+//       "value": 0.48927153781200905,
+//       "random": false,
+//       "anim": {
+//         "enable": true,
+//         "speed": 0.2,
+//         "opacity_min": 0,
+//         "sync": false
+//       }
+//     },
+//     "size": {
+//       "value": 2,
+//       "random": true,
+//       "anim": {
+//         "enable": true,
+//         "speed": 2,
+//         "size_min": 0,
+//         "sync": false
+//       }
+//     },
+//     "line_linked": {
+//       "enable": false,
+//       "distance": 150,
+//       "color": "#ffffff",
+//       "opacity": 0.4,
+//       "width": 1
+//     },
+//     "move": {
+//       "enable": true,
+//       "speed": 0.2,
+//       "direction": "none",
+//       "random": true,
+//       "straight": false,
+//       "out_mode": "out",
+//       "bounce": false,
+//       "attract": {
+//         "enable": false,
+//         "rotateX": 600,
+//         "rotateY": 1200
+//       }
+//     }
+//   },
+//   "interactivity": {
+//     "detect_on": "canvas",
+//     "events": {
+//       "onhover": {
+//         "enable": true,
+//         "mode": "bubble"
+//       },
+//       "onclick": {
+//         "enable": true,
+//         "mode": "push"
+//       },
+//       "resize": true
+//     },
+//     "modes": {
+//       "grab": {
+//         "distance": 400,
+//         "line_linked": {
+//           "opacity": 1
+//         }
+//       },
+//       "bubble": {
+//         "distance": 83.91608391608392,
+//         "size": 1,
+//         "duration": 3,
+//         "opacity": 1,
+//         "speed": 3
+//       },
+//       "repulse": {
+//         "distance": 200,
+//         "duration": 0.4
+//       },
+//       "push": {
+//         "particles_nb": 4
+//       },
+//       "remove": {
+//         "particles_nb": 2
+//       }
+//     }
+//   },
+//   "retina_detect": true
+// });
+

@@ -26,8 +26,8 @@
  * Backgrounds */
 
   --bg-color: #ffffff;
-  --bg-footer: #ececec;
-  --bg-box: #ececec;
+  --bg-footer: rgb(245, 245, 247);
+  --bg-box: rgb(245, 245, 247);
 
   /*!========================================================================
  * Text */
@@ -58,6 +58,7 @@
  * Dividers */
 
   --section-divider: #919191;
+  --box-divider: rgb(245, 245, 247);
 
   /*!========================================================================
  * Social Icons */
@@ -105,7 +106,6 @@ html {
   font-size: 16px;
   font-weight: 400;
   line-height: 1.5;
-  text-transform: lowercase;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   scroll-behavior: smooth;
@@ -205,21 +205,34 @@ section row {
  * Services Section Container */
 
 .services {
+  position: relative;
   display: grid;
-  grid-template-columns: repeat(2, minmax(0.62rem, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
   gap: 1.5rem;
 }
 
 .service-box {
+  height: auto;
+  width: 100%;
   padding: 1.5rem;
-  border-radius: 20px;
-  height: 100%;
-  text-align: left;
   position: relative;
   z-index: 1;
   overflow: hidden;
-  background-color: var(--bg-box);
-  transition: background-image var(--transition), border var(--transition);
+  border-radius: 20px;
+  box-shadow: 2px 4px 12px #00000014;
+  background-color: var(--bg-color);
+  transition: all .3s cubic-bezier(0,0,.5,1);
+}
+
+.service-box:hover {
+  box-shadow: 2px 4px 16px #00000029;
+  transform: scale(1.1);
+}
+
+.box-content {
+  display: flex;
+  flex-direction: column;
+  white-space: normal;
 }
 
 .box-heading {
@@ -227,7 +240,7 @@ section row {
   width: 100%;
   align-items: center;
   justify-content: flex-start;
-  border-bottom: 1px solid var(--section-divider);
+  border-bottom: 1px solid var(--box-divider);
   padding-bottom: 1.5rem;
 }
 
@@ -397,6 +410,10 @@ section {
   width: 100%;
 }
 
+#services {
+  background-color: var(--bg-footer);
+}
+
 /*!========================================================================
  * 05. Overlay Effects
  * ======================================================================!*/
@@ -529,13 +546,12 @@ h6 {
 }
 
 .section-heading {
-  font-size: .9em;
-  font-weight: 500;
+  font-size: 2.5em;
+  font-weight: 600;
   text-align: left;
   padding: 0;
   margin-bottom: 1.55rem;
-  color: var(--section-heading);
-  text-transform: uppercase;
+  text-transform: none;
 }
 
 header h1 {
@@ -564,7 +580,7 @@ a:hover {
 
 p {
   font-size: 1.06em;
-  font-weight: 200;
+  font-weight: bold;
   margin: 0;
   font-family: "Inter", sans-serif;
   font-optical-sizing: auto;
@@ -621,19 +637,11 @@ header p {
 }
 
 strong {
-  font-weight: 600;
+  font-weight: 800;
 }
 
-.service-box .number {
-  position: absolute;
-  bottom: -.4em;
-  right: -.1em;
-  font-size: 5em;
-  font-weight: 900;
-  color: var(--box-number-color);
-  white-space: nowrap;
-  pointer-events: none;
-  transition: color var(--transition);
+faded {
+  color: var(--text-secondary);
 }
 
 /*!========================================================================
@@ -1050,11 +1058,26 @@ img {
 /*!========================================================================
  * Icons */
 
-.box-heading svg {
-  width: 1rem;
-  height: auto;
-  fill: var(--primary-color);
+.box-heading .icon {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 2rem;
+  height: 2rem;
+  fill: var(--text-accent);
   margin-right: 1.25rem;
+  background-color: var(--text-accent);
+  border-radius: 30%;
+  transition: fill var(--transition);
+}
+
+.box-heading svg {
+  width: 1.2rem;
+  height: 1.2rem;
+  position: relative;
+  fill: white;
+  transition: fill var(--transition);
 }
 
 .social-buttons .social-button {
@@ -1326,3 +1349,81 @@ img {
     right: -45%;
   }
 }
+
+/*!========================================================================
+ * 14. Cookie Consent Banner
+ * ======================================================================!*/
+
+ #cookie-consent-banner {
+  position: fixed;
+  bottom: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: max-content;
+  min-width: 19rem;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: rgba(56, 56, 60, 0.5);
+  backdrop-filter: blur(10px);
+  border-radius: 50px;
+  text-align: center;
+  padding: .8rem;
+  box-shadow: 2px 4px 16px #00000029;
+  z-index: 1000;
+}
+
+#cookie-consent-content {
+  max-width: 800px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#cookie-consent-content p {
+  color: white;
+  margin: 0;
+  font-size: .8em;
+  font-weight: bold;
+  padding: 0 1rem;
+  white-space: normal;
+}
+
+#cookie-consent-content a {
+  color: white;
+  text-decoration: underline;
+}
+
+#cookie-consent-content a:hover {
+  color: var(--primary-color);
+}
+
+#cookie-consent-banner button#accept-cookies {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: none;
+  border-radius: 50%;
+  background-color: var(--primary-color);
+  opacity: 1;
+  color: white;
+  cursor: pointer;
+  transition: all .3s ease-in-out;
+}
+
+#cookie-consent-banner button#accept-cookies svg {
+  width: 2.5rem;
+  height: auto;
+  margin: auto;
+}
+
+#cookie-consent-banner button#accept-cookies:hover {
+  opacity: .9;
+  transform: scale(1.1);
+}
+
+#cookie-consent-banner button#deny-cookies {
+  display: none;
+}
+
