@@ -8,7 +8,9 @@
  * 03. YouTube Lazy Loading
  * 04. Header background on scroll
  * 05. Menu Toggle
- * 06. Cookie Consent Banner
+ * 06. TextScramble
+ * 07. Cookie Consent Banner
+ * 08. Hero Section Particles Animation
  */
 
 /*!========================================================================
@@ -83,91 +85,175 @@ window.addEventListener("scroll", function () {
   nav.classList.toggle("sticky", window.scrollY > 0);
 });
 
-
 /*!========================================================================
  * 05. Menu Toggle
  * ======================================================================!*/
 
-var hamburgerMenu = document.querySelector('.hamburger-menu');
-var fullscreenMenu = document.querySelector('#fullscreen-menu');
-var menuItems = document.querySelectorAll('#fullscreen-menu .mobile-nav ul li');
-var socialIcons = document.querySelectorAll('.rounded-social-buttons a');
+var hamburgerMenu = document.querySelector(".hamburger-menu");
+var fullscreenMenu = document.querySelector("#fullscreen-menu");
+var menuItems = document.querySelectorAll("#fullscreen-menu .mobile-nav ul li");
+var socialIcons = document.querySelectorAll(".rounded-social-buttons a");
 var body = document.body;
 
-hamburgerMenu.addEventListener('click', function() {
-  this.classList.toggle('active');
-  fullscreenMenu.classList.toggle('active');
+hamburgerMenu.addEventListener("click", function () {
+  this.classList.toggle("active");
+  fullscreenMenu.classList.toggle("active");
 
-  if (fullscreenMenu.classList.contains('active')) {
-    body.style.overflow = 'hidden';
-    menuItems.forEach(function(item, index) {
-      item.style.animation = `slideInBlurredTop 0.5s cubic-bezier(0.23, 1, 0.32, 1) ${index * 0.1}s both`;
+  if (fullscreenMenu.classList.contains("active")) {
+    body.style.overflow = "hidden";
+    menuItems.forEach(function (item, index) {
+      item.style.animation = `slideInBlurredTop 0.5s cubic-bezier(0.23, 1, 0.32, 1) ${
+        index * 0.1
+      }s both`;
     });
-    socialIcons.forEach(function(icon, index) {
-      icon.style.animation = `slideInBlurredTop 0.5s cubic-bezier(0.23, 1, 0.32, 1) ${(menuItems.length + index) * 0.2}s both`;
+    socialIcons.forEach(function (icon, index) {
+      icon.style.animation = `slideInBlurredTop 0.5s cubic-bezier(0.23, 1, 0.32, 1) ${
+        (menuItems.length + index) * 0.2
+      }s both`;
     });
   } else {
-    body.style.overflow = 'auto';
-    menuItems.forEach(function(item) {
-      item.style.animation = '';
+    body.style.overflow = "auto";
+    menuItems.forEach(function (item) {
+      item.style.animation = "";
     });
-    socialIcons.forEach(function(icon) {
-      icon.style.animation = '';
+    socialIcons.forEach(function (icon) {
+      icon.style.animation = "";
     });
   }
 });
 
-menuItems.forEach(function(item) {
-  item.addEventListener('click', function() {
-    hamburgerMenu.classList.remove('active');
-    fullscreenMenu.classList.remove('active');
-    body.style.overflow = 'auto';
-    menuItems.forEach(function(item) {
-      item.style.animation = '';
+menuItems.forEach(function (item) {
+  item.addEventListener("click", function () {
+    hamburgerMenu.classList.remove("active");
+    fullscreenMenu.classList.remove("active");
+    body.style.overflow = "auto";
+    menuItems.forEach(function (item) {
+      item.style.animation = "";
     });
-    socialIcons.forEach(function(icon) {
-      icon.style.animation = '';
+    socialIcons.forEach(function (icon) {
+      icon.style.animation = "";
     });
   });
 });
 
 /*!========================================================================
- * 06. Cookie Consent Banner
+ * 06. TextScramble
  * ======================================================================!*/
 
-document.addEventListener('DOMContentLoaded', function() {
+class TextScramble {
+  constructor(el) {
+    this.el = el;
+    this.chars = "!<>-_\\/[]{}—=+*^?#________";
+    this.update = this.update.bind(this);
+  }
+  setText(newText) {
+    const oldText = this.el.innerText;
+    const length = Math.max(oldText.length, newText.length);
+    const promise = new Promise((resolve) => (this.resolve = resolve));
+    this.queue = [];
+    for (let i = 0; i < length; i++) {
+      const from = oldText[i] || "";
+      const to = newText[i] || "";
+      const start = Math.floor(Math.random() * 40);
+      const end = start + Math.floor(Math.random() * 40);
+      this.queue.push({ from, to, start, end });
+    }
+    cancelAnimationFrame(this.frameRequest);
+    this.frame = 0;
+    this.update();
+    return promise;
+  }
+  update() {
+    let output = "";
+    let complete = 0;
+    for (let i = 0, n = this.queue.length; i < n; i++) {
+      let { from, to, start, end, char } = this.queue[i];
+      if (this.frame >= end) {
+        complete++;
+        output += to;
+      } else if (this.frame >= start) {
+        if (!char || Math.random() < 0.28) {
+          char = this.randomChar();
+          this.queue[i].char = char;
+        }
+        output += `<span class="dud">${char}</span>`;
+      } else {
+        output += from;
+      }
+    }
+    this.el.innerHTML = output;
+    if (complete === this.queue.length) {
+      this.resolve();
+    } else {
+      this.frameRequest = requestAnimationFrame(this.update);
+      this.frame++;
+    }
+  }
+  randomChar() {
+    return this.chars[Math.floor(Math.random() * this.chars.length)];
+  }
+}
+
+// ——————————————————————————————————————————————————
+// Example
+// ——————————————————————————————————————————————————
+
+const phrases = ["Making Digital Dreams", "Come True", "with a Wink"];
+
+const el = document.querySelector(".herotext");
+const fx = new TextScramble(el);
+
+let counter = 0;
+const next = () => {
+  fx.setText(phrases[counter]).then(() => {
+    setTimeout(next, 1100);
+  });
+  counter = (counter + 1) % phrases.length;
+};
+
+next();
+
+/*!========================================================================
+ * 07. Cookie Consent Banner
+ * ======================================================================!*/
+
+document.addEventListener("DOMContentLoaded", function () {
   // Check if the consent cookie is already set
-  var consent = getCookie('cookie_consent');
+  var consent = getCookie("cookie_consent");
   if (!consent) {
     // Show the banner if consent is not set
-    document.getElementById('cookie-consent-banner').style.display = 'block';
+    document.getElementById("cookie-consent-banner").style.display = "block";
   }
 
   // Set up event listeners for the buttons
-  document.getElementById('accept-cookies').addEventListener('click', function() {
-    setCookie('cookie_consent', 'accepted', 365);
-    hideBanner();
-    // Push event to the GTM data layer
-    window.dataLayer = window.dataLayer || [];
-    window.dataLayer.push({
-      'event': 'cookieConsentGranted'
+  document
+    .getElementById("accept-cookies")
+    .addEventListener("click", function () {
+      setCookie("cookie_consent", "accepted", 365);
+      hideBanner();
+      // Push event to the GTM data layer
+      window.dataLayer = window.dataLayer || [];
+      window.dataLayer.push({
+        event: "cookieConsentGranted",
+      });
     });
-  });
 
-  document.getElementById('deny-cookies').addEventListener('click', function() {
-    setCookie('cookie_consent', 'denied', 365);
-    hideBanner();
-  });
+  document
+    .getElementById("deny-cookies")
+    .addEventListener("click", function () {
+      setCookie("cookie_consent", "denied", 365);
+      hideBanner();
+    });
 
   function hideBanner() {
-    document.getElementById('cookie-consent-banner').style.display = 'none';
+    document.getElementById("cookie-consent-banner").style.display = "none";
   }
 
   function setCookie(name, value, days) {
     var expires = "";
     if (days) {
       var date = new Date();
-      date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
+      date.setTime(date.getTime() + days * 24 * 60 * 60 * 1000);
       expires = "; expires=" + date.toUTCString();
     }
     document.cookie = name + "=" + (value || "") + expires + "; path=/";
@@ -175,173 +261,103 @@ document.addEventListener('DOMContentLoaded', function() {
 
   function getCookie(name) {
     var nameEQ = name + "=";
-    var ca = document.cookie.split(';');
+    var ca = document.cookie.split(";");
     for (var i = 0; i < ca.length; i++) {
       var c = ca[i];
-      while (c.charAt(0) === ' ') c = c.substring(1, c.length);
+      while (c.charAt(0) === " ") c = c.substring(1, c.length);
       if (c.indexOf(nameEQ) === 0) return c.substring(nameEQ.length, c.length);
     }
     return null;
   }
 });
 
+// /*!========================================================================
+//  * 08. Hero Section Particles Animation
+//  * ======================================================================!*/
 
+const canvas = document.getElementById("particleCanvas");
+const ctx = canvas.getContext("2d");
 
-document.addEventListener("DOMContentLoaded", function () {
-  const scrollImages = document.querySelector(".scrolling-wrapper-flexbox");
-  const scrollLength = scrollImages.scrollWidth - scrollImages.clientWidth;
-  const leftButton = document.querySelector(".left");
-  const rightButton = document.querySelector(".right");
+// Initial canvas size
+canvas.width = window.innerWidth;
+canvas.height = window.innerHeight;
 
-  function checkScroll() {
-    const currentScroll = scrollImages.scrollLeft;
-    if (currentScroll === 0) {
-      leftButton.setAttribute("disabled", "true");
-      rightButton.removeAttribute("disabled");
-    } else if (currentScroll === scrollLength) {
-      rightButton.setAttribute("disabled", "true");
-      leftButton.removeAttribute("disabled");
-    } else {
-      leftButton.removeAttribute("disabled");
-      rightButton.removeAttribute("disabled");
+let particles = [];
+let particleCount = calculateParticleCount();
+
+class Particle {
+  constructor() {
+    this.reset();
+    this.y = Math.random() * canvas.height;
+    this.fadeDelay = Math.random() * 600 + 100;
+    this.fadeStart = Date.now() + this.fadeDelay;
+    this.fadingOut = false;
+  }
+
+  reset() {
+    this.x = Math.random() * canvas.width;
+    this.y = Math.random() * canvas.height;
+    this.speed = Math.random() / 5 + 0.1;
+    this.opacity = 1;
+    this.fadeDelay = Math.random() * 600 + 100;
+    this.fadeStart = Date.now() + this.fadeDelay;
+    this.fadingOut = false;
+  }
+
+  update() {
+    this.y -= this.speed;
+    if (this.y < 0) {
+      this.reset();
+    }
+
+    if (!this.fadingOut && Date.now() > this.fadeStart) {
+      this.fadingOut = true;
+    }
+
+    if (this.fadingOut) {
+      this.opacity -= 0.008;
+      if (this.opacity <= 0) {
+        this.reset();
+      }
     }
   }
 
-  scrollImages.addEventListener("scroll", checkScroll);
-  window.addEventListener("resize", checkScroll);
-  checkScroll();
-
-  function leftScroll() {
-    scrollImages.scrollBy({
-      left: -600,
-      behavior: "smooth"
-    });
+  draw() {
+    ctx.fillStyle = `rgba(${255 - (Math.random() * 255) / 2}, 255, 255, ${
+      this.opacity
+    })`;
+    ctx.fillRect(this.x, this.y, 0.4, Math.random() * 2 + 1);
   }
+}
 
-  function rightScroll() {
-    scrollImages.scrollBy({
-      left: 600,
-      behavior: "smooth"
-    });
+function initParticles() {
+  particles = [];
+  for (let i = 0; i < particleCount; i++) {
+    particles.push(new Particle());
   }
+}
 
-  leftButton.addEventListener("click", leftScroll);
-  rightButton.addEventListener("click", rightScroll);
-});
+function animate() {
+  ctx.clearRect(0, 0, canvas.width, canvas.height);
+  particles.forEach((particle) => {
+    particle.update();
+    particle.draw();
+  });
+  requestAnimationFrame(animate);
+}
 
+function calculateParticleCount() {
+  return Math.floor((canvas.width * canvas.height) / 6000);
+}
 
-// /*!========================================================================
-//  * 06. Hero Section Particles Animation
-//  * ======================================================================!*/
+function onResize() {
+  canvas.width = window.innerWidth;
+  canvas.height = window.innerHeight;
+  particleCount = calculateParticleCount();
+  initParticles();
+}
 
-// particlesJS("particles-js", {
-//   "particles": {
-//     "number": {
-//       "value": 355,
-//       "density": {
-//         "enable": true,
-//         "value_area": 789.1476416322727
-//       }
-//     },
-//     "color": {
-//       "value": "#808080"
-//     },
-//     "shape": {
-//       "type": "circle",
-//       "stroke": {
-//         "width": 0,
-//         "color": "#000000"
-//       },
-//       "polygon": {
-//         "nb_sides": 5
-//       },
-//       "image": {
-//         "src": "img/github.svg",
-//         "width": 100,
-//         "height": 100
-//       }
-//     },
-//     "opacity": {
-//       "value": 0.48927153781200905,
-//       "random": false,
-//       "anim": {
-//         "enable": true,
-//         "speed": 0.2,
-//         "opacity_min": 0,
-//         "sync": false
-//       }
-//     },
-//     "size": {
-//       "value": 2,
-//       "random": true,
-//       "anim": {
-//         "enable": true,
-//         "speed": 2,
-//         "size_min": 0,
-//         "sync": false
-//       }
-//     },
-//     "line_linked": {
-//       "enable": false,
-//       "distance": 150,
-//       "color": "#ffffff",
-//       "opacity": 0.4,
-//       "width": 1
-//     },
-//     "move": {
-//       "enable": true,
-//       "speed": 0.2,
-//       "direction": "none",
-//       "random": true,
-//       "straight": false,
-//       "out_mode": "out",
-//       "bounce": false,
-//       "attract": {
-//         "enable": false,
-//         "rotateX": 600,
-//         "rotateY": 1200
-//       }
-//     }
-//   },
-//   "interactivity": {
-//     "detect_on": "canvas",
-//     "events": {
-//       "onhover": {
-//         "enable": true,
-//         "mode": "bubble"
-//       },
-//       "onclick": {
-//         "enable": true,
-//         "mode": "push"
-//       },
-//       "resize": true
-//     },
-//     "modes": {
-//       "grab": {
-//         "distance": 400,
-//         "line_linked": {
-//           "opacity": 1
-//         }
-//       },
-//       "bubble": {
-//         "distance": 83.91608391608392,
-//         "size": 1,
-//         "duration": 3,
-//         "opacity": 1,
-//         "speed": 3
-//       },
-//       "repulse": {
-//         "distance": 200,
-//         "duration": 0.4
-//       },
-//       "push": {
-//         "particles_nb": 4
-//       },
-//       "remove": {
-//         "particles_nb": 2
-//       }
-//     }
-//   },
-//   "retina_detect": true
-// });
+window.addEventListener("resize", onResize);
 
+initParticles();
+animate();

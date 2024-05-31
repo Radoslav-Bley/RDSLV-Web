@@ -50,7 +50,7 @@
   /*!========================================================================
  * Navigation */
 
-  --nav-color: rgba(255, 255, 255, .2);
+  --nav-color: rgba(255, 255, 255, 0.2);
   --menu-color: #000000;
   --menu-divider: #ececec;
 
@@ -161,7 +161,6 @@ body {
   margin: 0 auto;
 }
 
-
 .container.center {
   text-align: center;
 }
@@ -221,7 +220,7 @@ section row {
   border-radius: 20px;
   box-shadow: 2px 4px 12px #00000014;
   background-color: var(--bg-color);
-  transition: all .3s cubic-bezier(0,0,.5,1);
+  transition: all 0.3s cubic-bezier(0, 0, 0.5, 1);
 }
 
 .service-box:hover {
@@ -377,6 +376,15 @@ section row {
   gap: 1.87rem;
   margin: 0;
   padding: 0;
+}
+
+#particleCanvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: linear-gradient(#919191, #ffffff);
 }
 
 /*!========================================================================
@@ -540,8 +548,8 @@ h6 {
 
 .footer-section h3 {
   margin-top: 0;
-  margin-bottom: .5rem;
-  font-size: .9em;
+  margin-bottom: 0.5rem;
+  font-size: 0.9em;
   font-weight: 500;
 }
 
@@ -601,8 +609,8 @@ header p {
 .footer-section li {
   font-weight: 400;
   color: var(--text-secondary);
-  font-size: .85em;
-  margin-bottom: .4rem;
+  font-size: 0.85em;
+  margin-bottom: 0.4rem;
 }
 
 .footer-section li:last-child {
@@ -611,7 +619,7 @@ header p {
 
 .copyright-text p {
   color: var(--text-secondary);
-  font-size: .8em;
+  font-size: 0.8em;
   font-weight: 400;
   margin: 0;
   padding: 0;
@@ -625,7 +633,7 @@ header p {
   padding-left: 1.25em;
   padding-right: 1.25em;
   text-transform: uppercase;
-  letter-spacing: .6em;
+  letter-spacing: 0.6em;
 }
 
 /*!========================================================================
@@ -642,6 +650,12 @@ strong {
 
 faded {
   color: var(--text-secondary);
+}
+
+.herotext {
+  font-size: 1em;
+  font-weight: 700;
+  margin: 0;
 }
 
 /*!========================================================================
@@ -757,11 +771,11 @@ nav.sticky {
 }
 
 .line1 {
-  top: .25em;
+  top: 0.25em;
 }
 
 .line2 {
-  bottom: .25em;
+  bottom: 0.25em;
 }
 
 .hamburger-menu.active .line1 {
@@ -829,7 +843,7 @@ nav.sticky {
 }
 
 .subheading {
-  font-size: .65em;
+  font-size: 0.65em;
   font-weight: 600;
   color: var(--text-secondary);
 }
@@ -1008,7 +1022,7 @@ nav.sticky {
 
 .anilogo .icon #b {
   stroke: var(--secondary-color);
-  stroke-width: .3rem;
+  stroke-width: 0.3rem;
 }
 
 .anilogo .icon #b.is-active {
@@ -1017,7 +1031,7 @@ nav.sticky {
 
 .anilogo .icon #r {
   stroke: var(--primary-color);
-  stroke-width: .3rem;
+  stroke-width: 0.3rem;
 }
 
 .anilogo .icon #r.is-active {
@@ -1037,7 +1051,6 @@ nav.sticky {
   border-radius: 20px;
   transition: filter var(--transition);
 }
-
 
 /*!========================================================================
  * Images */
@@ -1354,7 +1367,7 @@ img {
  * 14. Cookie Consent Banner
  * ======================================================================!*/
 
- #cookie-consent-banner {
+#cookie-consent-banner {
   position: fixed;
   bottom: 2rem;
   display: flex;
@@ -1368,7 +1381,7 @@ img {
   backdrop-filter: blur(10px);
   border-radius: 50px;
   text-align: center;
-  padding: .8rem;
+  padding: 0.8rem;
   box-shadow: 2px 4px 16px #00000029;
   z-index: 1000;
 }
@@ -1384,7 +1397,7 @@ img {
 #cookie-consent-content p {
   color: white;
   margin: 0;
-  font-size: .8em;
+  font-size: 0.8em;
   font-weight: bold;
   padding: 0 1rem;
   white-space: normal;
@@ -1406,10 +1419,9 @@ img {
   border: none;
   border-radius: 50%;
   background-color: var(--primary-color);
-  opacity: 1;
   color: white;
   cursor: pointer;
-  transition: all .3s ease-in-out;
+  transition: all 0.3s ease-in-out;
 }
 
 #cookie-consent-banner button#accept-cookies svg {
@@ -1419,11 +1431,14 @@ img {
 }
 
 #cookie-consent-banner button#accept-cookies:hover {
-  opacity: .9;
+  background-color: var(--bg-box);
   transform: scale(1.1);
+}
+
+#cookie-consent-banner button#accept-cookies svg:hover {
+  fill: var(--primary-color);
 }
 
 #cookie-consent-banner button#deny-cookies {
   display: none;
 }
-

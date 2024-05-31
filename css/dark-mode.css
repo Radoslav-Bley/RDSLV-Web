@@ -69,6 +69,28 @@
     background-color: rgba(245, 248, 253, 0.5);
   }
 
+  #particleCanvas {
+    background-image: -webkit-radial-gradient(
+      top,
+      circle cover,
+      #082e44 0%,
+      #000000 80%
+    );
+    background-image: -moz-radial-gradient(
+      top,
+      circle cover,
+      #082e44 0%,
+      #000000 80%
+    );
+    background-image: -o-radial-gradient(
+      top,
+      circle cover,
+      #082e44 0%,
+      #000000 80%
+    );
+    background-image: radial-gradient(top, circle cover, #082e44 0%, #000000 80%);
+  }
+
   /*!========================================================================
  * 04. Sections
  * ======================================================================!*/
