@@ -11,6 +11,7 @@
  * 06. TextScramble
  * 07. Cookie Consent Banner
  * 08. Hero Section Particles Animation
+ * 09. Swiper Slider
  */
 
 /*!========================================================================
@@ -361,3 +362,48 @@ window.addEventListener("resize", onResize);
 
 initParticles();
 animate();
+
+
+/*!========================================================================
+ * 09. Swiper Slider
+ * ======================================================================!*/
+
+var swiper = new Swiper('.swiper-container', {
+  slidesPerView: 'auto', // Automatically adjusts to the size of the slides
+  spaceBetween: 30,
+  centeredSlides: true, // Center the active slide
+  centeredSlidesBounds: true, // Ensure the active slide is fully visible
+  navigation: {
+    nextEl: '.swiper-button-next',
+    prevEl: '.swiper-button-prev',
+  },
+  on: {
+    init: function () {
+      // Hide the previous and next buttons initially
+      document.querySelector('.swiper-button-prev').style.display = 'none';
+      document.querySelector('.swiper-button-next').style.display = 'block'; // Adjust if you want to hide initially
+    },
+    slideChange: function () {
+      // Show the previous button after the first slide change
+      if (swiper.activeIndex > 0) {
+        document.querySelector('.swiper-button-prev').style.display = 'block';
+      } else {
+        document.querySelector('.swiper-button-prev').style.display = 'none';
+      }
+
+      // Hide the next button when the last slide is reached
+      if (swiper.activeIndex === swiper.slides.length - 1) {
+        document.querySelector('.swiper-button-next').style.display = 'none';
+      } else {
+        document.querySelector('.swiper-button-next').style.display = 'block';
+      }
+    },
+  },
+});
+
+
+/*!========================================================================
+ * 10. Theme Switcher
+ * ======================================================================!*/
+
+

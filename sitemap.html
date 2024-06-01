@@ -563,7 +563,9 @@
     </nav>
 
     <header>
-      <h1>Site Map<span class="highlighted-text">.</span></h1>
+      <div class="section-heading">
+        <h1>Site Map<span class="highlight">.</span></h1>
+      </div>
     </header>
 
     <main id="sitemap">
@@ -607,13 +609,13 @@
     <div class="empty-space"></div>
 
     <footer class="footer">
-      <section class="footer-container">
+      <section class="container">
         <div class="footer-top">
           <div>
             <h2>
-              With over <strong>6 years</strong> of experience in design and
-              development, I'm ready to bring your vision to life. Let's
-              collaborate on your next project. Reach out to me at:
+              With over 6 years of experience in design and development, I'm
+              ready to bring your vision to life. Let's collaborate on your next
+              project.<br />Reach out to me at:
             </h2>
           </div>
           <div>
@@ -625,29 +627,29 @@
 
         <div class="footer-middle">
           <div class="footer-section">
-            <h3>Quick Links<span class="highlighted-text">.</span></h3>
+            <h3>Quick Links<span class="highlight">.</span></h3>
             <ul>
               <li><a href="/privacy-policy.html">Privacy Policy</a></li>
               <li><a href="/sitemap.html">Site Map</a></li>
             </ul>
           </div>
           <div class="footer-section">
-            <h3>latest projects<span class="highlighted-text">.</span></h3>
+            <h3>Latest projects<span class="highlight">.</span></h3>
             <ul>
               <li><a href="/404.html">RDSLV brand identity</a></li>
               <li><a href="/404.html">LMB Summer Chill 4</a></li>
             </ul>
           </div>
           <div class="footer-section">
-            <h3>company<span class="highlighted-text">.</span></h3>
+            <h3>Company<span class="highlight">.</span></h3>
             <ul>
-              <li><p>Business ID: 51846080</p></li>
-              <li><p>Tax ID: 1124696683</p></li>
-              <li><p>Trade Register Number: 540-21358</p></li>
+              <li>Business ID: 51846080</li>
+              <li>Tax ID: 1124696683</li>
+              <li>Trade Register Number: 540-21358</li>
             </ul>
           </div>
           <div class="footer-section">
-            <h3>contact<span class="highlighted-text">.</span></h3>
+            <h3>Contact<span class="highlight">.</span></h3>
             <ul>
               <li><a href="mailto:biznis@rdslv.sk">biznis@rdslv.sk</a></li>
               <li><a href="tel:+421911510344">+421 911 510 344</a></li>
@@ -655,9 +657,23 @@
           </div>
         </div>
 
+        <!-- <div class="footer-bottom">
+          <div class="language-switch">
+            <a href="#">English</a>
+          </div>
+
+          <div class="theme-switch">
+            <button class="active" id="light-btn">Light</button>
+            <div class="button-divider"></div>
+            <button id="dark-btn">Dark</button>
+            <div class="button-divider"></div>
+            <button id="auto-btn">Auto</button>
+          </div>
+        </div> -->
+
         <div class="subfooter">
           <div class="copyright-text">
-            <p>&copy; 2024 radoslav bley.</p>
+            <p>&copy; 2024 Radoslav Bley.</p>
           </div>
           <div class="social-buttons">
             <a
@@ -740,5 +756,42 @@
         </div>
       </section>
     </footer>
+
+    <div id="cookie-consent-banner" style="display: none">
+      <div id="cookie-consent-content">
+        <p>
+          By using our site, you consent to analytics<br />cookies and our
+          <a href="/privacy-policy.html">Privacy Policy</a>.
+        </p>
+        <button id="accept-cookies">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="16"
+            height="16"
+            fill="currentColor"
+            class="bi bi-check"
+            viewBox="0 0 16 16"
+          >
+            <path
+              d="M10.97 4.97a.75.75 0 0 1 1.07 1.05l-3.99 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425z"
+            />
+          </svg>
+        </button>
+        <button id="deny-cookies">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="16"
+            height="16"
+            fill="currentColor"
+            class="bi bi-x-circle-fill"
+            viewBox="0 0 16 16"
+          >
+            <path
+              d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0M5.354 4.646a.5.5 0 1 0-.708.708L7.293 8l-2.647 2.646a.5.5 0 0 0 .708.708L8 8.707l2.646 2.647a.5.5 0 0 0 .708-.708L8.707 8l2.647-2.646a.5.5 0 0 0-.708-.708L8 7.293z"
+            />
+          </svg>
+        </button>
+      </div>
+    </div>
   </body>
 </html>

@@ -39,19 +39,12 @@
    * ======================================================================!*/
 
 @media (max-width: 575.98px) {
-  .services {
-    grid-template-columns: 1fr;
-  }
   .nav {
     display: none;
   }
   .subfooter {
     flex-direction: column;
     align-items: center;
-  }
-  .footer-middle {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
   }
   .copyright-text {
     order: 2;
@@ -64,6 +57,9 @@
   }
   section row {
     height: 80%;
+  }
+  .service-box {
+    max-width: 90% !important;
   }
 }
 /*!========================================================================

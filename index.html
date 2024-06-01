@@ -119,10 +119,10 @@
     <link
       rel="stylesheet"
       href="/css/dark-mode.css"
-      media="(prefers-color-scheme: dark)"
     />
+    <link rel="stylesheet" href="/css/swiper-bundle.min.css" />
     <script src="/scripts/script.js" defer></script>
-    <script src="/scripts/typeit.umd.js" defer></script>
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
     <!-- <script src="/scripts/jquery-3.7.1.min.js" async="false"></script>
     <script>
       $(document).ready(function () {
@@ -406,10 +406,6 @@
         }
       });
     </script> -->
-    <script
-      src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"
-      async
-    ></script>
   </head>
   <body>
     <!-- Google Tag Manager (noscript) -->
@@ -598,8 +594,7 @@
 
             <div class="hero-content-container">
               <h1>
-                Nerdy by Nature,<br />Creative by Choice<span
-                  class="highlighted-text"
+                Nerdy by Nature,<br />Creative by Choice<span class="highlight"
                   >.</span
                 >
               </h1>
@@ -616,35 +611,21 @@
       <section id="about">
         <div class="container">
           <div>
-            <div class="section-heading"><faded>Meet</faded> Radoslav.</div>
+            <div class="section-heading"><h1>Meet Radoslav.<br><faded>Discover My Work.</faded><h1></div>
 
-            <h1>
-              I'm <span id="type"></span><span class="highlighted-text">.</span>
-            </h1>
-            <p style="font-style: italic">
-              <faded>"Hello,</faded> I'm Radoslav, a dedicated front-end
+            <p>
+              <faded>Hello,</faded> I'm Radoslav, a dedicated front-end
               developer, graphic designer, and video editor based in
               Slovakia.<faded>
                 I focus on creating engaging and functional websites with a keen
                 eye for design and animation. With a passion for innovation and
                 detail, I aim to deliver </faded
-              ><strong>top-notch digital experiences.</strong>"
+              >top-notch digital experiences.<faded>
+                I'm always eager to learn new technologies and improve my
+                skills, so I can provide the best solutions for my clients.
+              </faded>
+              Let's create something amazing together!
             </p>
-            <script>
-              document.addEventListener("DOMContentLoaded", function () {
-                new TypeIt("#type", {
-                  strings: [
-                    "a developer",
-                    "a graphic designer",
-                    "a video editor",
-                  ],
-                  speed: 100,
-                  breakLines: false,
-                  loop: true,
-                  waitUntilVisible: true,
-                }).go();
-              });
-            </script>
 
             <img
               src="/img/general/sections/about/about.webp"
@@ -660,119 +641,118 @@
       <section id="services">
         <div class="container">
           <div>
-            <div class="section-heading"><faded>My Expertise.</faded></div>
+            <div class="section-heading">
+              <h1>Imagine the Future.<br><faded>Delivered Today.</faded></h1>
+            </div>
 
-            <div class="services">
-              <div class="service-box slide-in-blurred-bottom">
-                <div class="box-heading">
-                  <div class="icon">
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      width="16"
-                      height="16"
-                      fill="currentColor"
-                      class="bi bi-file-earmark-code-fill"
-                      viewBox="0 0 16 16"
-                    >
-                      <path
-                        d="M9.293 0H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V4.707A1 1 0 0 0 13.707 4L10 .293A1 1 0 0 0 9.293 0M9.5 3.5v-2l3 3h-2a1 1 0 0 1-1-1M6.646 7.646a.5.5 0 1 1 .708.708L5.707 10l1.647 1.646a.5.5 0 0 1-.708.708l-2-2a.5.5 0 0 1 0-.708zm2.708 0 2 2a.5.5 0 0 1 0 .708l-2 2a.5.5 0 0 1-.708-.708L10.293 10 8.646 8.354a.5.5 0 1 1 .708-.708"
-                      />
-                    </svg>
+            <div class="swiper-container">
+              <div class="swiper-wrapper">
+                <div class="swiper-slide service-box">
+                  <div class="box-content">
+                    <div class="box-heading">
+                      <div class="icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" height="1em" fill="currentColor" viewBox="0 0 512 512">
+                          <path d="M 8 105.77777777777777 Q 0 96.88888888888889 0 85.33333333333333 L 0 85.33333333333333 L 0 85.33333333333333 Q 0 73.77777777777777 8 64.88888888888889 Q 16.88888888888889 56.888888888888886 28.444444444444443 56.888888888888886 Q 40 56.888888888888886 48.888888888888886 64.88888888888889 L 219.55555555555554 235.55555555555554 L 219.55555555555554 235.55555555555554 Q 227.55555555555554 244.44444444444446 227.55555555555554 256 Q 227.55555555555554 267.55555555555554 219.55555555555554 276.44444444444446 L 48.888888888888886 447.1111111111111 L 48.888888888888886 447.1111111111111 Q 40 455.1111111111111 28.444444444444443 455.1111111111111 Q 16.88888888888889 455.1111111111111 8 447.1111111111111 Q 0 438.22222222222223 0 426.6666666666667 Q 0 415.1111111111111 8 406.22222222222223 L 159.11111111111111 256 L 159.11111111111111 256 L 8 105.77777777777777 L 8 105.77777777777777 Z M 227.55555555555554 398.22222222222223 L 483.55555555555554 398.22222222222223 L 227.55555555555554 398.22222222222223 L 483.55555555555554 398.22222222222223 Q 496 398.22222222222223 504 406.22222222222223 Q 512 414.22222222222223 512 426.6666666666667 Q 512 439.1111111111111 504 447.1111111111111 Q 496 455.1111111111111 483.55555555555554 455.1111111111111 L 227.55555555555554 455.1111111111111 L 227.55555555555554 455.1111111111111 Q 215.11111111111111 455.1111111111111 207.11111111111111 447.1111111111111 Q 199.11111111111111 439.1111111111111 199.11111111111111 426.6666666666667 Q 199.11111111111111 414.22222222222223 207.11111111111111 406.22222222222223 Q 215.11111111111111 398.22222222222223 227.55555555555554 398.22222222222223 L 227.55555555555554 398.22222222222223 Z" />
+                        </svg>
+                      </div>
+                      <h4>Front-End Development</h4>
+                    </div>
+                    <ul>
+                      <li>Website and Web Application Development</li>
+                      <li>UI/UX Design Implementation</li>
+                      <li>Performance Optimization</li>
+                      <li>Cross-Browser and Cross-Device Compatibility</li>
+                    </ul>
                   </div>
-                  <h2>Front-End Development</h2>
                 </div>
-                <ul>
-                  <li>Website and Web Application Development</li>
-                  <li>UI/UX Design Implementation</li>
-                  <li>Performance Optimization</li>
-                  <li>Cross-Browser and Cross-Device Compatibility</li>
-                </ul>
-              </div>
-              <div class="service-box slide-in-blurred-bottom">
-                <div class="box-heading">
-                  <div class="icon">
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      width="16"
-                      height="16"
-                      fill="currentColor"
-                      class="bi bi-database-fill"
-                      viewBox="0 0 16 16"
-                    >
-                      <path
-                        d="M3.904 1.777C4.978 1.289 6.427 1 8 1s3.022.289 4.096.777C13.125 2.245 14 2.993 14 4s-.875 1.755-1.904 2.223C11.022 6.711 9.573 7 8 7s-3.022-.289-4.096-.777C2.875 5.755 2 5.007 2 4s.875-1.755 1.904-2.223"
-                      />
-                      <path
-                        d="M2 6.161V7c0 1.007.875 1.755 1.904 2.223C4.978 9.71 6.427 10 8 10s3.022-.289 4.096-.777C13.125 8.755 14 8.007 14 7v-.839c-.457.432-1.004.751-1.49.972C11.278 7.693 9.682 8 8 8s-3.278-.307-4.51-.867c-.486-.22-1.033-.54-1.49-.972"
-                      />
-                      <path
-                        d="M2 9.161V10c0 1.007.875 1.755 1.904 2.223C4.978 12.711 6.427 13 8 13s3.022-.289 4.096-.777C13.125 11.755 14 11.007 14 10v-.839c-.457.432-1.004.751-1.49.972-1.232.56-2.828.867-4.51.867s-3.278-.307-4.51-.867c-.486-.22-1.033-.54-1.49-.972"
-                      />
-                      <path
-                        d="M2 12.161V13c0 1.007.875 1.755 1.904 2.223C4.978 15.711 6.427 16 8 16s3.022-.289 4.096-.777C13.125 14.755 14 14.007 14 13v-.839c-.457.432-1.004.751-1.49.972-1.232.56-2.828.867-4.51.867s-3.278-.307-4.51-.867c-.486-.22-1.033-.54-1.49-.972"
-                      />
-                    </svg>
+                <div class="swiper-slide service-box">
+                  <div class="box-content">
+                    <div class="box-heading">
+                      <div class="icon">
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          width="16"
+                          height="16"
+                          fill="currentColor"
+                          class="bi bi-database-fill"
+                          viewBox="0 0 16 16"
+                        >
+                          <path
+                            d="M3.904 1.777C4.978 1.289 6.427 1 8 1s3.022.289 4.096.777C13.125 2.245 14 2.993 14 4s-.875 1.755-1.904 2.223C11.022 6.711 9.573 7 8 7s-3.022-.289-4.096-.777C2.875 5.755 2 5.007 2 4s.875-1.755 1.904-2.223"
+                          />
+                          <path
+                            d="M2 6.161V7c0 1.007.875 1.755 1.904 2.223C4.978 9.71 6.427 10 8 10s3.022-.289 4.096-.777C13.125 8.755 14 8.007 14 7v-.839c-.457.432-1.004.751-1.49.972C11.278 7.693 9.682 8 8 8s-3.278-.307-4.51-.867c-.486-.22-1.033-.54-1.49-.972"
+                          />
+                          <path
+                            d="M2 9.161V10c0 1.007.875 1.755 1.904 2.223C4.978 12.711 6.427 13 8 13s3.022-.289 4.096-.777C13.125 11.755 14 11.007 14 10v-.839c-.457.432-1.004.751-1.49.972-1.232.56-2.828.867-4.51.867s-3.278-.307-4.51-.867c-.486-.22-1.033-.54-1.49-.972"
+                          />
+                          <path
+                            d="M2 12.161V13c0 1.007.875 1.755 1.904 2.223C4.978 15.711 6.427 16 8 16s3.022-.289 4.096-.777C13.125 14.755 14 14.007 14 13v-.839c-.457.432-1.004.751-1.49.972-1.232.56-2.828.867-4.51.867s-3.278-.307-4.51-.867c-.486-.22-1.033-.54-1.49-.972"
+                          />
+                        </svg>
+                      </div>
+                      <h4>Back-End Development</h4>
+                    </div>
+                  
+                  <ul>
+                    <li>Server-Side Development</li>
+                    <li>Database Management</li>
+                    <li>API Development and Integration</li>
+                    <li>Authentication and Security</li>
+                  </ul>
+                </div>
+                </div>
+                <div class="swiper-slide service-box">
+                  <div class="box-content">
+                    <div class="box-heading">
+                      <div class="icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" height="1em" fill="currentColor" viewBox="0 0 512 512">
+                          <path d="M 370 16 L 315 72 L 370 16 L 315 72 L 440 197 L 440 197 L 496 142 L 496 142 Q 512 124 512 102 Q 512 80 496 62 L 450 16 L 450 16 Q 432 0 410 0 Q 388 0 370 16 L 370 16 Z M 290 93 L 281 95 L 290 93 L 281 95 L 137 139 L 137 139 Q 106 149 94 180 L 6 444 L 6 444 Q 0 462 13 476 L 167 323 L 167 323 Q 162 313 162 302 Q 163 282 176 268 Q 190 255 210 254 Q 230 255 244 268 Q 257 282 258 302 Q 257 322 244 336 Q 230 349 210 350 Q 199 350 189 345 L 36 499 L 36 499 Q 50 512 68 506 L 332 418 L 332 418 Q 363 406 373 375 L 417 231 L 417 231 L 419 222 L 419 222 L 290 93 L 290 93 Z" />
+                        </svg>
+                      </div>
+                      <h4>Graphic Design</h4>
+                    </div>
+                    <ul>
+                      <li>Branding and Identity Design</li>
+                      <li>Web and Mobile Design</li>
+                      <li>Print Design</li>
+                      <li>Marketing and Advertising Design</li>
+                    </ul>
                   </div>
-                  <h2>Back-End Development</h2>
                 </div>
-                <ul>
-                  <li>Server-Side Development</li>
-                  <li>Database Management</li>
-                  <li>API Development and Integration</li>
-                  <li>Authentication and Security</li>
-                </ul>
-              </div>
-              <div class="service-box slide-in-blurred-bottom">
-                <div class="box-heading">
-                  <div class="icon">
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      width="16"
-                      height="16"
-                      fill="currentColor"
-                      class="bi bi-palette2"
-                      viewBox="0 0 16 16"
-                    >
-                      <path
-                        d="M0 .5A.5.5 0 0 1 .5 0h5a.5.5 0 0 1 .5.5v5.277l4.147-4.131a.5.5 0 0 1 .707 0l3.535 3.536a.5.5 0 0 1 0 .708L10.261 10H15.5a.5.5 0 0 1 .5.5v5a.5.5 0 0 1-.5.5H3a3 3 0 0 1-2.121-.879A3 3 0 0 1 0 13.044m6-.21 7.328-7.3-2.829-2.828L6 7.188zM4.5 13a1.5 1.5 0 1 0-3 0 1.5 1.5 0 0 0 3 0M15 15v-4H9.258l-4.015 4zM0 .5v12.495zm0 12.495V13z"
-                      />
-                    </svg>
+                <div class="swiper-slide service-box">
+                  <div class="box-content">
+                    <div class="box-heading">
+                      <div class="icon">
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          width="16"
+                          height="16"
+                          fill="currentColor"
+                          class="bi bi-camera-fill"
+                          viewBox="0 0 16 16"
+                        >
+                          <path
+                            d="M10.5 8.5a2.5 2.5 0 1 1-5 0 2.5 2.5 0 0 1 5 0"
+                          />
+                          <path
+                            d="M2 4a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2h-1.172a2 2 0 0 1-1.414-.586l-.828-.828A2 2 0 0 0 9.172 2H6.828a2 2 0 0 0-1.414.586l-.828.828A2 2 0 0 1 3.172 4zm.5 2a.5.5 0 1 1 0-1 .5.5 0 0 1 0 1m9 2.5a3.5 3.5 0 1 1-7 0 3.5 3.5 0 0 1 7 0"
+                          />
+                        </svg>
+                      </div>
+                      <h4>Video Edit</h4>
+                    </div>
+                    <ul>
+                      <li>Video Editing and Post-Production</li>
+                      <li>Motion Graphics and Animation</li>
+                      <li>Audio Editing and Sound Design</li>
+                      <li>Color Grading and Correction</li>
+                    </ul>
                   </div>
-                  <h2>Graphic Design</h2>
                 </div>
-                <ul>
-                  <li>Branding and Identity Design</li>
-                  <li>Web and Mobile Design</li>
-                  <li>Print Design</li>
-                  <li>Marketing and Advertising Design</li>
-                </ul>
               </div>
-              <div class="service-box slide-in-blurred-bottom">
-                <div class="box-heading">
-                  <div class="icon">
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      width="16"
-                      height="16"
-                      fill="currentColor"
-                      class="bi bi-camera-fill"
-                      viewBox="0 0 16 16"
-                    >
-                      <path d="M10.5 8.5a2.5 2.5 0 1 1-5 0 2.5 2.5 0 0 1 5 0" />
-                      <path
-                        d="M2 4a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2h-1.172a2 2 0 0 1-1.414-.586l-.828-.828A2 2 0 0 0 9.172 2H6.828a2 2 0 0 0-1.414.586l-.828.828A2 2 0 0 1 3.172 4zm.5 2a.5.5 0 1 1 0-1 .5.5 0 0 1 0 1m9 2.5a3.5 3.5 0 1 1-7 0 3.5 3.5 0 0 1 7 0"
-                      />
-                    </svg>
-                  </div>
-                  <h2>Video Edit</h2>
-                </div>
-                <ul>
-                  <li>Video Editing and Post-Production</li>
-                  <li>Motion Graphics and Animation</li>
-                  <li>Audio Editing and Sound Design</li>
-                  <li>Color Grading and Correction</li>
-                </ul>
-              </div>
+              <div class="swiper-button-next"></div>
+              <div class="swiper-button-prev"></div>
             </div>
           </div>
         </div>
@@ -782,7 +762,7 @@
         <div class="container center">
           <div class="divider"></div>
           <div class="section-heading">
-            <h1>Reel <span class="highlighted-text">2024</span></h1>
+            <h1>Reel <span class="highlight">2024</span></h1>
           </div>
         </div>
 
@@ -800,7 +780,9 @@
 
       <section id="clients">
         <div class="container">
-          <div class="section-heading"><faded>Trusted By.</faded></div>
+          <div class="section-heading">
+            <h1>Enduring Relationships.<br><faded>Shared Achievements.</faded></h1>
+          </div>
 
           <div class="wrapper">
             <div class="marquee">
@@ -936,9 +918,9 @@
         <div class="footer-top">
           <div>
             <h2>
-              With over <strong>6 years</strong> of experience in design and
-              development, I'm ready to bring your vision to life. Let's
-              collaborate on your next project. Reach out to me at:
+              With over 6 years of experience in design and development, I'm
+              ready to bring your vision to life. Let's collaborate on your next
+              project.<br />Reach out to me at:
             </h2>
           </div>
           <div>
@@ -950,21 +932,21 @@
 
         <div class="footer-middle">
           <div class="footer-section">
-            <h3>Quick Links<span class="highlighted-text">.</span></h3>
+            <h3>Quick Links<span class="highlight">.</span></h3>
             <ul>
               <li><a href="/privacy-policy.html">Privacy Policy</a></li>
               <li><a href="/sitemap.html">Site Map</a></li>
             </ul>
           </div>
           <div class="footer-section">
-            <h3>latest projects<span class="highlighted-text">.</span></h3>
+            <h3>Latest projects<span class="highlight">.</span></h3>
             <ul>
               <li><a href="/404.html">RDSLV brand identity</a></li>
               <li><a href="/404.html">LMB Summer Chill 4</a></li>
             </ul>
           </div>
           <div class="footer-section">
-            <h3>company<span class="highlighted-text">.</span></h3>
+            <h3>Company<span class="highlight">.</span></h3>
             <ul>
               <li>Business ID: 51846080</li>
               <li>Tax ID: 1124696683</li>
@@ -972,7 +954,7 @@
             </ul>
           </div>
           <div class="footer-section">
-            <h3>contact<span class="highlighted-text">.</span></h3>
+            <h3>Contact<span class="highlight">.</span></h3>
             <ul>
               <li><a href="mailto:biznis@rdslv.sk">biznis@rdslv.sk</a></li>
               <li><a href="tel:+421911510344">+421 911 510 344</a></li>
@@ -980,9 +962,23 @@
           </div>
         </div>
 
+        <!-- <div class="footer-bottom">
+          <div class="language-switch">
+            <a href="#">English</a>
+          </div>
+
+          <div class="theme-switch">
+            <button class="active" id="light-btn">Light</button>
+            <div class="button-divider"></div>
+            <button id="dark-btn">Dark</button>
+            <div class="button-divider"></div>
+            <button id="auto-btn">Auto</button>
+          </div>
+        </div> -->
+
         <div class="subfooter">
           <div class="copyright-text">
-            <p>&copy; 2024 radoslav bley.</p>
+            <p>&copy; 2024 Radoslav Bley.</p>
           </div>
           <div class="social-buttons">
             <a
