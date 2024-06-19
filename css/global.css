@@ -74,6 +74,12 @@
   --status-border-green: rgba(50, 205, 50, 0.2);
 
   /*!========================================================================
+ * Paddings */
+
+  --primary-padding: 5rem;
+  --secondary-padding: 10%;
+
+  /*!========================================================================
  * Clients Section */
 
   --size: clamp(10rem, 0.62rem + 40vmin, 30rem);
@@ -115,10 +121,10 @@ html {
 }
 
 body {
-  font-family: -apple-system, system-ui, -apple-system, BlinkMacSystemFont, 'San Francisco', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-family: -apple-system, system-ui, -apple-system, BlinkMacSystemFont,
+    "San Francisco", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-style: normal;
   margin: 0;
-  overflow-x: hidden;
   background-color: var(--bg-color);
   transition: background-color var(--transition);
 }
@@ -139,9 +145,9 @@ body {
   justify-content: space-between;
   align-items: center;
   width: 100%;
-  max-width: 75rem;
   margin: 0 auto;
-  padding: 1.25rem;
+  padding-left: var(--secondary-padding);
+  padding-right: var(--secondary-padding);
   font-weight: 500;
 }
 
@@ -162,8 +168,11 @@ body {
   flex-direction: column;
   width: 100%;
   height: 100%;
-  max-width: 75rem;
   margin: 0 auto;
+  padding-left: var(--secondary-padding);
+  padding-right: var(--secondary-padding);
+  padding-top: var(--primary-padding);
+  padding-bottom: var(--primary-padding);
 }
 
 .container.center {
@@ -172,6 +181,14 @@ body {
 
 .container.left {
   text-align: left;
+}
+
+#services .container {
+  padding-bottom: 0;
+}
+
+footer .container {
+  padding-bottom: 2rem;
 }
 
 section row {
@@ -209,14 +226,11 @@ section row {
  * Services Section Container */
 
 .service-box {
-  width: 400px !important;
-  height: auto !important;
   display: flex;
-  flex-direction: column;
-  align-items: center;
+  flex: 0 0 auto;
+  align-items: flex-start;
   justify-content: center;
   padding: 1.5rem;
-  position: relative;
   z-index: 1;
   background: rgba(255, 255, 255, 0.1);
   border-radius: var(--border-radius);
@@ -226,6 +240,7 @@ section row {
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
   overflow: hidden;
   transition: all 0.3s cubic-bezier(0, 0, 0.5, 1);
+  scroll-snap-align: center;
 }
 
 .service-box::before {
@@ -428,13 +443,9 @@ header {
 section {
   display: flex;
   flex-direction: column;
+  position: relative;
   width: 100%;
   overflow: hidden;
-  padding: 3rem 0 4rem 0;
-}
-
-#services {
-  background-color: var(--bg-footer);
 }
 
 /*!========================================================================
@@ -862,19 +873,21 @@ nav.sticky {
 
 .mobile-menu-container {
   display: flex;
-  justify-content: flex-start;
-  align-items: flex-start;
-  flex-direction: column;
-  margin-top: 6.25rem;
-  padding: 0 1.55rem;
+  margin-top: 10%;
+  width: 100%;
+}
+
+.mobile-nav {
+  display: flex;
+  width: 100%;
 }
 
 #fullscreen-menu .mobile-nav ul {
   display: flex;
+  justify-content: space-around;
   flex-wrap: wrap;
-  gap: 1.87rem;
-  justify-content: space-between;
   list-style: none;
+  width: 100%;
 }
 
 #fullscreen-menu .mobile-nav ul li a {
@@ -887,9 +900,6 @@ nav.sticky {
 .menu-item {
   display: flex;
   flex-direction: column;
-  align-items: start;
-  flex-grow: 1;
-  width: 10.62rem;
 }
 
 .subheading {
@@ -901,7 +911,7 @@ nav.sticky {
 .menu-socials {
   position: absolute;
   bottom: 2.5em;
-  left: 2.5em;
+  left: var(--secondary-padding);
 }
 
 /*!========================================================================
@@ -1531,51 +1541,87 @@ img {
  * 15. Swiper Slider
  * ======================================================================!*/
 
-.swiper-button-next,
-.swiper-button-prev {
-  color: var(--text-primary) !important;
-  background-color: var(--bg-footer);
-  opacity: 0.2;
-  border-radius: 50%;
-  width: 2rem !important;
-  height: 2rem !important;
-  transition: all 0.3s ease-in-out;
-  padding: 1rem;
+.card-container {
+  position: relative;
+  display: flex;
+  justify-content: flex-start;
+  width: 100%;
+  height: 100%;
+  padding-left: var(--secondary-padding);
+  padding-right: var(--secondary-padding);
+  padding-bottom: var(--primary-padding);
+  padding-top: 1rem;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+  gap: 5%;
 }
 
-.swiper-button-prev {
+.card-container::-webkit-scrollbar {
   display: none;
 }
 
-.swiper-button-next:hover,
-.swiper-button-prev:hover {
-  opacity: 0.8;
+/*!========================================================================
+ * 15. Swiper Slider
+ * ======================================================================!*/
+
+.bouncing-blob {
+  width: 25vw;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  will-change: transform;
+  position: absolute;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  transform-origin: left top;
+  opacity: .3;
 }
 
-.swiper-button-next::after {
-  font-size: 1rem !important;
-  font-weight: 900;
-  margin: auto; /* Ensure no margin affects positioning */
-  position: absolute; /* Absolutely position the arrows */
-  top: 50%; /* Vertically center the arrows */
-  left: 55%; /* Horizontally center the arrows */
-  transform: translate(-50%, -50%); /* Correct centering */
+.bouncing-blob--blue {
+  background: #4783c7;
 }
 
-.swiper-button-prev::after {
-  font-size: 1rem !important;
-  font-weight: 900;
-  margin: auto; /* Ensure no margin affects positioning */
-  position: absolute; /* Absolutely position the arrows */
-  top: 50%; /* Vertically center the arrows */
-  left: 45%; /* Horizontally center the arrows */
-  transform: translate(-50%, -50%); /* Correct centering */
+.bouncing-blob--white {
+  background: #ffffff;
+  z-index: 2;
+  width: 15vw;
 }
 
-.swiper-container {
-  position: relative;
-  display: flex;
-  margin: 0 auto;
+.bouncing-blob--purple {
+  background: #8c8ff1;
+}
+
+.bouncing-blob--pink {
+  background: #e289cd50;
+}
+
+.bouncing-blobs-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
   width: 100%;
-  height: auto;
+  height: 100%;
+}
+
+.bouncing-blobs-glass {
+  position: absolute;
+  z-index: 2;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  backdrop-filter: blur(140px);
+  -webkit-backdrop-filter: blur(140px);
+  pointer-events: none;
+}
+
+.bouncing-blobs {
+  position: absolute;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
 }
