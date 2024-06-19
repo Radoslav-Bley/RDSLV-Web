@@ -59,7 +59,10 @@
     height: 80%;
   }
   .service-box {
-    max-width: 90% !important;
+    max-width: 95% !important;
+  }
+  .section-heading h1 {
+    font-size: 1.5em;
   }
 }
 /*!========================================================================

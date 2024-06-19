@@ -27,27 +27,26 @@
   /*!========================================================================
  * Backgrounds */
 
-  --bg-color: rgb(255, 255, 255);
-  --bg-footer: rgb(245, 245, 247);
-  --bg-box: rgb(245, 245, 247);
+  --bg-color: rgb(244, 248, 255);
+  --bg-footer: rgb(225, 227, 235);
+  --bg-box: rgb(225, 227, 235);
 
   /*!========================================================================
  * Text */
 
-  --text-primary: rgb(0, 0, 0);
-  --text-secondary: rgb(100, 100, 100);
-  --text-faded: rgb(100, 100, 100);
-  --text-accent: #ed1c24;
+  --text-primary: rgb(13, 33, 55);
+  --text-secondary: rgba(13, 33, 55, 0.7);
+  --text-faded: rgba(13, 33, 55, 0.5);
   --transition: 0.3s ease-in-out;
 
   /*!========================================================================
  * Custom Palette */
 
-  --primary-color: #ed1c24;
-  --secondary-color: #231f20;
-  --primary-color-2: rgba(237, 28, 36, 0.2);
-  --secondary-color-2: rgba(35, 31, 32, 0.2);
-  --final-color: #e1e4e9;
+  --primary-color: rgb(255, 69, 0);
+  --secondary-color: rgb(13, 33, 55);
+  --third-color: rgb(13, 33, 55);
+  --fourth-color: rgb(224, 234, 245);
+  --fifth-color: rgb(46, 119, 174);
 
   /*!========================================================================
  * Navigation */
@@ -59,17 +58,12 @@
   /*!========================================================================
  * Dividers */
 
-  --section-divider: rgb(210, 210, 212);
-  --box-divider: rgb(210, 210, 212);
+  --section-divider: rgba(5, 12, 67, 0.2);
+  --box-divider: rgba(5, 12, 67, 0.2);
 
   /*!========================================================================
  * Radius */
-  --border-radius: 20px;
-
-  /*!========================================================================
- * Social Icons */
-
-  --social-color: grey;
+  --border-radius: 1.2rem;
 
   /*!========================================================================
  * Status Pill */
@@ -121,7 +115,7 @@ html {
 }
 
 body {
-  font-family: "Inter", sans-serif;
+  font-family: -apple-system, system-ui, -apple-system, BlinkMacSystemFont, 'San Francisco', 'Helvetica Neue', Helvetica, Arial, sans-serif;
   font-style: normal;
   margin: 0;
   overflow-x: hidden;
@@ -155,13 +149,16 @@ body {
   display: flex;
   flex-direction: column;
   text-align: center;
+  gap: 2rem;
 }
 
 /*!========================================================================
  * General Container */
 
 .container {
+  position: relative;
   display: flex;
+  justify-content: center;
   flex-direction: column;
   width: 100%;
   height: 100%;
@@ -212,8 +209,8 @@ section row {
  * Services Section Container */
 
 .service-box {
-  width: 400px !important; /* Set your desired width */
-  height: auto !important; /* Set your desired height */
+  width: 400px !important;
+  height: auto !important;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -221,16 +218,29 @@ section row {
   padding: 1.5rem;
   position: relative;
   z-index: 1;
-  overflow: hidden;
+  background: rgba(255, 255, 255, 0.1);
   border-radius: var(--border-radius);
-  box-shadow: 2px 4px 12px #00000014;
-  background-color: var(--bg-color);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  overflow: hidden;
   transition: all 0.3s cubic-bezier(0, 0, 0.5, 1);
 }
 
-.service-box:hover {
-  box-shadow: 2px 4px 16px #00000029;
-  transform: scale3d(1.02, 1.02, 1.02);
+.service-box::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.3) 0%,
+    rgba(255, 255, 255, 0) 50%
+  );
+  pointer-events: none;
 }
 
 .box-content {
@@ -246,6 +256,7 @@ section row {
   justify-content: flex-start;
   border-bottom: 1px solid var(--box-divider);
   padding-bottom: 1.5rem;
+  z-index: 1;
 }
 
 /*!========================================================================
@@ -391,15 +402,6 @@ section row {
   padding: 0;
 }
 
-#particleCanvas {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-image: linear-gradient(#082e44 0%, #ffffff 80%);
-}
-
 /*!========================================================================
  * 04. Sections
  * ======================================================================!*/
@@ -428,7 +430,7 @@ section {
   flex-direction: column;
   width: 100%;
   overflow: hidden;
-  padding: 2rem 0;
+  padding: 3rem 0 4rem 0;
 }
 
 #services {
@@ -453,13 +455,6 @@ section {
 /*!========================================================================
  * Font */
 
-@font-face {
-  font-family: "Inter";
-  src: url("/fonts/Inter-Variable.woff2") format("woff2"),
-    url("/fonts/Inter-Variable.woff") format("woff");
-  font-display: swap;
-}
-
 /*!========================================================================
  * Headings */
 
@@ -468,7 +463,6 @@ h1 {
   font-weight: 800;
   line-height: 1.2;
   margin: 0;
-  font-family: "Inter", sans-serif;
   font-optical-sizing: auto;
   font-style: normal;
   font-variation-settings: "slnt" 0;
@@ -478,7 +472,6 @@ h2 {
   font-size: 1.6rem;
   font-weight: 700;
   margin: 0;
-  font-family: "Inter", sans-serif;
   font-optical-sizing: auto;
   font-style: normal;
   font-variation-settings: "slnt" 0;
@@ -488,7 +481,6 @@ h3 {
   font-size: 1.4rem;
   font-weight: 600;
   margin: 0;
-  font-family: "Inter", sans-serif;
   font-optical-sizing: auto;
   font-style: normal;
   font-variation-settings: "slnt" 0;
@@ -498,7 +490,6 @@ h4 {
   font-size: 1.2rem;
   font-weight: 500;
   margin: 0;
-  font-family: "Inter", sans-serif;
   font-optical-sizing: auto;
   font-style: normal;
   font-variation-settings: "slnt" 0;
@@ -508,7 +499,6 @@ h5 {
   font-size: 1rem;
   font-weight: 400;
   margin: 0;
-  font-family: "Inter", sans-serif;
   font-optical-sizing: auto;
   font-style: normal;
   font-variation-settings: "slnt" 0;
@@ -518,7 +508,6 @@ h6 {
   font-size: 0.8rem;
   font-weight: 300;
   margin: 0;
-  font-family: "Inter", sans-serif;
   font-optical-sizing: auto;
   font-style: normal;
   font-variation-settings: "slnt" 0;
@@ -557,30 +546,37 @@ li {
 }
 
 .section-heading {
-  text-align: left;
-  padding: 0;
-  margin-bottom: 1.55rem;
-  text-transform: none;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
+  position: relative;
+  padding: 0;
+  margin-bottom: 4rem;
 }
 
 .section-heading h1 {
-  font-weight: 600;
+  font-size: 1.75em;
+  font-weight: 700;
   margin: 0;
+  color: var(--text-faded);
 }
 
-.section-heading h1::before {
-  content: "";
-  width: 0;
-  flex-shrink: 0;
+.section-heading h1::first-line {
+  color: var(--text-primary);
 }
 
-.section-heading h1::after {
+/* .section-heading h1::before {
   content: "";
-  width: 0;
-  flex-shrink: 0;
+  width: 4rem;
+  height: .1rem;
+  position: absolute;
+  top: -1rem;
+  background-color: var(--primary-color);
+  z-index: 0;
+} */
+
+.section-heading p {
+  color: var(--text-faded);
 }
 
 header h1 {
@@ -613,7 +609,7 @@ a {
 a:active,
 a:hover {
   outline-width: 0;
-  color: var(--text-primary);
+  color: var(--primary-color);
 }
 
 /*!========================================================================
@@ -623,7 +619,6 @@ p {
   font-size: 1.06em;
   font-weight: 500;
   margin: 0;
-  font-family: "Inter", sans-serif;
   font-optical-sizing: auto;
   font-style: normal;
   font-variation-settings: "slnt" 0;
@@ -633,7 +628,6 @@ header p {
   font-size: 1em;
   font-weight: 200;
   margin: 0;
-  font-family: "Inter", sans-serif;
   font-optical-sizing: auto;
   font-style: normal;
   font-variation-settings: "slnt" 0;
@@ -673,8 +667,7 @@ header p {
  * Special */
 
 .highlight {
-  color: var(--text-accent);
-  font-weight: 700;
+  color: var(--primary-color);
 }
 
 .highlight-2 {
@@ -685,13 +678,13 @@ strong {
   font-weight: 800;
 }
 
-faded {
-  color: var(--text-secondary);
+.faded {
+  color: var(--text-faded);
 }
 
 .herotext {
   font-size: 1em;
-  font-weight: 700;
+  font-weight: 400;
   margin: 0;
 }
 
@@ -755,7 +748,7 @@ ul {
   flex-wrap: wrap;
   flex-grow: 0;
   flex-direction: column;
-  gap: 0.60rem;
+  gap: 0.6rem;
   padding: 1rem 0;
   list-style: none;
 }
@@ -802,7 +795,7 @@ nav {
 
 nav.sticky {
   background-color: var(--nav-color);
-  box-shadow: var(--menu-divider) 0px .5px 0px 0px;
+  box-shadow: var(--menu-divider) 0px 0.5px 0px 0px;
   -webkit-backdrop-filter: blur(15px);
   backdrop-filter: blur(15px);
   transition: all var(--transition);
@@ -889,7 +882,6 @@ nav.sticky {
   padding: 0;
   font-size: 1.87em;
   font-weight: 200;
-  color: var(--text-primary);
 }
 
 .menu-item {
@@ -903,7 +895,7 @@ nav.sticky {
 .subheading {
   font-size: 0.65em;
   font-weight: 600;
-  color: var(--text-secondary);
+  color: var(--text-faded);
 }
 
 .menu-socials {
@@ -975,15 +967,15 @@ nav.sticky {
   justify-content: center;
   cursor: pointer;
   padding-inline: 0.5rem;
-  font-size: .8em;
+  font-size: 0.8em;
 }
 
 .theme-switch button:first-child {
-  padding-left: .5rem;
+  padding-left: 0.5rem;
 }
 
 .theme-switch button:last-child {
-  padding-right: .5rem;
+  padding-right: 0.5rem;
 }
 
 .theme-switch .active {
@@ -994,7 +986,7 @@ nav.sticky {
 
 .button-divider {
   width: 1px;
-  height: .5rem;
+  height: 0.5rem;
   background-color: var(--primary-color);
   padding: 0;
 }
@@ -1152,11 +1144,12 @@ img {
   justify-content: center;
   width: 2rem;
   height: 2rem;
-  fill: var(--text-accent);
+  fill: var(--primary-color);
   margin-right: 1.25rem;
-  background-color: var(--text-accent);
-  border-radius: var(--border-radius);
+  background-color: var(--primary-color);
+  border-radius: 0.5rem;
   transition: fill var(--transition);
+  z-index: 1;
 }
 
 .box-heading svg {
@@ -1170,12 +1163,12 @@ img {
 .social-buttons .social-button {
   display: inline-flex;
   cursor: pointer;
-  fill: var(--social-color);
+  fill: var(--text-secondary);
   transition: all var(--transition);
 }
 
 .social-buttons .social-button:hover {
-  fill: var(--text-primary);
+  fill: var(--primary-color);
   transform: scale(1.2);
 }
 
@@ -1451,14 +1444,31 @@ img {
   min-width: 19rem;
   left: 50%;
   transform: translateX(-50%);
-  background-color: rgba(56, 56, 60, 0.5);
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-  border-radius: 50px;
   text-align: center;
   padding: 0.8rem;
-  box-shadow: 2px 4px 16px #00000029;
   z-index: 1000;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 50px;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  overflow: hidden;
+}
+
+#cookie-consent-banner::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.3) 0%,
+    rgba(255, 255, 255, 0) 50%
+  );
+  pointer-events: none;
 }
 
 #cookie-consent-content {
@@ -1470,7 +1480,7 @@ img {
 }
 
 #cookie-consent-content p {
-  color: white;
+  color: var(--text-primary);
   margin: 0;
   font-size: 0.8em;
   font-weight: normal;
@@ -1479,7 +1489,6 @@ img {
 }
 
 #cookie-consent-content a {
-  color: white;
   text-decoration: underline;
 }
 
@@ -1518,24 +1527,21 @@ img {
   display: none;
 }
 
-
-
 /*!========================================================================
  * 15. Swiper Slider
  * ======================================================================!*/
- 
- .swiper-button-next,
+
+.swiper-button-next,
 .swiper-button-prev {
   color: var(--text-primary) !important;
   background-color: var(--bg-footer);
   opacity: 0.2;
   border-radius: 50%;
-  width: 3rem !important;
-  height: 3rem !important;
+  width: 2rem !important;
+  height: 2rem !important;
   transition: all 0.3s ease-in-out;
   padding: 1rem;
 }
-
 
 .swiper-button-prev {
   display: none;
@@ -1543,11 +1549,11 @@ img {
 
 .swiper-button-next:hover,
 .swiper-button-prev:hover {
-  opacity: .8;
+  opacity: 0.8;
 }
 
 .swiper-button-next::after {
-  font-size: 1.5rem !important; 
+  font-size: 1rem !important;
   font-weight: 900;
   margin: auto; /* Ensure no margin affects positioning */
   position: absolute; /* Absolutely position the arrows */
@@ -1557,7 +1563,7 @@ img {
 }
 
 .swiper-button-prev::after {
-  font-size: 1.5rem !important; 
+  font-size: 1rem !important;
   font-weight: 900;
   margin: auto; /* Ensure no margin affects positioning */
   position: absolute; /* Absolutely position the arrows */
@@ -1571,5 +1577,5 @@ img {
   display: flex;
   margin: 0 auto;
   width: 100%;
-  height: 100%;
+  height: auto;
 }

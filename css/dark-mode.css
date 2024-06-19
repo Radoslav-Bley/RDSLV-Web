@@ -12,23 +12,26 @@
     /*!========================================================================
  * Backgrounds */
 
-    --bg-color: rgb(0, 0, 0);
-    --bg-footer: rgb(28, 28, 30);
-    --bg-box: rgb(28, 28, 30);
+    --bg-color: rgb(20, 20, 20);
+    --bg-footer: rgb(30, 30, 30);
+    --bg-box: rgb(30, 30, 30);
 
     /*!========================================================================
- * Text */
+* Text */
 
-    --text-primary: rgb(255, 255, 255);
-    --text-secondary: rgb(100, 100, 100);
-    --text-faded: rgb(100, 100, 100);
+    --text-primary: rgb(235, 235, 235);
+    --text-secondary: rgba(235, 235, 235, 0.7);
+    --text-faded: rgba(235, 235, 235, 0.5);
+    --transition: 0.3s ease-in-out;
 
     /*!========================================================================
- * Custom Palette */
+* Custom Palette */
 
-    --secondary-color: rgb(255, 255, 255);
-    --secondary-color-2: rgba(255, 255, 255, 0.2);
-    --final-color: #202020;
+    --primary-color: rgb(255, 69, 0);
+    --secondary-color: rgb(235, 235, 235);
+    --third-color: rgb(235, 235, 235);
+    --fourth-color: rgb(50, 50, 50);
+    --fifth-color: rgb(100, 149, 237);
 
     /*!========================================================================
  * Navigation */
@@ -40,17 +43,8 @@
     /*!========================================================================
  * Dividers */
 
-    --section-divider: rgb(44, 44, 46);
-    --box-divider: rgb(44, 44, 46);
-  }
-
-  /*!========================================================================
- * 02. Base Styling
- * ======================================================================!*/
-
-  body {
-    background-color: var(--bg-color);
-    color: var(--text-color);
+    --section-divider: rgba(235, 235, 235, 0.2);
+    --box-divider: rgba(235, 235, 235, 0.2);
   }
 
   /*!========================================================================
@@ -58,46 +52,28 @@
  * ======================================================================!*/
 
   .service-box {
-    background-color: var(--bg-box);
-  }
-  
-  .box-heading {
-    border-bottom: 1px solid rgb(44, 44, 46);
+    background: rgba(255, 255, 255, 0.05);
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.7),
+      -5px -5px 15px rgba(255, 255, 255, 0.1);
   }
 
-  .service-box ul li::before {
-    background-color: rgba(245, 248, 253, 0.5);
-  }
-
-  #particleCanvas {
-    background-image: -webkit-radial-gradient(
-      top,
-      circle cover,
-      #082e44 0%,
-      #000000 80%
+  .service-box::before {
+    background: linear-gradient(
+      145deg,
+      rgba(255, 255, 255, 0.1),
+      rgba(255, 255, 255, 0) 70%
     );
-    background-image: -moz-radial-gradient(
-      top,
-      circle cover,
-      #082e44 0%,
-      #000000 80%
-    );
-    background-image: -o-radial-gradient(
-      top,
-      circle cover,
-      #082e44 0%,
-      #000000 80%
-    );
-    background-image: radial-gradient(top, circle cover, #082e44 0%, #000000 80%);
   }
 
-  /*!========================================================================
- * 04. Sections
- * ======================================================================!*/
-
-#services {
-  background-color: var(--bg-bo);
-}
+  .service-box::after {
+    background: linear-gradient(
+      145deg,
+      rgba(255, 255, 255, 0.2),
+      rgba(255, 255, 255, 0) 70%
+    );
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.5),
+      -5px -5px 15px rgba(255, 255, 255, 0.1);
+  }
 
   /*!========================================================================
  * 09. Shapes/Buttons
@@ -112,6 +88,6 @@
  * ======================================================================!*/
   .marquee__group .logo {
     filter: invert(1);
-    background-color: #e1e1e1;
+    background-color: rgb(225, 225, 225);
   }
 }
