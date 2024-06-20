@@ -90,6 +90,16 @@
     padding-right: var(--secondary-padding);
     margin-top: 10%;
   }
+  .about-container {
+    flex-direction: column;
+  }
+  .about-text {
+    width: 100%;
+  }
+  .about-image {
+    width: 100%;
+    margin-top: 2rem;
+  }
 }
 /*!========================================================================
    * 02. Tablets
