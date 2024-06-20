@@ -50,12 +50,25 @@
   .subfooter {
     flex-direction: column;
     align-items: center;
+    padding: 0;
   }
   .copyright-text {
     order: 2;
   }
   .social-buttons {
+    display: flex;
+    flex-direction: row;
+    position: relative;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 100%;
     order: 1;
+    border-bottom: 1px solid var(--section-divider);
+    height: 100%;
+    padding: 1rem;
+  }
+  #fullscreen-menu .social-buttons {
+    border-bottom: none;
   }
   #sitemap .container {
     grid-template-columns: repeat(2, 1fr);
