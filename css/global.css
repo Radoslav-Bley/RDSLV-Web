@@ -1548,7 +1548,7 @@ img {
 .card-container {
   position: relative;
   display: flex;
-  padding: 0 var(--secondary-padding) var(--primary-padding);
+  padding: 1rem var(--secondary-padding) var(--primary-padding);
   width: 100%;
   height: 100%;
   overflow-x: auto;
