@@ -56,7 +56,7 @@ function setAddressBarColor() {
     // Light mode
     document
       .querySelector('meta[name="theme-color"]')
-      .setAttribute("content", "rgb(244, 248, 255)");
+      .setAttribute("content", "rgb(255, 255, 255)");
   }
 }
 
