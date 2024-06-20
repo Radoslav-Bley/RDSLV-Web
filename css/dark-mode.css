@@ -51,13 +51,13 @@
  * 03. Containers
  * ======================================================================!*/
 
-  .service-box {
+  .card {
     background: rgba(255, 255, 255, 0.05);
     box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.7),
       -5px -5px 15px rgba(255, 255, 255, 0.1);
   }
 
-  .service-box::before {
+  .card::before {
     background: linear-gradient(
       145deg,
       rgba(255, 255, 255, 0.1),
@@ -65,7 +65,7 @@
     );
   }
 
-  .service-box::after {
+  .card::after {
     background: linear-gradient(
       145deg,
       rgba(255, 255, 255, 0.2),

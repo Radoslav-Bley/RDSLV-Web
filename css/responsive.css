@@ -76,8 +76,9 @@
   section row {
     height: 80%;
   }
-  .service-box {
-    max-width: 100%;
+  .card {
+    width: 95%;
+    max-width: 400px;
   }
   .section-heading h1 {
     font-size: 1.5em;
