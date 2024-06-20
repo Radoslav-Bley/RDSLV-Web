@@ -12,7 +12,7 @@
     /*!========================================================================
  * Backgrounds */
 
-    --bg-color: rgb(20, 20, 20);
+    --bg-color: rgb(10, 10, 10);
     --bg-footer: rgb(30, 30, 30);
     --bg-box: rgb(30, 30, 30);
 
@@ -60,17 +60,12 @@
   .card::before {
     background: linear-gradient(
       145deg,
-      rgba(255, 255, 255, 0.1),
+      rgba(255, 255, 255, 0.3),
       rgba(255, 255, 255, 0) 70%
     );
   }
 
   .card::after {
-    background: linear-gradient(
-      145deg,
-      rgba(255, 255, 255, 0.2),
-      rgba(255, 255, 255, 0) 70%
-    );
     box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.5),
       -5px -5px 15px rgba(255, 255, 255, 0.1);
   }
@@ -88,6 +83,6 @@
  * ======================================================================!*/
   .marquee__group .logo {
     filter: invert(1);
-    background-color: rgb(225, 225, 225);
+    background-color: rgb(240, 240, 240);
   }
 }

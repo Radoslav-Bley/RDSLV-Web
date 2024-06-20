@@ -27,24 +27,24 @@
   /*!========================================================================
  * Backgrounds */
 
-  --bg-color: rgb(244, 248, 255);
-  --bg-footer: rgb(225, 227, 235);
-  --bg-box: rgb(225, 227, 235);
+  --bg-color: rgb(255, 255, 255);
+  --bg-footer: rgb(230, 230, 230);
+  --bg-box: rgb(255, 255, 255);
 
   /*!========================================================================
  * Text */
 
-  --text-primary: rgb(13, 33, 55);
-  --text-secondary: rgba(13, 33, 55, 0.7);
-  --text-faded: rgba(13, 33, 55, 0.5);
+  --text-primary: rgb(20, 20, 20);
+  --text-secondary: rgba(20, 20, 20, 0.7);
+  --text-faded: rgba(20, 20, 20, 0.5);
   --transition: 0.3s ease-in-out;
 
   /*!========================================================================
  * Custom Palette */
 
   --primary-color: rgb(255, 69, 0);
-  --secondary-color: rgb(13, 33, 55);
-  --third-color: rgb(13, 33, 55);
+  --secondary-color: rgb(20, 20, 20);
+  --third-color: rgb(20, 20, 20);
   --fourth-color: rgb(224, 234, 245);
   --fifth-color: rgb(46, 119, 174);
 
@@ -251,8 +251,8 @@ section row {
   bottom: 0;
   background: linear-gradient(
     135deg,
-    rgba(255, 255, 255, 0.3) 0%,
-    rgba(255, 255, 255, 0) 50%
+    rgba(230, 230, 230, 0.6) 0%,
+    rgba(230, 230, 230, 0) 50%
   );
   pointer-events: none;
 }
@@ -448,6 +448,12 @@ section {
   width: 100%;
   overflow: hidden;
 }
+
+#clients {
+  background-color: var(--bg-footer);
+  z-index: 1;
+}
+
 
 /*!========================================================================
  * 05. Overlay Effects
