@@ -16,9 +16,6 @@
    * ======================================================================!*/
 
 @media (orientation: portrait) {
-  .anilogo .icon {
-    width: 100%;
-  }
 }
 
 @media (orientation: landscape) {
@@ -28,10 +25,6 @@
     padding-left: env(safe-area-inset-left);
     padding-right: env(safe-area-inset-right);
   } */
-
-  .anilogo .icon {
-    width: 70%;
-  }
 }
 
 /*!========================================================================
@@ -45,6 +38,9 @@
 
     --primary-padding: 7rem;
     --secondary-padding: 5%;
+  }
+  .anilogo {
+    width: 80vw;
   }
 
   .subfooter {
@@ -74,7 +70,10 @@
     grid-template-columns: repeat(2, 1fr);
   }
   section row {
-    height: 80%;
+    flex-direction: column;
+  }
+  .hero-content-container {
+    text-align: center;
   }
   .card {
     width: 95%;
