@@ -1559,7 +1559,7 @@ img {
  * 15. Swiper Slider
  * ======================================================================!*/
 
-.bouncing-blob {
+.gradient {
   width: 25vw;
   aspect-ratio: 1;
   border-radius: 50%;
@@ -1569,28 +1569,27 @@ img {
   top: 0;
   left: 0;
   transform-origin: left top;
-  opacity: 0.3;
 }
 
-.bouncing-blob--blue {
-  background: #4783c7;
+.gradient--blue {
+  background: rgb(0, 182, 251);
 }
 
-.bouncing-blob--white {
-  background: #ffffff;
+.gradient--white {
+  background: rgb(255, 159, 41);
   z-index: 2;
   width: 15vw;
 }
 
-.bouncing-blob--purple {
-  background: #8c8ff1;
+.gradient--purple {
+  background: rgb(174, 100, 250);
 }
 
-.bouncing-blob--pink {
-  background: #e289cd50;
+.gradient--pink {
+  background: rgb(255, 81, 80);
 }
 
-.bouncing-blobs-container {
+.gradients-container {
   position: absolute;
   top: 0;
   left: 0;
@@ -1599,7 +1598,7 @@ img {
   height: 100%;
 }
 
-.bouncing-blobs-glass {
+.gradients-glass {
   position: absolute;
   z-index: 2;
   top: 0;
@@ -1611,7 +1610,7 @@ img {
   pointer-events: none;
 }
 
-.bouncing-blobs {
+.gradients {
   position: absolute;
   z-index: 1;
   top: 0;

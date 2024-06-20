@@ -276,8 +276,8 @@ document.addEventListener("DOMContentLoaded", function () {
  * 08. Blob Animation
  * ======================================================================!*/
 
-const MIN_SPEED = 1.5;
-const MAX_SPEED = 2.5;
+const MIN_SPEED = 0.1;
+const MAX_SPEED = 1;
 
 function randomNumber(min, max) {
   return Math.random() * (max - min) + min;
@@ -329,7 +329,7 @@ class Blob {
 }
 
 function initBlobs() {
-  const blobEls = document.querySelectorAll(".bouncing-blob");
+  const blobEls = document.querySelectorAll(".gradient");
   const blobs = Array.from(blobEls).map((blobEl) => new Blob(blobEl));
 
   function update() {
