@@ -65,12 +65,14 @@
   }
   #fullscreen-menu .social-buttons {
     border-bottom: none;
+    padding-left: calc(var(--secondary-padding) + 2rem);
   }
   #sitemap .container {
     grid-template-columns: repeat(2, 1fr);
   }
   section row {
     flex-direction: column;
+    gap: 5rem;
   }
   .hero-content-container {
     text-align: center;
@@ -85,7 +87,7 @@
   #fullscreen-menu .mobile-nav ul {
     flex-direction: column;
     gap: 2rem;
-    padding-left: var(--secondary-padding);
+    padding-left: calc(var(--secondary-padding) + 2rem);
     padding-right: var(--secondary-padding);
     margin-top: 10%;
   }
