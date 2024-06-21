@@ -100,7 +100,7 @@
     margin-top: 2rem;
   }
   .gradient {
-    width: 50vw;
+    width: 30vw;
   }
   .item {
     width: 8vw;
@@ -108,6 +108,9 @@
   .high {
     height: auto;
     width: 48vw;
+  }
+  .arrow {
+    display: none;
   }
 }
 /*!========================================================================

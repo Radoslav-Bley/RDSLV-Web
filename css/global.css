@@ -35,7 +35,7 @@
   --text-secondary: #273238; /* Arctic Night for secondary text */
   --text-faded: #acacac; /* Silver Chalice for faded or less important text */
   --transition: 0.3s ease-in-out;
-  
+
   /* Brand Colors */
   --primary-color: #ff6200; /* Amber Glow for primary brand color */
   --secondary-color: #1c1c1e; /* Obsidian Black for secondary brand color */
@@ -231,6 +231,24 @@ section row {
 /*!========================================================================
  * Services Section Container */
 
+.card-container {
+  position: relative;
+  display: flex;
+  justify-content: flex-start;
+  align-content: center;
+  padding: 1rem var(--secondary-padding) var(--primary-padding);
+  width: 100%;
+  height: 100%;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+  gap: 5%;
+}
+
+.card-container::-webkit-scrollbar {
+  display: none;
+}
+
 .card {
   display: flex;
   flex: 0 0 auto;
@@ -270,45 +288,39 @@ section row {
   z-index: 1;
 }
 
-/*!========================================================================
- * Reel Container */
-
-#youtube-video {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  position: relative;
-  overflow: visible;
-}
-
-#youtube-video button {
-  background: transparent;
+.arrow {
+  background-color: rgba(28, 28, 30, 0.3);
   border: none;
-  position: absolute;
-  width: 9rem;
-  height: 9rem;
+  color: white;
+  font-size: 3rem;
   cursor: pointer;
-}
-
-#youtube-video button:before {
-  content: "";
-  display: block;
+  border-radius: 50%;
+  width: 4rem;
+  height: 4rem;
   position: absolute;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
-  width: 100%;
-  height: 6.1.87rem;
-  background-image: url("/img/assets/youtube/YouTube_play_button_icon_\(2013–2017\).svg");
-  background-size: cover;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  top: 63%;
+  transform: translateY(-63%);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter:blur(10px);
+  z-index: 10;
+  opacity: 0;
+  transition: transform 0.3s ease, opacity 0.3s ease;
 }
 
-.video-container iframe {
-  width: 100%;
-  height: 50rem;
-  border: none;
-  border-radius: 1.25rem;
-  box-shadow: 0 0 1.25rem rgba(0, 0, 0, 0.1);
+.arrow.visible {
+  transform: translateY(-50%) scale(1);
+  opacity: 1;
+}
+
+.left-arrow {
+  left: var(--secondary-padding);
+}
+
+.right-arrow {
+  right: var(--secondary-padding);
 }
 
 /*!========================================================================
@@ -1523,28 +1535,8 @@ img {
  * 15. Swiper Slider
  * ======================================================================!*/
 
-.card-container {
-  position: relative;
-  display: flex;
-  padding: 1rem var(--secondary-padding) var(--primary-padding);
-  width: 100%;
-  height: 100%;
-  overflow-x: auto;
-  scroll-snap-type: x mandatory;
-  -webkit-overflow-scrolling: touch;
-  gap: 5%;
-}
-
-.card-container::-webkit-scrollbar {
-  display: none;
-}
-
-/*!========================================================================
- * 15. Swiper Slider
- * ======================================================================!*/
-
 .gradient {
-  width: 25vw;
+  width: 20vw;
   aspect-ratio: 1;
   border-radius: 50%;
   will-change: transform;
@@ -1560,13 +1552,13 @@ img {
 }
 
 .gradient--2 {
-  background: var(--fourth-color);
+  background: var(--fifth-color);
   z-index: 2;
   width: 15vw;
 }
 
 .gradient--3 {
-  background: var(--fifth-color);
+  background: var(--fourth-color);
 }
 
 .gradient--4 {
@@ -1589,8 +1581,8 @@ img {
   left: 0;
   width: 100%;
   height: 100%;
-  backdrop-filter: blur(140px);
-  -webkit-backdrop-filter: blur(140px);
+  backdrop-filter: blur(80px);
+  -webkit-backdrop-filter: blur(80px);
   pointer-events: none;
 }
 

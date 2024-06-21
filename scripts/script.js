@@ -273,11 +273,13 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 /*!========================================================================
- * 08. Blob Animation
+ * 08. Gradient Animation
  * ======================================================================!*/
 
 const MIN_SPEED = 0.1;
 const MAX_SPEED = 1;
+const VELOCITY_CHANGE_PROBABILITY = 0; // Probability of changing direction
+const POSITION_VARIANCE = 1000; // Variance for initial positioning
 
 function randomNumber(min, max) {
   return Math.random() * (max - min) + min;
@@ -288,21 +290,28 @@ class Blob {
     this.el = el;
     const boundingRect = this.el.getBoundingClientRect();
     this.size = boundingRect.width;
-    this.initialX = randomNumber(0, window.innerWidth - this.size);
-    this.initialY = randomNumber(0, window.innerHeight - this.size);
+
+    // Ensure more varied initial positions
+    this.initialX = randomNumber(POSITION_VARIANCE, window.innerWidth - this.size - POSITION_VARIANCE);
+    this.initialY = randomNumber(POSITION_VARIANCE, window.innerHeight - this.size - POSITION_VARIANCE);
+
     this.el.style.top = `${this.initialY}px`;
     this.el.style.left = `${this.initialX}px`;
-    this.vx =
-      randomNumber(MIN_SPEED, MAX_SPEED) * (Math.random() > 0.5 ? 1 : -1);
-    this.vy =
-      randomNumber(MIN_SPEED, MAX_SPEED) * (Math.random() > 0.5 ? 1 : -1);
+    this.vx = randomNumber(MIN_SPEED, MAX_SPEED) * (Math.random() > 0.5 ? 1 : -1);
+    this.vy = randomNumber(MIN_SPEED, MAX_SPEED) * (Math.random() > 0.5 ? 1 : -1);
     this.x = this.initialX;
     this.y = this.initialY;
   }
 
   update() {
+    if (Math.random() < VELOCITY_CHANGE_PROBABILITY) {
+      this.vx = randomNumber(MIN_SPEED, MAX_SPEED) * (Math.random() > 0.5 ? 1 : -1);
+      this.vy = randomNumber(MIN_SPEED, MAX_SPEED) * (Math.random() > 0.5 ? 1 : -1);
+    }
+
     this.x += this.vx;
     this.y += this.vy;
+
     if (this.x >= window.innerWidth - this.size) {
       this.x = window.innerWidth - this.size;
       this.vx *= -1;
@@ -322,9 +331,7 @@ class Blob {
   }
 
   move() {
-    this.el.style.transform = `translate(${this.x - this.initialX}px, ${
-      this.y - this.initialY
-    }px)`;
+    this.el.style.transform = `translate(${this.x - this.initialX}px, ${this.y - this.initialY}px)`;
   }
 }
 
@@ -333,14 +340,65 @@ function initBlobs() {
   const blobs = Array.from(blobEls).map((blobEl) => new Blob(blobEl));
 
   function update() {
-    requestAnimationFrame(update);
     blobs.forEach((blob) => {
       blob.update();
       blob.move();
     });
+    requestAnimationFrame(update);
   }
 
   requestAnimationFrame(update);
 }
 
-initBlobs();
+// Start the blobs animation after the initial website load
+document.addEventListener('DOMContentLoaded', initBlobs);
+
+/*!========================================================================
+ * 09. Cards Scroll Event
+ * ======================================================================!*/
+
+document.addEventListener('DOMContentLoaded', () => {
+  const slider = document.querySelector('.card-container');
+  const leftArrow = document.querySelector('.left-arrow');
+  const rightArrow = document.querySelector('.right-arrow');
+
+  const updateArrows = () => {
+    const maxScrollLeft = slider.scrollWidth - slider.clientWidth;
+    if (slider.scrollLeft > 0) {
+      leftArrow.classList.add('visible');
+    } else {
+      leftArrow.classList.remove('visible');
+    }
+    if (slider.scrollLeft < maxScrollLeft) {
+      rightArrow.classList.add('visible');
+    } else {
+      rightArrow.classList.remove('visible');
+    }
+  };
+
+  const scrollByOneCard = (direction) => {
+    const card = slider.querySelector('.card');
+    const cardWidth = card.clientWidth + parseInt(getComputedStyle(slider).gap);
+    const scrollAmount = direction === 'left' ? -cardWidth : cardWidth;
+
+    slider.scrollBy({
+      left: scrollAmount,
+      behavior: 'smooth'
+    });
+  };
+
+  leftArrow.addEventListener('click', () => {
+    scrollByOneCard('left');
+  });
+
+  rightArrow.addEventListener('click', () => {
+    scrollByOneCard('right');
+  });
+
+  slider.addEventListener('scroll', updateArrows);
+
+  // Initial check
+  updateArrows();
+});
+
+
