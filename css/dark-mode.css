@@ -9,42 +9,31 @@
  * ======================================================================!*/
 
   :root {
-    /*!========================================================================
- * Backgrounds */
+    /* Background Colors for Dark Mode */
+    --bg-color: #1c1c1e; /* Dark version of Obsidian Black for the main background */
+    --bg-box: #2e3136; /* A darker grey for boxes or card backgrounds to create a subtle distinction */
 
-    --bg-color: rgb(10, 10, 10);
-    --bg-footer: rgb(30, 30, 30);
-    --bg-box: rgb(30, 30, 30);
+    /* Text Colors for Dark Mode */
+    --text-primary: #fafafa; /* Alabaster White used for primary text to ensure readability */
+    --text-secondary: #c0c0c0; /* Mystic Silver for secondary text, provides good contrast without overwhelming brightness */
+    --text-faded: #868686; /* Darker shade of grey for less important, faded text */
 
-    /*!========================================================================
-* Text */
+    /* Brand Colors */
+    --primary-color: #ff6200; /* Amber Glow remains consistent as it works well in both light and dark modes */
+    --secondary-color: #1c1c1e; /* Consistent use of Obsidian Black as a secondary brand color */
+    --third-color: #ff6200; /* Amber Glow: Vibrant, warm orange */
+    --fourth-color: #0077be; /* Deep Azure: Rich, deep blue */
+    --fifth-color: #c0c0c0; /* Mystic Silver: Shiny, neutral silver */
+    --sixth-color: #882255; /* Velvet Wine: Deep wine red */
+    --seventh-color: #f0ffff; /* Ivory Mist: Very light cyan-white */
 
-    --text-primary: rgb(235, 235, 235);
-    --text-secondary: rgba(235, 235, 235, 0.7);
-    --text-faded: rgba(235, 235, 235, 0.5);
-    --transition: 0.3s ease-in-out;
-
-    /*!========================================================================
-* Custom Palette */
-
-    --primary-color: rgb(255, 69, 0);
-    --secondary-color: rgb(235, 235, 235);
-    --third-color: rgb(235, 235, 235);
-    --fourth-color: rgb(50, 50, 50);
-    --fifth-color: rgb(100, 149, 237);
-
-    /*!========================================================================
- * Navigation */
-
-    --nav-color: rgba(0, 0, 0, 0.2);
-    --menu-color: rgb(255, 255, 255);
-    --menu-divider: rgba(245, 248, 253, 0.2);
-
-    /*!========================================================================
- * Dividers */
-
-    --section-divider: rgba(235, 235, 235, 0.2);
-    --box-divider: rgba(235, 235, 235, 0.2);
+    /* Navigation Color */
+    --nav-color: rgba(
+      40,
+      40,
+      44,
+      0.85
+    ); /* Adjusted for better visibility in dark mode */
   }
 
   /*!========================================================================
@@ -52,23 +41,19 @@
  * ======================================================================!*/
 
   .card {
-    background: rgba(255, 255, 255, 0.05);
-    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.7),
-      -5px -5px 15px rgba(255, 255, 255, 0.1);
-  }
-
-  .card::before {
     background: linear-gradient(
       145deg,
-      rgba(255, 255, 255, 0.3),
-      rgba(255, 255, 255, 0) 70%
+      rgba(255, 255, 255, 0.1),
+      rgba(255, 255, 255, 0.05)
     );
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1),
+      inset 0 0 0 1px rgba(255, 255, 255, 0.1);
   }
 
-  .card::after {
-    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.5),
-      -5px -5px 15px rgba(255, 255, 255, 0.1);
-  }
+/*!========================================================================
+ * 08. Navigation
+ * ======================================================================!*/
+
 
   /*!========================================================================
  * 09. Shapes/Buttons
@@ -83,6 +68,16 @@
  * ======================================================================!*/
   .marquee__group .logo {
     filter: invert(1);
-    background-color: rgb(240, 240, 240);
+    background-color: rgb(209, 206, 201);
+  }
+
+  #cookie-consent-banner {
+    background: linear-gradient(
+      145deg,
+      rgba(255, 255, 255, 0.1),
+      rgba(255, 255, 255, 0.05)
+    );
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1),
+      inset 0 0 0 1px rgba(255, 255, 255, 0.1);
   }
 }

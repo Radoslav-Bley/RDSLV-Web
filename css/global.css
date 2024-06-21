@@ -25,41 +25,30 @@
 
 :root {
   /*!========================================================================
- * Backgrounds */
+ /* Background Colors */
+  --bg-color: #fafafa; /* Alabaster White for the main background */
+  --bg-footer: #16181d; /* Arctic Night for the footer background */
+  --bg-box: #acacac; /* Silver Chalice for boxes or card backgrounds */
 
-  --bg-color: rgb(255, 255, 255);
-  --bg-footer: rgb(230, 230, 230);
-  --bg-box: rgb(255, 255, 255);
-
-  /*!========================================================================
- * Text */
-
-  --text-primary: rgb(20, 20, 20);
-  --text-secondary: rgba(20, 20, 20, 0.7);
-  --text-faded: rgba(20, 20, 20, 0.5);
+  /* Text Colors */
+  --text-primary: #1c1c1e; /* Obsidian Black for primary text */
+  --text-secondary: #273238; /* Arctic Night for secondary text */
+  --text-faded: #acacac; /* Silver Chalice for faded or less important text */
   --transition: 0.3s ease-in-out;
-
-  /*!========================================================================
- * Custom Palette */
-
-  --primary-color: rgb(255, 69, 0);
-  --secondary-color: rgb(20, 20, 20);
-  --third-color: rgb(20, 20, 20);
-  --fourth-color: rgb(224, 234, 245);
-  --fifth-color: rgb(46, 119, 174);
+  
+  /* Brand Colors */
+  --primary-color: #ff6200; /* Amber Glow for primary brand color */
+  --secondary-color: #1c1c1e; /* Obsidian Black for secondary brand color */
+  --third-color: #ff6200; /* Amber Glow: Vibrant, warm orange */
+  --fourth-color: #0077be; /* Deep Azure: Rich, deep blue */
+  --fifth-color: #c0c0c0; /* Mystic Silver: Shiny, neutral silver */
+  --sixth-color: #882255; /* Velvet Wine: Deep wine red */
+  --seventh-color: #f0ffff; /* Ivory Mist: Very light cyan-white */
 
   /*!========================================================================
  * Navigation */
 
-  --nav-color: rgba(255, 255, 255, 0.2);
-  --menu-color: rgb(0, 0, 0);
-  --menu-divider: rgb(210, 210, 212);
-
-  /*!========================================================================
- * Dividers */
-
-  --section-divider: rgba(5, 12, 67, 0.2);
-  --box-divider: rgba(5, 12, 67, 0.2);
+  --nav-color: rgba(250, 250, 250, 0.2);
 
   /*!========================================================================
  * Radius */
@@ -87,9 +76,6 @@
   --duration: 60s;
   --scroll-start: 0;
   --scroll-end: calc(-100% - var(--gap));
-
-  /* Gallery Hero */
-  --index: calc(1vw + 1vh);
 }
 
 /*!========================================================================
@@ -188,7 +174,7 @@ body {
 .about-container {
   display: flex;
   flex-direction: row;
-  align-items: center;
+  align-items: flex-start;
   justify-content: space-between;
   height: 100%;
 }
@@ -248,34 +234,21 @@ section row {
   display: flex;
   flex: 0 0 auto;
   width: 400px;
-  align-items: flex-start;
+  align-items: center;
   justify-content: center;
   padding: 1.5rem;
-  z-index: 1;
-  background: rgba(255, 255, 255, 0.1);
   border-radius: var(--border-radius);
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
   overflow: hidden;
   transition: all 0.3s cubic-bezier(0, 0, 0.5, 1);
   scroll-snap-align: center;
-}
-
-.card::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
+  backdrop-filter: blur(10px);
   background: linear-gradient(
-    135deg,
-    rgba(230, 230, 230, 0.6) 0%,
-    rgba(230, 230, 230, 0) 50%
+    145deg,
+    rgba(255, 255, 255, 0.6),
+    rgba(255, 255, 255, 0.3)
   );
-  pointer-events: none;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1),
+    inset 0 0 0 1px rgba(255, 255, 255, 0.3);
 }
 
 .card-content {
@@ -283,6 +256,7 @@ section row {
   flex-direction: column;
   white-space: normal;
   width: 100%;
+  height: 100%;
 }
 
 .card-heading {
@@ -290,7 +264,7 @@ section row {
   width: 100%;
   align-items: center;
   justify-content: flex-start;
-  border-bottom: 1px solid var(--box-divider);
+  border-bottom: 1px solid var(--text-secondary);
   padding-bottom: 1.5rem;
   z-index: 1;
 }
@@ -409,8 +383,8 @@ section row {
   width: 100%;
   gap: 1.25rem;
   padding: 1.55rem 0;
-  border-top: 1px solid var(--section-divider);
-  border-bottom: 1px solid var(--section-divider);
+  border-top: 1px solid var(--fifth-color);
+  border-bottom: 1px solid var(--fifth-color);
 }
 
 .footer-bottom {
@@ -419,7 +393,7 @@ section row {
   align-items: center;
   padding: 1.55rem 0;
   gap: 1.25rem;
-  border-bottom: 1px solid var(--section-divider);
+  border-bottom: 1px solid var(--fifth-color);
 }
 
 .subfooter {
@@ -459,6 +433,7 @@ header {
 
 .footer {
   background-color: var(--bg-footer);
+  color: var(--text-faded);
 }
 
 section {
@@ -470,12 +445,6 @@ section {
   width: 100%;
   overflow: hidden;
 }
-
-#clients {
-  background-color: var(--bg-footer);
-  z-index: 1;
-}
-
 
 /*!========================================================================
  * 05. Overlay Effects
@@ -649,6 +618,10 @@ a:hover {
   color: var(--primary-color);
 }
 
+footer a {
+  color: var(--text-faded);
+}
+
 /*!========================================================================
  * Basic */
 
@@ -672,7 +645,6 @@ header p {
 
 .footer-section li {
   font-weight: 400;
-  color: var(--text-secondary);
   font-size: 0.85em;
   margin-bottom: 0.4rem;
 }
@@ -682,7 +654,6 @@ header p {
 }
 
 .copyright-text p {
-  color: var(--text-secondary);
   font-size: 0.8em;
   font-weight: 400;
   margin: 0;
@@ -837,10 +808,9 @@ nav {
 
 nav.sticky {
   background-color: var(--nav-color);
-  box-shadow: var(--menu-divider) 0px 0.5px 0px 0px;
-  -webkit-backdrop-filter: blur(15px);
-  backdrop-filter: blur(15px);
-  transition: all var(--transition);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: background-color var(--transition);
 }
 
 /*!========================================================================
@@ -857,7 +827,7 @@ nav.sticky {
 .line {
   width: 1.25rem;
   height: 1px;
-  background-color: var(--menu-color);
+  background-color: var(--text-secondary);
   position: absolute;
   right: 0;
   transition: all 0.3s ease;
@@ -1061,7 +1031,7 @@ nav.sticky {
 .section-divider {
   width: 100%;
   height: 1px;
-  background-color: var(--section-divider);
+  background-color: var(--fifth-color);
   margin-bottom: 0.62rem;
   transition: background-color var(--transition);
 }
@@ -1087,7 +1057,7 @@ nav.sticky {
 }
 
 #part1 {
-  fill: var(--secondary-color);
+  fill: var(--text-secondary);
   transition: fill var(--transition);
 }
 
@@ -1196,7 +1166,7 @@ img {
 .social-buttons .social-button {
   display: inline-flex;
   cursor: pointer;
-  fill: var(--text-secondary);
+  fill: var(--text-faded);
   transition: all var(--transition);
 }
 
@@ -1433,7 +1403,7 @@ img {
   border: none;
   font-size: 20px;
   font-weight: bold;
-  color: var(--menu-color);
+  color: var(--text-secondary);
   position: absolute;
   top: 10px;
   right: 10px;
@@ -1480,28 +1450,16 @@ img {
   text-align: center;
   padding: 0.8rem;
   z-index: 1000;
-  background: rgba(255, 255, 255, 0.1);
   border-radius: 50px;
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
   overflow: hidden;
-}
-
-#cookie-consent-banner::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
+  backdrop-filter: blur(10px);
   background: linear-gradient(
-    135deg,
-    rgba(255, 255, 255, 0.3) 0%,
-    rgba(255, 255, 255, 0) 50%
+    145deg,
+    rgba(255, 255, 255, 0.6),
+    rgba(255, 255, 255, 0.3)
   );
-  pointer-events: none;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1),
+    inset 0 0 0 1px rgba(255, 255, 255, 0.3);
 }
 
 #cookie-consent-content {
@@ -1596,22 +1554,22 @@ img {
   transform-origin: left top;
 }
 
-.gradient--blue {
-  background: rgb(0, 182, 251);
+.gradient--1 {
+  background: var(--third-color);
 }
 
-.gradient--white {
-  background: rgb(255, 159, 41);
+.gradient--2 {
+  background: var(--fourth-color);
   z-index: 2;
   width: 15vw;
 }
 
-.gradient--purple {
-  background: rgb(174, 100, 250);
+.gradient--3 {
+  background: var(--fifth-color);
 }
 
-.gradient--pink {
-  background: rgb(255, 81, 80);
+.gradient--4 {
+  background: var(--sixth-color);
 }
 
 .gradients-container {
@@ -1646,7 +1604,7 @@ img {
 
 /* Gallery Hero */
 
-.gallery-wrapper{
+.gallery-wrapper {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -1654,26 +1612,28 @@ img {
   width: 100%;
 }
 
-.items{
+.items {
   display: flex;
   align-items: center;
   gap: 0.4rem;
 }
 
-.item{
+.item {
   position: relative;
-  width: calc(var(--index) * 2.5);
-  height: calc(var(--index) * 12);
-  background-color: var(--primary-color);
+  width: 4vw;
+  height: auto;
+  aspect-ratio: 4 / 20;
+  background-color: var(--text-secondary);
   background-size: cover;
   background-position: center;
   border-radius: 50px;
-  filter: grayscale(1) brightness(.5);
+  filter: grayscale(1) brightness(0.7);
 }
 
 .high {
-  width: calc(var(--index) * 14);
-  height: calc(var(--index) * 14);
+  height: auto;
+  width: 24vw;
+  aspect-ratio: 1;
   background-color: var(--primary-color);
   border-radius: 24px;
   filter: grayscale(0) brightness(1);

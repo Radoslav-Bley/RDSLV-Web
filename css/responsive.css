@@ -99,6 +99,16 @@
     width: 100%;
     margin-top: 2rem;
   }
+  .gradient {
+    width: 50vw;
+  }
+  .item {
+    width: 8vw;
+  }
+  .high {
+    height: auto;
+    width: 48vw;
+  }
 }
 /*!========================================================================
    * 02. Tablets
