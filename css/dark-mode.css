@@ -18,15 +18,6 @@
     --text-secondary: #c0c0c0; /* Mystic Silver for secondary text, provides good contrast without overwhelming brightness */
     --text-faded: #868686; /* Darker shade of grey for less important, faded text */
 
-    /* Brand Colors */
-    --primary-color: #ff6200; /* Amber Glow remains consistent as it works well in both light and dark modes */
-    --secondary-color: #1c1c1e; /* Consistent use of Obsidian Black as a secondary brand color */
-    --third-color: #ff6200; /* Amber Glow: Vibrant, warm orange */
-    --fourth-color: #0077be; /* Deep Azure: Rich, deep blue */
-    --fifth-color: #c0c0c0; /* Mystic Silver: Shiny, neutral silver */
-    --sixth-color: #882255; /* Velvet Wine: Deep wine red */
-    --seventh-color: #f0ffff; /* Ivory Mist: Very light cyan-white */
-
     /* Navigation Color */
     --nav-color: rgba(
       40,
@@ -36,29 +27,6 @@
     ); /* Adjusted for better visibility in dark mode */
   }
 
-  /*!========================================================================
- * 03. Containers
- * ======================================================================!*/
-
-  .card {
-    background: linear-gradient(
-      145deg,
-      rgba(255, 255, 255, 0.1),
-      rgba(255, 255, 255, 0.05)
-    );
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1),
-      inset 0 0 0 1px rgba(255, 255, 255, 0.1);
-  }
-  
-  .arrow {
-    background: linear-gradient(
-      145deg,
-      rgba(255, 255, 255, 0.2),
-      rgba(255, 255, 255, 0.05)
-    );
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1),
-      inset 0 0 0 1px rgba(255, 255, 255, 0.1);
-  }
   
   /*!========================================================================
  * 09. Images
