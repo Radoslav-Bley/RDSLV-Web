@@ -110,6 +110,10 @@ html {
 }
 
 body {
+  user-select: none; /* For modern browsers */
+  -moz-user-select: none; /* For Firefox */
+  -webkit-user-select: none; /* For Safari */
+  -ms-user-select: none; /* For Internet Explorer/Edge */
   font-family: -apple-system, system-ui, -apple-system, BlinkMacSystemFont,
     "San Francisco", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-style: normal;
