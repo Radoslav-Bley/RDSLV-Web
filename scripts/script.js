@@ -50,12 +50,12 @@ function setAddressBarColor() {
     // Dark mode
     document
       .querySelector('meta[name="theme-color"]')
-      .setAttribute("content", "rgb(20, 20, 20)");
+      .setAttribute("content", "rgb(28, 28, 30)");
   } else {
     // Light mode
     document
       .querySelector('meta[name="theme-color"]')
-      .setAttribute("content", "rgb(255, 255, 255)");
+      .setAttribute("content", "rgb(250, 250, 250)");
   }
 }
 
