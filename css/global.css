@@ -291,8 +291,8 @@ section row {
   display: flex;
   align-items: flex-end;
   justify-content: center;
-  top: 63%;
-  transform: translateY(-63%);
+  top: 60%;
+  transform: translateY(-60%);
   z-index: 10;
   opacity: 0;
   transition: transform 0.3s ease, opacity 0.3s ease;
