@@ -43,6 +43,7 @@
   --fifth-color: #c0c0c0; /* Mystic Silver: Shiny, neutral silver */
   --sixth-color: #882255; /* Velvet Wine: Deep wine red */
   --seventh-color: #f0ffff; /* Ivory Mist: Very light cyan-white */
+  --eighth-color: #fafafa;
 
   /*!========================================================================
  * Navigation */
@@ -245,11 +246,11 @@ section row {
   backdrop-filter: blur(10px);
   background: linear-gradient(
     145deg,
-    rgba(255, 255, 255, 0.6),
-    rgba(255, 255, 255, 0.3)
+    rgba(255, 255, 255, 0.1),
+    rgba(255, 255, 255, 0.05)
   );
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1),
-    inset 0 0 0 1px rgba(255, 255, 255, 0.3);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1),
+    inset 0 0 0 1px rgba(255, 255, 255, 0.1);
 }
 
 .card-content {
@@ -265,20 +266,20 @@ section row {
   width: 100%;
   align-items: center;
   justify-content: flex-start;
-  border-bottom: 1px solid var(--text-faded);
+  border-bottom: 1px solid rgba(250, 250, 250, 0.1);
   padding-bottom: 1.5rem;
   z-index: 1;
 }
 
 .arrow {
   backdrop-filter: blur(10px);
-    background: linear-gradient(
-      145deg,
-      rgba(0, 0, 0, 0.2),
-      rgba(0, 0, 0, 0.05)
-    );
-    box-shadow: 0 0px 6px rgba(0, 0, 0, 0.2),
-      inset 0 0 0 1px rgba(0, 0, 0, 0.1);
+  background: linear-gradient(
+    145deg,
+    rgba(255, 255, 255, 0.2),
+    rgba(255, 255, 255, 0.05)
+  );
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1),
+    inset 0 0 0 1px rgba(255, 255, 255, 0.1);
   border: none;
   color: white;
   font-size: 3rem;
@@ -518,6 +519,7 @@ li {
   padding: 0;
   font-weight: 800;
   font-size: 1.2em;
+  color: var(--eighth-color);
 }
 
 .footer-top h2 {
@@ -543,11 +545,10 @@ li {
   font-weight: 700;
   margin: 0;
   padding: 0;
-  color: var(--text-faded);
 }
 
-.section-heading h1::first-line {
-  color: var(--text-primary);
+.subheader {
+  filter: opacity(0.5);
 }
 
 .section-heading p {
@@ -648,6 +649,15 @@ strong {
   color: var(--text-faded);
 }
 
+.blend {
+   filter:opacity(1);
+   mix-blend-mode: overlay;
+}
+
+.light {
+  color: var(--eighth-color);
+}
+
 .herotext {
   font-size: 1em;
   font-weight: 400;
@@ -700,13 +710,13 @@ ul {
 }
 
 .card ul li::marker {
-  color: var(--text-secondary);
+  color: var(--eighth-color);
 }
 
 .card ul li {
   position: relative;
   padding-left: 1em;
-  color: var(--text-primary);
+  color: var(--eighth-color);
 }
 
 .footer-section ul {
@@ -1296,6 +1306,7 @@ img {
   z-index: -1;
   width: 100%;
   height: 100%;
+  background-color: var(--secondary-color);
 }
 
 .gradients-glass {
