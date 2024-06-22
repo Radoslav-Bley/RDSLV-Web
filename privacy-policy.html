@@ -408,6 +408,7 @@
     </script> -->
   </head>
   <body>
+    <!-- Navigation -->
     <nav>
       <div class="nav-container">
         <div class="logo">
@@ -526,14 +527,18 @@
         </div>
       </div>
     </nav>
+    <!-- End Navigation -->
 
+    <!-- Header -->
     <header>
       <div class="section-heading">
         <h1>Privacy Policy<span class="highlight">.</span></h1>
         <p>Effective Date: 01/06/2024</p>
       </div>
     </header>
+    <!-- End Header -->
 
+    <!-- Main Content -->
     <main id="privacy-policy">
       <div class="container">
         <p>
@@ -803,6 +808,7 @@
         </p>
       </div>
     </main>
+    <!-- End Main Content -->
 
     <!-- Footer -->
     <footer class="footer">
@@ -845,20 +851,6 @@
             </ul>
           </div>
         </div>
-
-        <!-- <div class="footer-bottom">
-          <div class="language-switch">
-            <a href="#">English</a>
-          </div>
-
-          <div class="theme-switch">
-            <button class="active" id="light-btn">Light</button>
-            <div class="button-divider"></div>
-            <button id="dark-btn">Dark</button>
-            <div class="button-divider"></div>
-            <button id="auto-btn">Auto</button>
-          </div>
-        </div> -->
 
         <div class="subfooter">
           <div class="copyright-text">
@@ -951,13 +943,18 @@
     </footer>
     <!-- End Footer -->
 
+    <!-- Cookie Banner -->
     <div id="cookie-consent-banner" style="display: none">
       <div id="cookie-consent-content">
         <p>
           By using our site, you consent to analytics<br />cookies and our
           <a href="/privacy-policy.html">Privacy Policy</a>.
         </p>
-        <button id="accept-cookies">
+        <button
+          id="accept-cookies"
+          aria-label="Accept Cookies"
+          title="Accept Cookies"
+        >
           <svg
             xmlns="http://www.w3.org/2000/svg"
             width="16"
@@ -987,5 +984,14 @@
         </button>
       </div>
     </div>
+    <!-- End Cookie Banner -->
+
+    <!-- Block Right Click -->
+    <script type="text/javascript">
+      document.addEventListener("contextmenu", function (e) {
+        e.preventDefault();
+      });
+    </script>
+    <!-- End Block Right Click -->
   </body>
 </html>

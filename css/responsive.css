@@ -33,14 +33,8 @@
 
 @media (max-width: 575.98px) {
   :root {
-    /*!========================================================================
- * Paddings */
-
     --primary-padding: 7rem;
     --secondary-padding: 5%;
-  }
-  .anilogo {
-    width: 80vw;
   }
 
   .subfooter {

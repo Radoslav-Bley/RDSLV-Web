@@ -5,13 +5,12 @@
  *
  * 01. Reveal animations
  * 02. Adrress Bar Color Change
- * 03. YouTube Lazy Loading
- * 04. Header background on scroll
- * 05. Menu Toggle
- * 06. TextScramble
- * 07. Cookie Consent Banner
- * 08. Hero Section Particles Animation
- * 09. Swiper Slider
+ * 03. Navigation background on scroll
+ * 04. Menu Toggle
+ * 05. TextScramble
+ * 06. Cookie Consent Banner
+ * 07. Gradient Animation
+ * 08. Cards Scroll Event
  */
 
 /*!========================================================================
@@ -69,16 +68,7 @@ window
   .addListener(setAddressBarColor);
 
 /*!========================================================================
- * 03. YouTube Lazy Loading
- * ======================================================================!*/
-
-function loadYoutubeVideo() {
-  document.getElementById("youtube-video").innerHTML =
-    '<iframe width="560" height="315" src="https://www.youtube.com/embed/VIDEO_ID" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>';
-}
-
-/*!========================================================================
- * 04. Header background on scroll
+ * 03. Navigation background on scroll
  * ======================================================================!*/
 
 window.addEventListener("scroll", function () {
@@ -87,7 +77,7 @@ window.addEventListener("scroll", function () {
 });
 
 /*!========================================================================
- * 05. Menu Toggle
+ * 04. Menu Toggle
  * ======================================================================!*/
 
 var hamburgerMenu = document.querySelector(".hamburger-menu");
@@ -138,7 +128,7 @@ menuItems.forEach(function (item) {
 });
 
 /*!========================================================================
- * 06. TextScramble
+ * 05. TextScramble
  * ======================================================================!*/
 
 class TextScramble {
@@ -215,7 +205,7 @@ const next = () => {
 next();
 
 /*!========================================================================
- * 07. Cookie Consent Banner
+ * 06. Cookie Consent Banner
  * ======================================================================!*/
 
 document.addEventListener("DOMContentLoaded", function () {
@@ -273,7 +263,7 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 /*!========================================================================
- * 08. Gradient Animation
+ * 07. Gradient Animation
  * ======================================================================!*/
 
 const MIN_SPEED = 0.1;
@@ -292,21 +282,31 @@ class Blob {
     this.size = boundingRect.width;
 
     // Ensure more varied initial positions
-    this.initialX = randomNumber(POSITION_VARIANCE, window.innerWidth - this.size - POSITION_VARIANCE);
-    this.initialY = randomNumber(POSITION_VARIANCE, window.innerHeight - this.size - POSITION_VARIANCE);
+    this.initialX = randomNumber(
+      POSITION_VARIANCE,
+      window.innerWidth - this.size - POSITION_VARIANCE
+    );
+    this.initialY = randomNumber(
+      POSITION_VARIANCE,
+      window.innerHeight - this.size - POSITION_VARIANCE
+    );
 
     this.el.style.top = `${this.initialY}px`;
     this.el.style.left = `${this.initialX}px`;
-    this.vx = randomNumber(MIN_SPEED, MAX_SPEED) * (Math.random() > 0.5 ? 1 : -1);
-    this.vy = randomNumber(MIN_SPEED, MAX_SPEED) * (Math.random() > 0.5 ? 1 : -1);
+    this.vx =
+      randomNumber(MIN_SPEED, MAX_SPEED) * (Math.random() > 0.5 ? 1 : -1);
+    this.vy =
+      randomNumber(MIN_SPEED, MAX_SPEED) * (Math.random() > 0.5 ? 1 : -1);
     this.x = this.initialX;
     this.y = this.initialY;
   }
 
   update() {
     if (Math.random() < VELOCITY_CHANGE_PROBABILITY) {
-      this.vx = randomNumber(MIN_SPEED, MAX_SPEED) * (Math.random() > 0.5 ? 1 : -1);
-      this.vy = randomNumber(MIN_SPEED, MAX_SPEED) * (Math.random() > 0.5 ? 1 : -1);
+      this.vx =
+        randomNumber(MIN_SPEED, MAX_SPEED) * (Math.random() > 0.5 ? 1 : -1);
+      this.vy =
+        randomNumber(MIN_SPEED, MAX_SPEED) * (Math.random() > 0.5 ? 1 : -1);
     }
 
     this.x += this.vx;
@@ -331,7 +331,9 @@ class Blob {
   }
 
   move() {
-    this.el.style.transform = `translate(${this.x - this.initialX}px, ${this.y - this.initialY}px)`;
+    this.el.style.transform = `translate(${this.x - this.initialX}px, ${
+      this.y - this.initialY
+    }px)`;
   }
 }
 
@@ -351,54 +353,52 @@ function initBlobs() {
 }
 
 // Start the blobs animation after the initial website load
-document.addEventListener('DOMContentLoaded', initBlobs);
+document.addEventListener("DOMContentLoaded", initBlobs);
 
 /*!========================================================================
- * 09. Cards Scroll Event
+ * 08. Cards Scroll Event
  * ======================================================================!*/
 
-document.addEventListener('DOMContentLoaded', () => {
-  const slider = document.querySelector('.card-container');
-  const leftArrow = document.querySelector('.left-arrow');
-  const rightArrow = document.querySelector('.right-arrow');
+document.addEventListener("DOMContentLoaded", () => {
+  const slider = document.querySelector(".card-container");
+  const leftArrow = document.querySelector(".left-arrow");
+  const rightArrow = document.querySelector(".right-arrow");
 
   const updateArrows = () => {
     const maxScrollLeft = slider.scrollWidth - slider.clientWidth;
     if (slider.scrollLeft > 0) {
-      leftArrow.classList.add('visible');
+      leftArrow.classList.add("visible");
     } else {
-      leftArrow.classList.remove('visible');
+      leftArrow.classList.remove("visible");
     }
     if (slider.scrollLeft < maxScrollLeft) {
-      rightArrow.classList.add('visible');
+      rightArrow.classList.add("visible");
     } else {
-      rightArrow.classList.remove('visible');
+      rightArrow.classList.remove("visible");
     }
   };
 
   const scrollByOneCard = (direction) => {
-    const card = slider.querySelector('.card');
+    const card = slider.querySelector(".card");
     const cardWidth = card.clientWidth + parseInt(getComputedStyle(slider).gap);
-    const scrollAmount = direction === 'left' ? -cardWidth : cardWidth;
+    const scrollAmount = direction === "left" ? -cardWidth : cardWidth;
 
     slider.scrollBy({
       left: scrollAmount,
-      behavior: 'smooth'
+      behavior: "smooth",
     });
   };
 
-  leftArrow.addEventListener('click', () => {
-    scrollByOneCard('left');
+  leftArrow.addEventListener("click", () => {
+    scrollByOneCard("left");
   });
 
-  rightArrow.addEventListener('click', () => {
-    scrollByOneCard('right');
+  rightArrow.addEventListener("click", () => {
+    scrollByOneCard("right");
   });
 
-  slider.addEventListener('scroll', updateArrows);
+  slider.addEventListener("scroll", updateArrows);
 
   // Initial check
   updateArrows();
 });
-
-

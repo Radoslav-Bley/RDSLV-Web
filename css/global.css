@@ -6,17 +6,16 @@
  * 02. Base Styling
  * 03. Containers
  * 04. Sections
- * 05. Overlay Effects
- * 06. Text
- * 07. Lists
- * 08. Navigation
- * 09. Shapes/Buttons
- * 10. Dividers
- * 11. Images
- * 12. Animations
- * 13. Localization banner (Inactive)
- * 14. Cookie Consent Banner
- * 15. Swiper Slider
+ * 05. Text
+ * 06. Lists
+ * 07. Navigation
+ * 08. Dividers
+ * 09. Images
+ * 10. Animations
+ * 11. Localization banner (Inactive)
+ * 12. Cookie Consent Banner
+ * 13. Animated Gradient Background
+ * 14. Hero
  */
 
 /*!========================================================================
@@ -33,7 +32,7 @@
   /* Text Colors */
   --text-primary: #1c1c1e; /* Obsidian Black for primary text */
   --text-secondary: #273238; /* Arctic Night for secondary text */
-  --text-faded: #acacac; /* Silver Chalice for faded or less important text */
+  --text-faded: rgba(28, 28, 30, 0.5); /* Silver Chalice for faded or less important text */
   --transition: 0.3s ease-in-out;
 
   /* Brand Colors */
@@ -53,14 +52,6 @@
   /*!========================================================================
  * Radius */
   --border-radius: 1.2rem;
-
-  /*!========================================================================
- * Status Pill */
-
-  --status-light-red: rgba(237, 28, 36, 1);
-  --status-light-green: limegreen;
-  --status-border-red: rgba(237, 28, 36, 0.2);
-  --status-border-green: rgba(50, 205, 50, 0.2);
 
   /*!========================================================================
  * Paddings */
@@ -122,10 +113,6 @@ body {
   transition: background-color var(--transition);
 }
 
-.content {
-  padding-top: 1.25rem;
-}
-
 /*!========================================================================
  * 03. Containers
  * ======================================================================!*/
@@ -158,21 +145,12 @@ body {
 
 .container {
   position: relative;
-  display: block;
   width: 100%;
   height: 100%;
   padding-left: var(--secondary-padding);
   padding-right: var(--secondary-padding);
   padding-top: var(--primary-padding);
   padding-bottom: var(--primary-padding);
-}
-
-.container.center {
-  text-align: center;
-}
-
-.container.left {
-  text-align: left;
 }
 
 .about-container {
@@ -287,13 +265,20 @@ section row {
   width: 100%;
   align-items: center;
   justify-content: flex-start;
-  border-bottom: 1px solid var(--text-secondary);
+  border-bottom: 1px solid var(--text-faded);
   padding-bottom: 1.5rem;
   z-index: 1;
 }
 
 .arrow {
-  background-color: rgba(28, 28, 30, 0.3);
+  backdrop-filter: blur(10px);
+    background: linear-gradient(
+      145deg,
+      rgba(0, 0, 0, 0.2),
+      rgba(0, 0, 0, 0.05)
+    );
+    box-shadow: 0 0px 6px rgba(0, 0, 0, 0.2),
+      inset 0 0 0 1px rgba(0, 0, 0, 0.1);
   border: none;
   color: white;
   font-size: 3rem;
@@ -307,8 +292,6 @@ section row {
   justify-content: center;
   top: 63%;
   transform: translateY(-63%);
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter:blur(10px);
   z-index: 10;
   opacity: 0;
   transition: transform 0.3s ease, opacity 0.3s ease;
@@ -376,15 +359,6 @@ section row {
 }
 
 /*!========================================================================
- * Particle Container */
-
-#particles-js {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-}
-
-/*!========================================================================
  * Footer Container */
 
 .footer-top {
@@ -419,6 +393,7 @@ section row {
   align-items: center;
   padding: 1.25rem 0 0 0;
   gap: 1.25rem;
+  width: 100%;
 }
 
 .social-buttons {
@@ -450,7 +425,7 @@ header {
 
 .footer {
   background-color: var(--bg-footer);
-  color: var(--text-faded);
+  color: var(--fifth-color);
 }
 
 section {
@@ -464,22 +439,8 @@ section {
 }
 
 /*!========================================================================
- * 05. Overlay Effects
+ * 05. Text
  * ======================================================================!*/
-
-.overlay {
-  background-color: var(--overlay);
-  -webkit-backdrop-filter: blur(30px);
-  backdrop-filter: blur(30px);
-  transition: background-color var(--transition);
-}
-
-/*!========================================================================
- * 06. Text
- * ======================================================================!*/
-
-/*!========================================================================
- * Font */
 
 /*!========================================================================
  * Headings */
@@ -583,23 +544,11 @@ li {
   margin: 0;
   padding: 0;
   color: var(--text-faded);
-  mix-blend-mode: multiply;
 }
 
 .section-heading h1::first-line {
   color: var(--text-primary);
-  
 }
-
-/* .section-heading h1::before {
-  content: "";
-  width: 4rem;
-  height: .1rem;
-  position: absolute;
-  top: -1rem;
-  background-color: var(--primary-color);
-  z-index: 0;
-} */
 
 .section-heading p {
   color: var(--text-faded);
@@ -639,7 +588,7 @@ a:hover {
 }
 
 footer a {
-  color: var(--text-faded);
+  color: var(--fifth-color);
 }
 
 /*!========================================================================
@@ -680,17 +629,6 @@ header p {
   padding: 0;
 }
 
-#status-pill p {
-  font-weight: 300;
-  font-size: 1.25em;
-  color: var(--text-primary);
-  margin: 0;
-  padding-left: 1.25em;
-  padding-right: 1.25em;
-  text-transform: uppercase;
-  letter-spacing: 0.6em;
-}
-
 /*!========================================================================
  * Special */
 
@@ -716,11 +654,11 @@ strong {
   margin: 0;
 }
 
-.language-switch {
+/* .language-switch {
   font-size: 0.87em;
   font-weight: 400;
   color: var(--text-secondary);
-}
+} */
 
 .about-text {
   position: relative;
@@ -728,7 +666,7 @@ strong {
 }
 
 /*!========================================================================
- * 07. Lists
+ * 06. Lists
  * ======================================================================!*/
 
 ul {
@@ -805,12 +743,8 @@ ul {
   gap: 1rem;
 }
 
-.mar0 {
-  margin: 0 !important;
-}
-
 /*!========================================================================
- * 08. Navigation
+ * 07. Navigation
  * ======================================================================!*/
 
 nav {
@@ -914,7 +848,7 @@ nav.sticky {
 #fullscreen-menu .mobile-nav ul li a {
   margin: 0;
   padding: 0;
-  font-size: 1.87em;
+  font-size: 2em;
   font-weight: 200;
 }
 
@@ -924,7 +858,7 @@ nav.sticky {
 }
 
 .subheading {
-  font-size: 0.65em;
+  font-size: 0.8em;
   font-weight: 600;
   color: var(--text-faded);
 }
@@ -936,117 +870,8 @@ nav.sticky {
 }
 
 /*!========================================================================
- * 09. Shapes/Buttons
+ * 08. Dividers
  * ======================================================================!*/
-
-/*!========================================================================
- * Status Pill */
-
-#status-pill {
-  width: fit-content;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  border: 1px solid rgba(35, 31, 32, 0.2);
-  border-radius: 50%;
-  padding: 7px 10px 7px 10px;
-  z-index: 1;
-  margin: 0.5em 0;
-  transition: border var(--transition);
-}
-
-.light {
-  width: 8px;
-  height: 8px;
-  margin-left: 10px;
-  border-radius: 10px;
-  animation: flicker 1s linear infinite;
-  z-index: 1;
-}
-
-.not-available {
-  background-color: var(--status-light-red);
-  box-shadow: 0 0 10px var(--status-border-red);
-  transition: background-color var(--transition);
-}
-
-.available {
-  background-color: var(--status-light-green);
-  box-shadow: 0 0 10px var(--status-border-green);
-  transition: background-color var(--transition);
-}
-
-/*!========================================================================
- * Theme Switch */
-
-.theme-switch {
-  position: relative;
-  border: 1px solid var(--primary-color);
-  border-radius: var(--border-radius);
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  cursor: pointer;
-  overflow: hidden;
-}
-
-.theme-switch button {
-  position: relative;
-  border: none;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
-  padding-inline: 0.5rem;
-  font-size: 0.8em;
-}
-
-.theme-switch button:first-child {
-  padding-left: 0.5rem;
-}
-
-.theme-switch button:last-child {
-  padding-right: 0.5rem;
-}
-
-.theme-switch .active {
-  background-color: var(--primary-color);
-  color: white;
-  cursor: pointer;
-}
-
-.button-divider {
-  width: 1px;
-  height: 0.5rem;
-  background-color: var(--primary-color);
-  padding: 0;
-}
-
-/*!========================================================================
- * 10. Dividers
- * ======================================================================!*/
-
-/* General divider */
-.divider {
-  width: 0;
-  height: 1px;
-  background-color: var(--divider);
-  overflow: hidden;
-  transition: background-color var(--transition);
-}
-
-.divider.reveal {
-  animation: reveal 1s forwards;
-}
-
-@keyframes reveal {
-  0% {
-    width: 0;
-  }
-  100% {
-    width: 5em;
-  }
-}
 
 .section-divider {
   width: 100%;
@@ -1056,12 +881,8 @@ nav.sticky {
   transition: background-color var(--transition);
 }
 
-.empty-space {
-  height: 1.55rem;
-}
-
 /*!========================================================================
- * 11. Images
+ * 09. Images
  * ======================================================================!*/
 
 /*!========================================================================
@@ -1077,51 +898,13 @@ nav.sticky {
 }
 
 #part1 {
-  fill: var(--text-secondary);
+  fill: var(--text-primary);
   transition: fill var(--transition);
 }
 
 #part2 {
   fill: var(--primary-color);
   transition: fill var(--transition);
-}
-
-/*!========================================================================
- * Logo Animated */
-
-.anilogo {
-  position: relative;
-  width: 50vw;
-  opacity: 1;
-}
-
-.anilogo .icon {
-  position: relative;
-  overflow: hidden;
-}
-
-.anilogo .icon #b,
-.anilogo .icon #r {
-  stroke-dashoffset: 3000;
-  stroke-dasharray: 3000;
-}
-
-.anilogo .icon #b {
-  stroke: var(--secondary-color);
-  stroke-width: 0.3rem;
-}
-
-.anilogo .icon #b.is-active {
-  animation: iconB 15s ease-in-out infinite forwards;
-}
-
-.anilogo .icon #r {
-  stroke: var(--primary-color);
-  stroke-width: 0.3rem;
-}
-
-.anilogo .icon #r.is-active {
-  animation: iconR 15s ease-in-out infinite forwards;
 }
 
 /*!========================================================================
@@ -1132,7 +915,7 @@ nav.sticky {
   place-items: center;
   width: var(--size);
   aspect-ratio: 16/9;
-  background-color: var(--bg-box);
+  background-color: #fff;
   padding: calc(var(--size) / 10);
   border-radius: 20px;
   transition: filter var(--transition);
@@ -1186,7 +969,7 @@ img {
 .social-buttons .social-button {
   display: inline-flex;
   cursor: pointer;
-  fill: var(--text-faded);
+  fill: var(--fifth-color);
   transition: all var(--transition);
 }
 
@@ -1196,7 +979,7 @@ img {
 }
 
 /*!========================================================================
- * 12. Animations
+ * 10. Animations
  * ======================================================================!*/
 
 .slide-in-blurred-bottom {
@@ -1267,72 +1050,6 @@ img {
   }
 }
 
-/* Animated Logo */
-
-@-webkit-keyframes iconR {
-  from {
-    stroke-dashoffset: 3000;
-    fill: transparent;
-  }
-  50% {
-    stroke-dashoffset: 0;
-  }
-}
-
-@-webkit-keyframes iconB {
-  from {
-    stroke-dashoffset: 3000;
-    fill: transparent;
-  }
-  50% {
-    stroke-dashoffset: 0;
-  }
-}
-
-@keyframes iconR {
-  from {
-    stroke-dashoffset: 3000;
-    fill: transparent;
-  }
-  50% {
-    stroke-dashoffset: 0;
-  }
-}
-
-@keyframes iconB {
-  from {
-    stroke-dashoffset: 3000;
-    fill: transparent;
-  }
-  50% {
-    stroke-dashoffset: 0;
-  }
-}
-
-/* Status Light Flicker */
-
-@keyframes flicker {
-  0%,
-  19.999%,
-  22%,
-  62.999%,
-  64%,
-  64.999%,
-  70%,
-  100% {
-    text-shadow: none;
-    opacity: 0.99;
-  }
-  20%,
-  21.999%,
-  63%,
-  63.999%,
-  65%,
-  69.999% {
-    opacity: 0.4;
-  }
-}
-
 .marquee--reverse .marquee__group {
   animation-direction: reverse;
   animation-delay: -3s;
@@ -1357,10 +1074,10 @@ img {
 }
 
 /*!========================================================================
- * 13. Localization banner
+ * 11. Localization banner
  * ======================================================================!*/
 
-#localization-banner {
+/* #localization-banner {
   background-color: var(--bg-color);
   border-bottom: 1px solid #e0e0e0;
   padding: 10px 20px;
@@ -1451,10 +1168,10 @@ img {
     top: 10px;
     right: -45%;
   }
-}
+} */
 
 /*!========================================================================
- * 14. Cookie Consent Banner
+ * 12. Cookie Consent Banner
  * ======================================================================!*/
 
 #cookie-consent-banner {
@@ -1539,7 +1256,7 @@ img {
 }
 
 /*!========================================================================
- * 15. Swiper Slider
+ * 13. Animated Gradient Background
  * ======================================================================!*/
 
 .gradient {
@@ -1602,7 +1319,9 @@ img {
   height: 100%;
 }
 
-/* Gallery Hero */
+/*!========================================================================
+ * 14. Hero
+ * ======================================================================!*/
 
 .gallery-wrapper {
   display: flex;
