@@ -375,8 +375,8 @@ section row {
   width: 100%;
   gap: 1.25rem;
   padding: 1.55rem 0;
-  border-top: 1px solid var(--fifth-color);
-  border-bottom: 1px solid var(--fifth-color);
+  border-top: 1px solid rgba(250, 250, 250, 0.2);
+  border-bottom: 1px solid rgba(250, 250, 250, 0.2);
 }
 
 .footer-bottom {
@@ -385,7 +385,7 @@ section row {
   align-items: center;
   padding: 1.55rem 0;
   gap: 1.25rem;
-  border-bottom: 1px solid var(--fifth-color);
+  border-bottom: 1px solid rgba(250, 250, 250, 0.2);
 }
 
 .subfooter {
@@ -548,7 +548,7 @@ li {
 }
 
 .subheader {
-  filter: opacity(0.5);
+  opacity: 0.5;
 }
 
 .section-heading p {
@@ -647,11 +647,6 @@ strong {
 
 .faded {
   color: var(--text-faded);
-}
-
-.blend {
-   filter:opacity(1);
-   mix-blend-mode: overlay;
 }
 
 .light {
