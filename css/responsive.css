@@ -103,7 +103,7 @@
   }
   .high {
     height: auto;
-    width: 48vw;
+    width: 46vw;
   }
   .arrow {
     display: none;
@@ -114,6 +114,9 @@
    * ======================================================================!*/
 
 @media (min-width: 576px) and (max-width: 767.98px) {
+  #fullscreen-menu .mobile-nav ul {
+    flex-direction: column;
+  }
 }
 
 /*!========================================================================
@@ -121,6 +124,9 @@
    * ======================================================================!*/
 
 @media (min-width: 768px) and (max-width: 991.98px) {
+  #fullscreen-menu .mobile-nav ul {
+    flex-direction: column;
+  }
 }
 
 /*!========================================================================

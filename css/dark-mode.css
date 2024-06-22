@@ -10,7 +10,11 @@
 
   :root {
     /* Background Colors for Dark Mode */
-    --bg-color: #1c1c1e; /* Dark version of Obsidian Black for the main background */
+    --bg-color: rgb(
+      28,
+      28,
+      30
+    ); /* Dark version of Obsidian Black for the main background */
     --bg-box: #2e3136; /* A darker grey for boxes or card backgrounds to create a subtle distinction */
 
     /* Text Colors for Dark Mode */
@@ -27,22 +31,19 @@
     ); /* Adjusted for better visibility in dark mode */
   }
 
-  
-  /*!========================================================================
- * 09. Images
- * ======================================================================!*/
-  .marquee__group .logo {
-    filter: invert(1);
-    background-color: rgb(225, 225, 225);
+  nav {
+    border-bottom: 1px solid rgba(250, 250, 250, 0.1);
   }
 
-  #cookie-consent-banner {
+  .marquee__group .logo {
+    filter: invert(1);
+  }
+
+  .ui-background {
     background: linear-gradient(
       145deg,
-      rgba(255, 255, 255, 0.1),
-      rgba(255, 255, 255, 0.05)
+      /* Angle of the gradient */ rgba(255, 255, 255, 0.2),
+      /* Top left color */ rgba(255, 255, 255, 0) /* Bottom right color */
     );
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1),
-      inset 0 0 0 1px rgba(255, 255, 255, 0.1);
   }
 }
