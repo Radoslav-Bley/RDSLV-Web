@@ -59,7 +59,7 @@
     align-items: center;
     width: 100%;
     order: 1;
-    border-bottom: 1px solid var(--section-divider);
+    border-bottom: 1px solid var(--fifth-color);
     height: 100%;
     padding: 1rem;
   }
