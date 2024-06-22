@@ -548,7 +548,7 @@ li {
 }
 
 .subheader {
-  filter: opacity(0.5);
+  opacity: 0.5;
 }
 
 .section-heading p {
@@ -647,11 +647,6 @@ strong {
 
 .faded {
   color: var(--text-faded);
-}
-
-.blend {
-   filter:opacity(1);
-   mix-blend-mode: overlay;
 }
 
 .light {
