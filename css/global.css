@@ -552,10 +552,11 @@ li {
   transition: color var(--transition);
 }
 
-.card-heading h4 {
+.card-heading h2 {
   margin: 0;
   padding: 0;
   font-weight: 800;
+  font-size: 1.2em;
 }
 
 .footer-top h2 {
