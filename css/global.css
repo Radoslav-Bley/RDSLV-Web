@@ -53,7 +53,7 @@
   /*!========================================================================
  * Navigation */
 
-  --nav-color: rgba(250, 250, 250, 0.2);
+  --nav-color: rgba(250, 250, 250, 0.85);
 
   /*!========================================================================
  * Radius */
@@ -1338,8 +1338,8 @@ img {
   -webkit-backdrop-filter: blur(18px) saturate(180%);
   background: linear-gradient(
     145deg,
-    /* Angle of the gradient */ rgba(255, 255, 255, 0.4),
-    /* Top left color */ rgba(28, 28, 30, 0.15) /* Bottom right color */
+    rgba(255, 255, 255, 0.4),
+    rgba(28, 28, 30, 0.20)
   );
 }
 
