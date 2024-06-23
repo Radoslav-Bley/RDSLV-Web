@@ -37,7 +37,7 @@
   /* Obsidian Black for primary text */
   --text-secondary: #273238;
   /* Arctic Night for secondary text */
-  --text-faded: rgba(28, 28, 30, 0.75);
+  --text-faded: rgba(28, 28, 30, 0.65);
   /* Silver Chalice for faded or less important text */
   --transition: 0.3s ease-in-out;
 
@@ -849,7 +849,7 @@ nav.sticky {
 
 #fullscreen-menu .mobile-nav ul {
   display: flex;
-  justify-content: space-evenly;
+  justify-content: space-between;
   flex-wrap: wrap;
   list-style: none;
   width: 100%;
