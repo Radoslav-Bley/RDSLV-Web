@@ -64,10 +64,6 @@
   #sitemap .container {
     grid-template-columns: repeat(2, 1fr);
   }
-  section row {
-    flex-direction: column;
-    gap: 5rem;
-  }
   .hero-content-container {
     text-align: center;
   }
@@ -98,16 +94,16 @@
   .gradient {
     width: 30vw;
   }
-  .item {
-    width: 8vw;
-  }
-  .high {
-    height: auto;
-    width: 46vw;
-  }
   .arrow {
     display: none;
   }
+  .item {
+    width: 40px;
+    height: 50%;
+  }
+  .high-item{
+    height: 70%;
+  } 
 }
 /*!========================================================================
    * 02. Tablets
@@ -117,6 +113,13 @@
   #fullscreen-menu .mobile-nav ul {
     flex-direction: column;
   }
+  .item {
+    width: 40px;
+    height: 60%;
+  }
+  .high-item{
+    height: 80%;
+  } 
 }
 
 /*!========================================================================
@@ -124,8 +127,11 @@
    * ======================================================================!*/
 
 @media (min-width: 768px) and (max-width: 991.98px) {
-  #fullscreen-menu .mobile-nav ul {
-    flex-direction: column;
+  .arrow {
+    display: none;
+  }
+  .card-container {
+   justify-content: space-between;
   }
 }
 
@@ -134,6 +140,12 @@
    * ======================================================================!*/
 
 @media (min-width: 992px) and (max-width: 1199.98px) {
+  .arrow {
+    display: none;
+  }
+  .card-container {
+   justify-content: space-between;
+  }
 }
 
 /*!========================================================================
