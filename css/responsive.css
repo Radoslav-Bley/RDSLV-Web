@@ -145,7 +145,7 @@
     display: none;
   }
   .card-container {
-   justify-content: center;
+   justify-content: space-between;
   }
 }
 
