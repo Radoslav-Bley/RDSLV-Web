@@ -15,8 +15,7 @@
    * 00. General
    * ======================================================================!*/
 
-@media (orientation: portrait) {
-}
+@media (orientation: portrait) {}
 
 @media (orientation: landscape) {
   /* .nav-container,
@@ -42,9 +41,11 @@
     align-items: center;
     padding: 0;
   }
+
   .copyright-text {
     order: 2;
   }
+
   .social-buttons {
     display: flex;
     flex-direction: row;
@@ -57,23 +58,29 @@
     height: 100%;
     padding: 1rem;
   }
+
   #fullscreen-menu .social-buttons {
     border-bottom: none;
     padding-left: calc(var(--secondary-padding) + 2rem);
   }
+
   #sitemap .container {
     grid-template-columns: repeat(2, 1fr);
   }
+
   .hero-content-container {
     text-align: center;
   }
+
   .card {
     width: 95%;
     max-width: 400px;
   }
+
   .section-heading h1 {
     font-size: 1.5em;
   }
+
   #fullscreen-menu .mobile-nav ul {
     flex-direction: column;
     gap: 2rem;
@@ -81,30 +88,38 @@
     padding-right: var(--secondary-padding);
     margin-top: 10%;
   }
+
   .about-container {
     flex-direction: column;
   }
+
   .about-text {
     width: 100%;
   }
+
   .about-image {
     width: 100%;
     margin-top: 2rem;
   }
+
   .gradient {
     width: 30vw;
   }
+
   .arrow {
     display: none;
   }
+
   .item {
     width: 40px;
     height: 50%;
   }
-  .high-item{
+
+  .high-item {
     height: 70%;
-  } 
+  }
 }
+
 /*!========================================================================
    * 02. Tablets
    * ======================================================================!*/
@@ -113,13 +128,15 @@
   #fullscreen-menu .mobile-nav ul {
     flex-direction: column;
   }
+
   .item {
     width: 40px;
     height: 60%;
   }
-  .high-item{
+
+  .high-item {
     height: 80%;
-  } 
+  }
 }
 
 /*!========================================================================
@@ -130,8 +147,9 @@
   .arrow {
     display: none;
   }
+
   .card-container {
-   justify-content: space-between;
+    justify-content: space-between;
   }
 }
 
@@ -143,8 +161,9 @@
   .arrow {
     display: none;
   }
+
   .card-container {
-   justify-content: space-between;
+    justify-content: space-between;
   }
 }
 
@@ -156,8 +175,9 @@
   .arrow {
     display: none;
   }
+
   .card-container {
-   justify-content: space-between;
+    justify-content: space-between;
   }
 }
 
