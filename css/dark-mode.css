@@ -10,29 +10,22 @@
 
   :root {
     /* Background Colors for Dark Mode */
-    --bg-color: rgb(
-      28,
-      28,
-      30
-    ); /* Dark version of Obsidian Black for the main background */
-    --bg-box: #2e3136; /* A darker grey for boxes or card backgrounds to create a subtle distinction */
+    --bg-color: #1c1c1e;
+    /* Dark version of Obsidian Black for the main background */
+    --bg-box: #2e3136;
+    /* A darker grey for boxes or card backgrounds to create a subtle distinction */
 
     /* Text Colors for Dark Mode */
-    --text-primary: #fafafa; /* Alabaster White used for primary text to ensure readability */
-    --text-secondary: #c0c0c0; /* Mystic Silver for secondary text, provides good contrast without overwhelming brightness */
-    --text-faded: #868686; /* Darker shade of grey for less important, faded text */
+    --text-primary: #fafafa;
+    /* Alabaster White used for primary text to ensure readability */
+    --text-secondary: #c0c0c0;
+    /* Mystic Silver for secondary text, provides good contrast without overwhelming brightness */
+    --text-faded: #868686;
+    /* Darker shade of grey for less important, faded text */
 
     /* Navigation Color */
-    --nav-color: rgba(
-      40,
-      40,
-      44,
-      0.85
-    ); /* Adjusted for better visibility in dark mode */
-  }
-
-  nav {
-    border-bottom: 1px solid rgba(250, 250, 250, 0.1);
+    --nav-color: rgba(40, 40, 44, 0.85);
+    /* Adjusted for better visibility in dark mode */
   }
 
   .marquee__group .logo {
@@ -40,10 +33,12 @@
   }
 
   .ui-background {
-    background: linear-gradient(
-      145deg,
-      /* Angle of the gradient */ rgba(255, 255, 255, 0.2),
-      /* Top left color */ rgba(255, 255, 255, 0) /* Bottom right color */
-    );
+    background: linear-gradient(145deg,
+        /* Angle of the gradient */
+        rgba(255, 255, 255, 0.2),
+        /* Top left color */
+        rgba(255, 255, 255, 0)
+        /* Bottom right color */
+      );
   }
 }

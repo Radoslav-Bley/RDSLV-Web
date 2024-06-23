@@ -93,14 +93,12 @@ hamburgerMenu.addEventListener("click", function () {
   if (fullscreenMenu.classList.contains("active")) {
     body.style.overflow = "hidden";
     menuItems.forEach(function (item, index) {
-      item.style.animation = `slideInBlurredTop 0.5s cubic-bezier(0.23, 1, 0.32, 1) ${
-        index * 0.1
-      }s both`;
+      item.style.animation = `slideInBlurredTop 0.5s cubic-bezier(0.23, 1, 0.32, 1) ${index * 0.1
+        }s both`;
     });
     socialIcons.forEach(function (icon, index) {
-      icon.style.animation = `slideInBlurredTop 0.5s cubic-bezier(0.23, 1, 0.32, 1) ${
-        (menuItems.length + index) * 0.2
-      }s both`;
+      icon.style.animation = `slideInBlurredTop 0.5s cubic-bezier(0.23, 1, 0.32, 1) ${(menuItems.length + index) * 0.2
+        }s both`;
     });
   } else {
     body.style.overflow = "auto";
@@ -331,9 +329,8 @@ class Blob {
   }
 
   move() {
-    this.el.style.transform = `translate(${this.x - this.initialX}px, ${
-      this.y - this.initialY
-    }px)`;
+    this.el.style.transform = `translate(${this.x - this.initialX}px, ${this.y - this.initialY
+      }px)`;
   }
 }
 

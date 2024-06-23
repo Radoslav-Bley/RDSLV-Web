@@ -25,29 +25,37 @@
 :root {
   /*!========================================================================
  /* Background Colors */
-  --bg-color: #fafafa; /* Alabaster White for the main background */
-  --bg-footer: #16181d; /* Arctic Night for the footer background */
-  --bg-box: #acacac; /* Silver Chalice for boxes or card backgrounds */
+  --bg-color: #fafafa;
+  /* Alabaster White for the main background */
+  --bg-footer: #16181d;
+  /* Arctic Night for the footer background */
+  --bg-box: #acacac;
+  /* Silver Chalice for boxes or card backgrounds */
 
   /* Text Colors */
-  --text-primary: #1c1c1e; /* Obsidian Black for primary text */
-  --text-secondary: #273238; /* Arctic Night for secondary text */
-  --text-faded: rgba(
-    28,
-    28,
-    30,
-    0.5
-  ); /* Silver Chalice for faded or less important text */
+  --text-primary: #1c1c1e;
+  /* Obsidian Black for primary text */
+  --text-secondary: #273238;
+  /* Arctic Night for secondary text */
+  --text-faded: rgba(28, 28, 30, 0.75);
+  /* Silver Chalice for faded or less important text */
   --transition: 0.3s ease-in-out;
 
   /* Brand Colors */
-  --primary-color: #ff6200; /* Amber Glow for primary brand color */
-  --secondary-color: #1c1c1e; /* Obsidian Black for secondary brand color */
-  --third-color: #ff6200; /* Amber Glow: Vibrant, warm orange */
-  --fourth-color: #0077be; /* Deep Azure: Rich, deep blue */
-  --fifth-color: #c0c0c0; /* Mystic Silver: Shiny, neutral silver */
-  --sixth-color: #882255; /* Velvet Wine: Deep wine red */
-  --seventh-color: #f0ffff; /* Ivory Mist: Very light cyan-white */
+  --primary-color: #ff6200;
+  /* Amber Glow for primary brand color */
+  --secondary-color: #1c1c1e;
+  /* Obsidian Black for secondary brand color */
+  --third-color: #ff6200;
+  /* Amber Glow: Vibrant, warm orange */
+  --fourth-color: #0077be;
+  /* Deep Azure: Rich, deep blue */
+  --fifth-color: #c0c0c0;
+  /* Mystic Silver: Shiny, neutral silver */
+  --sixth-color: #882255;
+  /* Velvet Wine: Deep wine red */
+  --seventh-color: #f0ffff;
+  /* Ivory Mist: Very light cyan-white */
   --eighth-color: #fafafa;
 
   /*!========================================================================
@@ -107,10 +115,14 @@ html {
 }
 
 body {
-  user-select: none; /* For modern browsers */
-  -moz-user-select: none; /* For Firefox */
-  -webkit-user-select: none; /* For Safari */
-  -ms-user-select: none; /* For Internet Explorer/Edge */
+  user-select: none;
+  /* For modern browsers */
+  -moz-user-select: none;
+  /* For Firefox */
+  -webkit-user-select: none;
+  /* For Safari */
+  -ms-user-select: none;
+  /* For Internet Explorer/Edge */
   font-family: -apple-system, system-ui, -apple-system, BlinkMacSystemFont,
     "San Francisco", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-style: normal;
@@ -292,6 +304,7 @@ section row {
   opacity: 0.75;
   filter: brightness(50%);
 }
+
 .arrow.visible:hover {
   opacity: 1;
   filter: brightness(1);
@@ -315,20 +328,16 @@ section row {
   -webkit-user-select: none;
   user-select: none;
   gap: var(--gap);
-  -webkit-mask-image: linear-gradient(
-    var(--mask-direction, to right),
-    hsl(0 0% 0% / 0),
-    hsl(0 0% 0% / 1) 20%,
-    hsl(0 0% 0% / 1) 80%,
-    hsl(0 0% 0% / 0)
-  );
-  mask-image: linear-gradient(
-    var(--mask-direction, to right),
-    hsl(0 0% 0% / 0),
-    hsl(0 0% 0% / 1) 20%,
-    hsl(0 0% 0% / 1) 80%,
-    hsl(0 0% 0% / 0)
-  );
+  -webkit-mask-image: linear-gradient(var(--mask-direction, to right),
+      hsl(0 0% 0% / 0),
+      hsl(0 0% 0% / 1) 20%,
+      hsl(0 0% 0% / 1) 80%,
+      hsl(0 0% 0% / 0));
+  mask-image: linear-gradient(var(--mask-direction, to right),
+      hsl(0 0% 0% / 0),
+      hsl(0 0% 0% / 1) 20%,
+      hsl(0 0% 0% / 1) 80%,
+      hsl(0 0% 0% / 0));
 }
 
 .marquee__group {
@@ -985,8 +994,7 @@ img {
 }
 
 .slide-in-blurred-bottom.reveal {
-  -webkit-animation: slide-in-blurred-bottom 0.6s cubic-bezier(0.23, 1, 0.32, 1)
-    both;
+  -webkit-animation: slide-in-blurred-bottom 0.6s cubic-bezier(0.23, 1, 0.32, 1) both;
   animation: slide-in-blurred-bottom 0.6s cubic-bezier(0.23, 1, 0.32, 1) both;
 }
 
@@ -1000,6 +1008,7 @@ img {
     filter: blur(40px);
     opacity: 0;
   }
+
   100% {
     -webkit-transform: translateY(0) scaleY(1) scaleX(1);
     transform: translateY(0) scaleY(1) scaleX(1);
@@ -1010,6 +1019,7 @@ img {
     opacity: 1;
   }
 }
+
 @keyframes slide-in-blurred-bottom {
   0% {
     -webkit-transform: translateY(1000px) scaleY(2.5) scaleX(0.2);
@@ -1020,6 +1030,7 @@ img {
     filter: blur(40px);
     opacity: 0;
   }
+
   100% {
     -webkit-transform: translateY(0) scaleY(1) scaleX(1);
     transform: translateY(0) scaleY(1) scaleX(1);
@@ -1038,6 +1049,7 @@ img {
     filter: blur(40px);
     opacity: 0;
   }
+
   100% {
     transform: translateY(0) scaleY(1) scaleX(1);
     transform-origin: 50% 50%;
@@ -1055,6 +1067,7 @@ img {
   from {
     transform: translateX(var(--scroll-start));
   }
+
   to {
     transform: translateX(var(--scroll-end));
   }
@@ -1064,6 +1077,7 @@ img {
   from {
     transform: translateY(var(--scroll-start));
   }
+
   to {
     transform: translateY(var(--scroll-end));
   }
@@ -1308,7 +1322,6 @@ img {
   align-items: center;
   gap: 1vw;
   height: 100%;
-
 }
 
 .item {
@@ -1340,11 +1353,9 @@ img {
 .ui-background {
   backdrop-filter: blur(18px) saturate(180%);
   -webkit-backdrop-filter: blur(18px) saturate(180%);
-  background: linear-gradient(
-    145deg,
-    rgba(255, 255, 255, 0.4),
-    rgba(28, 28, 30, 0.20)
-  );
+  background: linear-gradient(145deg,
+      rgba(255, 255, 255, 0.4),
+      rgba(28, 28, 30, 0.2));
 }
 
 .ui-illumination {
