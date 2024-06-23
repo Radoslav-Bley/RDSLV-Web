@@ -125,82 +125,6 @@ menuItems.forEach(function (item) {
   });
 });
 
-/*!========================================================================
- * 05. TextScramble
- * ======================================================================!*/
-
-class TextScramble {
-  constructor(el) {
-    this.el = el;
-    this.chars = "!<>-_\\/[]{}—=+*^?#________";
-    this.update = this.update.bind(this);
-  }
-  setText(newText) {
-    const oldText = this.el.innerText;
-    const length = Math.max(oldText.length, newText.length);
-    const promise = new Promise((resolve) => (this.resolve = resolve));
-    this.queue = [];
-    for (let i = 0; i < length; i++) {
-      const from = oldText[i] || "";
-      const to = newText[i] || "";
-      const start = Math.floor(Math.random() * 40);
-      const end = start + Math.floor(Math.random() * 40);
-      this.queue.push({ from, to, start, end });
-    }
-    cancelAnimationFrame(this.frameRequest);
-    this.frame = 0;
-    this.update();
-    return promise;
-  }
-  update() {
-    let output = "";
-    let complete = 0;
-    for (let i = 0, n = this.queue.length; i < n; i++) {
-      let { from, to, start, end, char } = this.queue[i];
-      if (this.frame >= end) {
-        complete++;
-        output += to;
-      } else if (this.frame >= start) {
-        if (!char || Math.random() < 0.28) {
-          char = this.randomChar();
-          this.queue[i].char = char;
-        }
-        output += `<span class="dud">${char}</span>`;
-      } else {
-        output += from;
-      }
-    }
-    this.el.innerHTML = output;
-    if (complete === this.queue.length) {
-      this.resolve();
-    } else {
-      this.frameRequest = requestAnimationFrame(this.update);
-      this.frame++;
-    }
-  }
-  randomChar() {
-    return this.chars[Math.floor(Math.random() * this.chars.length)];
-  }
-}
-
-// ——————————————————————————————————————————————————
-// Example
-// ——————————————————————————————————————————————————
-
-const phrases = ["Making Digital Dreams", "Come True", "with a Wink"];
-
-const el = document.querySelector(".herotext");
-const fx = new TextScramble(el);
-
-let counter = 0;
-const next = () => {
-  fx.setText(phrases[counter]).then(() => {
-    setTimeout(next, 1100);
-  });
-  counter = (counter + 1) % phrases.length;
-};
-
-next();
 
 /*!========================================================================
  * 06. Cookie Consent Banner
@@ -399,3 +323,24 @@ document.addEventListener("DOMContentLoaded", () => {
   // Initial check
   updateArrows();
 });
+
+/*!========================================================================
+ * 09. Hover Fix for Touch Devices
+ * ======================================================================!*/
+
+const element = document.getElementById('element');
+
+        element.addEventListener('touchstart', () => {
+            element.classList.add('hover');
+        });
+
+        element.addEventListener('touchend', () => {
+            element.classList.remove('hover');
+        });
+
+        // Optional: To handle touchmove if you want to ensure hover is removed when user moves finger away
+        document.addEventListener('touchmove', (event) => {
+            if (!element.contains(event.target)) {
+                element.classList.remove('hover');
+            }
+        });

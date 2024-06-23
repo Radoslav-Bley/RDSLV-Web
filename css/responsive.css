@@ -111,11 +111,11 @@
 
   .item {
     width: 50px;
-    height: 40%;
+    height: 70%;
   }
 
-  .high-item {
-    height: 50%;
+  .items {
+    gap: 0.4rem;
   }
 }
 
