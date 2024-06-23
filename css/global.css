@@ -37,8 +37,6 @@
   /* Obsidian Black for primary text */
   --text-secondary: #273238;
   /* Arctic Night for secondary text */
-  --text-faded: rgba(28, 28, 30, 0.65);
-  /* Silver Chalice for faded or less important text */
   --transition: 0.3s ease-in-out;
 
   /* Brand Colors */
@@ -70,7 +68,7 @@
   /*!========================================================================
  * Paddings */
 
-  --primary-padding: 5rem;
+  --primary-padding: 4rem;
   --secondary-padding: 10%;
 
   /*!========================================================================
@@ -143,10 +141,8 @@ body {
   justify-content: space-between;
   align-items: center;
   width: 100%;
-  margin: 0 auto;
   padding-left: var(--secondary-padding);
   padding-right: var(--secondary-padding);
-  font-weight: 500;
 }
 
 .hero-content-container {
@@ -188,7 +184,7 @@ body {
 
 footer .container {
   padding-top: 2rem;
-  padding-bottom: 2rem;
+  padding-bottom: 1.5rem;
 }
 
 section row {
@@ -537,36 +533,14 @@ li {
 
 .section-heading {
   padding: 0;
-  margin: 0 0 4rem 0;
-}
-
-.section-heading h1 {
-  font-size: 1.75em;
-  font-weight: 700;
-  margin: 0;
-  padding: 0;
-}
-
-.subheader {
-  opacity: 0.5;
-}
-
-.section-heading p {
-  color: var(--text-faded);
-}
-
-header h1 {
-  font-size: 1.87em;
-  font-weight: 800;
-  margin: 0;
+  margin: 0 0 2rem 0;
 }
 
 /*!========================================================================
  * Links */
 
 a {
-  background-color: transparent;
-  color: var(--text-secondary);
+  color: var(--text-primary);
   text-decoration: none;
 }
 
@@ -592,15 +566,6 @@ p {
   font-variation-settings: "slnt" 0;
 }
 
-header p {
-  font-size: 1em;
-  font-weight: 200;
-  margin: 0;
-  font-optical-sizing: auto;
-  font-style: normal;
-  font-variation-settings: "slnt" 0;
-}
-
 .footer-section li {
   font-weight: 400;
   font-size: 0.85em;
@@ -613,9 +578,7 @@ header p {
 
 .copyright-text p {
   font-size: 0.8em;
-  font-weight: 400;
-  margin: 0;
-  padding: 0;
+  opacity: 0.65;
 }
 
 /*!========================================================================
@@ -634,7 +597,7 @@ strong {
 }
 
 .faded {
-  color: var(--text-faded);
+  opacity: 0.65;
 }
 
 .light {
@@ -842,8 +805,6 @@ nav.sticky {
 }
 
 #fullscreen-menu .mobile-nav ul li a {
-  margin: 0;
-  padding: 0;
   font-size: 2em;
   font-weight: 200;
 }
@@ -856,7 +817,6 @@ nav.sticky {
 .subheading {
   font-size: 0.8em;
   font-weight: 600;
-  color: var(--text-faded);
 }
 
 /*!========================================================================

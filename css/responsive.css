@@ -32,7 +32,6 @@
 
 @media (max-width: 575.98px) {
   :root {
-    --primary-padding: 7rem;
     --secondary-padding: 5%;
   }
 
@@ -112,11 +111,11 @@
 
   .item {
     width: 50px;
-    height: 50%;
+    height: 40%;
   }
 
   .high-item {
-    height: 60%;
+    height: 50%;
   }
 }
 
