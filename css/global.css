@@ -40,8 +40,8 @@
   --transition: 0.3s ease-in-out;
 
   /* Brand Colors */
-  --primary-color: #ff4500;
-  /* Orange Red for primary brand color */
+  --primary-color: #ff5101;
+  /* Dragonfruit Red for primary brand color */
   --secondary-color: #1c1c1e;
   /* Obsidian Black for secondary brand color */
   --third-color: #ff6200;
@@ -59,7 +59,7 @@
   /*!========================================================================
  * Navigation */
 
-  --nav-color: rgba(250, 250, 250, 0.85);
+  --nav-color: rgba(250, 250, 250, 0.65);
 
   /*!========================================================================
  * Radius */
@@ -412,7 +412,7 @@ header {
   width: 100%;
   padding-left: var(--secondary-padding);
   padding-right: var(--secondary-padding);
-  margin: 3.5rem 0 0 0;
+  margin: 4rem 0 0 0;
 }
 
 #hero-section {
@@ -435,6 +435,10 @@ section {
   overflow: hidden;
 }
 
+#services {
+  background-color: black;
+}
+
 /*!========================================================================
  * 05. Text
  * ======================================================================!*/
@@ -443,7 +447,7 @@ section {
  * Headings */
 
 h1 {
-  font-size: 1.8rem;
+  font-size: 2rem;
   font-weight: 800;
   line-height: 1.2;
   margin: 1em 0 0.5em 0;
@@ -453,7 +457,7 @@ h1 {
 }
 
 h2 {
-  font-size: 1.6rem;
+  font-size: 1.8rem;
   font-weight: 700;
   margin: 0.75em 0 0.5em 0;
   font-optical-sizing: auto;
@@ -462,7 +466,7 @@ h2 {
 }
 
 h3 {
-  font-size: 1.4rem;
+  font-size: 1.6rem;
   font-weight: 600;
   margin: 0.75em 0 0.5em 0;
   font-optical-sizing: auto;
@@ -471,7 +475,7 @@ h3 {
 }
 
 h4 {
-  font-size: 1.2rem;
+  font-size: 1.4rem;
   font-weight: 500;
   margin: 0.75em 0 0.5em 0;
   font-optical-sizing: auto;
@@ -480,7 +484,7 @@ h4 {
 }
 
 h5 {
-  font-size: 1rem;
+  font-size: 1.2rem;
   font-weight: 400;
   margin: 0.75em 0 0.5em 0;
   font-optical-sizing: auto;
@@ -489,7 +493,7 @@ h5 {
 }
 
 h6 {
-  font-size: 0.8rem;
+  font-size: 1rem;
   font-weight: 300;
   margin: 0.75em 0 0.5em 0;
   font-optical-sizing: auto;
@@ -533,8 +537,15 @@ li {
 }
 
 .section-heading {
+  display: flex;
+  flex-direction: row;
   padding: 0;
   margin: 0 0 2rem 0;
+}
+
+.section-heading h1::before {
+  content: "/";
+  color: var(--primary-color);
 }
 
 /*!========================================================================
@@ -571,7 +582,7 @@ footer a {
  * Basic */
 
 p {
-  font-size: 1.06em;
+  font-size: 1em;
   font-weight: 500;
   margin: 0;
   font-optical-sizing: auto;
@@ -734,10 +745,11 @@ nav {
   backdrop-filter: blur(18px);
   -webkit-backdrop-filter: blur(18px);
   z-index: 1;
-} 
+}
 
 nav-mobile {
   position: fixed;
+  top: 0;
   width: 100%;
   height: 50px;
   display: none;
@@ -842,7 +854,7 @@ nav-mobile {
 }
 
 .logo-mobile {
-  background-color: var(--nav-color);
+  background-color: var(--nav-color) !important;
   position: relative;
   display: flex;
   align-items: center;
@@ -873,7 +885,7 @@ nav-mobile {
 
 .marquee__group .logo {
   display: grid;
-  background-color: rgba(0, 0, 0, 0.1);
+  background-color: #fff;
   place-items: center;
   width: var(--size);
   aspect-ratio: 16/9;
@@ -1313,6 +1325,7 @@ img {
 .ui-background {
   backdrop-filter: blur(18px) saturate(180%);
   -webkit-backdrop-filter: blur(18px) saturate(180%);
+
 }
 
 .ui-background-color {
@@ -1325,8 +1338,8 @@ img {
     inset 1px 1px 1px rgba(255, 255, 255, 0.3),
     inset -1px -1px 1px rgba(0, 0, 0, 0.2);
   background: linear-gradient(145deg,
-      rgba(255, 255, 255, 0.4),
-      rgba(28, 28, 30, 0.2));
+      rgba(255, 255, 255, 0.2),
+      rgba(255, 255, 255, 0.1));
 }
 
 .ui-border {

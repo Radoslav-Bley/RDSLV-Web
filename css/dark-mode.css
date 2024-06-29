@@ -10,7 +10,7 @@
 
   :root {
     /* Background Colors for Dark Mode */
-    --bg-color: #1c1c1e;
+    --bg-color: black;
     /* Dark version of Obsidian Black for the main background */
     --bg-box: #2e3136;
     /* A darker grey for boxes or card backgrounds to create a subtle distinction */
@@ -22,7 +22,7 @@
     /* Mystic Silver for secondary text, provides good contrast without overwhelming brightness */
 
     /* Navigation Color */
-    --nav-color: rgba(28, 28, 30, 0.85);
+    --nav-color: rgba(0, 0, 0, 0.65);
     /* Adjusted for better visibility in dark mode */
   }
 
@@ -31,17 +31,9 @@
   }
 
   .marquee__group .logo {
+    background-color: rgba(0, 0, 0, 0.1);
     filter: invert(1);
-  }
-
-  .ui-illumination {
-    background: linear-gradient(145deg,
-        /* Angle of the gradient */
-        rgba(255, 255, 255, 0.2),
-        /* Top left color */
-        rgba(255, 255, 255, 0)
-        /* Bottom right color */
-      );
+    -webkit-filter: invert(1);
   }
 
   .ui-border {
@@ -49,6 +41,6 @@
   }
 
   .ui-background-color {
-    background: rgba(28, 28, 30, 0.65) !important;
+    background: rgba(0, 0, 0, 0.65) !important;
   }
 }

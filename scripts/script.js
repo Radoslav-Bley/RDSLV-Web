@@ -9,8 +9,8 @@
  * 04. Menu Toggle
  * 05. TextScramble
  * 06. Cookie Consent Banner
- * 07. Gradient Animation
- * 08. Cards Scroll Event
+ * 07. Cards Scroll Event
+ * 08. Hover Fix for Touch Devices
  */
 
 /*!========================================================================
@@ -50,7 +50,7 @@ function setAddressBarColor() {
     // Dark mode
     document
       .querySelector('meta[name="theme-color"]')
-      .setAttribute("content", "rgb(28, 28, 30)");
+      .setAttribute("content", "#000");
   } else {
     // Light mode
     document
@@ -186,99 +186,7 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 /*!========================================================================
- * 07. Gradient Animation
- * ======================================================================!*/
-
-const MIN_SPEED = 0.1;
-const MAX_SPEED = 1;
-const VELOCITY_CHANGE_PROBABILITY = 0; // Probability of changing direction
-const POSITION_VARIANCE = 1000; // Variance for initial positioning
-
-function randomNumber(min, max) {
-  return Math.random() * (max - min) + min;
-}
-
-class Blob {
-  constructor(el) {
-    this.el = el;
-    const boundingRect = this.el.getBoundingClientRect();
-    this.size = boundingRect.width;
-
-    // Ensure more varied initial positions
-    this.initialX = randomNumber(
-      POSITION_VARIANCE,
-      window.innerWidth - this.size - POSITION_VARIANCE
-    );
-    this.initialY = randomNumber(
-      POSITION_VARIANCE,
-      window.innerHeight - this.size - POSITION_VARIANCE
-    );
-
-    this.el.style.top = `${this.initialY}px`;
-    this.el.style.left = `${this.initialX}px`;
-    this.vx =
-      randomNumber(MIN_SPEED, MAX_SPEED) * (Math.random() > 0.5 ? 1 : -1);
-    this.vy =
-      randomNumber(MIN_SPEED, MAX_SPEED) * (Math.random() > 0.5 ? 1 : -1);
-    this.x = this.initialX;
-    this.y = this.initialY;
-  }
-
-  update() {
-    if (Math.random() < VELOCITY_CHANGE_PROBABILITY) {
-      this.vx =
-        randomNumber(MIN_SPEED, MAX_SPEED) * (Math.random() > 0.5 ? 1 : -1);
-      this.vy =
-        randomNumber(MIN_SPEED, MAX_SPEED) * (Math.random() > 0.5 ? 1 : -1);
-    }
-
-    this.x += this.vx;
-    this.y += this.vy;
-
-    if (this.x >= window.innerWidth - this.size) {
-      this.x = window.innerWidth - this.size;
-      this.vx *= -1;
-    }
-    if (this.y >= window.innerHeight - this.size) {
-      this.y = window.innerHeight - this.size;
-      this.vy *= -1;
-    }
-    if (this.x <= 0) {
-      this.x = 0;
-      this.vx *= -1;
-    }
-    if (this.y <= 0) {
-      this.y = 0;
-      this.vy *= -1;
-    }
-  }
-
-  move() {
-    this.el.style.transform = `translate(${this.x - this.initialX}px, ${this.y - this.initialY
-      }px)`;
-  }
-}
-
-function initBlobs() {
-  const blobEls = document.querySelectorAll(".gradient");
-  const blobs = Array.from(blobEls).map((blobEl) => new Blob(blobEl));
-
-  function update() {
-    blobs.forEach((blob) => {
-      blob.update();
-      blob.move();
-    });
-    requestAnimationFrame(update);
-  }
-
-  requestAnimationFrame(update);
-}
-
-// Start the blobs animation after the initial website load
-document.addEventListener("DOMContentLoaded", initBlobs);
-
-/*!========================================================================
- * 08. Cards Scroll Event
+ * 07. Cards Scroll Event
  * ======================================================================!*/
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -326,7 +234,7 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 /*!========================================================================
- * 09. Hover Fix for Touch Devices
+ * 08. Hover Fix for Touch Devices
  * ======================================================================!*/
 
 const element = document.getElementById('element');
