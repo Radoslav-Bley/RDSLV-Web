@@ -26,11 +26,15 @@
     /* Adjusted for better visibility in dark mode */
   }
 
+  .nav-background {
+    border-bottom: 1px solid rgba(250, 250, 250, 0.2);
+  }
+
   .marquee__group .logo {
     filter: invert(1);
   }
 
-  .ui-background {
+  .ui-illumination {
     background: linear-gradient(145deg,
         /* Angle of the gradient */
         rgba(255, 255, 255, 0.2),
@@ -38,5 +42,13 @@
         rgba(255, 255, 255, 0)
         /* Bottom right color */
       );
+  }
+
+  .ui-border {
+    border: 1px solid rgba(250, 250, 250, 0.2);
+  }
+
+  .ui-background-color {
+    background: rgba(28, 28, 30, 0.65) !important;
   }
 }

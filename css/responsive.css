@@ -35,6 +35,87 @@
     --secondary-padding: 5%;
   }
 
+  .nav-background {
+    display: none;
+  }
+
+  .nav-container {
+    flex-direction: column;
+  }
+
+  .logo {
+    display: none;
+  }
+
+  .nav-menu {
+    position: fixed;
+    top: -200%;
+    /* Start offscreen */
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: var(--nav-color);
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
+    padding: 90px 0;
+    transition: top 0.5s ease;
+    /* Smooth transition for sliding effect */
+  }
+
+  .nav-menu.active {
+    top: 0;
+    /* Slide in from the top when active */
+  }
+
+  nav-mobile {
+    display: flex;
+  }
+
+  #logo {
+    transform: scale(1);
+    opacity: 1;
+    transition: all 0.5s ease;
+  }
+
+  #logo.active {
+    transform: scale(0);
+    opacity: 0;
+  }
+
+  .nav-menu ul {
+    flex-direction: column;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  .nav-menu ul li {
+    padding-left: var(--primary-padding);
+    opacity: 0;
+    /* Start with opacity 0 */
+    transform: translateY(-120px);
+    /* Start position offscreen */
+    transition: opacity 0.5s ease, transform 0.5s ease;
+    /* Transition properties */
+  }
+
+  .nav-menu.active ul li.active {
+    opacity: 1;
+    /* Show menu items */
+    transform: translateY(0);
+    /* End position */
+  }
+
+  .nav-menu ul li a {
+    font-size: 2rem;
+    font-weight: lighter;
+  }
+
+  .nav-menu ul li a::before {
+    content: "/ ";
+    color: var(--primary-color);
+  }
+
   .subfooter {
     flex-direction: column;
     align-items: center;
@@ -58,11 +139,6 @@
     padding: 1rem;
   }
 
-  #fullscreen-menu .social-buttons {
-    border-bottom: none;
-    padding-left: calc(var(--secondary-padding) + 2rem);
-  }
-
   #sitemap .container {
     grid-template-columns: repeat(2, 1fr);
   }
@@ -78,14 +154,6 @@
 
   .section-heading h1 {
     font-size: 1.5em;
-  }
-
-  #fullscreen-menu .mobile-nav ul {
-    flex-direction: column;
-    gap: 2rem;
-    padding-left: calc(var(--secondary-padding) + 2rem);
-    padding-right: var(--secondary-padding);
-    margin-top: 10%;
   }
 
   .about-container {
@@ -124,8 +192,85 @@
    * ======================================================================!*/
 
 @media (min-width: 576px) and (max-width: 767.98px) {
-  #fullscreen-menu .mobile-nav ul {
+  .nav-background {
+    display: none;
+  }
+
+  .nav-container {
     flex-direction: column;
+  }
+
+  .logo {
+    display: none;
+  }
+
+  .nav-menu {
+    position: fixed;
+    top: -200%;
+    /* Start offscreen */
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: var(--nav-color);
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
+    padding: 90px 0;
+    transition: top 0.5s ease;
+    /* Smooth transition for sliding effect */
+  }
+
+  .nav-menu.active {
+    top: 0;
+    /* Slide in from the top when active */
+  }
+
+  nav-mobile {
+    display: flex;
+  }
+
+  #logo {
+    transform: scale(1);
+    opacity: 1;
+    transition: all 0.5s ease;
+  }
+
+  #logo.active {
+    transform: scale(0);
+    opacity: 0;
+  }
+
+  .nav-menu ul {
+    flex-direction: column;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  .nav-menu ul li {
+    padding-left: var(--primary-padding);
+    opacity: 0;
+    /* Start with opacity 0 */
+    transform: translateY(-120px);
+    /* Start position offscreen */
+    transition: opacity 0.5s ease, transform 0.5s ease;
+    /* Transition properties */
+  }
+
+  .nav-menu.active ul li.active {
+    opacity: 1;
+    /* Show menu items */
+    transform: translateY(0);
+    /* End position */
+  }
+
+  .nav-menu ul li a {
+    font-size: 2rem;
+    font-weight: lighter;
+  }
+
+  .nav-menu ul li a::before {
+    content: "/ ";
+    color: var(--primary-color);
   }
 
   .item {
@@ -143,6 +288,13 @@
    * ======================================================================!*/
 
 @media (min-width: 768px) and (max-width: 991.98px) {
+  nav-mobile {
+    display: none;
+  }
+
+  .subheading {
+    display: none;
+  }
 }
 
 /*!========================================================================
@@ -150,6 +302,14 @@
    * ======================================================================!*/
 
 @media (min-width: 992px) and (max-width: 1199.98px) {
+  nav-mobile {
+    display: none;
+  }
+
+  .subheading {
+    display: none;
+  }
+
   .arrow {
     display: none;
   }
@@ -164,6 +324,14 @@
    * ======================================================================!*/
 
 @media (min-width: 1200px) {
+  nav-mobile {
+    display: none;
+  }
+
+  .subheading {
+    display: none;
+  }
+
   .arrow {
     display: none;
   }

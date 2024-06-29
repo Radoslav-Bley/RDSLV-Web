@@ -68,64 +68,65 @@ window
   .addListener(setAddressBarColor);
 
 /*!========================================================================
- * 03. Navigation background on scroll
- * ======================================================================!*/
-
-window.addEventListener("scroll", function () {
-  var nav = document.querySelector("nav");
-  nav.classList.toggle("sticky", window.scrollY > 0);
-});
-
-/*!========================================================================
  * 04. Menu Toggle
  * ======================================================================!*/
 
-var hamburgerMenu = document.querySelector(".hamburger-menu");
-var fullscreenMenu = document.querySelector("#fullscreen-menu");
-var menuItems = document.querySelectorAll("#fullscreen-menu .mobile-nav ul li");
-var socialIcons = document.querySelectorAll(".rounded-social-buttons a");
-var body = document.body;
+document.addEventListener('DOMContentLoaded', function() {
+  const logo = document.getElementById('logo');
+  const navMenu = document.querySelector('.nav-menu');
+  const hamburgerMenu = document.getElementById('hamburger-menu');
+  const menuItems = navMenu.querySelectorAll('li');
+  const menuLinks = navMenu.querySelectorAll('a');
 
-hamburgerMenu.addEventListener("click", function () {
-  this.classList.toggle("active");
-  fullscreenMenu.classList.toggle("active");
+  hamburgerMenu.addEventListener('click', function() {
+      // Toggle active class on hamburgerMenu and navMenu
+      hamburgerMenu.classList.toggle('active');
+      navMenu.classList.toggle('active');
+      logo.classList.toggle('active');
 
-  if (fullscreenMenu.classList.contains("active")) {
-    body.style.overflow = "hidden";
-    menuItems.forEach(function (item, index) {
-      item.style.animation = `slideInBlurredTop 0.5s cubic-bezier(0.23, 1, 0.32, 1) ${index * 0.1
-        }s both`;
-    });
-    socialIcons.forEach(function (icon, index) {
-      icon.style.animation = `slideInBlurredTop 0.5s cubic-bezier(0.23, 1, 0.32, 1) ${(menuItems.length + index) * 0.2
-        }s both`;
-    });
-  } else {
-    body.style.overflow = "auto";
-    menuItems.forEach(function (item) {
-      item.style.animation = "";
-    });
-    socialIcons.forEach(function (icon) {
-      icon.style.animation = "";
-    });
-  }
-});
+      // Toggle body scrolling
+      if (navMenu.classList.contains('active')) {
+          // Disable scrolling
+          document.body.style.overflow = 'hidden';
+          
+          // Apply active class to menu items with delay
+          menuItems.forEach((item, index) => {
+              setTimeout(() => {
+                  item.classList.add('active');
+              }, index * 150); // Adjust delay (150ms here) for animation timing
+          });
+      } else {
+          // Enable scrolling
+          document.body.style.overflow = '';
 
-menuItems.forEach(function (item) {
-  item.addEventListener("click", function () {
-    hamburgerMenu.classList.remove("active");
-    fullscreenMenu.classList.remove("active");
-    body.style.overflow = "auto";
-    menuItems.forEach(function (item) {
-      item.style.animation = "";
-    });
-    socialIcons.forEach(function (icon) {
-      icon.style.animation = "";
-    });
+          // Remove active class from menu items
+          menuItems.forEach(item => {
+              item.classList.remove('active');
+          });
+      }
+  });
+
+  // Close menu when a menu item link is clicked
+  menuLinks.forEach(item => {
+      item.addEventListener('click', function() {
+          hamburgerMenu.classList.remove('active');
+          navMenu.classList.remove('active');
+          logo.classList.remove('active');
+          document.body.style.overflow = ''; // Ensure scrolling is re-enabled
+      });
+  });
+
+  // Close menu when device orientation changes
+  window.addEventListener('resize', function() {
+      // Check if navMenu is active and device is in landscape mode
+      if (navMenu.classList.contains('active') && window.innerWidth > window.innerHeight) {
+          hamburgerMenu.classList.remove('active');
+          navMenu.classList.remove('active');
+          logo.classList.remove('active');
+          document.body.style.overflow = ''; // Ensure scrolling is re-enabled
+      }
   });
 });
-
-
 /*!========================================================================
  * 06. Cookie Consent Banner
  * ======================================================================!*/
