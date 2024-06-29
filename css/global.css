@@ -551,6 +551,18 @@ a:hover {
   color: var(--primary-color);
 }
 
+.nav-menu ul li a {
+  width: fit-content;
+  font-weight: 300;
+  color: var(--text-primary);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.nav-menu ul li a:hover {
+  color: var(--primary-color);
+}
+
 footer a {
   color: var(--fifth-color);
 }
@@ -631,20 +643,12 @@ ul {
   padding: 0 1.25rem;
 }
 
-.nav ul {
+.nav-menu ul {
   list-style-type: none;
   margin: 0;
   padding: 0;
   display: flex;
-}
-
-.nav ul li {
-  margin-left: 1.25em;
-  font-size: 0.87em;
-}
-
-.nav ul li:first-child {
-  margin-left: 0;
+  gap: 35px;
 }
 
 .card ul {
@@ -717,99 +721,81 @@ nav {
   transition: all var(--transition);
 }
 
-nav.sticky {
+.nav-menu {
+  z-index: 9999;
+}
+
+.nav-background {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-bottom: 1px solid rgba(28, 28, 30, 0.2);
   background-color: var(--nav-color);
-  backdrop-filter: blur(18px) saturate(180%);
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  transition: background-color var(--transition);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+  z-index: 1;
+} 
+
+nav-mobile {
+  position: fixed;
+  width: 100%;
+  height: 50px;
+  display: none;
+  align-content: flex-end;
+  justify-content: space-between;
+  padding: 1.5rem;
+  z-index: 10000;
 }
 
 /*!========================================================================
  * Hamburger */
 
 .hamburger-menu {
-  width: 1rem;
-  height: 0.93rem;
+  background-color: var(--nav-color);
   position: relative;
   cursor: pointer;
-  z-index: 100000;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 50px;
+  width: 50px;
+  transition: transform 0.3s ease;
+  /* Add transition for smooth animation */
 }
 
-.line {
-  width: 1rem;
-  height: 1px;
+.hamburger-menu .line {
+  position: relative;
   background-color: var(--text-primary);
-  position: absolute;
-  right: 0;
+  height: 1px;
+  width: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  top: 5%;
+  transform: translateY(-5%);
   transition: all 0.3s ease;
+  /* Add transition for smooth animation */
 }
 
-.line1 {
-  top: 0.25em;
-}
-
-.line2 {
-  bottom: 0.25em;
+.hamburger-menu .line:nth-child(2) {
+  margin: 5px;
 }
 
 .hamburger-menu.active .line1 {
-  transform: rotate(-45deg);
-  top: 47%;
+  top: 12%;
+  transform: rotate(-45deg) translateY(-45%);
+  /* Adjust rotation and vertical position */
 }
 
 .hamburger-menu.active .line2 {
-  transform: rotate(45deg);
-  bottom: 47%;
+  top: 0;
+  transform: rotate(45deg) translateY(-45%);
+  /* Adjust rotation and vertical position */
 }
 
 /*!========================================================================
- * Fullscreen Menu */
-
-#fullscreen-menu {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
-  opacity: 0;
-  visibility: hidden;
-  background: var(--bg-color);
-  transition: opacity 0.3s ease, visibility 0.3s ease,
-    background-color 0.3s ease;
-}
-
-#fullscreen-menu.active {
-  opacity: 1;
-  visibility: visible;
-}
-
-.mobile-menu-container {
-  display: flex;
-  margin-top: 10%;
-  width: 100%;
-}
-
-.mobile-nav {
-  display: flex;
-  width: 100%;
-}
-
-#fullscreen-menu .mobile-nav ul {
-  display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap;
-  list-style: none;
-  width: 100%;
-  gap: 40px;
-  padding-left: var(--secondary-padding);
-  padding-right: var(--secondary-padding);
-}
-
-#fullscreen-menu .mobile-nav ul li a {
-  font-size: 2em;
-  font-weight: 200;
-  width: fit-content;
-}
+ * Mobile Menu */
 
 .menu-item {
   display: flex;
@@ -842,12 +828,34 @@ nav.sticky {
  * Logo */
 
 .logo {
-  display: block;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2;
 }
 
 .logo svg {
-  width: 2.81rem;
+  width: 30px;
   height: auto;
+  aspect-ratio: 1;
+}
+
+.logo-mobile {
+  background-color: var(--nav-color);
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 5px;
+  width: 50px;
+  height: 50px;
+}
+
+.logo-mobile svg {
+  width: 30px;
+  height: auto;
+  aspect-ratio: 1;
 }
 
 #part1 {
@@ -1282,10 +1290,10 @@ img {
   transition: all var(--transition);
 }
 
-.item:hover{
+.item:hover {
   filter: grayscale(0) brightness(1);
   transform: scale(1.02);
-} 
+}
 
 .high {
   display: flex;
@@ -1305,9 +1313,10 @@ img {
 .ui-background {
   backdrop-filter: blur(18px) saturate(180%);
   -webkit-backdrop-filter: blur(18px) saturate(180%);
-  background: linear-gradient(145deg,
-      rgba(255, 255, 255, 0.4),
-      rgba(28, 28, 30, 0.2));
+}
+
+.ui-background-color {
+  background: rgba(250, 250, 250, 0.65) !important;
 }
 
 .ui-illumination {
@@ -1315,10 +1324,13 @@ img {
     inset 0 0 0 1px rgba(255, 255, 255, 0.12),
     inset 1px 1px 1px rgba(255, 255, 255, 0.3),
     inset -1px -1px 1px rgba(0, 0, 0, 0.2);
+  background: linear-gradient(145deg,
+      rgba(255, 255, 255, 0.4),
+      rgba(28, 28, 30, 0.2));
 }
 
 .ui-border {
-  border: 0px solid rgba(209, 213, 219, 0.3);
+  border: 1px solid rgba(28, 28, 30, 0.2);
 }
 
 .ui-radius {
