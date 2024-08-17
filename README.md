@@ -24,7 +24,7 @@ This work is licensed under a Creative Commons Attribution-NonCommercial-ShareAl
 
 ## Contact
 For any questions or support, you can reach me at:
-- **Email**: biznis@rdslv.sk
+- **Email**: office@rdslv.sk
 - **Phone**: +421 911 510 344
 
 You can also check out my other works and follow me on:
