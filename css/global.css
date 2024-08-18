@@ -551,6 +551,11 @@ li {
   color: var(--primary-color);
 }
 
+.section-heading .faded {
+  font-size: smaller;
+  font-weight: 400;
+}
+
 /*!========================================================================
  * Links */
 
