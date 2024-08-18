@@ -145,6 +145,7 @@
 
   .hero-content-container {
     text-align: center;
+    flex-direction: column;
   }
 
   .card {

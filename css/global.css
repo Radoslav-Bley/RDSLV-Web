@@ -148,11 +148,12 @@ body {
 .hero-content-container {
   position: relative;
   display: flex;
-  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
   text-align: left;
   flex-shrink: 1;
   gap: 2rem;
-  height: 30%;
   width: 100%;
 }
 
@@ -193,7 +194,7 @@ section row {
   display: flex;
   align-items: center;
   justify-content: center;
-  flex-direction: column;
+  flex-direction: row;
   height: 100%;
   width: 100%;
   z-index: 10;
@@ -418,6 +419,8 @@ header {
 #hero-section {
   width: 100%;
   height: 100vh;
+  background-image: radial-gradient(var(--bg-box) 10%, transparent 10%);
+  background-size: 15px 15px; /* Size of each dot */
 }
 
 .footer {
@@ -878,6 +881,17 @@ nav-mobile {
 #part2 {
   fill: var(--primary-color);
   transition: fill var(--transition);
+}
+
+.macbook {
+  display: flex;
+  position: relative;
+  width: 400px;
+  height: 250px;
+  background-image: url(../img/general/sections/hero/mbp.png);
+  background-position: center;
+  background-size: contain;
+  background-repeat:no-repeat;
 }
 
 /*!========================================================================
