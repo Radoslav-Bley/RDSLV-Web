@@ -28,7 +28,7 @@ For any questions or support, you can reach me at:
 - **Phone**: +421 911 510 344
 
 You can also check out my other works and follow me on:
-- [GitHub](https://github.com/radblesk)
+- [GitHub](https://github.com/Radoslav-Bley)
 - [Behance](https://www.behance.net/radoslavbley)
-- [Twitter/X](https://twitter.com/radblesk)
+- [Twitter/X](https://x.com/radblesk)
 - [YouTube](https://www.youtube.com/channel/UC2NdG4m3JBUSyFkHP1DGkPQ)
