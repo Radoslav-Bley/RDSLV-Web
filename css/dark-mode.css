@@ -14,6 +14,7 @@
     /* Dark version of Obsidian Black for the main background */
     --bg-box: #2e3136;
     /* A darker grey for boxes or card backgrounds to create a subtle distinction */
+    --hero-highlight: #ff5101;
 
     /* Text Colors for Dark Mode */
     --text-primary: #fafafa;
@@ -22,7 +23,7 @@
     /* Mystic Silver for secondary text, provides good contrast without overwhelming brightness */
 
     /* Navigation Color */
-    --nav-color: rgba(0, 0, 0, 0.65);
+    --nav-color: rgba(0, 0, 0, 0.75);
     /* Adjusted for better visibility in dark mode */
   }
 
