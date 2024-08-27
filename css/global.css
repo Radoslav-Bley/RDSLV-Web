@@ -958,9 +958,9 @@ nav-mobile {
 .macbook {
   display: flex;
   position: relative;
-  width: 50vw;
-  aspect-ratio: 50 / 35;
-  background-image: url(../img/general/sections/hero/mbp.png);
+  width: 40vw;
+  aspect-ratio: 3 / 2;
+  background-image: url(../img/general/sections/hero/macbook.webp);
   background-position: center;
   background-size: contain;
   background-repeat: no-repeat;
