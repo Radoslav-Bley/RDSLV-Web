@@ -916,13 +916,12 @@ nav-mobile {
 
 .logo {
   position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: center;
   z-index: 2;
 }
 
 .logo svg {
+  position: relative;
+  top: 50%;
   width: 30px;
   height: auto;
   aspect-ratio: 1;
@@ -931,26 +930,27 @@ nav-mobile {
 .logo-mobile {
   background-color: var(--nav-color) !important;
   position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: center;
   padding: 5px;
   width: 50px;
   height: 50px;
 }
 
 .logo-mobile svg {
-  width: 30px;
+  position: relative;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 25px;
   height: auto;
   aspect-ratio: 1;
 }
 
-#part1 {
+#Letter-B {
   fill: var(--text-primary);
   transition: fill var(--transition);
 }
 
-#part2 {
+#Letter-R {
   fill: var(--primary-color);
   transition: fill var(--transition);
 }
