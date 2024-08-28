@@ -45,7 +45,7 @@ document.querySelectorAll(".slide-in-blurred-bottom").forEach((element) => {
  * 02. Adrress Bar Color Change
  * ======================================================================!*/
 
-function setAddressBarColor() {
+/* function setAddressBarColor() {
   if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
     // Dark mode
     document
@@ -65,7 +65,7 @@ setAddressBarColor();
 // Listen for changes in the user's color scheme preference
 window
   .matchMedia("(prefers-color-scheme: dark)")
-  .addListener(setAddressBarColor);
+  .addListener(setAddressBarColor); */
 
 /*!========================================================================
  * 04. Menu Toggle
