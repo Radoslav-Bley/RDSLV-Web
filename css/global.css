@@ -805,6 +805,10 @@ nav {
   align-items: center;
   justify-content: center;
   transition: all var(--transition);
+  border-bottom: 1px solid rgba(250, 250, 250, 0.2);
+  background-color: var(--nav-color);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
 }
 
 .nav-menu {
@@ -813,6 +817,7 @@ nav {
 
 .nav-background {
   position: absolute;
+  top: -5px;
   width: 100%;
   height: 100%;
   border-bottom: 1px solid rgba(250, 250, 250, 0.2);
