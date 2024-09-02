@@ -976,7 +976,6 @@ nav-mobile {
 
 .marquee__group .logo-client {
   display: grid;
-  background-color: rgba(250, 250, 250, 0.05);
   place-items: center;
   width: var(--size);
   aspect-ratio: 16/9;
@@ -986,7 +985,6 @@ nav-mobile {
 
 .logo-client-color {
   fill: var(--text-primary);
-  opacity: 0.5;
 }
 
 /*!========================================================================
