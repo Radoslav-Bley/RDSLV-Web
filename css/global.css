@@ -921,15 +921,15 @@ nav-mobile {
 
 .logo {
   position: relative;
+  width: fit-content;
+  height: fit-content;
   z-index: 2;
 }
 
 .logo svg {
   position: relative;
-  top: 50%;
-  width: 30px;
-  height: auto;
-  aspect-ratio: 1;
+  width: 2rem;
+  height: 2rem;
 }
 
 .logo-mobile {
@@ -946,8 +946,7 @@ nav-mobile {
   left: 50%;
   transform: translate(-50%, -50%);
   width: 25px;
-  height: auto;
-  aspect-ratio: 1;
+  height: 25px;
 }
 
 #Letter-B {
