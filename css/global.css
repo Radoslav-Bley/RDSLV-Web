@@ -73,7 +73,7 @@
   --secondary-padding: 3rem;
 
   /*!========================================================================
- * Clients Section */
+ * Clients Logos */
 
   --size: clamp(10rem, 0.62rem + 40vmin, 30rem);
   --gap: calc(var(--size) / 14);
@@ -974,16 +974,19 @@ nav-mobile {
 /*!========================================================================
  * Clients Logos */
 
-.marquee__group .logo {
+.marquee__group .logo-client {
   display: grid;
-  background-color: rgba(0, 0, 0, 0.1);
-  filter: invert(1);
-  -webkit-filter: invert(1);
+  background-color: rgba(250, 250, 250, 0.05);
   place-items: center;
   width: var(--size);
   aspect-ratio: 16/9;
-  padding: calc(var(--size) / 10);
+  padding: calc(var(--size) / 7);
   transition: filter var(--transition);
+}
+
+.logo-client-color {
+  fill: var(--text-primary);
+  opacity: 0.5;
 }
 
 /*!========================================================================
