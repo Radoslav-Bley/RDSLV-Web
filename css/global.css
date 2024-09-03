@@ -59,7 +59,6 @@
 
   /*!========================================================================
  * Navigation */
-
   --nav-color: rgba(0, 0, 0, 0.45);
 
   /*!========================================================================
@@ -143,6 +142,7 @@ body {
   align-items: center;
   width: 100%;
   max-width: 1200px;
+  height: 100%;
   padding-left: var(--secondary-padding);
   padding-right: var(--secondary-padding);
 }
@@ -836,6 +836,7 @@ nav-mobile {
   align-content: center;
   justify-content: space-between;
   padding: 0 var(--secondary-padding);
+  margin: 0;
   z-index: 10000;
 }
 
@@ -1000,32 +1001,39 @@ line:nth-child(2) {
 
 .logo {
   position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: fit-content;
+  height: 100%;
+  padding: 0;
+  margin: 0;
   z-index: 2;
 }
 
 .logo svg {
-  position: relative;
-  top: 50%;
-  width: 30px;
-  height: auto;
-  aspect-ratio: 1;
+  display: flex;
+  width: 2rem;
+  height: 100%;
+  padding: 0;
+  margin: 0;
 }
 
 .logo-mobile {
   position: relative;
-  padding: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   width: 50px;
   height: 50px;
 }
 
 .logo-mobile svg {
   position: relative;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 25px;
-  height: auto;
-  aspect-ratio: 1;
+  display: flex;
+  width: 1.8rem;
+  height: 100%;
+  overflow: visible;
 }
 
 #Letter-B {
