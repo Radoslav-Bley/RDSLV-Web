@@ -628,22 +628,34 @@ a {
   text-decoration: none;
 }
 
-a:active,
+a.active,
 a:hover {
   outline-width: 0;
   color: var(--primary-color);
 }
 
 .nav-menu ul li a {
-  width: fit-content;
+  position: relative;
+  width: 100%;
   font-weight: 300;
-  color: var(--text-primary);
   text-decoration: none;
-  transition: color 0.3s ease;
+  transition: color 0.3s ease-in-out;
 }
 
-.nav-menu ul li a:hover {
-  color: var(--primary-color);
+.nav-menu ul li a::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -16px;
+  width: 0;
+  height: 1px;
+  background-color: var(--primary-color);
+  transition: width 0.3s ease;
+}
+
+.nav-menu ul li a.active::after,
+.nav-menu ul li a:hover::after {
+  width: 100%;
 }
 
 footer a {

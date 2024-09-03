@@ -254,3 +254,28 @@ document.addEventListener('touchmove', (event) => {
     element.classList.remove('hover');
   }
 });
+
+/*!========================================================================
+ * 09. Active Menu Item Highlight
+ * ======================================================================!*/
+
+window.addEventListener('scroll', function () {
+  const sections = document.querySelectorAll('section');
+  const menuLinks = document.querySelectorAll('.nav-menu ul li a');
+
+  let currentSection = '';
+
+  sections.forEach(section => {
+    const sectionTop = section.offsetTop - 50;
+    if (pageYOffset >= sectionTop) {
+      currentSection = section.getAttribute('id');
+    }
+  });
+
+  menuLinks.forEach(link => {
+    link.classList.remove('active');
+    if (link.getAttribute('href').substring(1) === currentSection) {
+      link.classList.add('active');
+    }
+  });
+});
