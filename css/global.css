@@ -941,20 +941,21 @@ nav-mobile {
 }
 
 .logo-mobile {
-  background-color: var(--nav-color) !important;
+  background-color: var(--nav-color);
   position: relative;
-  padding: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   width: 50px;
   height: 50px;
 }
 
 .logo-mobile svg {
   position: relative;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 25px;
-  height: 25px;
+  display: flex;
+  width: 1.8rem;
+  height: 100%;
+  overflow: visible;
 }
 
 #Letter-B {
