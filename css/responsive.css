@@ -358,14 +358,6 @@
   .subheading {
     display: none;
   }
-
-  .arrow {
-    display: none;
-  }
-
-  .card-container {
-    justify-content: space-around;
-  }
 }
 
 /*!========================================================================
