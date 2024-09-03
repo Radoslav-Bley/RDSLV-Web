@@ -71,60 +71,61 @@ window
  * 04. Menu Toggle
  * ======================================================================!*/
 
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
   const logo = document.getElementById('logo');
   const navMenu = document.querySelector('.nav-menu');
   const hamburgerMenu = document.getElementById('hamburger-menu');
   const menuItems = navMenu.querySelectorAll('li');
   const menuLinks = navMenu.querySelectorAll('a');
 
-  hamburgerMenu.addEventListener('click', function() {
-      // Toggle active class on hamburgerMenu and navMenu
-      hamburgerMenu.classList.toggle('active');
-      navMenu.classList.toggle('active');
-      logo.classList.toggle('active');
+  hamburgerMenu.addEventListener('click', function () {
+    // Toggle active class on hamburgerMenu and navMenu
+    hamburgerMenu.classList.toggle('active');
+    navMenu.classList.toggle('active');
+    logo.classList.toggle('active');
 
-      // Toggle body scrolling
-      if (navMenu.classList.contains('active')) {
-          // Disable scrolling
-          document.body.style.overflow = 'hidden';
-          
-          // Apply active class to menu items with delay
-          menuItems.forEach((item, index) => {
-              setTimeout(() => {
-                  item.classList.add('active');
-              }, index * 150); // Adjust delay (150ms here) for animation timing
-          });
-      } else {
-          // Enable scrolling
-          document.body.style.overflow = '';
+    // Toggle body scrolling
+    if (navMenu.classList.contains('active')) {
+      // Disable scrolling
+      document.body.style.overflow = 'hidden';
 
-          // Remove active class from menu items
-          menuItems.forEach(item => {
-              item.classList.remove('active');
-          });
-      }
+      // Apply active class to menu items with delay
+      menuItems.forEach((item, index) => {
+        setTimeout(() => {
+          item.classList.add('active');
+        }, index * 150); // Adjust delay (150ms here) for animation timing
+      });
+    } else {
+      // Enable scrolling
+      document.body.style.overflow = '';
+
+      // Remove active class from menu items
+      menuItems.forEach(item => {
+        item.classList.remove('active');
+      });
+
+    }
   });
 
   // Close menu when a menu item link is clicked
   menuLinks.forEach(item => {
-      item.addEventListener('click', function() {
-          hamburgerMenu.classList.remove('active');
-          navMenu.classList.remove('active');
-          logo.classList.remove('active');
-          document.body.style.overflow = ''; // Ensure scrolling is re-enabled
-      });
+    item.addEventListener('click', function () {
+      hamburgerMenu.classList.remove('active');
+      navMenu.classList.remove('active');
+      logo.classList.remove('active');
+      document.body.style.overflow = ''; // Ensure scrolling is re-enabled
+    });
   });
 
   // Close menu when device orientation changes
-  window.addEventListener('resize', function() {
-      // Check if navMenu is active and device is in landscape mode
-      if (navMenu.classList.contains('active') && window.innerWidth > window.innerHeight) {
-          hamburgerMenu.classList.remove('active');
-          navMenu.classList.remove('active');
-          logo.classList.remove('active');
-          document.body.style.overflow = ''; // Ensure scrolling is re-enabled
-      }
+  window.addEventListener('resize', function () {
+    // Check if navMenu is active and device is in landscape mode
+    if (navMenu.classList.contains('active') && window.innerWidth > window.innerHeight) {
+      hamburgerMenu.classList.remove('active');
+      navMenu.classList.remove('active');
+      logo.classList.remove('active');
+      document.body.style.overflow = ''; // Ensure scrolling is re-enabled
+    }
   });
 });
 /*!========================================================================
@@ -239,17 +240,17 @@ document.addEventListener("DOMContentLoaded", () => {
 
 const element = document.getElementById('element');
 
-        element.addEventListener('touchstart', () => {
-            element.classList.add('hover');
-        });
+element.addEventListener('touchstart', () => {
+  element.classList.add('hover');
+});
 
-        element.addEventListener('touchend', () => {
-            element.classList.remove('hover');
-        });
+element.addEventListener('touchend', () => {
+  element.classList.remove('hover');
+});
 
-        // Optional: To handle touchmove if you want to ensure hover is removed when user moves finger away
-        document.addEventListener('touchmove', (event) => {
-            if (!element.contains(event.target)) {
-                element.classList.remove('hover');
-            }
-        });
+// Optional: To handle touchmove if you want to ensure hover is removed when user moves finger away
+document.addEventListener('touchmove', (event) => {
+  if (!element.contains(event.target)) {
+    element.classList.remove('hover');
+  }
+});
