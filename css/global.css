@@ -60,7 +60,7 @@
   /*!========================================================================
  * Navigation */
 
-  --nav-color: rgba(0, 0, 0, 0.75);
+  --nav-color: rgba(0, 0, 0, 0.45);
 
   /*!========================================================================
  * Radius */
@@ -1012,7 +1012,6 @@ line:nth-child(2) {
 }
 
 .logo-mobile {
-  background-color: var(--nav-color) !important;
   position: relative;
   padding: 5px;
   width: 50px;
