@@ -9,8 +9,8 @@ RewriteEngine on
 RewriteCond %{HTTP:X-Forwarded-Proto} !https
 RewriteCond %{HTTP_USER_AGENT} !(BlackBerry)
 RewriteCond %{HTTP_USER_AGENT} !(Windows\sNT\s5\.[12])
-RewriteCond %{HTTP_HOST} ^(www\.)?rdslv\.sk [NC,OR]
 RewriteCond %{HTTPS} off
+RewriteCond %{HTTP_HOST} ^(.*\.)?rdslv\.sk [NC]
 RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
 RewriteCond %{REQUEST_FILENAME} !-d
 RewriteCond %{REQUEST_FILENAME}\.html -f
