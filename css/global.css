@@ -60,6 +60,8 @@
   /*!========================================================================
  * Navigation */
   --nav-color: rgba(0, 0, 0, 0.45);
+  --notice: 'Website is in active development - v2.0b2';
+  --notice-height: 25px;
 
   /*!========================================================================
  * Radius */
@@ -68,14 +70,14 @@
   /*!========================================================================
  * Paddings */
 
-  --primary-padding: 4rem;
+  --primary-padding: 150px;
   --secondary-padding: 3rem;
 
   /*!========================================================================
  * Clients Logos */
 
-  --size: clamp(10rem, 0.62rem + 40vmin, 30rem);
-  --gap: calc(var(--size) / 14);
+  --size: 5rem;
+  --gap: 4rem;
   --duration: 60s;
   --scroll-start: 0;
   --scroll-end: calc(-100% - var(--gap));
@@ -114,13 +116,9 @@ html {
 
 body {
   user-select: none;
-  /* For modern browsers */
   -moz-user-select: none;
-  /* For Firefox */
   -webkit-user-select: none;
-  /* For Safari */
   -ms-user-select: none;
-  /* For Internet Explorer/Edge */
   font-family: -apple-system, system-ui, -apple-system, BlinkMacSystemFont,
     "San Francisco", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-style: normal;
@@ -147,6 +145,28 @@ body {
   padding-right: var(--secondary-padding);
 }
 
+.notice {
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: var(--notice-height);
+  background-color: rgba(255, 81, 1, 0.5);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  text-align: center;
+  overflow: hidden;
+  z-index: 99999;
+}
+
+.notice::after {
+  content: var(--notice);
+  display: inline-flex;
+}
+
 .hero-content-container {
   position: relative;
   display: flex;
@@ -170,6 +190,11 @@ body {
   padding-right: var(--secondary-padding);
   padding-top: var(--primary-padding);
   padding-bottom: var(--primary-padding);
+}
+
+#clients .container {
+  padding-top: 50px;
+  padding-bottom: 0;
 }
 
 .about-container {
@@ -239,15 +264,16 @@ section row {
 .sw-icons div {
   display: flex;
   flex-direction: row;
+  gap: 5px;
 }
 
 .sw-icons svg {
   transition: all var(--transition);
 }
 
-.sw-icons svg:hover {
+/* .sw-icons svg:hover {
   transform: scale(1.3);
-}
+} */
 
 .dev-icons {
   display: flex;
@@ -257,15 +283,16 @@ section row {
 .dev-icons div {
   display: flex;
   flex-direction: row;
+  gap: 5px;
 }
 
 .dev-icons svg {
   transition: all var(--transition);
 }
 
-.dev-icons svg:hover {
+/* .dev-icons svg:hover {
   transform: scale(1.3);
-}
+} */
 
 /*!========================================================================
  * Services Section Container */
@@ -275,7 +302,8 @@ section row {
   display: flex;
   justify-content: flex-start;
   align-content: center;
-  padding: 1rem var(--secondary-padding) var(--primary-padding);
+  padding: 0 var(--secondary-padding);
+  padding-bottom: var(--primary-padding);
   width: 100%;
   height: 100%;
   overflow-x: auto;
@@ -317,6 +345,12 @@ section row {
   z-index: 1;
 }
 
+.card-wrapper {
+  position: relative;
+  width: 100%;
+  height: fit-content;
+}
+
 .arrow {
   border: none;
   color: white;
@@ -329,8 +363,7 @@ section row {
   display: flex;
   align-items: flex-end;
   justify-content: center;
-  top: 60%;
-  transform: translateY(-60%);
+  top: calc(50% - 3rem);
   z-index: 10;
   opacity: 0;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2),
@@ -468,20 +501,20 @@ header {
 #hero-section {
   width: 100%;
   height: 100vh;
-  background-image: radial-gradient(circle at center right, var(--hero-highlight) 0%, var(--bg-color) 60%);
+  background-image: radial-gradient(circle at center right, var(--hero-highlight) 0%, var(--bg-color) 65%);
 }
 
 .hero {
   position: absolute;
   width: 100%;
-  height: 100vh;
-  background-image: radial-gradient(var(--text-primary) 10%, transparent 10%);
-  background-size: 15px 15px;
+  height: 100%;
+  background-image: radial-gradient(rgba(255, 255, 255, 0.5) 10%, transparent 10%);
+  background-size: 20px 20px;
   opacity: 0.2;
 }
 
 #services .hero {
-  background-image: radial-gradient(#fafafa 10%, transparent 10%);
+  background-image: radial-gradient(rgba(255, 255, 255, 0.5) 10%, transparent 10%);
 }
 
 .footer {
@@ -503,7 +536,7 @@ section {
 }
 
 #services {
-  background-image: radial-gradient(circle at top right, var(--primary-color) 0%, black 50%);
+  background-image: radial-gradient(circle at top right, rgba(255, 81, 1, 1) 0%, black 50%);
 }
 
 /*!========================================================================
@@ -607,7 +640,7 @@ li {
   display: flex;
   flex-direction: row;
   padding: 0;
-  margin: 0 0 2rem 0;
+  margin: 0 0 4rem 0;
 }
 
 .section-heading h1::before {
@@ -809,7 +842,7 @@ ul {
 nav {
   position: fixed;
   left: 0;
-  top: 0;
+  top: calc(0px + var(--notice-height));
   width: 100%;
   height: 3.44rem;
   z-index: 9999;
@@ -841,7 +874,7 @@ nav {
 
 nav-mobile {
   position: fixed;
-  top: 1rem;
+  top: calc(1rem + var(--notice-height));
   width: 100%;
   height: fit-content;
   display: none;
@@ -1067,6 +1100,8 @@ line:nth-child(2) {
   background-position: center;
   background-size: contain;
   background-repeat: no-repeat;
+
+  filter: drop-shadow(-10px 10px 15px rgba(0, 0, 0, 0.75))
 }
 
 /*!========================================================================
@@ -1076,8 +1111,9 @@ line:nth-child(2) {
   display: grid;
   place-items: center;
   width: var(--size);
-  aspect-ratio: 16/9;
-  padding: calc(var(--size) / 7);
+  aspect-ratio: 1;
+  padding: 0;
+  opacity: 0.5;
   transition: filter var(--transition);
 }
 

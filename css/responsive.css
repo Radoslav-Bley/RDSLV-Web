@@ -32,6 +32,7 @@
 
 @media (max-width: 575.98px) {
   :root {
+    --primary-padding: 100px;
     --secondary-padding: 5%;
   }
 
@@ -95,20 +96,15 @@
   }
 
   .nav-menu ul li {
-    padding-left: var(--primary-padding);
+    padding-left: 3.5rem;
     opacity: 0;
-    /* Start with opacity 0 */
     transform: translateY(-120px);
-    /* Start position offscreen */
     transition: opacity 0.5s ease, transform 0.5s ease;
-    /* Transition properties */
   }
 
   .nav-menu.active ul li.active {
     opacity: 1;
-    /* Show menu items */
     transform: translateY(0);
-    /* End position */
   }
 
   .nav-menu ul li a {
@@ -174,10 +170,6 @@
 
   .gradient {
     width: 30vw;
-  }
-
-  .arrow {
-    display: none;
   }
 
   .item {
