@@ -1110,15 +1110,15 @@ line:nth-child(2) {
 .marquee__group .logo-client {
   display: grid;
   place-items: center;
-  width: var(--size);
-  aspect-ratio: 1;
+  height: var(--size);
+  width: auto;
+  max-width: 200px;
   padding: 0;
-  opacity: 0.5;
   transition: filter var(--transition);
 }
 
 .logo-client-color {
-  fill: var(--text-primary);
+  fill: rgb(100, 100, 100);
 }
 
 /*!========================================================================
