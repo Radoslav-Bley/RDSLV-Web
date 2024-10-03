@@ -34,6 +34,8 @@
   :root {
     --primary-padding: 100px;
     --secondary-padding: 5%;
+    --size: 50px;
+    --duration: 30s;
   }
 
   .nav-container {
